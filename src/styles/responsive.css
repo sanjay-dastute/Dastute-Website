@@ -1,0 +1,172 @@
+/* Mobile-first responsive utilities and fixes */
+
+/* Better spacing for mobile devices */
+@media (max-width: 640px) {
+  /* Ensure proper touch targets */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5rem;
+  }
+
+  /* Better form field sizing */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px 0;
+    min-height: 44px;
+  }
+
+  /* Better link sizing */
+  a {
+    -webkit-tap-highlight-color: transparent;
+    padding: 4px;
+  }
+
+  /* Fix text wrapping */
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Better text readability on mobile */
+  body {
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+  }
+
+  /* Reduce excessive padding on mobile */
+  [class*="px-"] {
+    padding-left: clamp(1rem, 5vw, 1.5rem);
+    padding-right: clamp(1rem, 5vw, 1.5rem);
+  }
+}
+
+/* Tablet optimizations (640px - 1024px) */
+@media (min-width: 640px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1025px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Image responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Improve video/iframe responsiveness */
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better table responsiveness */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 0.875rem;
+  }
+
+  table td,
+  table th {
+    padding: 0.5rem;
+  }
+}
+
+/* Fix for notch/safe area on mobile */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+}
+
+/* Better scrolling performance */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Fix for iOS input zooming */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+textarea,
+select {
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+/* Better focus states for accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Orientation lock for fullscreen */
+@media (orientation: landscape) {
+  body {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+/* Print styles for mobile */
+@media print {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  nav,
+  footer {
+    display: none;
+  }
+}
+
+/* Smooth scrolling on supported browsers */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better line-height for readability */
+body {
+  --tw-leading-relaxed: 1.625;
+  line-height: var(--tw-leading-relaxed, 1.625);
+}
+
+/* Viewport fit for notched devices */
+body {
+  viewport-fit: cover;
+}

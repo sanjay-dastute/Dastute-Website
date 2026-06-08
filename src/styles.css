@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "./styles/responsive.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -14,8 +15,8 @@
   --color-border: var(--border);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  --font-sans: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -32,25 +33,134 @@
 }
 
 @keyframes reveal-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes line-extend {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
-.animate-reveal { animation: reveal-up 0.8s var(--ease-out-expo) both; transform-origin: left; }
-.animate-line { animation: line-extend 1.2s var(--ease-out-expo) both; transform-origin: left; }
+@keyframes ambient-float-a {
+  0%,
+  100% {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 6%, 0) scale(1.08);
+  }
+}
+
+@keyframes ambient-float-b {
+  0%,
+  100% {
+    transform: translate3d(6%, 4%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-4%, -6%, 0) scale(1.06);
+  }
+}
+
+.animate-reveal {
+  animation: reveal-up 0.8s var(--ease-out-expo) both;
+  transform-origin: left;
+}
+.animate-line {
+  animation: line-extend 1.2s var(--ease-out-expo) both;
+  transform-origin: left;
+}
+
+.site-ambient {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.ambient-orb {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  width: min(48vw, 560px);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  opacity: 0.25;
+  filter: blur(70px);
+  will-change: transform;
+}
+
+.ambient-orb-a {
+  top: -14rem;
+  left: -10rem;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(0, 66, 217, 0.45),
+    rgba(0, 66, 217, 0)
+  );
+  animation: ambient-float-a 20s ease-in-out infinite;
+}
+
+.ambient-orb-b {
+  right: -10rem;
+  bottom: -16rem;
+  background: radial-gradient(
+    circle at 70% 70%,
+    rgba(5, 138, 98, 0.32),
+    rgba(5, 138, 98, 0)
+  );
+  animation: ambient-float-b 24s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-orb-a,
+  .ambient-orb-b {
+    animation: none;
+  }
+}
 
 @layer base {
-  * { border-color: var(--border); }
+  * {
+    border-color: var(--border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
   }
-  .font-mono { font-family: var(--font-mono); }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  /* Mobile-first responsive improvements */
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px;
+    }
+    input,
+    textarea,
+    select {
+      font-size: 16px;
+    } /* Prevents zoom on iOS */
+  }
+  /* Touch-friendly touch targets */
+  button,
+  a,
+  input[type="checkbox"],
+  input[type="radio"] {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
 }

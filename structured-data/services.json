@@ -1,0 +1,86 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.dastute.co.uk/services#software-development",
+      "name": "Custom Software Development",
+      "description": "DASTUTE builds bespoke web applications, mobile apps, enterprise platforms, APIs, and microservices using modern frameworks and agile methodologies. From requirements discovery to post-launch support.",
+      "provider": {
+        "@id": "https://www.dastute.co.uk/#organization"
+      },
+      "url": "https://www.dastute.co.uk/services",
+      "areaServed": "Worldwide",
+      "serviceType": "Software Development",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Businesses, Startups, Enterprises"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "GBP"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.dastute.co.uk/services#cloud",
+      "name": "Cloud Migration & Management",
+      "description": "End-to-end cloud services including strategy, migration, architecture, and ongoing management across AWS, Microsoft Azure, and Google Cloud Platform.",
+      "provider": {
+        "@id": "https://www.dastute.co.uk/#organization"
+      },
+      "url": "https://www.dastute.co.uk/services",
+      "areaServed": "Worldwide",
+      "serviceType": "Cloud Computing Services"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.dastute.co.uk/services#cybersecurity",
+      "name": "Cybersecurity Services",
+      "description": "Comprehensive cybersecurity including penetration testing, security audits, GDPR and ISO 27001 compliance, 24/7 SOC monitoring, and incident response.",
+      "provider": {
+        "@id": "https://www.dastute.co.uk/#organization"
+      },
+      "url": "https://www.dastute.co.uk/services",
+      "areaServed": "Worldwide",
+      "serviceType": "Cybersecurity"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.dastute.co.uk/services#ai-data",
+      "name": "AI & Data Solutions",
+      "description": "Machine learning model development, predictive analytics, NLP, data engineering pipelines, business intelligence dashboards, and generative AI integration.",
+      "provider": {
+        "@id": "https://www.dastute.co.uk/#organization"
+      },
+      "url": "https://www.dastute.co.uk/services",
+      "areaServed": "Worldwide",
+      "serviceType": "Artificial Intelligence & Data Analytics"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.dastute.co.uk/services#consulting",
+      "name": "IT Consulting",
+      "description": "Technology strategy, digital transformation planning, IT governance, vendor selection, and programme management for organisations at any stage of maturity.",
+      "provider": {
+        "@id": "https://www.dastute.co.uk/#organization"
+      },
+      "url": "https://www.dastute.co.uk/services",
+      "areaServed": "Worldwide",
+      "serviceType": "IT Consulting"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.dastute.co.uk/services#managed-it",
+      "name": "Managed IT Services",
+      "description": "24/7 proactive IT monitoring, helpdesk and end-user support, patch management, business continuity, disaster recovery, and IT asset management.",
+      "provider": {
+        "@id": "https://www.dastute.co.uk/#organization"
+      },
+      "url": "https://www.dastute.co.uk/services",
+      "areaServed": "Worldwide",
+      "serviceType": "Managed IT Services"
+    }
+  ]
+}

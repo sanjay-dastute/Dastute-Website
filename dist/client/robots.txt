@@ -1,4 +1,22 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
 
-Sitemap: https://dastute-solutions-studio.lovable.app/sitemap.xml
+Sitemap: https://dastute.co.uk/sitemap.xml
+
+# AI/LLM discovery
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

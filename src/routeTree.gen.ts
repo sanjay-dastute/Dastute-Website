@@ -14,13 +14,31 @@ import { Route as TechnologyRouteImport } from './routes/technology'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ServiceWebDevelopmentRouteImport } from './routes/service-web-development'
+import { Route as ServiceStaffingRouteImport } from './routes/service-staffing'
+import { Route as ServiceRedBlueTeamRouteImport } from './routes/service-red-blue-team'
+import { Route as ServiceNetworkRouteImport } from './routes/service-network'
+import { Route as ServiceMobileRouteImport } from './routes/service-mobile'
+import { Route as ServiceMarketingRouteImport } from './routes/service-marketing'
+import { Route as ServiceManagedItRouteImport } from './routes/service-managed-it'
+import { Route as ServiceIosRouteImport } from './routes/service-ios'
+import { Route as ServiceErpRouteImport } from './routes/service-erp'
+import { Route as ServiceCyberSecurityRouteImport } from './routes/service-cyber-security'
+import { Route as ServiceCustomSoftwareRouteImport } from './routes/service-custom-software'
+import { Route as ServiceConsultingRouteImport } from './routes/service-consulting'
+import { Route as ServiceCloudRouteImport } from './routes/service-cloud'
+import { Route as ServiceBlockchainRouteImport } from './routes/service-blockchain'
+import { Route as ServiceAndroidRouteImport } from './routes/service-android'
 import { Route as RequestAuditRouteImport } from './routes/request-audit'
 import { Route as ProjectEstimatorRouteImport } from './routes/project-estimator'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as MarketingRouteImport } from './routes/marketing'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CareersApplyRouteImport } from './routes/careers-apply'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as CapabilitiesRouteImport } from './routes/capabilities'
 import { Route as AboutRouteImport } from './routes/about'
@@ -51,6 +69,81 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiceWebDevelopmentRoute = ServiceWebDevelopmentRouteImport.update({
+  id: '/service-web-development',
+  path: '/service-web-development',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceStaffingRoute = ServiceStaffingRouteImport.update({
+  id: '/service-staffing',
+  path: '/service-staffing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceRedBlueTeamRoute = ServiceRedBlueTeamRouteImport.update({
+  id: '/service-red-blue-team',
+  path: '/service-red-blue-team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceNetworkRoute = ServiceNetworkRouteImport.update({
+  id: '/service-network',
+  path: '/service-network',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceMobileRoute = ServiceMobileRouteImport.update({
+  id: '/service-mobile',
+  path: '/service-mobile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceMarketingRoute = ServiceMarketingRouteImport.update({
+  id: '/service-marketing',
+  path: '/service-marketing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceManagedItRoute = ServiceManagedItRouteImport.update({
+  id: '/service-managed-it',
+  path: '/service-managed-it',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceIosRoute = ServiceIosRouteImport.update({
+  id: '/service-ios',
+  path: '/service-ios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceErpRoute = ServiceErpRouteImport.update({
+  id: '/service-erp',
+  path: '/service-erp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceCyberSecurityRoute = ServiceCyberSecurityRouteImport.update({
+  id: '/service-cyber-security',
+  path: '/service-cyber-security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceCustomSoftwareRoute = ServiceCustomSoftwareRouteImport.update({
+  id: '/service-custom-software',
+  path: '/service-custom-software',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceConsultingRoute = ServiceConsultingRouteImport.update({
+  id: '/service-consulting',
+  path: '/service-consulting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceCloudRoute = ServiceCloudRouteImport.update({
+  id: '/service-cloud',
+  path: '/service-cloud',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceBlockchainRoute = ServiceBlockchainRouteImport.update({
+  id: '/service-blockchain',
+  path: '/service-blockchain',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAndroidRoute = ServiceAndroidRouteImport.update({
+  id: '/service-android',
+  path: '/service-android',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RequestAuditRoute = RequestAuditRouteImport.update({
   id: '/request-audit',
   path: '/request-audit',
@@ -59,6 +152,16 @@ const RequestAuditRoute = RequestAuditRouteImport.update({
 const ProjectEstimatorRoute = ProjectEstimatorRouteImport.update({
   id: '/project-estimator',
   path: '/project-estimator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -84,6 +187,11 @@ const CookiePolicyRoute = CookiePolicyRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersApplyRoute = CareersApplyRouteImport.update({
+  id: '/careers-apply',
+  path: '/careers-apply',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareersRoute = CareersRouteImport.update({
@@ -112,13 +220,31 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/capabilities': typeof CapabilitiesRoute
   '/careers': typeof CareersRoute
+  '/careers-apply': typeof CareersApplyRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
   '/insights': typeof InsightsRoute
   '/marketing': typeof MarketingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/process': typeof ProcessRoute
+  '/products': typeof ProductsRoute
   '/project-estimator': typeof ProjectEstimatorRoute
   '/request-audit': typeof RequestAuditRoute
+  '/service-android': typeof ServiceAndroidRoute
+  '/service-blockchain': typeof ServiceBlockchainRoute
+  '/service-cloud': typeof ServiceCloudRoute
+  '/service-consulting': typeof ServiceConsultingRoute
+  '/service-custom-software': typeof ServiceCustomSoftwareRoute
+  '/service-cyber-security': typeof ServiceCyberSecurityRoute
+  '/service-erp': typeof ServiceErpRoute
+  '/service-ios': typeof ServiceIosRoute
+  '/service-managed-it': typeof ServiceManagedItRoute
+  '/service-marketing': typeof ServiceMarketingRoute
+  '/service-mobile': typeof ServiceMobileRoute
+  '/service-network': typeof ServiceNetworkRoute
+  '/service-red-blue-team': typeof ServiceRedBlueTeamRoute
+  '/service-staffing': typeof ServiceStaffingRoute
+  '/service-web-development': typeof ServiceWebDevelopmentRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
@@ -130,13 +256,31 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/capabilities': typeof CapabilitiesRoute
   '/careers': typeof CareersRoute
+  '/careers-apply': typeof CareersApplyRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
   '/insights': typeof InsightsRoute
   '/marketing': typeof MarketingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/process': typeof ProcessRoute
+  '/products': typeof ProductsRoute
   '/project-estimator': typeof ProjectEstimatorRoute
   '/request-audit': typeof RequestAuditRoute
+  '/service-android': typeof ServiceAndroidRoute
+  '/service-blockchain': typeof ServiceBlockchainRoute
+  '/service-cloud': typeof ServiceCloudRoute
+  '/service-consulting': typeof ServiceConsultingRoute
+  '/service-custom-software': typeof ServiceCustomSoftwareRoute
+  '/service-cyber-security': typeof ServiceCyberSecurityRoute
+  '/service-erp': typeof ServiceErpRoute
+  '/service-ios': typeof ServiceIosRoute
+  '/service-managed-it': typeof ServiceManagedItRoute
+  '/service-marketing': typeof ServiceMarketingRoute
+  '/service-mobile': typeof ServiceMobileRoute
+  '/service-network': typeof ServiceNetworkRoute
+  '/service-red-blue-team': typeof ServiceRedBlueTeamRoute
+  '/service-staffing': typeof ServiceStaffingRoute
+  '/service-web-development': typeof ServiceWebDevelopmentRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
@@ -149,13 +293,31 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/capabilities': typeof CapabilitiesRoute
   '/careers': typeof CareersRoute
+  '/careers-apply': typeof CareersApplyRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
   '/insights': typeof InsightsRoute
   '/marketing': typeof MarketingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/process': typeof ProcessRoute
+  '/products': typeof ProductsRoute
   '/project-estimator': typeof ProjectEstimatorRoute
   '/request-audit': typeof RequestAuditRoute
+  '/service-android': typeof ServiceAndroidRoute
+  '/service-blockchain': typeof ServiceBlockchainRoute
+  '/service-cloud': typeof ServiceCloudRoute
+  '/service-consulting': typeof ServiceConsultingRoute
+  '/service-custom-software': typeof ServiceCustomSoftwareRoute
+  '/service-cyber-security': typeof ServiceCyberSecurityRoute
+  '/service-erp': typeof ServiceErpRoute
+  '/service-ios': typeof ServiceIosRoute
+  '/service-managed-it': typeof ServiceManagedItRoute
+  '/service-marketing': typeof ServiceMarketingRoute
+  '/service-mobile': typeof ServiceMobileRoute
+  '/service-network': typeof ServiceNetworkRoute
+  '/service-red-blue-team': typeof ServiceRedBlueTeamRoute
+  '/service-staffing': typeof ServiceStaffingRoute
+  '/service-web-development': typeof ServiceWebDevelopmentRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
@@ -169,13 +331,31 @@ export interface FileRouteTypes {
     | '/about'
     | '/capabilities'
     | '/careers'
+    | '/careers-apply'
     | '/contact'
     | '/cookie-policy'
     | '/insights'
     | '/marketing'
     | '/privacy-policy'
+    | '/process'
+    | '/products'
     | '/project-estimator'
     | '/request-audit'
+    | '/service-android'
+    | '/service-blockchain'
+    | '/service-cloud'
+    | '/service-consulting'
+    | '/service-custom-software'
+    | '/service-cyber-security'
+    | '/service-erp'
+    | '/service-ios'
+    | '/service-managed-it'
+    | '/service-marketing'
+    | '/service-mobile'
+    | '/service-network'
+    | '/service-red-blue-team'
+    | '/service-staffing'
+    | '/service-web-development'
     | '/services'
     | '/sitemap.xml'
     | '/team'
@@ -187,13 +367,31 @@ export interface FileRouteTypes {
     | '/about'
     | '/capabilities'
     | '/careers'
+    | '/careers-apply'
     | '/contact'
     | '/cookie-policy'
     | '/insights'
     | '/marketing'
     | '/privacy-policy'
+    | '/process'
+    | '/products'
     | '/project-estimator'
     | '/request-audit'
+    | '/service-android'
+    | '/service-blockchain'
+    | '/service-cloud'
+    | '/service-consulting'
+    | '/service-custom-software'
+    | '/service-cyber-security'
+    | '/service-erp'
+    | '/service-ios'
+    | '/service-managed-it'
+    | '/service-marketing'
+    | '/service-mobile'
+    | '/service-network'
+    | '/service-red-blue-team'
+    | '/service-staffing'
+    | '/service-web-development'
     | '/services'
     | '/sitemap.xml'
     | '/team'
@@ -205,13 +403,31 @@ export interface FileRouteTypes {
     | '/about'
     | '/capabilities'
     | '/careers'
+    | '/careers-apply'
     | '/contact'
     | '/cookie-policy'
     | '/insights'
     | '/marketing'
     | '/privacy-policy'
+    | '/process'
+    | '/products'
     | '/project-estimator'
     | '/request-audit'
+    | '/service-android'
+    | '/service-blockchain'
+    | '/service-cloud'
+    | '/service-consulting'
+    | '/service-custom-software'
+    | '/service-cyber-security'
+    | '/service-erp'
+    | '/service-ios'
+    | '/service-managed-it'
+    | '/service-marketing'
+    | '/service-mobile'
+    | '/service-network'
+    | '/service-red-blue-team'
+    | '/service-staffing'
+    | '/service-web-development'
     | '/services'
     | '/sitemap.xml'
     | '/team'
@@ -224,13 +440,31 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CapabilitiesRoute: typeof CapabilitiesRoute
   CareersRoute: typeof CareersRoute
+  CareersApplyRoute: typeof CareersApplyRoute
   ContactRoute: typeof ContactRoute
   CookiePolicyRoute: typeof CookiePolicyRoute
   InsightsRoute: typeof InsightsRoute
   MarketingRoute: typeof MarketingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ProcessRoute: typeof ProcessRoute
+  ProductsRoute: typeof ProductsRoute
   ProjectEstimatorRoute: typeof ProjectEstimatorRoute
   RequestAuditRoute: typeof RequestAuditRoute
+  ServiceAndroidRoute: typeof ServiceAndroidRoute
+  ServiceBlockchainRoute: typeof ServiceBlockchainRoute
+  ServiceCloudRoute: typeof ServiceCloudRoute
+  ServiceConsultingRoute: typeof ServiceConsultingRoute
+  ServiceCustomSoftwareRoute: typeof ServiceCustomSoftwareRoute
+  ServiceCyberSecurityRoute: typeof ServiceCyberSecurityRoute
+  ServiceErpRoute: typeof ServiceErpRoute
+  ServiceIosRoute: typeof ServiceIosRoute
+  ServiceManagedItRoute: typeof ServiceManagedItRoute
+  ServiceMarketingRoute: typeof ServiceMarketingRoute
+  ServiceMobileRoute: typeof ServiceMobileRoute
+  ServiceNetworkRoute: typeof ServiceNetworkRoute
+  ServiceRedBlueTeamRoute: typeof ServiceRedBlueTeamRoute
+  ServiceStaffingRoute: typeof ServiceStaffingRoute
+  ServiceWebDevelopmentRoute: typeof ServiceWebDevelopmentRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TeamRoute: typeof TeamRoute
@@ -275,6 +509,111 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/service-web-development': {
+      id: '/service-web-development'
+      path: '/service-web-development'
+      fullPath: '/service-web-development'
+      preLoaderRoute: typeof ServiceWebDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-staffing': {
+      id: '/service-staffing'
+      path: '/service-staffing'
+      fullPath: '/service-staffing'
+      preLoaderRoute: typeof ServiceStaffingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-red-blue-team': {
+      id: '/service-red-blue-team'
+      path: '/service-red-blue-team'
+      fullPath: '/service-red-blue-team'
+      preLoaderRoute: typeof ServiceRedBlueTeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-network': {
+      id: '/service-network'
+      path: '/service-network'
+      fullPath: '/service-network'
+      preLoaderRoute: typeof ServiceNetworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-mobile': {
+      id: '/service-mobile'
+      path: '/service-mobile'
+      fullPath: '/service-mobile'
+      preLoaderRoute: typeof ServiceMobileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-marketing': {
+      id: '/service-marketing'
+      path: '/service-marketing'
+      fullPath: '/service-marketing'
+      preLoaderRoute: typeof ServiceMarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-managed-it': {
+      id: '/service-managed-it'
+      path: '/service-managed-it'
+      fullPath: '/service-managed-it'
+      preLoaderRoute: typeof ServiceManagedItRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-ios': {
+      id: '/service-ios'
+      path: '/service-ios'
+      fullPath: '/service-ios'
+      preLoaderRoute: typeof ServiceIosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-erp': {
+      id: '/service-erp'
+      path: '/service-erp'
+      fullPath: '/service-erp'
+      preLoaderRoute: typeof ServiceErpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-cyber-security': {
+      id: '/service-cyber-security'
+      path: '/service-cyber-security'
+      fullPath: '/service-cyber-security'
+      preLoaderRoute: typeof ServiceCyberSecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-custom-software': {
+      id: '/service-custom-software'
+      path: '/service-custom-software'
+      fullPath: '/service-custom-software'
+      preLoaderRoute: typeof ServiceCustomSoftwareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-consulting': {
+      id: '/service-consulting'
+      path: '/service-consulting'
+      fullPath: '/service-consulting'
+      preLoaderRoute: typeof ServiceConsultingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-cloud': {
+      id: '/service-cloud'
+      path: '/service-cloud'
+      fullPath: '/service-cloud'
+      preLoaderRoute: typeof ServiceCloudRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-blockchain': {
+      id: '/service-blockchain'
+      path: '/service-blockchain'
+      fullPath: '/service-blockchain'
+      preLoaderRoute: typeof ServiceBlockchainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-android': {
+      id: '/service-android'
+      path: '/service-android'
+      fullPath: '/service-android'
+      preLoaderRoute: typeof ServiceAndroidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/request-audit': {
       id: '/request-audit'
       path: '/request-audit'
@@ -287,6 +626,20 @@ declare module '@tanstack/react-router' {
       path: '/project-estimator'
       fullPath: '/project-estimator'
       preLoaderRoute: typeof ProjectEstimatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -322,6 +675,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers-apply': {
+      id: '/careers-apply'
+      path: '/careers-apply'
+      fullPath: '/careers-apply'
+      preLoaderRoute: typeof CareersApplyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers': {
@@ -360,13 +720,31 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CapabilitiesRoute: CapabilitiesRoute,
   CareersRoute: CareersRoute,
+  CareersApplyRoute: CareersApplyRoute,
   ContactRoute: ContactRoute,
   CookiePolicyRoute: CookiePolicyRoute,
   InsightsRoute: InsightsRoute,
   MarketingRoute: MarketingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ProcessRoute: ProcessRoute,
+  ProductsRoute: ProductsRoute,
   ProjectEstimatorRoute: ProjectEstimatorRoute,
   RequestAuditRoute: RequestAuditRoute,
+  ServiceAndroidRoute: ServiceAndroidRoute,
+  ServiceBlockchainRoute: ServiceBlockchainRoute,
+  ServiceCloudRoute: ServiceCloudRoute,
+  ServiceConsultingRoute: ServiceConsultingRoute,
+  ServiceCustomSoftwareRoute: ServiceCustomSoftwareRoute,
+  ServiceCyberSecurityRoute: ServiceCyberSecurityRoute,
+  ServiceErpRoute: ServiceErpRoute,
+  ServiceIosRoute: ServiceIosRoute,
+  ServiceManagedItRoute: ServiceManagedItRoute,
+  ServiceMarketingRoute: ServiceMarketingRoute,
+  ServiceMobileRoute: ServiceMobileRoute,
+  ServiceNetworkRoute: ServiceNetworkRoute,
+  ServiceRedBlueTeamRoute: ServiceRedBlueTeamRoute,
+  ServiceStaffingRoute: ServiceStaffingRoute,
+  ServiceWebDevelopmentRoute: ServiceWebDevelopmentRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TeamRoute: TeamRoute,

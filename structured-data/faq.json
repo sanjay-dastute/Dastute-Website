@@ -1,0 +1,87 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.dastute.co.uk/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does DASTUTE TECHNOLOGIES offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DASTUTE TECHNOLOGIES offers six core IT services: custom software development, cloud migration and management (AWS, Azure, GCP), cybersecurity and compliance, AI and data solutions, IT consulting and digital strategy, and 24/7 managed IT services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is DASTUTE TECHNOLOGIES based?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DASTUTE TECHNOLOGIES LIMITED is headquartered in London, UK, with additional offices in India (Technology & Delivery Centre) and Singapore (APAC Regional Office)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long has DASTUTE been operating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DASTUTE TECHNOLOGIES has been operating for over 10 years, delivering 500+ projects for 150+ clients globally across industries including finance, healthcare, retail, logistics, and government."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does DASTUTE offer a free technology audit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. DASTUTE offers a free technology audit for qualifying businesses. The audit covers infrastructure and architecture, cybersecurity posture, software quality, data and analytics capabilities, and IT governance. You'll receive a written report with a risk register and actionable recommendations, plus a debrief call with a senior consultant. Request yours at https://www.dastute.co.uk/request-audit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What cloud platforms does DASTUTE work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DASTUTE works with all major cloud platforms including Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). We also support multi-cloud and hybrid cloud architectures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can DASTUTE help with GDPR compliance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. DASTUTE's cybersecurity team provides comprehensive compliance support including GDPR, ISO 27001, and SOC 2. We conduct audits, identify gaps, and implement the technical and organisational measures required to achieve and maintain compliance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get a project estimate from DASTUTE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can get a free, no-commitment project estimate by visiting https://www.dastute.co.uk/project-estimator. Fill in details about your project type, timeline, and budget, and a member of our team will respond within one business day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does DASTUTE work with startups or only large enterprises?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DASTUTE works with organisations of all sizes — from ambitious startups building their first product to large enterprises undertaking complex digital transformations. Our services are tailored to suit the specific needs, budgets, and goals of each client."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What industries does DASTUTE serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DASTUTE serves clients across Finance & Banking, Healthcare, Retail & eCommerce, Education, Logistics & Supply Chain, Manufacturing, Government & Public Sector, and Media & Technology."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I contact DASTUTE TECHNOLOGIES?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can contact DASTUTE TECHNOLOGIES by visiting https://www.dastute.co.uk/contact or emailing info@dastute.co.uk. Our London team is available Monday to Friday, 9am–6pm GMT. We respond to all enquiries within one business day."
+      }
+    }
+  ]
+}

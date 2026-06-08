@@ -1,15 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { buildBreadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
       { title: "Privacy Policy — Dastute Technologies" },
-      { name: "description", content: "Privacy Policy for Dastute Technologies Limited. How we collect, use and protect your data under UK GDPR and the Data Protection Act 2018." },
-      { property: "og:title", content: "Privacy Policy — Dastute Technologies" },
+      {
+        name: "description",
+        content:
+          "Privacy Policy for Dastute Technologies Limited. How we collect, use and protect your data under UK GDPR and the Data Protection Act 2018.",
+      },
+      {
+        property: "og:title",
+        content: "Privacy Policy — Dastute Technologies",
+      },
       { property: "og:url", content: "/privacy-policy" },
     ],
     links: [{ rel: "canonical", href: "/privacy-policy" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Privacy Policy", path: "/privacy-policy" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: PrivacyPolicyPage,
 });
@@ -18,7 +37,9 @@ function PrivacyPolicyPage() {
   return (
     <SiteLayout>
       <section className="px-6 py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary block mb-6">/ Legal</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary block mb-6">
+          / Legal
+        </span>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-8">
           Privacy Policy
         </h1>
@@ -33,12 +54,35 @@ function PrivacyPolicyPage() {
           <article>
             <div className="flex items-center gap-4 mb-6">
               <span className="font-mono text-xs text-primary">01</span>
-              <h2 className="text-2xl font-bold tracking-tight">Introduction</h2>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Introduction
+              </h2>
             </div>
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed pl-10">
-              <p>Dastute Technologies Limited ("we", "our", "us") is a company registered in England and Wales (Company No. 17019407) with its registered office at 128 City Road, London, EC1V 2NX, United Kingdom.</p>
-              <p>We are committed to protecting and respecting your privacy. This policy explains how we collect, use, store and share personal data when you visit our website, engage our services, or otherwise interact with us.</p>
-              <p>We act as a data controller for the personal data described in this policy. For questions about our data practices, please contact us at <a href="mailto:privacy@dastute.co.uk" className="text-primary hover:underline">privacy@dastute.co.uk</a>.</p>
+              <p>
+                Dastute Technologies Limited ("we", "our", "us") is a company
+                registered in England and Wales (Company No. 17019407) with its
+                registered office at 128 City Road, London, EC1V 2NX, United
+                Kingdom.
+              </p>
+              <p>
+                We are committed to protecting and respecting your privacy. This
+                policy explains how we collect, use, store and share personal
+                data when you visit our website, engage our services, or
+                otherwise interact with us.
+              </p>
+              <p>
+                We act as a data controller for the personal data described in
+                this policy. For questions about our data practices, please
+                contact us at{" "}
+                <a
+                  href="mailto:privacy@dastute.co.uk"
+                  className="text-primary hover:underline"
+                >
+                  privacy@dastute.co.uk
+                </a>
+                .
+              </p>
             </div>
           </article>
 
@@ -46,7 +90,9 @@ function PrivacyPolicyPage() {
           <article className="border-t border-border pt-16">
             <div className="flex items-center gap-4 mb-6">
               <span className="font-mono text-xs text-primary">02</span>
-              <h2 className="text-2xl font-bold tracking-tight">Data We Collect</h2>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Data We Collect
+              </h2>
             </div>
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed pl-10">
               <p>We may collect the following categories of personal data:</p>
@@ -60,7 +106,9 @@ function PrivacyPolicyPage() {
                   "Project Data: information you provide in briefs, audit requests or project estimators.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="font-mono text-[10px] text-primary mt-1.5">→</span>
+                    <span className="font-mono text-[10px] text-primary mt-1.5">
+                      →
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -72,7 +120,9 @@ function PrivacyPolicyPage() {
           <article className="border-t border-border pt-16">
             <div className="flex items-center gap-4 mb-6">
               <span className="font-mono text-xs text-primary">03</span>
-              <h2 className="text-2xl font-bold tracking-tight">How We Use Your Data</h2>
+              <h2 className="text-2xl font-bold tracking-tight">
+                How We Use Your Data
+              </h2>
             </div>
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed pl-10">
               <p>We process personal data for the following purposes:</p>
@@ -86,7 +136,9 @@ function PrivacyPolicyPage() {
                   "To protect our legitimate business interests and enforce our terms.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="font-mono text-[10px] text-primary mt-1.5">→</span>
+                    <span className="font-mono text-[10px] text-primary mt-1.5">
+                      →
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -98,10 +150,15 @@ function PrivacyPolicyPage() {
           <article className="border-t border-border pt-16">
             <div className="flex items-center gap-4 mb-6">
               <span className="font-mono text-xs text-primary">04</span>
-              <h2 className="text-2xl font-bold tracking-tight">Legal Basis for Processing</h2>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Legal Basis for Processing
+              </h2>
             </div>
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed pl-10">
-              <p>Under UK GDPR and the Data Protection Act 2018, we rely on the following lawful bases:</p>
+              <p>
+                Under UK GDPR and the Data Protection Act 2018, we rely on the
+                following lawful bases:
+              </p>
               <ul className="space-y-2">
                 {[
                   "Consent: where you have given clear consent for us to process your data for specific purposes (e.g. newsletter subscriptions).",
@@ -110,7 +167,9 @@ function PrivacyPolicyPage() {
                   "Legal obligation: where processing is necessary to comply with applicable law.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="font-mono text-[10px] text-primary mt-1.5">→</span>
+                    <span className="font-mono text-[10px] text-primary mt-1.5">
+                      →
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -122,7 +181,9 @@ function PrivacyPolicyPage() {
           <article className="border-t border-border pt-16">
             <div className="flex items-center gap-4 mb-6">
               <span className="font-mono text-xs text-primary">05</span>
-              <h2 className="text-2xl font-bold tracking-tight">Data Sharing & Transfers</h2>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Data Sharing & Transfers
+              </h2>
             </div>
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed pl-10">
               <p>We do not sell your personal data. We may share data with:</p>
@@ -133,12 +194,18 @@ function PrivacyPolicyPage() {
                   "Law enforcement or regulatory authorities when required by law.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="font-mono text-[10px] text-primary mt-1.5">→</span>
+                    <span className="font-mono text-[10px] text-primary mt-1.5">
+                      →
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p>Where data is transferred outside the UK, we ensure appropriate safeguards are in place, including Standard Contractual Clauses approved by the ICO.</p>
+              <p>
+                Where data is transferred outside the UK, we ensure appropriate
+                safeguards are in place, including Standard Contractual Clauses
+                approved by the ICO.
+              </p>
             </div>
           </article>
 
@@ -146,10 +213,16 @@ function PrivacyPolicyPage() {
           <article className="border-t border-border pt-16">
             <div className="flex items-center gap-4 mb-6">
               <span className="font-mono text-xs text-primary">06</span>
-              <h2 className="text-2xl font-bold tracking-tight">Data Retention</h2>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Data Retention
+              </h2>
             </div>
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed pl-10">
-              <p>We retain personal data only for as long as necessary to fulfil the purposes for which it was collected. Typical retention periods include:</p>
+              <p>
+                We retain personal data only for as long as necessary to fulfil
+                the purposes for which it was collected. Typical retention
+                periods include:
+              </p>
               <ul className="space-y-2">
                 {[
                   "Contact form submissions: 24 months from last interaction.",
@@ -158,7 +231,9 @@ function PrivacyPolicyPage() {
                   "Website analytics data: 26 months (anonymised).",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="font-mono text-[10px] text-primary mt-1.5">→</span>
+                    <span className="font-mono text-[10px] text-primary mt-1.5">
+                      →
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -185,12 +260,33 @@ function PrivacyPolicyPage() {
                   "Withdraw consent: where processing is based on consent, you may withdraw it at any time.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="font-mono text-[10px] text-primary mt-1.5">→</span>
+                    <span className="font-mono text-[10px] text-primary mt-1.5">
+                      →
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p>To exercise any of these rights, contact us at <a href="mailto:privacy@dastute.co.uk" className="text-primary hover:underline">privacy@dastute.co.uk</a>. You also have the right to lodge a complaint with the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">ico.org.uk</a>.</p>
+              <p>
+                To exercise any of these rights, contact us at{" "}
+                <a
+                  href="mailto:privacy@dastute.co.uk"
+                  className="text-primary hover:underline"
+                >
+                  privacy@dastute.co.uk
+                </a>
+                . You also have the right to lodge a complaint with the
+                Information Commissioner's Office (ICO) at{" "}
+                <a
+                  href="https://ico.org.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  ico.org.uk
+                </a>
+                .
+              </p>
             </div>
           </article>
 
@@ -198,20 +294,33 @@ function PrivacyPolicyPage() {
           <article className="border-t border-border pt-16">
             <div className="flex items-center gap-4 mb-6">
               <span className="font-mono text-xs text-primary">08</span>
-              <h2 className="text-2xl font-bold tracking-tight">Changes to This Policy</h2>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Changes to This Policy
+              </h2>
             </div>
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed pl-10">
-              <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.</p>
+              <p>
+                We may update this Privacy Policy from time to time. Any changes
+                will be posted on this page with an updated revision date. We
+                encourage you to review this policy periodically.
+              </p>
             </div>
           </article>
 
           {/* Contact */}
           <div className="border-t border-border pt-16">
             <div className="p-8 bg-muted">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">Data Protection Contact</p>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">
+                Data Protection Contact
+              </p>
               <p className="text-sm mb-1">Dastute Technologies Limited</p>
               <p className="text-sm mb-1">128 City Road, London, EC1V 2NX</p>
-              <a href="mailto:privacy@dastute.co.uk" className="text-sm text-primary hover:underline">privacy@dastute.co.uk</a>
+              <a
+                href="mailto:privacy@dastute.co.uk"
+                className="text-sm text-primary hover:underline"
+              >
+                privacy@dastute.co.uk
+              </a>
             </div>
           </div>
         </div>

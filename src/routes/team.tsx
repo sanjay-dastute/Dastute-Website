@@ -1,16 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { buildBreadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
     meta: [
       { title: "Leadership Team — Dastute Technologies" },
-      { name: "description", content: "Meet the leadership team behind Dastute Technologies. Founded by Sanjay with a team of senior practitioners in software engineering, blockchain, product management and advisory." },
-      { property: "og:title", content: "Leadership Team — Dastute Technologies" },
-      { property: "og:description", content: "Experienced leadership spanning software engineering, blockchain, product management and enterprise advisory." },
+      {
+        name: "description",
+        content:
+          "Meet the leadership team behind Dastute Technologies. Founded by Sanjay with a team of senior practitioners in software engineering, blockchain, product management and advisory.",
+      },
+      {
+        property: "og:title",
+        content: "Leadership Team — Dastute Technologies",
+      },
+      {
+        property: "og:description",
+        content:
+          "Experienced leadership spanning software engineering, blockchain, product management and enterprise advisory.",
+      },
       { property: "og:url", content: "/team" },
     ],
     links: [{ rel: "canonical", href: "/team" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Team", path: "/team" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: TeamPage,
 });
@@ -18,106 +41,135 @@ export const Route = createFileRoute("/team")({
 function TeamPage() {
   const team = [
     {
-      name: "Sanjay",
+      name: "SANJAY KR",
       role: "Founder & CEO",
       practice: "Leadership",
       bio: "President of Dastute overseeing all business operations. Entrepreneur, Founder of Kira-Tech Labs, Founder of Dastute Switcher Technologies LLP. Member at Google Developer Groups, ASME and active Software Developer.",
     },
     {
-      name: "Company Advisor",
-      role: "Strategic Advisor",
+      name: "ANANDA KUMAR N",
+      role: "Investor & Strategic Advisor",
       practice: "Advisory",
-      bio: "Vice Chairman of SSACCI — Singapore South Asia Chamber of Commerce and Industry. Building Singapore's reliable delivery platform. Co-Founder & CEO at Deliver.sg. Multipreneur and RegTech specialist.",
+      bio: "Ananda Kumar N brings over 24 years of distinguished professional experience to Dastute's advisory board — including more than 15 years at C-suite level across Fintech, Strategy, Corporate Finance, Business Development, and Operations, spanning global markets across Asia, the Middle East, and beyond.",
     },
     {
-      name: "Blockchain Lead",
-      role: "Blockchain & ML Lead",
+      name: "DR. MANJARI ANANDAN, DBA",
+      role: "Chief Technology Officer",
       practice: "Technology",
-      bio: "Software Developer specialising in Machine Learning and Blockchain. Co-Founder of the Blockchain Club at Mahindra University. Focused on decentralised applications and technological innovation.",
+      bio: "Dr. Manjari leads Dastute's global engineering organisation, setting the standards for software architecture, cloud infrastructure, cybersecurity practices, data engineering, and research and innovation. Her approach is defined by a belief that technology must solve real business problems — not showcase engineering complexity — and that security, scalability, and maintainability must be designed in from the start, never bolted on afterwards.",
     },
     {
-      name: "Product Manager",
-      role: "Product Manager",
-      practice: "Operations",
-      bio: "Software solutions designer with expertise in data analysis and interpretation, strategic management, advertising, business and brand management, HR and customer engagement.",
+      name: "SMITHA SRIHARSHA",
+      role: "Chief Security Advisor",
+      practice: "Technology / Security",
+      bio: "As Chief Security Advisor, Smitha defines Dastute's security philosophy, oversees the quality and rigour of all cybersecurity service delivery, and ensures that our security practices — from CREST-aligned penetration testing and SOC operations to compliance advisory and Red Team engagements — reflect the highest professional standards in the industry.",
     },
     {
-      name: "Joint Technical Officer",
-      role: "Joint Technical Officer",
-      practice: "Technology",
-      bio: "Product Manager with prior experience in the Singapore Military. Former NCS Singapore team member bringing rigorous technical leadership and operational discipline.",
-    },
-    {
-      name: "Joint Member",
-      role: "Joint Member",
-      practice: "Operations",
-      bio: "Business and brand management specialist with deep support expertise. Former NCS Singapore team member focused on customer success and service delivery excellence.",
+      name: "PRASANNA KUMAR M (SALES ELEPHANT)",
+      role: "Chief Marketing Officer",
+      practice: "Growth & Marketing",
+      bio: "A seasoned B2B technology marketing leader, Prasanna brings a results-first philosophy to everything Dastute communicates externally — from brand identity and content strategy to demand generation, ABM campaigns, digital marketing, and partner marketing. His approach is rooted in the belief that great marketing does not just build awareness — it builds trust, and trust drives the long-term client relationships that define exceptional technology companies.",
     },
   ];
 
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="px-6 py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary block mb-6">/ Team</span>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-12">
-          Experienced practitioners.<br />Real partnerships.
+      <section className="px-4 sm:px-6 py-16 sm:py-24 md:py-32 max-w-7xl mx-auto">
+        <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-primary block mb-4 sm:mb-6">
+          / Team
+        </span>
+        <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-8 sm:mb-12">
+          Experienced practitioners.
+          <br />
+          Real partnerships.
         </h1>
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl">
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            Every project at Dastute is staffed by experienced professionals who understand your business. Our team brings together expertise from Google Developer Groups, NCS Singapore, and leading institutions across Asia and Europe.
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl">
+          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
+            Every project at Dastute is staffed by experienced professionals who
+            understand your business. Our team brings together expertise from
+            Google Developer Groups, NCS Singapore, and leading institutions
+            across Asia and Europe.
           </p>
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            When you work with Dastute, you're working with a team who understands your pain points and your goals. We forge real partnerships — not just vendor relationships — to deliver outcomes that matter.
+          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
+            When you work with Dastute, you're working with a team who
+            understands your pain points and your goals. We forge real
+            partnerships — not just vendor relationships — to deliver outcomes
+            that matter.
           </p>
         </div>
       </section>
 
       {/* Stats Bar */}
       <section className="border-y border-border">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 md:divide-x divide-border">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 md:divide-x divide-border">
           {[
             { k: "Founded", v: "2023" },
             { k: "Global Presence", v: "UK · India · SG" },
             { k: "Core Expertise", v: "Engineering + Advisory" },
           ].map((s) => (
-            <div key={s.k} className="p-12 border-b md:border-b-0 border-border">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-4">{s.k}</p>
-              <p className="text-2xl font-bold tracking-tight">{s.v}</p>
+            <div
+              key={s.k}
+              className="p-4 sm:p-8 md:p-12 border-b md:border-b-0 border-border"
+            >
+              <p className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mb-2 sm:mb-4">
+                {s.k}
+              </p>
+              <p className="text-lg sm:text-2xl font-bold tracking-tight">
+                {s.v}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Team Grid */}
-      <section className="px-6 py-24 max-w-7xl mx-auto">
-        <div className="flex items-end gap-6 mb-16">
-          <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">Leadership & Specialists</h2>
+      <section className="px-4 sm:px-6 py-16 sm:py-24 max-w-7xl mx-auto">
+        <div className="flex items-end gap-4 sm:gap-6 mb-12 sm:mb-16">
+          <h2 className="text-[8px] sm:text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+            Leadership & Specialists
+          </h2>
           <div className="h-px flex-1 bg-border" />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {team.map((member) => (
-            <div key={member.name} className="bg-background p-8 md:p-10 group hover:bg-foreground hover:text-background transition-colors duration-300">
-              <div className="flex justify-between items-start mb-8">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-primary group-hover:text-background/60">{member.practice}</span>
-                <span className="font-mono text-[10px] text-muted-foreground group-hover:text-background/50">{member.role}</span>
+            <div
+              key={member.name}
+              className="bg-background p-4 sm:p-8 md:p-10 group hover:bg-foreground hover:text-background transition-colors duration-300"
+            >
+              <div className="flex justify-between items-start gap-2 mb-6 sm:mb-8">
+                <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-primary group-hover:text-background/60">
+                  {member.practice}
+                </span>
+                <span className="font-mono text-[8px] sm:text-[10px] text-muted-foreground group-hover:text-background/50 text-right">
+                  {member.role}
+                </span>
               </div>
-              <h4 className="text-xl font-bold tracking-tight mb-4">{member.name}</h4>
-              <p className="text-sm text-muted-foreground group-hover:text-background/70 leading-relaxed">{member.bio}</p>
+              <h4 className="text-base sm:text-xl font-bold tracking-tight mb-3 sm:mb-4">
+                {member.name}
+              </h4>
+              <p className="text-[12px] sm:text-sm text-muted-foreground group-hover:text-background/70 leading-relaxed">
+                {member.bio}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Platform Partnerships */}
-      <section className="border-t border-border px-6 py-24 max-w-7xl mx-auto">
-        <div className="flex items-end gap-6 mb-16">
-          <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">Platform Partnerships</h2>
+      <section className="border-t border-border px-4 sm:px-6 py-16 sm:py-24 max-w-7xl mx-auto">
+        <div className="flex items-end gap-4 sm:gap-6 mb-12 sm:mb-16">
+          <h2 className="text-[8px] sm:text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+            Platform Partnerships
+          </h2>
           <div className="h-px flex-1 bg-border" />
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
           {["AWS", "Google Cloud", "Microsoft", "Salesforce"].map((partner) => (
-            <div key={partner} className="p-8 border border-border text-center hover:border-primary transition-colors">
+            <div
+              key={partner}
+              className="p-4 sm:p-8 border border-border text-center hover:border-primary transition-colors"
+            >
               <span className="font-bold text-lg">{partner}</span>
             </div>
           ))}

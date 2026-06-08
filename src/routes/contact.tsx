@@ -1,62 +1,80 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import {
+  buildBreadcrumbJsonLd,
+  buildLocalBusinessJsonLd,
+  buildStandardPageHead,
+} from "@/lib/seo";
+
+// NOTE: Form submissions are sent to info@dastute.co.uk via Formspree
+// Update the formspree form ID in the action attribute if needed
+// Formspree endpoint format: https://formspree.io/f/{FORM_ID}
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
-    meta: [
-      { title: "Contact Dastute Technologies — UK, India & Singapore" },
-      { name: "description", content: "Get in touch with Dastute Technologies. Offices in Coimbatore (HQ), Chennai, Bangalore, Singapore and London. Call +44 7423 021644 (UK) or email hello@dastute.co.uk." },
-      { property: "og:title", content: "Contact Dastute Technologies — UK, India & Singapore" },
-      { property: "og:description", content: "Start a consultation with our global team. We schedule a call at your convenience, do a discovery meeting, and prepare a proposal." },
-      { property: "og:url", content: "/contact" },
-    ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    ...buildStandardPageHead({
+      title: "Contact Dastute Technologies | London · India · Singapore",
+      description:
+        "Contact Dastute Technologies Limited. London HQ: 128 City Road, EC1V 2NX. UK: +44 7423021644. India: +91 9940941959. Singapore: +65-87722877. Email: contact@dastute.co.uk. 1-day response.",
+      path: "/contact",
+      keywords:
+        "contact Dastute Technologies, IT company London contact, managed IT enquiry UK, cybersecurity consultancy London",
+      ogDescription:
+        "Contact our London HQ and global delivery teams in India and Singapore. We respond to all enquiries within one business day.",
+    }),
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "Dastute Technologies Limited",
-          url: "https://dastute.co.uk/contact",
-          telephone: "+447423021644",
-          email: "hello@dastute.co.uk",
-          address: [
-            {
-              "@type": "PostalAddress",
-              addressLocality: "London",
-              addressCountry: "GB",
-            },
-            {
-              "@type": "PostalAddress",
-              addressLocality: "Coimbatore",
-              addressRegion: "Tamil Nadu",
-              addressCountry: "IN",
-            },
-            {
-              "@type": "PostalAddress",
-              addressLocality: "Singapore",
-              addressCountry: "SG",
-            },
-          ],
-          openingHoursSpecification: {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "09:00",
-            closes: "18:00",
-          },
-        }),
+        children: JSON.stringify(
+          buildLocalBusinessJsonLd({
+            path: "/contact",
+            name: "Dastute Technologies Limited",
+            description: "Contact page for Dastute Technologies Limited",
+            streetAddress: "128 City Road",
+            city: "London",
+            postalCode: "EC1V 2NX",
+            countryCode: "GB",
+            telephone: "+44-7423021644",
+            email: "contact@dastute.co.uk",
+            openingHours: "Mo-Fr 09:00-18:00",
+            latitude: 51.5258,
+            longitude: -0.0877,
+          }),
+        ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+        ),
       },
     ],
   }),
   component: ContactPage,
 });
 
-function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
+function Field({
+  label,
+  name,
+  type = "text",
+  required,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+}) {
   return (
     <div>
-      <label htmlFor={name} className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground block mb-2">
-        {label}{required && " *"}
+      <label
+        htmlFor={name}
+        className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground block mb-2"
+      >
+        {label}
+        {required && " *"}
       </label>
       <input
         id={name}
@@ -73,67 +91,117 @@ function ContactPage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="px-6 py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary block mb-6">/ Contact</span>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-16">
-          Start a consultation.
+      <section className="px-4 sm:px-6 py-16 sm:py-24 md:py-32 max-w-7xl mx-auto">
+        <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-primary block mb-4 sm:mb-6">
+          / Contact
+        </span>
+        <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-6">
+          Let&apos;s talk about your technology challenges.
         </h1>
+        <p className="max-w-3xl text-sm sm:text-lg text-muted-foreground leading-relaxed mb-12 sm:mb-16">
+          Whether you need a consultation, project estimate, or a technology
+          audit, our team is ready to help. We respond to every enquiry within
+          one business day.
+        </p>
 
-        <div className="grid md:grid-cols-[1fr_2fr] gap-16 border-t border-border pt-12">
+        <div className="grid md:grid-cols-[1fr_2fr] gap-8 sm:gap-16 border-t border-border pt-8 sm:pt-12">
           {/* Office Contacts */}
-          <div className="space-y-10">
+          <div className="space-y-6 sm:space-y-10">
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">UK Office</p>
-              <address className="not-italic text-sm leading-relaxed">
-                Dastute Technologies Limited<br />
-                London, United Kingdom<br />
-                Co. No. 17019407
+              <p className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mb-2 sm:mb-3">
+                UK Office
+              </p>
+              <address className="not-italic text-xs sm:text-sm leading-relaxed">
+                Dastute Technologies Limited
+                <br />
+                128 City Road, London EC1V 2NX, United Kingdom
               </address>
-              <a href="tel:+447423021644" className="text-sm hover:text-primary block mt-2">+44 7423 021644</a>
-              <a href="mailto:hello@dastute.co.uk" className="text-sm hover:text-primary block">hello@dastute.co.uk</a>
+              <a
+                href="tel:+447423021644"
+                className="text-xs sm:text-sm hover:text-primary block mt-2 break-all"
+              >
+                +44 7423 021644
+              </a>
+              <a
+                href="mailto:contact@dastute.co.uk"
+                className="text-xs sm:text-sm hover:text-primary block break-all"
+              >
+                contact@dastute.co.uk
+              </a>
             </div>
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">India HQ</p>
-              <address className="not-italic text-sm leading-relaxed">
-                Dastute Switcher Technologies LLP<br />
-                Coimbatore, Tamil Nadu<br />
-                Chennai · Bangalore
+              <p className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mb-2 sm:mb-3">
+                India HQ
+              </p>
+              <address className="not-italic text-xs sm:text-sm leading-relaxed">
+                Coimbatore · Chennai · Bangalore, India
               </address>
-              <a href="tel:+919940941959" className="text-sm hover:text-primary block mt-2">+91 9940 941959</a>
-              <a href="mailto:office@dastute.com" className="text-sm hover:text-primary block">office@dastute.com</a>
+              <a
+                href="tel:+919940941959"
+                className="text-xs sm:text-sm hover:text-primary block mt-2 break-all"
+              >
+                +91 9940 941959
+              </a>
+              <a
+                href="mailto:contact@dastute.co.uk"
+                className="text-xs sm:text-sm hover:text-primary block break-all"
+              >
+                contact@dastute.co.uk
+              </a>
             </div>
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">Singapore</p>
-              <address className="not-italic text-sm leading-relaxed">
+              <p className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mb-2 sm:mb-3">
+                Singapore
+              </p>
+              <address className="not-italic text-xs sm:text-sm leading-relaxed">
                 Ubi, Singapore
               </address>
-              <a href="tel:+6587722877" className="text-sm hover:text-primary block mt-2">+65 8772 2877</a>
+              <a
+                href="tel:+6587722877"
+                className="text-xs sm:text-sm hover:text-primary block mt-2 break-all"
+              >
+                +65 8772 2877
+              </a>
             </div>
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">Hours</p>
-              <p className="text-sm">Mon — Fri · 09:00 — 18:00 (local time)</p>
+              <p className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mb-2 sm:mb-3">
+                Hours
+              </p>
+              <p className="text-xs sm:text-sm">
+                Mon — Fri · 09:00 — 18:00 (Local Office Time)
+              </p>
             </div>
           </div>
 
           {/* Contact Form */}
           <form
-            className="space-y-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Thanks — we'll be in touch within one business day.");
-            }}
+            className="space-y-4 sm:space-y-6"
+            action="https://formspree.io/f/mleqdrdo"
+            method="POST"
           >
-            <div className="grid md:grid-cols-2 gap-6">
-              <Field label="Name" name="name" required />
-              <Field label="Company" name="company" />
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+              <Field label="First Name" name="firstName" required />
+              <Field label="Last Name" name="lastName" required />
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Field label="Email" name="email" type="email" required />
-              <Field label="Phone" name="phone" type="tel" />
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+              <Field
+                label="Business Email"
+                name="businessEmail"
+                type="email"
+                required
+              />
+              <Field label="Company Name" name="companyName" required />
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+              <Field label="Phone Number" name="phone" type="tel" />
+              <Field label="Country" name="country" required />
             </div>
             <div>
-              <label htmlFor="service" className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground block mb-2">
-                Service Interest
+              <label
+                htmlFor="service"
+                className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground block mb-2"
+              >
+                Service of Interest
               </label>
               <select
                 id="service"
@@ -143,59 +211,107 @@ function ContactPage() {
                 <option value="">Select a service...</option>
                 <option value="managed-it">Managed IT Services</option>
                 <option value="cyber-security">Cyber Security</option>
-                <option value="cloud">Cloud Services</option>
-                <option value="web-dev">Web & App Development</option>
-                <option value="mobile-dev">Mobile Development</option>
+                <option value="cloud">Cloud Services (AWS/Azure/GCP)</option>
+                <option value="web-dev">Web Development</option>
+                <option value="mobile-dev">Mobile App Development</option>
                 <option value="blockchain">Blockchain & Web3</option>
                 <option value="erp">ERP Solutions</option>
                 <option value="network">Network Connectivity</option>
                 <option value="consulting">IT Consulting & Advisory</option>
                 <option value="marketing">Digital Marketing</option>
-                <option value="staffing">IT Staffing</option>
+                <option value="staffing">IT Staff Resource Supply</option>
+                <option value="red-blue">Red Team / Blue Team Security</option>
+                <option value="audit">Free Technology Audit</option>
+                <option value="estimate">Project Estimate</option>
                 <option value="other">Other</option>
               </select>
             </div>
             <div>
-              <label htmlFor="brief" className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground block mb-2">
-                Project brief
+              <label
+                htmlFor="source"
+                className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground block mb-2"
+              >
+                How Did You Hear About Us?
+              </label>
+              <select
+                id="source"
+                name="source"
+                className="w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 text-sm transition-colors"
+              >
+                <option value="">Select...</option>
+                <option>Google Search</option>
+                <option>LinkedIn</option>
+                <option>Referral</option>
+                <option>Social Media</option>
+                <option>Blog/Article</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="message"
+                className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground block mb-2"
+              >
+                Message
               </label>
               <textarea
-                id="brief"
-                name="brief"
+                id="message"
+                name="message"
                 rows={6}
                 required
-                placeholder="Tell us about your IT challenges, goals and timeline..."
+                placeholder="Tell us about your goals, challenges, and timeline..."
                 className="w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 text-sm resize-none transition-colors"
               />
             </div>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Your information is handled under our Privacy Policy and UK GDPR.
+              We only use your details to respond to your enquiry.
+            </p>
             <button
               type="submit"
-              className="bg-foreground text-background px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors"
+              className="bg-foreground text-background px-6 sm:px-8 py-3 sm:py-4 text-[10px] sm:text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors min-h-[44px]"
             >
-              Submit Brief →
+              Send Message — We&apos;ll Reply Within 1 Business Day
             </button>
           </form>
         </div>
       </section>
 
-      {/* Consultation Process */}
+      {/* Fast Track Options */}
       <section className="border-t border-border px-6 py-24 max-w-7xl mx-auto">
         <div className="flex items-end gap-6 mb-16">
-          <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">How We Start</h2>
+          <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+            Fast-Track Options
+          </h2>
           <div className="h-px flex-1 bg-border" />
         </div>
-        <div className="grid md:grid-cols-3 gap-12">
-          {[
-            { n: "01", t: "Schedule a Call", d: "We schedule a call at your convenience to understand your needs and discuss potential solutions." },
-            { n: "02", t: "Discovery Meeting", d: "We conduct a discovery and consulting meeting to deep-dive into your IT challenges and business goals." },
-            { n: "03", t: "Tailored Proposal", d: "We prepare a detailed proposal with scope, timeline and investment — no obligation, no jargon." },
-          ].map((p) => (
-            <div key={p.n}>
-              <span className="font-mono text-xs text-primary">{p.n}</span>
-              <h4 className="font-bold text-lg mt-4 mb-3">{p.t}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.d}</p>
-            </div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-8">
+          <article className="border border-border rounded-lg p-6">
+            <h3 className="font-bold text-lg mb-3">Free Technology Audit</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              Request a no-obligation audit and receive a prioritized report on
+              infrastructure, security, software, and data risks.
+            </p>
+            <a
+              href="/request-audit"
+              className="text-sm text-primary hover:underline"
+            >
+              Request Free Audit →
+            </a>
+          </article>
+          <article className="border border-border rounded-lg p-6">
+            <h3 className="font-bold text-lg mb-3">Project Estimator</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              Get a ballpark budget and timeline in minutes. Useful for early
+              planning before full discovery.
+            </p>
+            <a
+              href="/project-estimator"
+              className="text-sm text-primary hover:underline"
+            >
+              Use Project Estimator →
+            </a>
+          </article>
         </div>
       </section>
     </SiteLayout>

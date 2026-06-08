@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+  xsi:schemaLocation="
+    http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+  "
+>
+
+  <!-- ============================================================ -->
+  <!-- DASTUTE TECHNOLOGIES LIMITED                                  -->
+  <!-- Domain: https://www.dastute.co.uk                            -->
+  <!-- Generated: 2025                                              -->
+  <!-- ============================================================ -->
+
+  <!-- ------------------------------------------------------------ -->
+  <!-- PRIORITY 1.0 — Home                                          -->
+  <!-- ------------------------------------------------------------ -->
+  <url>
+    <loc>https://www.dastute.co.uk/</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.dastute.co.uk/images/og-image.jpg</image:loc>
+      <image:title>DASTUTE TECHNOLOGIES LIMITED — Engineered for Tomorrow. Delivered Today.</image:title>
+      <image:caption>Global IT company headquartered in London delivering software, cloud, cybersecurity, AI and managed IT services.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ------------------------------------------------------------ -->
+  <!-- PRIORITY 0.9 — Core Commercial Pages                         -->
+  <!-- ------------------------------------------------------------ -->
+  <url>
+    <loc>https://www.dastute.co.uk/services</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.dastute.co.uk/images/services-hero.jpg</image:loc>
+      <image:title>IT Services — DASTUTE TECHNOLOGIES</image:title>
+      <image:caption>Custom software development, cloud migration, cybersecurity, AI & data, IT consulting, and managed IT services.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dastute.co.uk/capabilities</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dastute.co.uk/contact</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dastute.co.uk/request-audit</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dastute.co.uk/project-estimator</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ------------------------------------------------------------ -->
+  <!-- PRIORITY 0.8 — Company & Brand Pages                         -->
+  <!-- ------------------------------------------------------------ -->
+  <url>
+    <loc>https://www.dastute.co.uk/about</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dastute.co.uk/images/about-hero.jpg</image:loc>
+      <image:title>About DASTUTE TECHNOLOGIES — Global IT Company</image:title>
+      <image:caption>Over a decade of delivering transformative digital solutions from London, India and Singapore.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dastute.co.uk/team</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dastute.co.uk/images/team-hero.jpg</image:loc>
+      <image:title>Meet the DASTUTE Team — 120+ Technology Professionals</image:title>
+      <image:caption>Engineers, consultants, and strategists across London, India, and Singapore.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dastute.co.uk/technology</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dastute.co.uk/marketing</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ------------------------------------------------------------ -->
+  <!-- PRIORITY 0.8 — Insights (updated frequently)                 -->
+  <!-- ------------------------------------------------------------ -->
+  <url>
+    <loc>https://www.dastute.co.uk/insights</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ------------------------------------------------------------ -->
+  <!-- PRIORITY 0.7 — Careers                                       -->
+  <!-- ------------------------------------------------------------ -->
+  <url>
+    <loc>https://www.dastute.co.uk/careers</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ------------------------------------------------------------ -->
+  <!-- PRIORITY 0.3 — Legal & Policy Pages                          -->
+  <!-- ------------------------------------------------------------ -->
+  <url>
+    <loc>https://www.dastute.co.uk/privacy-policy</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dastute.co.uk/cookie-policy</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dastute.co.uk/terms</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

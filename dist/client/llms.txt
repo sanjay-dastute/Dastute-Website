@@ -1,14 +1,26 @@
 # Dastute Technologies
 
-> A high-precision London consultancy bridging heavy-lift software engineering and strategic brand identity — from dApp architecture to national advertising campaigns.
+> Dastute Technologies Limited is a UK-headquartered global IT consultancy delivering managed IT, cybersecurity, cloud, software engineering, ERP, and digital marketing services.
 
-## Pages
+## Canonical
 
-- [Home](/): Engineering Logic. Directing Strategy. Overview of technology and marketing practices.
-- [Technology](/technology): Software & Cloud Systems — Web Development, Mobile Apps, Custom Software, Blockchain, DeFi, dApps, MVP Build, SaaS, Cybersecurity, and Cloud Services.
-- [Marketing](/marketing): Brand & Marketing Arm — Brand Strategy, Identity, Media Planning, Market Intelligence, Digital Marketing & SEO, and Visual Production.
-- [Services](/services): Complete service matrix covering all technology and marketing disciplines.
-- [Capabilities](/capabilities): Capability statement and operational methodology.
-- [About](/about): Company profile, mission, and London headquarters.
-- [Team](/team): Leadership and senior practitioners.
-- [Contact](/contact): Get in touch with Dastute Technologies.
+- https://dastute.co.uk
+
+## Primary Pages
+
+- [Home](/)
+- [Services](/services)
+- [Technology](/technology)
+- [Marketing](/marketing)
+- [Capabilities](/capabilities)
+- [About](/about)
+- [Team](/team)
+- [Insights](/insights)
+- [Careers](/careers)
+- [Contact](/contact)
+
+## Contact
+
+- General enquiries: info@dastute.co.uk
+- Careers: info@dastute.co.uk
+- Privacy: privacy@dastute.co.uk

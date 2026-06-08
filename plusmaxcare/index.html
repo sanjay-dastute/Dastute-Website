@@ -1,0 +1,2154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="slides-format" content="viewport" />
+    <title>PlusMax Care - OS — Product Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-bg: #0d0d0d;
+        --color-bg-deep: #070707;
+        --color-surface: #1a1a1a;
+        --color-text: #f5f5f5;
+        --color-text-secondary: #d4d4d4;
+        --color-text-muted: #9a9a9a;
+        --color-accent-1: #cc2222;
+        --color-accent-2: #e83535;
+        --color-accent-3: #d4a843;
+        --color-glass-bg: rgba(255, 255, 255, 0.05);
+        --color-glass-border: rgba(255, 255, 255, 0.08);
+        --color-vignette: rgba(0, 0, 0, 0.45);
+        --font-display: "DM Serif Display", serif;
+        --font-body: "Inter", sans-serif;
+      }
+    </style>
+    <style>
+      :root {
+        --color-bg: #0d0d0d;
+        --color-text: #f5f5f5;
+        --glow-color-rgb: 204, 34, 34;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        background: var(--color-bg);
+      }
+      body {
+        font-family: var(--font-body);
+        color: var(--color-text);
+        overflow: hidden;
+        height: 100vh;
+        height: 100dvh;
+        width: 100vw;
+      }
+      .deck {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        position: relative;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transform: scale(0.96);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+        pointer-events: none;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: var(--color-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slide.active {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+      }
+      .slide > .content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1180px;
+        padding: clamp(1.5rem, 4vw, 3.5rem);
+      }
+      .nav-controls {
+        position: fixed;
+        left: 50%;
+        bottom: 24px;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        z-index: 100;
+        background: rgba(20, 20, 20, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 10px 18px;
+        border-radius: 999px;
+      }
+      .nav-btn {
+        width: 38px;
+        height: 38px;
+        border: none;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      .slide-dots {
+        display: flex;
+        gap: 8px;
+      }
+      .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        cursor: pointer;
+      }
+      .dot.active {
+        background: #cc2222;
+        transform: scale(1.2);
+      }
+      .slide-counter {
+        font-size: 12px;
+        color: #aaa;
+        min-width: 44px;
+        text-align: center;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .gradient-mesh {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        animation: floaty 14s ease-in-out infinite;
+      }
+      .blob:nth-child(2) {
+        animation-duration: 18s;
+      }
+      .blob:nth-child(3) {
+        animation-duration: 22s;
+      }
+      .blob:nth-child(4) {
+        animation-duration: 16s;
+      }
+      @keyframes floaty {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(40px, -30px) scale(1.12);
+        }
+      }
+      .slide::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        opacity: 0.03;
+        mix-blend-mode: overlay;
+      }
+      .slide::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: radial-gradient(
+          ellipse at center,
+          transparent 52%,
+          rgba(0, 0, 0, 0.45) 100%
+        );
+      }
+      .panel {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 22px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+      .metric {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.03)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+      }
+      .redline {
+        height: 4px;
+        background: linear-gradient(90deg, #cc2222, #e83535);
+      }
+      .goldline {
+        height: 4px;
+        background: linear-gradient(90deg, #d4a843, #f0d27d);
+      }
+      .kpi {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 1;
+        color: #cc2222;
+      }
+      .hero-title {
+        background: linear-gradient(135deg, #fff 0%, #ffb3b3 40%, #cc2222 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .hero-sub {
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: #b4b4b4;
+        font-size: 0.85rem;
+      }
+      .deco-shape {
+        position: absolute;
+        border-radius: 999px;
+        opacity: 0.15;
+        filter: blur(8px);
+      }
+      .timeline-line {
+        position: absolute;
+        left: 24px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, #cc2222, #444);
+      }
+      .timeline-dot {
+        width: 18px;
+        height: 18px;
+        border-radius: 999px;
+        background: #cc2222;
+        box-shadow: 0 0 24px rgba(204, 34, 34, 0.45);
+      }
+      .phone {
+        border: 2px solid #cc2222;
+        border-radius: 28px;
+        background: #101010;
+        box-shadow: 0 0 30px rgba(204, 34, 34, 0.25);
+      }
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: 2.2fr repeat(4, 1fr);
+        gap: 1px;
+        background: #272727;
+        border-radius: 18px;
+        overflow: hidden;
+      }
+      .comparison-grid > div {
+        background: #111;
+        padding: 0.8rem 0.7rem;
+        font-size: 0.9rem;
+      }
+      .comparison-grid .head {
+        background: #171717;
+        font-weight: 700;
+        text-align: center;
+      }
+      .comparison-grid .good {
+        color: #cc2222;
+        font-weight: 700;
+      }
+      .comparison-grid .mid {
+        color: #b9b9b9;
+      }
+      .comparison-grid .bad {
+        color: #666;
+      }
+      .pricing {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+      }
+      .pricing .card {
+        min-height: 470px;
+      }
+      @media (max-width: 900px) {
+        .comparison-grid {
+          font-size: 0.75rem;
+        }
+        .pricing {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ═══ MOBILE RESPONSIVE ═══ */
+      @media (max-width: 768px) {
+        html,
+        body {
+          overflow-y: auto;
+          height: auto;
+        }
+        .deck {
+          width: 100%;
+          height: auto;
+        }
+        .slide {
+          position: relative;
+          opacity: 1;
+          transform: none;
+          pointer-events: auto;
+          min-height: 100vh;
+          min-height: 100dvh;
+          display: block;
+          overflow-y: auto;
+        }
+        .slide.active {
+          opacity: 1;
+          transform: none;
+        }
+        .slide + .slide {
+          display: none;
+        }
+        .slide.active + .slide,
+        .slide.active {
+          display: block;
+        }
+        .slide > .content {
+          max-width: 100%;
+          padding: 1.25rem;
+        }
+
+        /* Nav controls - fixed at bottom */
+        .nav-controls {
+          bottom: 12px;
+          gap: 10px;
+          padding: 8px 14px;
+        }
+        .nav-btn {
+          width: 44px;
+          height: 44px;
+          font-size: 22px;
+        }
+        .dot {
+          width: 10px;
+          height: 10px;
+        }
+        .slide-counter {
+          font-size: 11px;
+        }
+
+        /* Stack all grids */
+        .slide .grid[class*="grid-cols-"] {
+          grid-template-columns: 1fr !important;
+        }
+        .slide .grid[class*="grid-cols-["] {
+          grid-template-columns: 1fr !important;
+        }
+
+        /* Comparison grid - horizontal scroll */
+        .comparison-grid {
+          grid-template-columns: 2.2fr repeat(4, 1fr);
+          font-size: 0.7rem;
+          overflow-x: auto;
+          display: grid;
+          min-width: 0;
+        }
+        .comparison-grid > div {
+          padding: 0.5rem 0.4rem;
+        }
+
+        /* Pricing */
+        .pricing {
+          grid-template-columns: 1fr !important;
+        }
+
+        /* Hero title - allow wrapping */
+        .hero-title {
+          white-space: normal !important;
+        }
+
+        /* Reduce heading sizes */
+        .slide h1 {
+          font-size: clamp(2.2rem, 8vw, 3.4rem) !important;
+        }
+        .slide h2 {
+          font-size: clamp(1.6rem, 5vw, 2.5rem) !important;
+        }
+        .slide h2.font-display {
+          font-size: clamp(1.8rem, 6vw, 2.8rem) !important;
+        }
+
+        /* Reduce KPI sizes */
+        .kpi {
+          font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+        }
+
+        /* Reduce padding on panels */
+        .panel {
+          padding: 1rem !important;
+          border-radius: 14px;
+        }
+        .metric {
+          padding: 0.75rem !important;
+          border-radius: 14px;
+        }
+
+        /* Phone mockup */
+        .phone {
+          height: 200px !important;
+        }
+
+        /* Reduce text sizes */
+        .hero-sub {
+          font-size: 0.65rem;
+          letter-spacing: 0.2em;
+        }
+        .slide p {
+          font-size: 0.9rem !important;
+        }
+        .slide p.text-2xl {
+          font-size: 1.1rem !important;
+        }
+        .slide p.text-xl {
+          font-size: 1rem !important;
+        }
+        .slide p.text-lg {
+          font-size: 0.9rem !important;
+        }
+        .slide ul li {
+          font-size: 0.85rem !important;
+        }
+
+        /* Reduce gaps */
+        .slide .gap-10,
+        .slide .gap-8 {
+          gap: 1rem !important;
+        }
+        .slide .gap-6,
+        .slide .gap-5 {
+          gap: 0.75rem !important;
+        }
+        .slide .gap-4 {
+          gap: 0.5rem !important;
+        }
+
+        /* Reduce mt spacing */
+        .slide .mt-10,
+        .slide .mt-8 {
+          margin-top: 1rem !important;
+        }
+        .slide .mt-12 {
+          margin-top: 1.5rem !important;
+        }
+
+        /* Module grid (slide 7) - 3 cols on mobile */
+        .slide .grid.grid-cols-5 {
+          grid-template-columns: repeat(3, 1fr) !important;
+        }
+
+        /* 4-col stats (slide 4) - 2x2 */
+        .slide .grid.grid-cols-4 {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+
+        /* 3-col grids - single column */
+        .slide .grid.grid-cols-3 {
+          grid-template-columns: 1fr !important;
+        }
+
+        /* Timeline adjustments */
+        .timeline-line {
+          left: 16px;
+        }
+        .timeline-dot {
+          width: 14px;
+          height: 14px;
+          left: 10px !important;
+        }
+        .slide .pl-14 {
+          padding-left: 2.5rem !important;
+        }
+
+        /* DASTUTE panel in slide 1 & 18 */
+        .slide .text-5xl {
+          font-size: 2rem !important;
+        }
+        .slide .text-4xl {
+          font-size: 1.75rem !important;
+        }
+        .slide .text-6xl {
+          font-size: 2.2rem !important;
+        }
+        .slide .text-3xl {
+          font-size: 1.5rem !important;
+        }
+
+        /* Fix slide 18 specific */
+        .slide .text-center.text-5xl {
+          font-size: 2.5rem !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .slide .grid.grid-cols-5 {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .comparison-grid {
+          font-size: 0.6rem;
+        }
+        .comparison-grid > div {
+          padding: 0.4rem 0.3rem;
+        }
+        .nav-controls {
+          gap: 6px;
+          padding: 6px 10px;
+        }
+        .slide-dots {
+          gap: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="deck">
+      <section class="slide active" data-slide="1">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 520px;
+              height: 520px;
+              left: -120px;
+              top: -120px;
+              background: #cc2222;
+              opacity: 0.17;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 280px;
+              height: 280px;
+              right: -40px;
+              top: 50px;
+              background: #e83535;
+              opacity: 0.15;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 260px;
+              height: 260px;
+              left: 30%;
+              bottom: -80px;
+              background: #d4a843;
+              opacity: 0.11;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 220px;
+              height: 220px;
+              right: 20%;
+              bottom: 8%;
+              background: #7a1a1a;
+              opacity: 0.12;
+            "
+          ></div>
+        </div>
+        <canvas
+          class="particle-canvas"
+          style="position: absolute; inset: 0; z-index: 1"
+        ></canvas>
+        <div class="content">
+          <div class="grid grid-cols-[1.1fr_1.5fr] gap-10 items-center">
+            <div
+              class="panel p-10 bg-[linear-gradient(180deg,rgba(204,34,34,.95),rgba(122,26,26,.94))] border-white/10 reveal"
+            >
+              <div class="text-5xl font-black tracking-[0.22em] text-white">
+                DASTUTE
+              </div>
+              <div class="mt-3 text-sm tracking-[0.35em] text-red-100">
+                TECHNOLOGIES LIMITED
+              </div>
+              <div class="mt-10 h-[2px] bg-red-100/60"></div>
+              <div class="mt-8 text-sm tracking-[0.35em] italic text-red-100">
+                PROPOSES
+              </div>
+              <div class="mt-12 text-2xl font-display text-white">
+                PlusMax Group of Companies
+              </div>
+              <div class="mt-12 text-2xl font-display text-white">
+                PlusMax Care - OS
+              </div>
+              <div class="mt-2 text-red-100">
+                Hospital Intelligence Platform
+              </div>
+            </div>
+            <div>
+              <div class="hero-sub reveal">
+                Confidential • Exclusive Proposal • 2026
+              </div>
+              <h1
+                class="hero-title font-display text-[clamp(3.4rem,7vw,6rem)] leading-[.95] mt-4 reveal whitespace-nowrap"
+              >
+                PlusMax Care - OS
+              </h1>
+              <p class="text-2xl text-text-secondary mt-3 reveal">
+                The hospital intelligence platform built for Plus Max’s
+                expanding network.
+              </p>
+              <div class="panel p-6 mt-8 reveal">
+                <p class="text-lg text-text-secondary">
+                  A unified operating system for clinical care, academic
+                  operations, AI intelligence, patient engagement, and
+                  network-scale hospital growth.
+                </p>
+              </div>
+              <div class="grid grid-cols-3 gap-4 mt-8">
+                <div class="metric p-5 text-center reveal">
+                  <div class="kpi">15</div>
+                  <div
+                    class="text-sm uppercase tracking-[0.2em] text-text-muted"
+                  >
+                    Modules
+                  </div>
+                </div>
+                <div class="metric p-5 text-center reveal">
+                  <div class="kpi">189+</div>
+                  <div
+                    class="text-sm uppercase tracking-[0.2em] text-text-muted"
+                  >
+                    Features
+                  </div>
+                </div>
+                <div class="metric p-5 text-center reveal">
+                  <div class="kpi text-accent-3">3</div>
+                  <div
+                    class="text-sm uppercase tracking-[0.2em] text-text-muted"
+                  >
+                    World firsts
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="2">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 340px;
+              height: 340px;
+              right: -80px;
+              top: -60px;
+              background: #cc2222;
+              opacity: 0.08;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 260px;
+              height: 260px;
+              left: -50px;
+              bottom: -60px;
+              background: #d4a843;
+              opacity: 0.06;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">Agenda</div>
+          <h2 class="font-display text-5xl reveal">What we will cover</h2>
+          <div class="grid grid-cols-2 gap-5 mt-10">
+            <div class="panel p-5 reveal">
+              <div class="text-accent-1 text-sm tracking-[0.25em] uppercase">
+                01
+              </div>
+              <div class="text-xl font-semibold mt-2">
+                The Plus Max opportunity
+              </div>
+              <div class="text-text-muted mt-2">
+                Why a network-scale platform matters for your growth vision.
+              </div>
+            </div>
+            <div class="panel p-5 reveal">
+              <div class="text-accent-1 text-sm tracking-[0.25em] uppercase">
+                02
+              </div>
+              <div class="text-xl font-semibold mt-2">Why legacy HMS fails</div>
+              <div class="text-text-muted mt-2">
+                Where fragmented systems break multi-branch execution.
+              </div>
+            </div>
+            <div class="panel p-5 reveal">
+              <div class="text-accent-1 text-sm tracking-[0.25em] uppercase">
+                03
+              </div>
+              <div class="text-xl font-semibold mt-2">
+                Introducing PlusMax Care - OS
+              </div>
+              <div class="text-text-muted mt-2">
+                The product thesis, architecture, and operating model.
+              </div>
+            </div>
+            <div class="panel p-5 reveal">
+              <div class="text-accent-1 text-sm tracking-[0.25em] uppercase">
+                04
+              </div>
+              <div class="text-xl font-semibold mt-2">15-module platform</div>
+              <div class="text-text-muted mt-2">
+                Clinical, academic, operational, patient, and AI stack.
+              </div>
+            </div>
+            <div class="panel p-5 reveal">
+              <div class="text-accent-1 text-sm tracking-[0.25em] uppercase">
+                05
+              </div>
+              <div class="text-xl font-semibold mt-2">
+                AI, patient app, and ROI
+              </div>
+              <div class="text-text-muted mt-2">
+                Differentiators, outcomes, and business case.
+              </div>
+            </div>
+            <div class="panel p-5 reveal">
+              <div class="text-accent-1 text-sm tracking-[0.25em] uppercase">
+                06
+              </div>
+              <div class="text-xl font-semibold mt-2">
+                Implementation and commercials
+              </div>
+              <div class="text-text-muted mt-2">
+                Roadmap, pricing, compliance, and next steps.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="3">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 480px;
+              height: 480px;
+              left: -140px;
+              top: -120px;
+              background: #cc2222;
+              opacity: 0.14;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 240px;
+              height: 240px;
+              right: 5%;
+              bottom: 8%;
+              background: #d4a843;
+              opacity: 0.08;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">The Plus Max opportunity</div>
+          <h2 class="font-display text-5xl reveal">
+            You are building India’s next great hospital network
+          </h2>
+          <div class="grid grid-cols-2 gap-8 mt-10">
+            <div class="panel p-8 reveal">
+              <h3 class="text-accent-1 uppercase tracking-[0.2em] text-sm">
+                Who Plus Max is today
+              </h3>
+              <ul class="mt-5 space-y-4 text-lg text-text-secondary">
+                <li class="reveal">
+                  Multi-specialty super hospital in Salem, Tamil Nadu
+                </li>
+                <li class="reveal">
+                  NMC-affiliated medical college with MBBS, MD/MS, DM/M.Ch
+                  tracks
+                </li>
+                <li class="reveal">
+                  A decade-plus clinical care foundation with mission-led
+                  delivery
+                </li>
+                <li class="reveal">
+                  Plus Max Foundation backing and international outlook
+                </li>
+              </ul>
+            </div>
+            <div class="panel p-8 reveal">
+              <h3 class="text-accent-1 uppercase tracking-[0.2em] text-sm">
+                What you are building
+              </h3>
+              <div class="grid grid-cols-1 gap-4 mt-5">
+                <div class="metric p-5 reveal">
+                  🏥 Nationwide multi-specialty hospital network
+                </div>
+                <div class="metric p-5 reveal">
+                  🎓 Premier teaching-hospital ecosystem
+                </div>
+                <div class="metric p-5 reveal">
+                  🌐 International patient destination in India
+                </div>
+                <div class="metric p-5 reveal">
+                  🤝 Affordable quality healthcare at scale
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="4">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 300px;
+              height: 300px;
+              right: -80px;
+              top: 40px;
+              background: #cc2222;
+              opacity: 0.09;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 220px;
+              height: 220px;
+              left: 10%;
+              bottom: -50px;
+              background: #7a1a1a;
+              opacity: 0.09;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">The problem</div>
+          <h2 class="font-display text-5xl reveal">
+            Every existing HMS was built for yesterday
+          </h2>
+          <div class="grid grid-cols-4 gap-5 mt-10">
+            <div class="metric p-6 text-center reveal">
+              <div class="kpi">73%</div>
+              <div class="text-text-secondary mt-3">
+                Hospital networks suffer inter-branch data loss
+              </div>
+            </div>
+            <div class="metric p-6 text-center reveal">
+              <div class="kpi">₹40L+</div>
+              <div class="text-text-secondary mt-3">
+                Annual preventable revenue leakage per hospital
+              </div>
+            </div>
+            <div class="metric p-6 text-center reveal">
+              <div class="kpi">0</div>
+              <div class="text-text-secondary mt-3">
+                Legacy HMS built for teaching hospital networks
+              </div>
+            </div>
+            <div class="metric p-6 text-center reveal">
+              <div class="kpi">100%</div>
+              <div class="text-text-secondary mt-3">
+                Current platforms ignore predictive AI natively
+              </div>
+            </div>
+          </div>
+          <div class="panel p-6 mt-8 reveal">
+            <p class="text-xl text-center text-text-secondary">
+              PlusMax Care - OS is purpose-engineered for multi-specialty,
+              multi-branch, AI-enabled healthcare operations—not retrofitted
+              into them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="5">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 360px;
+              height: 360px;
+              left: -80px;
+              top: -80px;
+              background: #cc2222;
+              opacity: 0.12;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 240px;
+              height: 240px;
+              right: 10%;
+              bottom: 8%;
+              background: #d4a843;
+              opacity: 0.08;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="grid grid-cols-[1.1fr_1fr] gap-10 items-center">
+            <div>
+              <div class="hero-sub reveal">Introducing</div>
+              <h2 class="font-display text-6xl reveal">PlusMax Care - OS</h2>
+              <p class="text-2xl text-accent-1 mt-2 reveal">
+                Hospital Intelligence Platform
+              </p>
+              <p class="text-xl text-text-secondary mt-8 reveal">
+                Not a collection of disconnected modules. One unified operating
+                system for an entire hospital nation.
+              </p>
+              <div class="panel p-6 mt-8 reveal">
+                <p class="text-lg text-text-secondary">
+                  The platform combines a medical college LMS, patient
+                  super-app, and self-learning AI engine inside one
+                  architecture.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 gap-5">
+              <div class="panel p-6 reveal">
+                <div class="text-xl font-semibold">AI-native intelligence</div>
+                <div class="text-text-muted mt-2">
+                  PlusMind learns from hospital data and improves continuously.
+                </div>
+              </div>
+              <div class="panel p-6 reveal">
+                <div class="text-xl font-semibold">
+                  One platform, many hospitals
+                </div>
+                <div class="text-text-muted mt-2">
+                  Every branch runs on the same operating model with rapid
+                  rollout.
+                </div>
+              </div>
+              <div class="panel p-6 reveal">
+                <div class="text-xl font-semibold">Patient ecosystem</div>
+                <div class="text-text-muted mt-2">
+                  Patients stay connected from checkup to medicine delivery and
+                  follow-up.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="6">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 400px;
+              height: 400px;
+              right: -120px;
+              top: -80px;
+              background: #cc2222;
+              opacity: 0.08;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 260px;
+              height: 260px;
+              left: -60px;
+              bottom: -50px;
+              background: #2266bb;
+              opacity: 0.08;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">Platform architecture</div>
+          <h2 class="font-display text-5xl reveal">
+            Four intelligent layers, one unified system
+          </h2>
+          <div class="space-y-5 mt-10">
+            <div class="panel p-6 reveal">
+              <div class="text-sm tracking-[0.2em] uppercase text-accent-1">
+                Layer 4 — AI cognition
+              </div>
+              <div class="text-2xl font-semibold mt-1">
+                PlusMind Intelligence Engine
+              </div>
+              <div class="text-text-muted mt-2">
+                Clinical AI, revenue AI, operational AI, academic AI, and
+                self-learning models
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-sm tracking-[0.2em] uppercase text-[#c08020]">
+                Layer 3 — Clinical & academic core
+              </div>
+              <div class="text-2xl font-semibold mt-1">
+                EMR, IPD, Lab, Radiology, OT, Medical College LMS
+              </div>
+              <div class="text-text-muted mt-2">
+                HL7 FHIR R4, DICOM, ICD-11, SNOMED CT, NMC CBME curriculum
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-sm tracking-[0.2em] uppercase text-[#2266bb]">
+                Layer 2 — Business operations
+              </div>
+              <div class="text-2xl font-semibold mt-1">
+                Billing, Pharmacy, HR, Payroll, Command Centre, Patient App
+              </div>
+              <div class="text-text-muted mt-2">
+                Ayushman Bharat, 300+ TPA, GST/e-Invoice, Tally, WhatsApp API
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-sm tracking-[0.2em] uppercase text-[#22aa66]">
+                Layer 1 — Secure cloud foundation
+              </div>
+              <div class="text-2xl font-semibold mt-1">
+                AWS India, zero-trust security, offline mode, high availability
+              </div>
+              <div class="text-text-muted mt-2">
+                AES-256 encryption, DISHA alignment, API-first integrations,
+                real-time sync
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="7">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 320px;
+              height: 320px;
+              left: -50px;
+              top: -60px;
+              background: #cc2222;
+              opacity: 0.09;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 240px;
+              height: 240px;
+              right: -30px;
+              bottom: -50px;
+              background: #d4a843;
+              opacity: 0.09;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">Complete platform</div>
+          <h2 class="font-display text-5xl reveal">
+            15 modules, 189+ features, 3 world firsts
+          </h2>
+          <div class="grid grid-cols-5 gap-4 mt-10 text-center">
+            <div class="panel p-4 reveal">Smart OPD & EMR</div>
+            <div class="panel p-4 reveal">IPD & Bed Intelligence</div>
+            <div class="panel p-4 reveal">Lab & LIS</div>
+            <div class="panel p-4 reveal">Radiology & PACS</div>
+            <div class="panel p-4 reveal">OT & Surgical Suite</div>
+            <div class="panel p-4 reveal">Pharmacy & Supply Chain</div>
+            <div class="panel p-4 reveal">Revenue Cycle & Billing</div>
+            <div class="panel p-4 reveal">HR, Payroll & Workforce</div>
+            <div class="panel p-4 border-yellow-500/30 reveal">
+              Medical College LMS ★
+            </div>
+            <div class="panel p-4 border-yellow-500/30 reveal">
+              PlusMind AI Engine ★
+            </div>
+            <div class="panel p-4 reveal">Executive Command Centre</div>
+            <div class="panel p-4 border-yellow-500/30 reveal">
+              Patient Super-App ★
+            </div>
+            <div class="panel p-4 reveal">Asset & Facility Management</div>
+            <div class="panel p-4 reveal">Compliance & Quality</div>
+            <div class="panel p-4 reveal">Cloud Infra & Integration</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="8">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 420px;
+              height: 420px;
+              left: -140px;
+              top: -120px;
+              background: #d4a843;
+              opacity: 0.12;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 260px;
+              height: 260px;
+              right: 5%;
+              bottom: 5%;
+              background: #cc2222;
+              opacity: 0.07;
+            "
+          ></div>
+        </div>
+        <canvas
+          class="particle-canvas-ambient"
+          style="position: absolute; inset: 0; z-index: 1"
+        ></canvas>
+        <div class="content">
+          <div class="hero-sub reveal text-yellow-500">World first</div>
+          <h2 class="font-display text-5xl reveal">
+            Advanced multi-specialty medical college LMS
+          </h2>
+          <p class="text-xl text-text-secondary mt-5 max-w-5xl reveal">
+            A teaching platform natively connected to live hospital operations
+            so students learn through real cases, real patient pathways, and
+            real clinical outcomes.
+          </p>
+          <div class="grid grid-cols-3 gap-5 mt-10">
+            <div class="panel p-6 reveal">
+              <div class="text-lg font-semibold">NMC CBME curriculum</div>
+              <div class="text-text-muted mt-2">
+                Preloaded competencies, TLAs, and assessments for MBBS to
+                super-specialty tracks.
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-lg font-semibold">Live case assignment</div>
+              <div class="text-text-muted mt-2">
+                Automatic student notifications when rare or high-learning cases
+                are admitted.
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-lg font-semibold">Digital OSCE & exams</div>
+              <div class="text-text-muted mt-2">
+                Paperless exam orchestration with faster marking and reporting.
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-lg font-semibold">Digital case logbook</div>
+              <div class="text-text-muted mt-2">
+                Timestamped, countersigned logs with less paper friction and
+                better auditability.
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-lg font-semibold">AI academic mentor</div>
+              <div class="text-text-muted mt-2">
+                Self-tests, query support, and early signals for struggling
+                learners.
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-lg font-semibold">Research & ethics board</div>
+              <div class="text-text-muted mt-2">
+                Integrated protocol, IEC workflow, and publication tracking.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="9">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 420px;
+              height: 420px;
+              right: -140px;
+              top: -120px;
+              background: #9b1515;
+              opacity: 0.14;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 240px;
+              height: 240px;
+              left: 10%;
+              bottom: 0;
+              background: #555599;
+              opacity: 0.1;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">World first AI engine</div>
+          <h2 class="font-display text-5xl reveal">
+            PlusMind learns your hospital
+          </h2>
+          <p class="text-xl text-text-secondary mt-5 max-w-5xl reveal">
+            A self-learning AI layer trained on anonymized clinical and
+            operational data to improve prediction quality for your specific
+            patient mix and workflows.
+          </p>
+          <div class="grid grid-cols-3 gap-5 mt-10">
+            <div class="metric p-6 reveal">
+              <div class="text-xl font-semibold">Sepsis early warning</div>
+              <div class="kpi mt-3">4–6h</div>
+              <div class="text-text-muted">Earlier detection window</div>
+            </div>
+            <div class="metric p-6 reveal">
+              <div class="text-xl font-semibold">Bed demand forecast</div>
+              <div class="kpi mt-3">24–48h</div>
+              <div class="text-text-muted">Ahead visibility</div>
+            </div>
+            <div class="metric p-6 reveal">
+              <div class="text-xl font-semibold">Revenue leakage AI</div>
+              <div class="kpi mt-3">₹25–50L</div>
+              <div class="text-text-muted">Recovered per quarter potential</div>
+            </div>
+            <div class="metric p-6 reveal">
+              <div class="text-xl font-semibold">Readmission risk</div>
+              <div class="kpi mt-3">30-day</div>
+              <div class="text-text-muted">Prediction per patient</div>
+            </div>
+            <div class="metric p-6 reveal">
+              <div class="text-xl font-semibold">Pharmacy forecast</div>
+              <div class="kpi mt-3">0</div>
+              <div class="text-text-muted">
+                Target stockouts and expiry waste
+              </div>
+            </div>
+            <div class="metric p-6 reveal">
+              <div class="text-xl font-semibold">Academic AI mentor</div>
+              <div class="kpi mt-3">4 mo</div>
+              <div class="text-text-muted">Earlier gap detection</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="10">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 340px;
+              height: 340px;
+              left: -80px;
+              top: -80px;
+              background: #cc2222;
+              opacity: 0.11;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 240px;
+              height: 240px;
+              right: -40px;
+              bottom: -40px;
+              background: #d4a843;
+              opacity: 0.07;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">Patient ecosystem</div>
+          <h2 class="font-display text-5xl reveal">
+            Patient super-app & care connect
+          </h2>
+          <div class="grid grid-cols-[1fr_.8fr_1fr] gap-6 mt-10 items-center">
+            <div class="grid gap-4">
+              <div class="panel p-5 reveal">
+                📅 Appointment booking across branches in seconds
+              </div>
+              <div class="panel p-5 reveal">
+                🩺 Routine health checkups with digital booking and reports
+              </div>
+              <div class="panel p-5 reveal">
+                🎥 Video teleconsultation for follow-up care
+              </div>
+              <div class="panel p-5 reveal">
+                📊 Personal health dashboard and trends
+              </div>
+            </div>
+            <div
+              class="phone p-6 h-[420px] flex items-center justify-center reveal"
+            >
+              <div class="text-center">
+                <div class="text-3xl font-display text-accent-1">
+                  PlusMax Care
+                </div>
+                <div class="text-lg text-text-secondary mt-2">Patient App</div>
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <div class="panel p-5 reveal">
+                💊 Medicine home delivery with prescription tracking
+              </div>
+              <div class="panel p-5 reveal">
+                🔁 Auto-refill for chronic care continuity
+              </div>
+              <div class="panel p-5 reveal">📋 Discharge care plans in app</div>
+              <div class="panel p-5 reveal">
+                📈 Remote chronic monitoring for connected care
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="11">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 420px;
+              height: 420px;
+              left: -160px;
+              top: -100px;
+              background: #cc2222;
+              opacity: 0.09;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 220px;
+              height: 220px;
+              right: 8%;
+              bottom: 8%;
+              background: #2266bb;
+              opacity: 0.08;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">Clinical modules</div>
+          <h2 class="font-display text-5xl reveal">
+            From consultation to recovery
+          </h2>
+          <div class="grid grid-cols-3 gap-5 mt-10">
+            <div class="panel p-6 reveal">
+              <div class="text-sm uppercase tracking-[0.2em] text-accent-1">
+                01 · OPD & EMR
+              </div>
+              <div class="text-xl font-semibold mt-2">
+                Smart OPD & electronic records
+              </div>
+              <ul class="mt-4 space-y-3 text-text-secondary">
+                <li>Voice-to-EMR with Indian accent support</li>
+                <li>AI differential diagnosis and drug alerts</li>
+                <li>Lifetime patient record across branches</li>
+                <li>ABHA integration and WhatsApp reminders</li>
+              </ul>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-sm uppercase tracking-[0.2em] text-accent-1">
+                02 · IPD
+              </div>
+              <div class="text-xl font-semibold mt-2">
+                Bed intelligence and inpatient flow
+              </div>
+              <ul class="mt-4 space-y-3 text-text-secondary">
+                <li>Live bed board across the network</li>
+                <li>24–48 hour AI bed forecasting</li>
+                <li>Specialized ICU dashboards</li>
+                <li>
+                  Digital medication administration and discharge planning
+                </li>
+              </ul>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-sm uppercase tracking-[0.2em] text-accent-1">
+                05 · OT
+              </div>
+              <div class="text-xl font-semibold mt-2">
+                Operating theatre management
+              </div>
+              <ul class="mt-4 space-y-3 text-text-secondary">
+                <li>OT utilization uplift from roughly 65% to 85%+</li>
+                <li>Digital WHO checklist compliance</li>
+                <li>Anaesthesia information management</li>
+                <li>Implant tracking and surgeon analytics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="12">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 380px;
+              height: 380px;
+              right: -120px;
+              top: -100px;
+              background: #cc2222;
+              opacity: 0.12;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 260px;
+              height: 260px;
+              left: -80px;
+              bottom: -50px;
+              background: #226644;
+              opacity: 0.08;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">Financial & operational modules</div>
+          <h2 class="font-display text-5xl reveal">
+            Zero leakage revenue, intelligent operations
+          </h2>
+          <div class="grid grid-cols-[1fr_1fr] gap-8 mt-10">
+            <div>
+              <div class="panel p-8 reveal">
+                <div class="kpi text-center">₹25–50L</div>
+                <div class="text-center text-text-secondary text-xl mt-3">
+                  Potential first-quarter recovery from revenue leakage AI alone
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-4 mt-5">
+                <div class="metric p-4 text-center reveal">
+                  <div class="font-semibold">Pharmacy</div>
+                  <div class="text-text-muted mt-2">
+                    Demand forecasting and home delivery
+                  </div>
+                </div>
+                <div class="metric p-4 text-center reveal">
+                  <div class="font-semibold">HR</div>
+                  <div class="text-text-muted mt-2">
+                    Credentialing, duty hours, CME tracking
+                  </div>
+                </div>
+                <div class="metric p-4 text-center reveal">
+                  <div class="font-semibold">Assets</div>
+                  <div class="text-text-muted mt-2">
+                    Biomedical maintenance and facility uptime
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel p-8 reveal">
+              <div class="text-2xl font-semibold">Revenue cycle management</div>
+              <ul class="mt-5 space-y-4 text-text-secondary text-lg">
+                <li>
+                  Auto-billing from clinical orders with minimal manual entry
+                </li>
+                <li>Ayushman Bharat PM-JAY integration</li>
+                <li>300+ TPA pre-auth and settlement support</li>
+                <li>AI leakage auditor running multiple times per day</li>
+                <li>GST, e-Invoice, and Tally-ready workflows</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="13">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 320px;
+              height: 320px;
+              left: -60px;
+              top: -60px;
+              background: #cc2222;
+              opacity: 0.08;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 240px;
+              height: 240px;
+              right: 0;
+              bottom: -60px;
+              background: #444;
+              opacity: 0.08;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">Competitive comparison</div>
+          <h2 class="font-display text-5xl reveal">
+            Why alternatives fall short for Plus Max
+          </h2>
+          <div class="comparison-grid mt-10 reveal">
+            <div class="head">Capability</div>
+            <div class="head">PlusMax Care - OS</div>
+            <div class="head">Insta HMS</div>
+            <div class="head">Practo Ent.</div>
+            <div class="head">Medscape HMS</div>
+            <div>Multi-branch unified network</div>
+            <div class="good">✓ Native</div>
+            <div class="mid">Partial</div>
+            <div class="bad">✗</div>
+            <div class="mid">Add-on</div>
+            <div>AI clinical decision support</div>
+            <div class="good">✓ PlusMind</div>
+            <div class="bad">✗</div>
+            <div class="mid">Basic</div>
+            <div class="bad">✗</div>
+            <div>Medical college LMS</div>
+            <div class="good">✓ Full</div>
+            <div class="bad">✗</div>
+            <div class="bad">✗</div>
+            <div class="bad">✗</div>
+            <div>Patient app & home delivery</div>
+            <div class="good">✓ Full</div>
+            <div class="bad">✗</div>
+            <div class="bad">✗</div>
+            <div class="bad">✗</div>
+            <div>Revenue leakage AI</div>
+            <div class="good">✓ Real-time</div>
+            <div class="bad">✗</div>
+            <div class="bad">✗</div>
+            <div class="bad">✗</div>
+            <div>Compliance automation</div>
+            <div class="good">✓ Auto</div>
+            <div class="mid">Checklist</div>
+            <div class="bad">✗</div>
+            <div class="mid">Checklist</div>
+            <div>Offline mode</div>
+            <div class="good">✓ Full</div>
+            <div class="bad">✗</div>
+            <div class="bad">✗</div>
+            <div class="bad">✗</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="14">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 360px;
+              height: 360px;
+              right: -120px;
+              top: -80px;
+              background: #cc2222;
+              opacity: 0.1;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 240px;
+              height: 240px;
+              left: -50px;
+              bottom: -50px;
+              background: #2244aa;
+              opacity: 0.08;
+            "
+          ></div>
+        </div>
+        <canvas
+          class="particle-canvas-ambient"
+          style="position: absolute; inset: 0; z-index: 1"
+        ></canvas>
+        <div class="content">
+          <div class="hero-sub reveal">Implementation roadmap</div>
+          <h2 class="font-display text-5xl reveal">
+            Contract to fully live in 9 months
+          </h2>
+          <div class="grid grid-cols-1 gap-5 mt-10">
+            <div class="panel p-6 pl-14 relative reveal">
+              <div class="timeline-line"></div>
+              <div class="timeline-dot absolute left-[15px] top-7"></div>
+              <div class="text-sm uppercase tracking-[0.2em] text-accent-1">
+                Month 1–2
+              </div>
+              <div class="text-2xl font-semibold mt-1">
+                Foundation & discovery
+              </div>
+              <div class="text-text-muted mt-2">
+                Infrastructure on AWS Mumbai, workflow customization, migration
+                planning, role configuration.
+              </div>
+            </div>
+            <div class="panel p-6 pl-14 relative reveal">
+              <div class="timeline-line"></div>
+              <div
+                class="timeline-dot absolute left-[15px] top-7 bg-orange-500"
+              ></div>
+              <div class="text-sm uppercase tracking-[0.2em] text-orange-400">
+                Month 3–5
+              </div>
+              <div class="text-2xl font-semibold mt-1">
+                Pilot go-live at Salem
+              </div>
+              <div class="text-text-muted mt-2">
+                Clinical, billing, and HR core modules go live with support and
+                parallel run.
+              </div>
+            </div>
+            <div class="panel p-6 pl-14 relative reveal">
+              <div class="timeline-line"></div>
+              <div
+                class="timeline-dot absolute left-[15px] top-7 bg-green-500"
+              ></div>
+              <div class="text-sm uppercase tracking-[0.2em] text-green-400">
+                Month 6–7
+              </div>
+              <div class="text-2xl font-semibold mt-1">
+                Advanced modules activation
+              </div>
+              <div class="text-text-muted mt-2">
+                Medical College LMS, patient app, PlusMind AI, and executive
+                command centre launch.
+              </div>
+            </div>
+            <div class="panel p-6 pl-14 relative reveal">
+              <div
+                class="timeline-dot absolute left-[15px] top-7 bg-blue-500"
+              ></div>
+              <div class="text-sm uppercase tracking-[0.2em] text-blue-400">
+                Month 8–9
+              </div>
+              <div class="text-2xl font-semibold mt-1">
+                Network expansion & intelligence
+              </div>
+              <div class="text-text-muted mt-2">
+                Rapid deploy branch rollout, multi-branch analytics, and
+                accreditation-ready documentation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="15">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 420px;
+              height: 420px;
+              left: -140px;
+              top: -100px;
+              background: #cc2222;
+              opacity: 0.12;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 280px;
+              height: 280px;
+              right: -80px;
+              bottom: -60px;
+              background: #d4a843;
+              opacity: 0.08;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">Return on investment</div>
+          <h2 class="font-display text-5xl reveal">
+            The platform pays for itself fast
+          </h2>
+          <div class="grid grid-cols-[1fr_.8fr_1fr] gap-6 mt-10 items-center">
+            <div class="grid gap-4">
+              <div class="panel p-5 reveal">
+                <div class="text-3xl font-display text-accent-1">₹25–50L</div>
+                <div class="text-text-muted mt-2">
+                  Quarter-one revenue leakage recovery potential
+                </div>
+              </div>
+              <div class="panel p-5 reveal">
+                <div class="text-3xl font-display text-accent-1">₹15–30L</div>
+                <div class="text-text-muted mt-2">
+                  Annual pharmacy waste savings potential
+                </div>
+              </div>
+              <div class="panel p-5 reveal">
+                <div class="text-3xl font-display text-accent-1">85%+</div>
+                <div class="text-text-muted mt-2">
+                  OT utilization target improvement
+                </div>
+              </div>
+            </div>
+            <div class="panel p-8 text-center reveal">
+              <div class="text-sm uppercase tracking-[0.25em] text-accent-1">
+                Typical year-one return
+              </div>
+              <div class="kpi mt-4">10×</div>
+            </div>
+            <div class="grid gap-4">
+              <div class="panel p-5 reveal">
+                <div class="text-3xl font-display text-accent-1">30%↑</div>
+                <div class="text-text-muted mt-2">
+                  Patient retention lift via app ecosystem
+                </div>
+              </div>
+              <div class="panel p-5 reveal">
+                <div class="text-3xl font-display text-accent-1">40%↓</div>
+                <div class="text-text-muted mt-2">
+                  Readmission reduction target
+                </div>
+              </div>
+              <div class="panel p-5 reveal">
+                <div class="text-3xl font-display text-accent-1">NABH</div>
+                <div class="text-text-muted mt-2">
+                  Continuously maintained compliance posture
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="16">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 340px;
+              height: 340px;
+              left: -80px;
+              top: -80px;
+              background: #cc2222;
+              opacity: 0.11;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 240px;
+              height: 240px;
+              right: 0;
+              bottom: -30px;
+              background: #2266bb;
+              opacity: 0.08;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="hero-sub reveal">Technology & compliance</div>
+          <h2 class="font-display text-5xl reveal">
+            Built for India, secure, compliant, always on
+          </h2>
+          <div class="grid grid-cols-3 gap-5 mt-10">
+            <div class="panel p-6 reveal">
+              <div class="text-xl font-semibold">DISHA aligned</div>
+              <div class="text-text-muted mt-3">
+                Health data privacy, access logging, and consent-aware
+                workflows.
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-xl font-semibold">AWS India region</div>
+              <div class="text-text-muted mt-3">
+                Mumbai hosting with disaster recovery and low-latency
+                operations.
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-xl font-semibold">AES-256 + zero trust</div>
+              <div class="text-text-muted mt-3">
+                Strong encryption and no implicit trust across users or devices.
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-xl font-semibold">Full offline mode</div>
+              <div class="text-text-muted mt-3">
+                Rural or unstable-connection sites continue operating and sync
+                later.
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-xl font-semibold">99.99% uptime target</div>
+              <div class="text-text-muted mt-3">
+                Resilient infrastructure with rapid failover posture.
+              </div>
+            </div>
+            <div class="panel p-6 reveal">
+              <div class="text-xl font-semibold">HL7 FHIR R4 + ABDM ready</div>
+              <div class="text-text-muted mt-3">
+                Open standards for national and future ecosystem integrations.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="17">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 520px;
+              height: 520px;
+              left: -120px;
+              top: -120px;
+              background: #cc2222;
+              opacity: 0.17;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 280px;
+              height: 280px;
+              right: -40px;
+              top: 50px;
+              background: #e83535;
+              opacity: 0.15;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 260px;
+              height: 260px;
+              left: 30%;
+              bottom: -80px;
+              background: #d4a843;
+              opacity: 0.11;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 220px;
+              height: 220px;
+              right: 20%;
+              bottom: 8%;
+              background: #7a1a1a;
+              opacity: 0.12;
+            "
+          ></div>
+        </div>
+        <div class="content">
+          <div class="grid grid-cols-[1fr_1fr] gap-10 items-center">
+            <div class="panel p-10 reveal">
+              <div
+                class="text-accent-1 text-sm tracking-[0.25em] uppercase mb-6"
+              >
+                Product Proposed By
+              </div>
+              <div class="text-2xl font-semibold">FOUNDER & CEO</div>
+              <div class="text-3xl font-display text-accent-1 mt-2">
+                SANJAY KR
+              </div>
+              <div class="mt-8 space-y-4 text-text-secondary">
+                <div>
+                  <div class="text-sm text-text-muted uppercase tracking-wider">
+                    DASTUTE SWITCHER TECHNOLOGIES LLP
+                  </div>
+                  <div>
+                    70/15-A Malai Kaavalar Kovil Street, Velur Road,
+                    Tiruchengode, Namakkal District, TN, India - 637211
+                  </div>
+                </div>
+                <div>
+                  <div class="text-sm text-text-muted uppercase tracking-wider">
+                    DASTUTE TECHNOLOGIES LIMITED
+                  </div>
+                  <div>128 City Road, London, United Kingdom EC1V 2NX</div>
+                </div>
+              </div>
+            </div>
+            <div class="panel p-10 reveal">
+              <div
+                class="text-accent-1 text-sm tracking-[0.25em] uppercase mb-6"
+              >
+                To
+              </div>
+              <div class="text-2xl font-semibold">
+                PLUS MAX GROUP OF COMPANIES
+              </div>
+              <div class="text-3xl font-display text-accent-1 mt-2">
+                Dato' S. Prakadeesh Kumar
+              </div>
+              <div class="mt-2 text-text-secondary">
+                GROUP MANAGING DIRECTOR
+              </div>
+              <div
+                class="mt-10 panel p-6 bg-[linear-gradient(180deg,rgba(204,34,34,.12),rgba(122,26,26,.08))] border-white/8"
+              >
+                <p
+                  class="text-lg text-text-secondary text-center leading-relaxed"
+                >
+                  Thank you for your valuable time in reviewing this product
+                  proposal. We truly appreciate the opportunity to present
+                  PlusCare OS to Plus Max Group of Companies. We look forward to
+                  the possibility of working together to build a world-class
+                  hospital intelligence platform.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="18">
+        <div class="gradient-mesh">
+          <div
+            class="blob"
+            style="
+              width: 500px;
+              height: 500px;
+              left: -140px;
+              top: -120px;
+              background: #cc2222;
+              opacity: 0.18;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 300px;
+              height: 300px;
+              right: -60px;
+              bottom: -80px;
+              background: #d4a843;
+              opacity: 0.1;
+            "
+          ></div>
+          <div
+            class="blob"
+            style="
+              width: 220px;
+              height: 220px;
+              left: 40%;
+              top: 20%;
+              background: #7a1a1a;
+              opacity: 0.1;
+            "
+          ></div>
+        </div>
+        <canvas
+          class="particle-canvas"
+          style="position: absolute; inset: 0; z-index: 1"
+        ></canvas>
+        <div class="content">
+          <div class="grid grid-cols-[1fr_1.2fr] gap-10 items-center">
+            <div
+              class="panel p-10 bg-[linear-gradient(180deg,rgba(204,34,34,.95),rgba(122,26,26,.92))] border-white/10 reveal"
+            >
+              <div class="text-5xl font-black tracking-[0.2em]">DASTUTE</div>
+              <div class="mt-2 text-sm tracking-[0.3em] text-red-100">
+                LIMITED TECHNOLOGIES
+              </div>
+              <div class="mt-8 h-[2px] bg-red-100/60"></div>
+              <div class="mt-8 text-center text-5xl font-display">×</div>
+              <div class="mt-6 text-4xl font-display">PlusMax Care - OS</div>
+              <div class="mt-2 text-red-100">
+                Hospital Intelligence Platform
+              </div>
+              <div class="panel mt-8 p-5 bg-white/8 border-white/15">
+                <div class="text-center text-sm">
+                  medicalcollege@plusmax.com<br />www.plusmaxmedicalcollege.com
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="hero-sub reveal">Next step</div>
+              <h2 class="font-display text-6xl leading-[1.02] reveal">
+                Let’s build India’s smartest hospital network together
+              </h2>
+              <p class="text-xl text-text-secondary mt-8 reveal">
+                PlusMax Care - OS is positioned for a live demonstration with
+                patient flows, AI predictions, and commercial projections
+                tailored to Plus Max.
+              </p>
+              <a href="plusmaxcare_os.html" class="block no-underline"
+                ><div
+                  class="panel p-5 mt-4 reveal cursor-pointer hover:bg-white/10 transition-colors"
+                >
+                  <div class="text-center text-lg font-semibold text-white">
+                    View Full Technical Brief →
+                  </div>
+                </div></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="nav-controls">
+      <button class="nav-btn" onclick="changeSlide(-1)">&#8249;</button>
+      <div class="slide-dots" id="dots"></div>
+      <button class="nav-btn" onclick="changeSlide(1)">&#8250;</button
+      ><span class="slide-counter" id="counter">1 / 18</span>
+    </div>
+    <script>
+      let current = 1;
+      const total = document.querySelectorAll(".slide").length;
+      const dotsContainer = document.getElementById("dots");
+      const counter = document.getElementById("counter");
+      for (let i = 1; i <= total; i++) {
+        const dot = document.createElement("div");
+        dot.className = "dot" + (i === 1 ? " active" : "");
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+      function goToSlide(n) {
+        const prev = document.querySelector(".slide.active");
+        const next = document.querySelector(`.slide[data-slide="${n}"]`);
+        if (prev) prev.classList.remove("active");
+        if (next) {
+          next.classList.add("active");
+          animateSlide(next);
+        }
+        current = n;
+        updateNav();
+      }
+      function changeSlide(dir) {
+        let next = current + dir;
+        if (next < 1) next = total;
+        if (next > total) next = 1;
+        goToSlide(next);
+      }
+      function updateNav() {
+        document
+          .querySelectorAll(".dot")
+          .forEach((d, i) => d.classList.toggle("active", i + 1 === current));
+        counter.textContent = current + " / " + total;
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === " ") {
+          e.preventDefault();
+          changeSlide(1);
+        }
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          changeSlide(-1);
+        }
+      });
+      let touchStartX = 0;
+      document.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+      });
+      document.addEventListener("touchend", (e) => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) changeSlide(diff > 0 ? 1 : -1);
+      });
+      function animateSlide(slide) {
+        slide.querySelectorAll(".reveal").forEach((el, i) => {
+          el.style.transition = "none";
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.offsetHeight;
+          const delay = i * 0.07;
+          el.style.transition = `opacity .36s ease ${delay}s, transform .36s ease ${delay}s`;
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        });
+      }
+      window.initParticles = function (canvas, options) {
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        function resize() {
+          canvas.width = canvas.offsetWidth;
+          canvas.height = canvas.offsetHeight;
+        }
+        resize();
+        window.addEventListener("resize", resize);
+        const count = options.count || 30;
+        const interactive = options.interactive !== false;
+        let mx = -999,
+          my = -999;
+        const particles = Array.from({ length: count }, () => ({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          size: Math.random() * 2 + 1,
+          alpha: Math.random() * 0.4 + 0.1,
+        }));
+        if (interactive) {
+          canvas.addEventListener("mousemove", (e) => {
+            const r = canvas.getBoundingClientRect();
+            mx = e.clientX - r.left;
+            my = e.clientY - r.top;
+          });
+          canvas.addEventListener("mouseleave", () => {
+            mx = -999;
+            my = -999;
+          });
+        }
+        (function tick() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach((p) => {
+            const dx = p.x - mx,
+              dy = p.y - my,
+              dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            if (interactive && dist < 120) {
+              const f = (120 - dist) / 120;
+              p.vx += (dx / dist) * f * 0.08;
+              p.vy += (dy / dist) * f * 0.08;
+            }
+            p.vx *= 0.985;
+            p.vy *= 0.985;
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0) p.x = canvas.width;
+            if (p.x > canvas.width) p.x = 0;
+            if (p.y < 0) p.y = canvas.height;
+            if (p.y > canvas.height) p.y = 0;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(204,34,34,${p.alpha})`;
+            ctx.fill();
+          });
+          requestAnimationFrame(tick);
+        })();
+      };
+      document
+        .querySelectorAll(".particle-canvas")
+        .forEach((c) =>
+          window.initParticles(c, { interactive: true, count: 55 }),
+        );
+      document
+        .querySelectorAll(".particle-canvas-ambient")
+        .forEach((c) =>
+          window.initParticles(c, { interactive: false, count: 18 }),
+        );
+      animateSlide(document.querySelector(".slide.active"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,5157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlusmaxCare OS — Complete Hospital Intelligence Platform</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /* Plus Max Brand Colors - Light Theme */
+        --ink: #1a1a1a;
+        --bg: #ffffff;
+        --surface: #f8f9fa;
+        --surface2: #f1f3f5;
+        --paper: #ffffff;
+        --text: #1a1a1a;
+        --muted: rgba(26, 26, 26, 0.6);
+        --faint: rgba(26, 26, 26, 0.35);
+
+        /* Plus Max Primary Red */
+        --plusmax-red: #e31e24;
+        --plusmax-red-light: #ff4d4d;
+        --plusmax-red-dim: rgba(227, 30, 36, 0.1);
+        --plusmax-red-border: rgba(227, 30, 36, 0.25);
+
+        /* Plus Max Black */
+        --plusmax-black: #1a1a1a;
+        --plusmax-black-dim: rgba(26, 26, 26, 0.08);
+
+        /* Module Colors - Updated for Light Theme */
+        --teal: #0d9488;
+        --teal-light: #14b8a6;
+        --teal-dim: rgba(13, 148, 136, 0.1);
+        --crimson: #dc2626;
+        --crimson-dim: rgba(220, 38, 38, 0.1);
+        --blue: #2563eb;
+        --blue-dim: rgba(37, 99, 235, 0.1);
+        --purple: #7c3aed;
+        --purple-dim: rgba(124, 58, 237, 0.1);
+        --green: #16a34a;
+        --green-dim: rgba(22, 163, 74, 0.1);
+        --orange: #ea580c;
+        --orange-dim: rgba(234, 88, 12, 0.1);
+        --pink: #db2777;
+        --pink-dim: rgba(219, 39, 119, 0.1);
+        --cyan: #0891b2;
+        --cyan-dim: rgba(8, 145, 178, 0.1);
+        --lime: #65a30d;
+        --lime-dim: rgba(101, 163, 13, 0.1);
+        --amber: #d97706;
+        --amber-dim: rgba(217, 119, 6, 0.1);
+        --indigo: #4f46e5;
+        --indigo-dim: rgba(79, 70, 229, 0.1);
+        --rose: #e11d48;
+        --rose-dim: rgba(225, 29, 72, 0.1);
+        --violet: #8b5cf6;
+        --violet-dim: rgba(139, 92, 246, 0.1);
+        --emerald: #059669;
+        --emerald-dim: rgba(5, 150, 105, 0.1);
+        --sky: #0284c7;
+        --sky-dim: rgba(2, 132, 199, 0.1);
+
+        /* Plus Max Brand Aliases */
+        --gold: var(--plusmax-red);
+        --gold-light: var(--plusmax-red-light);
+        --gold-dim: var(--plusmax-red-dim);
+        --gold-border: var(--plusmax-red-border);
+
+        --border: rgba(26, 26, 26, 0.1);
+        --section-pad: 100px 80px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", "Syne", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--surface2);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--plusmax-red);
+        border-radius: 3px;
+      }
+
+      /* Animation Keyframes */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-60px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(60px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.08);
+          opacity: 0.85;
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      @keyframes rotateIn {
+        from {
+          opacity: 0;
+          transform: rotate(-15deg) scale(0.85);
+        }
+        to {
+          opacity: 1;
+          transform: rotate(0) scale(1);
+        }
+      }
+
+      @keyframes countUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          transform: translateX(-5px);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          transform: translateX(5px);
+        }
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 5px rgba(227, 30, 36, 0.3);
+        }
+        50% {
+          box-shadow:
+            0 0 20px rgba(227, 30, 36, 0.6),
+            0 0 30px rgba(227, 30, 36, 0.4);
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes ripple {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes swing {
+        20% {
+          transform: rotate(15deg);
+        }
+        40% {
+          transform: rotate(-10deg);
+        }
+        60% {
+          transform: rotate(5deg);
+        }
+        80% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0.5) translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      @keyframes flipIn {
+        from {
+          opacity: 0;
+          transform: perspective(400px) rotateY(90deg);
+        }
+        to {
+          opacity: 1;
+          transform: perspective(400px) rotateY(0deg);
+        }
+      }
+
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .animate-slide-left {
+        opacity: 0;
+        transform: translateX(-60px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .animate-slide-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .animate-slide-right {
+        opacity: 0;
+        transform: translateX(60px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .animate-slide-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .animate-scale {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .animate-scale.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .animate-rotate {
+        opacity: 0;
+        transform: rotate(-15deg) scale(0.85);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .animate-rotate.visible {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+      }
+
+      .stagger-1 {
+        transition-delay: 0.1s;
+      }
+      .stagger-2 {
+        transition-delay: 0.2s;
+      }
+      .stagger-3 {
+        transition-delay: 0.3s;
+      }
+      .stagger-4 {
+        transition-delay: 0.4s;
+      }
+      .stagger-5 {
+        transition-delay: 0.5s;
+      }
+      .stagger-6 {
+        transition-delay: 0.6s;
+      }
+      .stagger-7 {
+        transition-delay: 0.7s;
+      }
+      .stagger-8 {
+        transition-delay: 0.8s;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        padding: 20px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        animation: fadeInDown 0.8s ease;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .nav-brand {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--plusmax-black);
+        animation: fadeIn 1s ease 0.3s both;
+      }
+      .nav-brand span {
+        color: var(--plusmax-red);
+        font-weight: 800;
+      }
+      .nav-brand em {
+        color: var(--plusmax-red);
+        font-style: italic;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      .nav-links a:hover {
+        color: var(--plusmax-red);
+        transform: translateY(-2px);
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--plusmax-red);
+        transition: width 0.3s ease;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .nav-meta {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        color: var(--muted);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f8f9fa 50%,
+          #fff5f5 100%
+        );
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 120px 80px 80px;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(227, 30, 36, 0.08) 0%,
+          transparent 65%
+        );
+        right: -200px;
+        top: -100px;
+        pointer-events: none;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(26, 26, 26, 0.05) 0%,
+          transparent 65%
+        );
+        left: -100px;
+        bottom: -100px;
+        pointer-events: none;
+        animation: float 8s ease-in-out infinite reverse;
+      }
+
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(227, 30, 36, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(227, 30, 36, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+      }
+
+      .hero-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--gold-dim);
+        border: 1px solid var(--gold-border);
+        padding: 8px 16px;
+        border-radius: 100px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 32px;
+        width: fit-content;
+      }
+
+      .hero-chip::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+        animation: pulse 2s ease infinite;
+      }
+
+      .hero-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(64px, 8vw, 110px);
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -3px;
+        margin-bottom: 24px;
+      }
+      .hero-title span,
+      .hero-title em {
+        color: var(--gold);
+        font-style: italic;
+      }
+
+      .hero-subtitle-block {
+        display: flex;
+        align-items: flex-end;
+        gap: 40px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+        font-weight: 300;
+        color: var(--muted);
+        max-width: 600px;
+        line-height: 1.7;
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .hero-badge {
+        flex-shrink: 0;
+        border: 2px solid var(--plusmax-red);
+        border-radius: 12px;
+        padding: 20px 28px;
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          rgba(227, 30, 36, 0.05) 0%,
+          rgba(255, 255, 255, 0.95) 100%
+        );
+        box-shadow: 0 4px 15px rgba(227, 30, 36, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        animation: zoomIn 0.8s ease both;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-badge::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(227, 30, 36, 0.1),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .hero-badge:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 12px 35px rgba(227, 30, 36, 0.25);
+        animation: glow 2s ease infinite;
+      }
+
+      .hero-badge:hover::before {
+        left: 100%;
+      }
+
+      .hero-badge .num {
+        font-family: "Playfair Display", serif;
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--plusmax-red);
+        display: block;
+        animation: countUp 1s ease 0.5s both;
+      }
+
+      .hero-badge .label {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .hero-scroll {
+        position: absolute;
+        bottom: 40px;
+        left: 80px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--muted);
+        animation: fadeIn 1s ease 1s both;
+      }
+
+      .hero-scroll::before {
+        content: "";
+        width: 40px;
+        height: 2px;
+        background: var(--plusmax-red);
+        animation: slideInLeft 0.8s ease 1.2s both;
+      }
+
+      /* Section Shared Styles */
+      section {
+        padding: var(--section-pad);
+        border-top: 1px solid var(--border);
+      }
+
+      .section-label {
+        font-family: "JetBrains Mono", "DM Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(36px, 4vw, 58px);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 24px;
+      }
+      .section-title em {
+        color: var(--gold);
+        font-style: italic;
+      }
+
+      .section-body {
+        font-size: 16px;
+        font-weight: 300;
+        color: var(--muted);
+        line-height: 1.8;
+        max-width: 680px;
+      }
+
+      /* Problem Section */
+      .problem {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .problem::before {
+        content: "";
+        position: absolute;
+        top: -200px;
+        right: -100px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(227, 30, 36, 0.05) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-top: 60px;
+      }
+
+      .problem-card {
+        border-left: 4px solid var(--plusmax-red);
+        padding-left: 24px;
+        background: #ffffff;
+        padding: 24px;
+        border-radius: 0 16px 16px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        animation: slideInLeft 0.8s ease both;
+        position: relative;
+      }
+
+      .problem-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(227, 30, 36, 0.05)
+        );
+        transition: width 0.4s ease;
+      }
+
+      .problem-card:hover {
+        transform: translateX(15px) scale(1.02);
+        box-shadow: 0 12px 40px rgba(227, 30, 36, 0.2);
+      }
+
+      .problem-card:hover::after {
+        width: 100%;
+      }
+
+      .problem-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: var(--plusmax-black);
+      }
+
+      .problem-card p {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .problem-stat {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .problem-stat .big {
+        font-family: "Playfair Display", serif;
+        font-size: 48px;
+        font-weight: 900;
+        color: var(--plusmax-red);
+        animation: bounce 2s ease infinite;
+      }
+
+      .problem-stat .sm {
+        font-size: 12px;
+        color: var(--muted);
+        max-width: 140px;
+        line-height: 1.4;
+      }
+
+      /* Vision Banner */
+      .vision-banner {
+        background: linear-gradient(
+          135deg,
+          var(--plusmax-red) 0%,
+          #c41e24 50%,
+          var(--plusmax-black) 100%
+        );
+        padding: 80px;
+        position: relative;
+        overflow: hidden;
+        animation: fadeIn 1s ease;
+      }
+
+      .vision-banner::after {
+        content: "PlusmaxCare OS";
+        position: absolute;
+        right: -60px;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        font-family: "Playfair Display", serif;
+        font-size: 120px;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.08);
+        white-space: nowrap;
+        pointer-events: none;
+      }
+
+      .vision-banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.5;
+      }
+
+      .vision-tagline {
+        font-size: 20px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 20px;
+        max-width: 600px;
+        line-height: 1.6;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Architecture Section */
+      .arch {
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        position: relative;
+      }
+
+      .arch::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background: linear-gradient(
+          to top,
+          rgba(227, 30, 36, 0.03),
+          transparent
+        );
+        pointer-events: none;
+      }
+
+      .arch-diagram {
+        margin-top: 60px;
+        border: 2px solid var(--border);
+        border-radius: 20px;
+        padding: 48px;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .arch-diagram:hover {
+        box-shadow: 0 15px 50px rgba(227, 30, 36, 0.1);
+        border-color: var(--plusmax-red-border);
+      }
+
+      .arch-layers {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .arch-layer {
+        border-radius: 12px;
+        padding: 24px 28px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        background: #ffffff;
+      }
+
+      .arch-layer:hover {
+        transform: translateX(10px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .arch-layer.layer-ai {
+        background: linear-gradient(
+          90deg,
+          rgba(227, 30, 36, 0.08),
+          rgba(255, 255, 255, 0.9)
+        );
+        border-color: var(--plusmax-red-border);
+        border-left: 4px solid var(--plusmax-red);
+      }
+      .arch-layer.layer-core {
+        background: linear-gradient(
+          90deg,
+          rgba(13, 148, 136, 0.08),
+          rgba(255, 255, 255, 0.9)
+        );
+        border-color: rgba(13, 148, 136, 0.2);
+        border-left: 4px solid var(--teal);
+      }
+      .arch-layer.layer-ops {
+        background: linear-gradient(
+          90deg,
+          rgba(37, 99, 235, 0.08),
+          rgba(255, 255, 255, 0.9)
+        );
+        border-color: rgba(37, 99, 235, 0.2);
+        border-left: 4px solid var(--blue);
+      }
+      .arch-layer.layer-infra {
+        background: linear-gradient(
+          90deg,
+          rgba(124, 58, 237, 0.08),
+          rgba(255, 255, 255, 0.9)
+        );
+        border-color: rgba(124, 58, 237, 0.2);
+        border-left: 4px solid var(--purple);
+      }
+
+      .arch-layer-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        flex-shrink: 0;
+        background: var(--surface2);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .arch-layer:hover .arch-layer-icon {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(227, 30, 36, 0.2);
+      }
+
+      .arch-layer-name {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--plusmax-red);
+        margin-bottom: 4px;
+        font-weight: 600;
+      }
+
+      .arch-layer-desc {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text);
+      }
+
+      .arch-layer-tags {
+        margin-left: auto;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .arch-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        padding: 4px 10px;
+        border-radius: 20px;
+        background: var(--surface2);
+        color: var(--muted);
+        white-space: nowrap;
+        border: 1px solid var(--border);
+        transition: all 0.2s ease;
+      }
+
+      .arch-tag:hover {
+        background: var(--plusmax-red-dim);
+        color: var(--plusmax-red);
+        border-color: var(--plusmax-red-border);
+      }
+
+      /* TOC Section */
+      .toc {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border: 2px solid var(--border);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 60px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        animation: fadeInUp 0.8s ease both;
+      }
+
+      .toc-title {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--plusmax-red);
+        margin-bottom: 24px;
+        font-weight: 600;
+      }
+
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 10px;
+      }
+
+      .toc-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px;
+        border-radius: 12px;
+        background: #ffffff;
+        border: 1px solid var(--border);
+        text-decoration: none;
+        color: var(--plusmax-black);
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .toc-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background: var(--plusmax-red);
+        transform: scaleY(0);
+        transition: transform 0.3s ease;
+      }
+
+      .toc-item:hover {
+        border-color: var(--plusmax-red-border);
+        background: var(--plusmax-red-dim);
+        color: var(--plusmax-red);
+        transform: translateX(12px) scale(1.02);
+        box-shadow: 0 6px 20px rgba(227, 30, 36, 0.15);
+      }
+
+      .toc-item:hover::before {
+        transform: scaleY(1);
+      }
+      .toc-item .toc-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--plusmax-red);
+        min-width: 28px;
+        font-weight: 700;
+      }
+
+      /* Module Section from Blueprint */
+      .module-section {
+        padding: 80px 60px;
+        border-top: 1px solid var(--border);
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        position: relative;
+      }
+
+      .module-section:nth-child(even) {
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+      }
+
+      .section-chip {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--plusmax-red);
+        margin-bottom: 12px;
+        font-weight: 600;
+        animation: fadeIn 0.6s ease both;
+      }
+
+      .section-h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(32px, 3.5vw, 52px);
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: -1px;
+        margin-bottom: 16px;
+      }
+      .section-h2 em {
+        color: var(--gold);
+        font-style: italic;
+      }
+
+      .section-intro {
+        font-size: 15px;
+        color: var(--muted);
+        max-width: 720px;
+        line-height: 1.8;
+        margin-bottom: 56px;
+      }
+
+      /* Module Block */
+      .module-block {
+        margin-bottom: 72px;
+        border: 2px solid var(--border);
+        border-radius: 20px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+        transition: all 0.4s ease;
+        animation: fadeInUp 0.8s ease both;
+      }
+
+      .module-block:hover {
+        box-shadow: 0 15px 50px rgba(227, 30, 36, 0.12);
+        border-color: var(--plusmax-red-border);
+        transform: translateY(-5px);
+      }
+
+      .module-header {
+        padding: 32px 40px;
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(248, 249, 250, 0.9) 100%
+        );
+      }
+
+      .module-header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.08;
+        background: var(--accent, var(--plusmax-red));
+      }
+
+      .module-icon-box {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        flex-shrink: 0;
+        border: 2px solid var(--border);
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1;
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .module-block:hover .module-icon-box {
+        transform: scale(1.15) rotate(10deg);
+        box-shadow: 0 8px 25px rgba(227, 30, 36, 0.2);
+        border-color: var(--plusmax-red-border);
+        animation: swing 1s ease;
+      }
+
+      .module-meta {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+      }
+
+      .module-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        opacity: 0.5;
+      }
+
+      .module-name {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+        line-height: 1.1;
+        color: var(--plusmax-black);
+      }
+
+      .module-tagline {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.6;
+        max-width: 700px;
+      }
+
+      .module-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 12px;
+      }
+
+      .badge {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 9px;
+        letter-spacing: 1px;
+        padding: 4px 12px;
+        border-radius: 100px;
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+      }
+
+      .badge:hover {
+        background: var(--plusmax-red-dim);
+        color: var(--plusmax-red);
+        border-color: var(--plusmax-red-border);
+      }
+
+      .world-first {
+        background: linear-gradient(
+          90deg,
+          var(--plusmax-red-dim),
+          rgba(227, 30, 36, 0.04)
+        );
+        border-left: 4px solid var(--plusmax-red);
+        padding: 12px 18px;
+        border-radius: 0 10px 10px 0;
+        font-size: 12px;
+        color: var(--plusmax-red);
+        font-family: "JetBrains Mono", monospace;
+        margin-top: 12px;
+        display: inline-block;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        box-shadow: 0 2px 10px rgba(227, 30, 36, 0.1);
+        animation: slideInLeft 0.6s ease both;
+      }
+
+      .module-body {
+        padding: 0;
+      }
+
+      .feature-group {
+        border-bottom: 1px solid var(--border);
+        padding: 28px 40px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+      .feature-group:last-child {
+        border-bottom: none;
+      }
+
+      .feature-group-title {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--plusmax-black);
+        font-weight: 600;
+      }
+      .feature-group-title::after {
+        content: "";
+        flex: 1;
+        height: 2px;
+        background: linear-gradient(90deg, var(--border), transparent);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+      }
+
+      .feature-item {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px 20px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(227, 30, 36, 0.05),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .feature-item:hover {
+        border-color: var(--plusmax-red-border);
+        box-shadow: 0 8px 25px rgba(227, 30, 36, 0.15);
+        transform: translateY(-5px) scale(1.02);
+      }
+
+      .feature-item:hover::before {
+        opacity: 1;
+      }
+
+      .feature-item-name {
+        position: relative;
+        z-index: 1;
+      }
+
+      .feature-item-desc {
+        position: relative;
+        z-index: 1;
+      }
+
+      .feature-item-name {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--plusmax-black);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .feature-item-name .fi {
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      .feature-item-desc {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* AI Section */
+      .ai-section {
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ai-section::before {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(227, 30, 36, 0.08) 0%,
+          transparent 70%
+        );
+        right: -200px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .ai-section::after {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(26, 26, 26, 0.05) 0%,
+          transparent 70%
+        );
+        left: -100px;
+        bottom: -50px;
+        pointer-events: none;
+        animation: float 6s ease-in-out infinite reverse;
+      }
+
+      .ai-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        margin-top: 60px;
+        align-items: start;
+      }
+
+      .ai-feature {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      .ai-feature-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        background: var(--gold-dim);
+        border: 1px solid var(--gold-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        flex-shrink: 0;
+      }
+
+      .ai-feature h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+
+      .ai-feature p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .ai-visual {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border: 2px solid var(--plusmax-red-border);
+        border-radius: 16px;
+        padding: 32px;
+        position: sticky;
+        top: 40px;
+        box-shadow: 0 10px 40px rgba(227, 30, 36, 0.1);
+        animation: fadeInUp 0.8s ease both;
+      }
+
+      .ai-visual-title {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--plusmax-red);
+        margin-bottom: 24px;
+        font-weight: 600;
+      }
+
+      .ai-metric {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--border);
+        transition: all 0.2s ease;
+      }
+      .ai-metric:hover {
+        background: var(--plusmax-red-dim);
+        margin: 0 -16px;
+        padding: 16px;
+        border-radius: 8px;
+      }
+      .ai-metric:last-child {
+        border-bottom: none;
+      }
+
+      .ai-metric-name {
+        font-size: 13px;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .ai-metric-value {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        color: var(--plusmax-red);
+        font-weight: 600;
+      }
+
+      .ai-pulse {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--plusmax-red);
+        display: inline-block;
+        animation: pulse 2s ease infinite;
+        box-shadow: 0 0 10px rgba(227, 30, 36, 0.5);
+      }
+
+      /* Comparison Table */
+      .compare {
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        position: relative;
+      }
+
+      .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 50px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 2px solid var(--border);
+      }
+
+      .compare-table thead tr {
+        background: linear-gradient(90deg, var(--plusmax-red) 0%, #c41e24 100%);
+      }
+
+      .compare-table th {
+        padding: 20px 24px;
+        text-align: left;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-weight: 600;
+        border-bottom: none;
+      }
+
+      .compare-table td {
+        padding: 16px 24px;
+        font-size: 14px;
+        color: var(--muted);
+        border-bottom: 1px solid var(--border);
+        background: #ffffff;
+        transition: all 0.2s ease;
+      }
+
+      .compare-table tr:hover td {
+        background: var(--plusmax-red-dim);
+      }
+
+      .compare-table .feature-col {
+        color: var(--plusmax-black);
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .compare-table .our-col {
+        background: linear-gradient(
+          90deg,
+          rgba(227, 30, 36, 0.08) 0%,
+          rgba(255, 255, 255, 0.9) 100%
+        );
+        color: var(--plusmax-red);
+        font-weight: 600;
+      }
+
+      .check {
+        color: var(--green);
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .cross {
+        color: var(--faint);
+        font-size: 18px;
+      }
+      .partial {
+        color: var(--amber);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      /* Differentiators */
+      .diff {
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        border-top: 1px solid var(--border);
+        position: relative;
+      }
+
+      .diff-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .diff-item {
+        padding: 40px;
+        background: #ffffff;
+        border: 2px solid var(--border);
+        border-radius: 16px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        transition: all 0.4s ease;
+        animation: fadeInUp 0.8s ease both;
+      }
+
+      .diff-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(227, 30, 36, 0.15);
+      }
+
+      .diff-item:first-child {
+        border-color: var(--plusmax-red-border);
+        background: linear-gradient(
+          135deg,
+          rgba(227, 30, 36, 0.05) 0%,
+          #ffffff 100%
+        );
+      }
+
+      .diff-item .big-icon {
+        font-size: 56px;
+        display: block;
+        margin-bottom: 24px;
+        animation: float 4s ease-in-out infinite;
+        transition: all 0.3s ease;
+      }
+
+      .diff-item:hover .big-icon {
+        animation: bounce 1s ease infinite;
+        transform: scale(1.2);
+      }
+
+      .diff-item h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        margin-bottom: 16px;
+        color: var(--plusmax-black);
+      }
+
+      .diff-item p {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .diff-crown {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--plusmax-red);
+        color: #ffffff;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 2px;
+        padding: 6px 14px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+        box-shadow: 0 4px 15px rgba(227, 30, 36, 0.3);
+        animation: glow 2s ease infinite;
+      }
+
+      /* Implementation Timeline */
+      .impl {
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        position: relative;
+      }
+
+      .impl-phases {
+        margin-top: 60px;
+        position: relative;
+      }
+
+      .impl-phases::before {
+        content: "";
+        position: absolute;
+        left: 28px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(
+          180deg,
+          var(--plusmax-red) 0%,
+          rgba(227, 30, 36, 0.1) 100%
+        );
+        border-radius: 2px;
+      }
+
+      .impl-phase {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 48px;
+        padding-left: 80px;
+        position: relative;
+        animation: fadeInUp 0.8s ease both;
+      }
+
+      .impl-phase-dot {
+        position: absolute;
+        left: 14px;
+        top: 10px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--plusmax-red);
+        border: 4px solid #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 800;
+        color: #ffffff;
+        font-family: "JetBrains Mono", monospace;
+        box-shadow: 0 4px 15px rgba(227, 30, 36, 0.3);
+        animation: glow 2s ease infinite;
+        transition: all 0.3s ease;
+      }
+
+      .impl-phase:hover .impl-phase-dot {
+        transform: scale(1.2);
+        animation: spin 1s ease;
+      }
+
+      .impl-phase-content {
+        flex: 1;
+      }
+
+      .impl-phase-timeline {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 2px;
+        color: var(--plusmax-red);
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .impl-phase-name {
+        font-family: "Playfair Display", serif;
+        font-size: 26px;
+        margin-bottom: 12px;
+        color: var(--plusmax-black);
+      }
+
+      .impl-phase-desc {
+        font-size: 15px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .impl-phase-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .impl-pill {
+        font-size: 11px;
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: var(--plusmax-red-dim);
+        border: 1px solid var(--plusmax-red-border);
+        color: var(--plusmax-red);
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      .impl-pill:hover {
+        background: var(--plusmax-red);
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      /* Commercial / Pricing */
+      .commercial {
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        border-top: 1px solid var(--border);
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 60px;
+      }
+
+      .price-card {
+        border-radius: 20px;
+        padding: 44px 36px;
+        border: 2px solid var(--border);
+        background: #ffffff;
+        position: relative;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        animation: zoomIn 0.8s ease both;
+        overflow: hidden;
+      }
+
+      .price-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          transparent,
+          rgba(227, 30, 36, 0.03),
+          transparent 30%
+        );
+        animation: spin 4s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .price-card:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(227, 30, 36, 0.2);
+      }
+
+      .price-card:hover::before {
+        opacity: 1;
+      }
+
+      .price-card.featured {
+        border-color: var(--plusmax-red);
+        background: linear-gradient(
+          135deg,
+          rgba(227, 30, 36, 0.03) 0%,
+          #ffffff 100%
+        );
+        transform: scale(1.02);
+      }
+
+      .price-card.featured:hover {
+        transform: scale(1.02) translateY(-10px);
+      }
+
+      .featured-badge {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--plusmax-red);
+        color: #ffffff;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 2px;
+        padding: 6px 16px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+        white-space: nowrap;
+        box-shadow: 0 4px 15px rgba(227, 30, 36, 0.3);
+        animation: glow 2s ease infinite;
+        z-index: 2;
+      }
+
+      .price-tier {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--plusmax-red);
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+
+      .price-name {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        margin-bottom: 8px;
+        color: var(--plusmax-black);
+      }
+
+      .price-desc {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+
+      .price-amount {
+        font-family: "Playfair Display", serif;
+        font-size: 46px;
+        font-weight: 700;
+        color: var(--plusmax-red);
+        margin-bottom: 4px;
+      }
+
+      .price-amount span {
+        font-size: 16px;
+        color: var(--muted);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+      }
+
+      .price-note {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 28px;
+      }
+
+      .price-divider {
+        height: 2px;
+        background: linear-gradient(90deg, var(--border), transparent);
+        margin-bottom: 24px;
+      }
+
+      .price-includes {
+        list-style: none;
+      }
+
+      .price-includes li {
+        font-size: 14px;
+        color: var(--muted);
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .price-includes li::before {
+        content: "✓";
+        color: var(--plusmax-red);
+        font-weight: 800;
+        flex-shrink: 0;
+        font-size: 16px;
+      }
+
+      /* Summary Table */
+      .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 40px;
+      }
+      .summary-table th {
+        text-align: left;
+        padding: 14px 20px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: var(--gold-dim);
+        border-bottom: 1px solid var(--gold-border);
+      }
+      .summary-table td {
+        padding: 14px 20px;
+        font-size: 13px;
+        color: var(--muted);
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .summary-table tr:hover td {
+        background: rgba(255, 255, 255, 0.015);
+      }
+      .summary-table .td-module {
+        color: var(--text);
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .summary-table .td-count {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: var(--teal);
+      }
+
+      /* Why Accept / CTA Section */
+      .why {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        padding: 100px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .why::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(227, 30, 36, 0.1) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-top: 60px;
+        align-items: start;
+      }
+
+      .why-reason {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 36px;
+        padding-bottom: 36px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        animation: fadeInUp 0.6s ease both;
+      }
+      .why-reason:last-child {
+        border-bottom: none;
+      }
+
+      .why-reason-num {
+        font-family: "Playfair Display", serif;
+        font-size: 48px;
+        font-weight: 900;
+        color: var(--plusmax-red);
+        line-height: 1;
+        width: 60px;
+        flex-shrink: 0;
+        text-shadow: 0 2px 10px rgba(227, 30, 36, 0.1);
+      }
+
+      .why-reason h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #ffffff;
+      }
+
+      .why-reason p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+      }
+
+      .why-cta {
+        background: linear-gradient(
+          135deg,
+          rgba(227, 30, 36, 0.15) 0%,
+          rgba(227, 30, 36, 0.05) 100%
+        );
+        border: 2px solid var(--plusmax-red-border);
+        border-radius: 20px;
+        padding: 48px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 400px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        color: #ffffff;
+      }
+
+      .why h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 16px;
+        color: #ffffff;
+      }
+
+      .why h2 em {
+        color: var(--plusmax-red);
+        font-style: italic;
+      }
+
+      .why-cta p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--plusmax-red) 0%,
+          #ff2d33 100%
+        );
+        color: #ffffff;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: 1px;
+        padding: 18px 36px;
+        border-radius: 10px;
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 12px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 6px 20px rgba(227, 30, 36, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s ease,
+          height 0.6s ease;
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(227, 30, 36, 0.5);
+      }
+
+      .cta-btn:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .cta-btn:active {
+        transform: translateY(-2px) scale(0.98);
+      }
+
+      .cta-btn-sec {
+        display: inline-block;
+        background: transparent;
+        color: #ffffff;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        padding: 16px 36px;
+        border-radius: 10px;
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-btn-sec::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(227, 30, 36, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .cta-btn-sec:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--plusmax-red);
+        color: var(--plusmax-red);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(227, 30, 36, 0.2);
+      }
+
+      .cta-btn-sec:hover::before {
+        left: 100%;
+      }
+
+      .why-cta-trust {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+        padding: 60px 80px;
+        border-top: 2px solid var(--plusmax-red-border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--plusmax-red),
+          transparent
+        );
+      }
+
+      .footer-brand {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+      .footer-brand span {
+        color: var(--plusmax-red);
+        font-weight: 800;
+      }
+      .footer-brand small {
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 8px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .footer-meta {
+        text-align: right;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.8;
+      }
+
+      .footer-logo {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        color: #ffffff;
+      }
+      .footer-logo em {
+        color: var(--plusmax-red);
+        font-style: italic;
+        font-weight: 600;
+      }
+
+      .footer-copy {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 1px;
+        text-align: right;
+      }
+
+      /* Animations */
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Mobile Menu Button */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--plusmax-red);
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-btn:hover {
+        background: var(--plusmax-red-dim);
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        :root {
+          --section-pad: 60px 40px;
+        }
+        nav {
+          padding: 16px 40px;
+        }
+        .hero {
+          padding: 100px 40px 60px;
+        }
+        .problem-grid,
+        .ai-grid,
+        .why-grid {
+          grid-template-columns: 1fr;
+        }
+        .diff-row,
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        footer {
+          flex-direction: column;
+          gap: 24px;
+          text-align: center;
+        }
+        .footer-meta {
+          text-align: center;
+        }
+        .hero-subtitle-block {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .arch-layer {
+          flex-direction: column;
+          text-align: center;
+        }
+        .arch-layer-tags {
+          margin-left: 0;
+          justify-content: center;
+          margin-top: 16px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .mobile-menu-btn {
+          display: block;
+        }
+        .hero-scroll {
+          left: 40px;
+        }
+        .module-section {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+        .module-header {
+          padding: 24px;
+          flex-direction: column;
+        }
+        .feature-group {
+          padding: 20px 24px;
+        }
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+        .toc-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-badge {
+          padding: 16px 20px;
+        }
+        .hero-badge .num {
+          font-size: 32px;
+        }
+        .hero-title {
+          font-size: clamp(40px, 10vw, 64px);
+        }
+        .why {
+          padding: 60px 40px;
+        }
+        .why-grid {
+          grid-template-columns: 1fr;
+        }
+        .compare-table {
+          font-size: 12px;
+        }
+        .compare-table th,
+        .compare-table td {
+          padding: 12px 16px;
+        }
+        .pricing-grid {
+          gap: 20px;
+        }
+        .price-card {
+          padding: 32px 24px;
+        }
+        .impl-phase {
+          padding-left: 60px;
+        }
+        .impl-phases::before {
+          left: 20px;
+        }
+        .impl-phase-dot {
+          left: 8px;
+          width: 24px;
+          height: 24px;
+          font-size: 10px;
+        }
+        .why-cta {
+          position: relative;
+          top: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --section-pad: 50px 30px;
+        }
+        nav {
+          padding: 14px 30px;
+        }
+        .hero {
+          padding: 90px 30px 50px;
+        }
+        .hero-title {
+          font-size: clamp(32px, 9vw, 52px);
+        }
+        .hero-subtitle {
+          font-size: 16px;
+        }
+        .hero-stats {
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+        .section-title {
+          font-size: clamp(30px, 7vw, 42px);
+        }
+        .section-subtitle {
+          font-size: 15px;
+        }
+
+        /* Stack all 2-column grids */
+        .problem-grid,
+        .ai-grid,
+        .why-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        /* Stack 3-column grids */
+        .diff-row,
+        .pricing-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        /* Module features grid */
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        /* TOC grid */
+        .toc-grid {
+          grid-template-columns: 1fr;
+        }
+
+        /* Footer */
+        footer {
+          flex-direction: column;
+          gap: 24px;
+          text-align: center;
+        }
+        .footer-meta {
+          text-align: center;
+        }
+
+        /* Hero subtitle block */
+        .hero-subtitle-block {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+
+        /* Architecture diagram */
+        .arch-layer {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+        .arch-layer-tags {
+          margin-left: 0;
+          justify-content: center;
+          margin-top: 12px;
+        }
+
+        /* Navigation */
+        .nav-links {
+          display: none;
+        }
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        /* Hero scroll indicator */
+        .hero-scroll {
+          left: 30px;
+        }
+
+        /* Module sections */
+        .module-section {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .module-header {
+          padding: 20px;
+          flex-direction: column;
+        }
+        .feature-group {
+          padding: 18px 20px;
+        }
+
+        /* Hero badge */
+        .hero-badge {
+          padding: 14px 18px;
+        }
+        .hero-badge .num {
+          font-size: 28px;
+        }
+
+        /* Why section */
+        .why {
+          padding: 50px 30px;
+        }
+
+        /* Comparison table - horizontal scroll */
+        .compare-table-wrapper {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .compare-table {
+          min-width: 600px;
+          font-size: 13px;
+        }
+        .compare-table th,
+        .compare-table td {
+          padding: 14px 18px;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+          gap: 24px;
+        }
+        .price-card {
+          padding: 28px 20px;
+        }
+        .price-card.featured {
+          transform: scale(1);
+        }
+        .price-card.featured:hover {
+          transform: translateY(-8px);
+        }
+
+        /* Implementation timeline */
+        .impl-phase {
+          padding-left: 50px;
+        }
+        .impl-phases::before {
+          left: 16px;
+        }
+        .impl-phase-dot {
+          left: 6px;
+          width: 20px;
+          height: 20px;
+          font-size: 9px;
+        }
+
+        /* Why CTA */
+        .why-cta {
+          position: relative;
+          top: 0;
+        }
+
+        /* Vision banner */
+        .vision-banner {
+          padding: 50px 30px;
+        }
+
+        /* Diff items */
+        .diff-item {
+          padding: 32px 24px;
+        }
+        .diff-item .big-icon {
+          font-size: 44px;
+        }
+
+        /* Architecture diagram */
+        .arch-diagram {
+          padding: 20px;
+        }
+
+        /* Problem cards */
+        .problem-card {
+          padding: 20px;
+        }
+
+        /* AI features */
+        .ai-feature {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .ai-feature-icon {
+          width: 44px;
+          height: 44px;
+          font-size: 20px;
+        }
+        .ai-visual {
+          position: relative;
+          top: 0;
+          margin-top: 30px;
+        }
+
+        /* Why reason */
+        .why-reason {
+          gap: 16px;
+          margin-bottom: 24px;
+          padding-bottom: 24px;
+        }
+        .why-reason-num {
+          font-size: 40px;
+          width: 50px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        :root {
+          --section-pad: 40px 24px;
+        }
+        nav {
+          padding: 12px 24px;
+        }
+        .hero {
+          padding: 80px 24px 40px;
+        }
+        .hero-title {
+          font-size: clamp(28px, 10vw, 42px);
+        }
+        .hero-subtitle {
+          font-size: 14px;
+        }
+        .hero-stats {
+          gap: 16px;
+        }
+        .section-title {
+          font-size: clamp(26px, 8vw, 36px);
+        }
+        .section-subtitle {
+          font-size: 14px;
+        }
+        .diff-item {
+          padding: 24px 20px;
+        }
+        .diff-item .big-icon {
+          font-size: 36px;
+        }
+        .arch-diagram {
+          padding: 16px;
+        }
+        .price-card {
+          padding: 24px 18px;
+        }
+        .price-card.featured {
+          transform: scale(1);
+        }
+        .price-card.featured:hover {
+          transform: scale(1) translateY(-6px);
+        }
+        .vision-banner {
+          padding: 40px 24px;
+        }
+        .why-reason-num {
+          font-size: 32px;
+          width: 42px;
+        }
+        .why-reason h4 {
+          font-size: 17px;
+        }
+        .why-reason p {
+          font-size: 14px;
+        }
+        .problem-card h3 {
+          font-size: 18px;
+        }
+        .problem-card p {
+          font-size: 13px;
+        }
+        .ai-feature h4 {
+          font-size: 16px;
+        }
+        .ai-feature p {
+          font-size: 12px;
+        }
+        .nav-brand {
+          font-size: 18px;
+        }
+        .nav-brand span {
+          font-size: 18px;
+        }
+        .compare-table {
+          font-size: 11px;
+        }
+        .compare-table th,
+        .compare-table td {
+          padding: 10px 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="nav-brand">Plusmax<span>Care</span> OS</div>
+      <ul class="nav-links">
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#ai">AI Engine</a></li>
+        <li><a href="#compare">Comparison</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+      <button
+        class="mobile-menu-btn"
+        onclick="
+          alert('Menu: Modules | AI Engine | Comparison | Timeline | Pricing')
+        "
+      >
+        ☰
+      </button>
+      <div class="nav-meta">Complete Product Blueprint · 2026</div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="top">
+      <div class="hero-grid"></div>
+
+      <div class="hero-chip">PlusmaxCare OS · Master Feature Specification</div>
+
+      <h1 class="hero-title">
+        Plusmax<span>Care</span><br />
+        <em>OS</em>
+      </h1>
+
+      <div class="hero-subtitle-block">
+        <p class="hero-subtitle">
+          The world's most advanced Hospital
+          <span style="color: var(--plusmax-red); font-weight: 700"
+            >Operating System</span
+          >
+          — purpose-engineered for Plus Max's nationwide multi-specialty
+          network. 15 deeply integrated modules covering clinical operations,
+          financial intelligence, medical education, AI-driven analytics, and a
+          patient-facing super ecosystem. No competitor has built anything close
+          to this.
+        </p>
+        <div class="hero-stats">
+          <div class="hero-badge">
+            <span class="num">15</span>
+            <span class="label">Core Modules</span>
+          </div>
+          <div class="hero-badge">
+            <span class="num">189+</span>
+            <span class="label">Features</span>
+          </div>
+          <div class="hero-badge">
+            <span class="num">∞</span>
+            <span class="label">Hospital Branches</span>
+          </div>
+          <div class="hero-badge">
+            <span class="num">AI</span>
+            <span class="label">Native Intelligence</span>
+          </div>
+          <div class="hero-badge">
+            <span class="num">3</span>
+            <span class="label">World Firsts</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">Scroll to explore the platform</div>
+    </section>
+
+    <!-- PROBLEM STATEMENT -->
+    <section class="problem" id="problem">
+      <div class="section-label">The Gap in the Market</div>
+      <h2 class="section-title">
+        Every existing HMS<br />was built for yesterday.
+      </h2>
+      <p class="section-body">
+        India's hospital management software market is fragmented, outdated, and
+        built for single-location clinics — not ambitious multi-city networks.
+        Here's what you're up against if you don't own your own platform.
+      </p>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <h3>Data Silos Across Locations</h3>
+          <p>
+            Every branch operates in isolation. Salem doesn't see Chennai.
+            Finance can't consolidate. Clinical data never travels with the
+            patient. You lose referrals, revenue, and reputation.
+          </p>
+          <div class="problem-stat">
+            <span class="big">73%</span>
+            <span class="sm"
+              >of Indian hospital networks report inter-branch data loss</span
+            >
+          </div>
+        </div>
+        <div class="problem-card">
+          <h3>Zero Predictive Intelligence</h3>
+          <p>
+            Existing systems are reactive — they record. They don't predict bed
+            occupancy, drug shortages, staff burnout, or patient readmission
+            risk. They're ledgers, not brains.
+          </p>
+          <div class="problem-stat">
+            <span class="big">₹40L</span>
+            <span class="sm"
+              >average annual loss per hospital from preventable
+              inefficiencies</span
+            >
+          </div>
+        </div>
+        <div class="problem-card">
+          <h3>No Medical College Integration</h3>
+          <p>
+            Plus Max Medical College is a strategic asset. No existing HMS can
+            natively link teaching cases, student rotations, research outcomes,
+            and clinical operations into a unified ecosystem.
+          </p>
+          <div class="problem-stat">
+            <span class="big">0</span>
+            <span class="sm"
+              >existing platforms built for teaching-hospital networks in
+              India</span
+            >
+          </div>
+        </div>
+        <div class="problem-card">
+          <h3>International Patient Blind Spot</h3>
+          <p>
+            Your vision is medical tourism and overseas patients. No Indian HMS
+            has multi-currency billing, NABH + JCI dual compliance, multilingual
+            EMR, or a patient concierge portal built in.
+          </p>
+          <div class="problem-stat">
+            <span class="big">$9B</span>
+            <span class="sm"
+              >India's medical tourism market by 2026 — you need the right
+              tools</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION BANNER -->
+    <div class="vision-banner">
+      <div class="section-label">The Solution</div>
+      <h2 class="section-title">
+        One <em style="color: var(--plusmax-white)">Operating System</em
+        ><br />for your entire hospital nation.
+      </h2>
+      <p class="vision-tagline">
+        PlusmaxCare OS is not a collection of modules. It's a unified
+        intelligence platform where every department, every location, and every
+        patient interaction feeds a single living system that learns, predicts,
+        and optimizes in real time.
+      </p>
+    </div>
+
+    <!-- ARCHITECTURE SECTION -->
+    <section class="arch" id="architecture">
+      <div class="section-label">System Architecture</div>
+      <h2 class="section-title">Built on four<br />intelligent layers.</h2>
+      <p class="section-body">
+        PlusmaxCare OS is architected as a layered intelligence stack — from
+        infrastructure to AI cognition — ensuring every module benefits from the
+        full power of the platform.
+      </p>
+
+      <div class="arch-diagram">
+        <div class="arch-layers">
+          <div class="arch-layer layer-ai">
+            <div class="arch-layer-icon">🧠</div>
+            <div>
+              <div class="arch-layer-name">Layer 4 — AI Cognition Engine</div>
+              <div class="arch-layer-desc">
+                PlusMind™ — Predictive analytics, NLP diagnostics assist,
+                anomaly detection, demand forecasting
+              </div>
+            </div>
+            <div class="arch-layer-tags">
+              <span class="arch-tag">Clinical AI</span>
+              <span class="arch-tag">Financial Forecasting</span>
+              <span class="arch-tag">Readmission Risk</span>
+              <span class="arch-tag">Bed Intelligence</span>
+            </div>
+          </div>
+          <div class="arch-layer layer-core">
+            <div class="arch-layer-icon">🏥</div>
+            <div>
+              <div class="arch-layer-name">
+                Layer 3 — Clinical & Operational Core
+              </div>
+              <div class="arch-layer-desc">
+                EMR, OT Management, Pharmacy, Lab, Radiology, Nursing Station,
+                Ward Management
+              </div>
+            </div>
+            <div class="arch-layer-tags">
+              <span class="arch-tag">HL7 FHIR R4</span>
+              <span class="arch-tag">DICOM</span>
+              <span class="arch-tag">ICD-11</span>
+              <span class="arch-tag">SNOMED CT</span>
+            </div>
+          </div>
+          <div class="arch-layer layer-ops">
+            <div class="arch-layer-icon">⚙️</div>
+            <div>
+              <div class="arch-layer-name">
+                Layer 2 — Business & Admin Operations
+              </div>
+              <div class="arch-layer-desc">
+                HR, Payroll, Finance, Procurement, Supply Chain, CRM, Medical
+                Tourism, Academic Management
+              </div>
+            </div>
+            <div class="arch-layer-tags">
+              <span class="arch-tag">GST Compliant</span>
+              <span class="arch-tag">Multi-Currency</span>
+              <span class="arch-tag">NABH/JCI</span>
+              <span class="arch-tag">Tally Integration</span>
+            </div>
+          </div>
+          <div class="arch-layer layer-infra">
+            <div class="arch-layer-icon">☁️</div>
+            <div>
+              <div class="arch-layer-name">
+                Layer 1 — Secure Cloud Infrastructure
+              </div>
+              <div class="arch-layer-desc">
+                AWS India Region, end-to-end encryption, HIPAA + DISHA
+                compliant, real-time multi-branch sync
+              </div>
+            </div>
+            <div class="arch-layer-tags">
+              <span class="arch-tag">99.99% Uptime SLA</span>
+              <span class="arch-tag">AES-256</span>
+              <span class="arch-tag">Zero-Trust</span>
+              <span class="arch-tag">Offline Mode</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="module-section" id="modules">
+      <div class="section-chip">Navigation</div>
+      <h2 class="section-h2">All <em>15 Modules</em></h2>
+      <div class="toc">
+        <div class="toc-title">Jump to any module</div>
+        <div class="toc-grid">
+          <a href="#m01" class="toc-item"
+            ><span class="toc-num">01</span> 🩺 Smart OPD & EMR</a
+          >
+          <a href="#m02" class="toc-item"
+            ><span class="toc-num">02</span> 🏨 IPD & Bed Intelligence</a
+          >
+          <a href="#m03" class="toc-item"
+            ><span class="toc-num">03</span> 🔬 Lab & Pathology (LIS)</a
+          >
+          <a href="#m04" class="toc-item"
+            ><span class="toc-num">04</span> 🩻 Radiology & PACS</a
+          >
+          <a href="#m05" class="toc-item"
+            ><span class="toc-num">05</span> 🏥 OT & Surgical Suite</a
+          >
+          <a href="#m06" class="toc-item"
+            ><span class="toc-num">06</span> 💊 Pharmacy & Supply Chain</a
+          >
+          <a href="#m07" class="toc-item"
+            ><span class="toc-num">07</span> 💰 Revenue Cycle & Billing</a
+          >
+          <a href="#m08" class="toc-item"
+            ><span class="toc-num">08</span> 👥 HR, Payroll & Workforce</a
+          >
+          <a href="#m09" class="toc-item"
+            ><span class="toc-num">09</span> 🎓 Medical College LMS</a
+          >
+          <a href="#m10" class="toc-item"
+            ><span class="toc-num">10</span> 🧠 PlusMind™ AI Engine</a
+          >
+          <a href="#m11" class="toc-item"
+            ><span class="toc-num">11</span> 📊 Executive Command Centre</a
+          >
+          <a href="#m12" class="toc-item"
+            ><span class="toc-num">12</span> 📱 Patient Super-App & Connect</a
+          >
+          <a href="#m13" class="toc-item"
+            ><span class="toc-num">13</span> 🏗️ Asset & Facility Management</a
+          >
+          <a href="#m14" class="toc-item"
+            ><span class="toc-num">14</span> 🔒 Compliance & Quality</a
+          >
+          <a href="#m15" class="toc-item"
+            ><span class="toc-num">15</span> ☁️ Infrastructure & Integration</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+     MODULE 01 — SMART OPD & EMR
+════════════════════════════════════════════════════════════════════════ -->
+    <div class="module-section" id="m01">
+      <div class="section-chip">Module 01</div>
+      <div class="module-block" style="--accent: var(--gold)">
+        <div class="module-header">
+          <div class="module-icon-box">🩺</div>
+          <div class="module-meta">
+            <div class="module-num">Module 01 · Clinical Entry Point</div>
+            <div class="module-name">
+              Smart OPD & Electronic Medical Records
+            </div>
+            <div class="module-tagline">
+              The face of every patient encounter. AI-assisted consultation
+              tools, voice-enabled clinical note-taking, real-time decision
+              support, and a longitudinal patient record that travels with every
+              patient across every Plus Max hospital — for their lifetime.
+            </div>
+            <div class="module-badges">
+              <span class="badge">ICD-11</span
+              ><span class="badge">SNOMED CT</span
+              ><span class="badge">ABHA Linked</span
+              ><span class="badge">HL7 FHIR R4</span
+              ><span class="badge">NMC Compliant</span>
+            </div>
+            <div class="world-first">
+              ★ World First — Indian-accent trained voice-to-EMR with clinical
+              decision overlay at point of dictation
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--gold)">
+              Patient Registration & Master
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🪪</span> Unified Patient ID (UHID)
+                </div>
+                <div class="feature-item-desc">
+                  One permanent UHID across all Plus Max hospitals, branches,
+                  and future expansions. A patient registered in Salem is
+                  instantly known in any future branch.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🏛️</span> ABHA Health Account Integration
+                </div>
+                <div class="feature-item-desc">
+                  Native Ayushman Bharat Health Account (ABHA) creation and
+                  linking at registration. Auto-sync of all clinical records to
+                  the national health locker.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📸</span> Biometric + Photo Registration
+                </div>
+                <div class="feature-item-desc">
+                  Fingerprint, Aadhaar-based eKYC, and photo capture at
+                  registration. Prevents duplicate records and ghost patients.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">👨‍👩‍👧</span> Family Health Profile
+                </div>
+                <div class="feature-item-desc">
+                  Group up to 6 family members under one master profile.
+                  Hereditary condition tracking, family history mapping.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🌐</span> Multi-Language Demographics
+                </div>
+                <div class="feature-item-desc">
+                  Patient records in Tamil, Hindi, Telugu, Kannada, and English
+                  — displayed in the clinician's preferred language.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📋</span> Smart Queue & Token Management
+                </div>
+                <div class="feature-item-desc">
+                  AI-powered queue management predicting consultation time per
+                  doctor. WhatsApp notifications when 2 patients away.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--gold)">
+              Electronic Medical Record (EMR)
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🎤</span> Voice-to-EMR (Indian Accent AI)
+                </div>
+                <div class="feature-item-desc">
+                  Doctor speaks naturally in English, Tamil-English mix, or
+                  Hindi. AI transcribes into structured SOAP notes, auto-maps to
+                  ICD-11 codes in real time.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📊</span> SOAP Note Structuring
+                </div>
+                <div class="feature-item-desc">
+                  Structured SOAP notes with specialty-specific templates for
+                  60+ specialties — Cardiology, Neurology, Orthopedics,
+                  Gynecology, Pediatrics.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🔗</span> Longitudinal Patient Record
+                </div>
+                <div class="feature-item-desc">
+                  Complete clinical timeline from first visit onward — every
+                  consultation, lab result, imaging report, surgery, discharge
+                  summary.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">⚠️</span> Allergy & Alert Flagging
+                </div>
+                <div class="feature-item-desc">
+                  Permanent allergy and drug sensitivity flags appearing
+                  prominently on every screen with mandatory acknowledgment.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🩺</span> Vital Signs Auto-Integration
+                </div>
+                <div class="feature-item-desc">
+                  Direct Bluetooth/USB connection to BP monitors, pulse
+                  oximeters, glucometers, ECG machines. Vitals auto-populate
+                  without manual entry.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📈</span> Trend Graphs & Visual History
+                </div>
+                <div class="feature-item-desc">
+                  Auto-generated graphs showing HbA1c trends, BP over 12 months,
+                  weight trajectory — displayed with one click.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--gold)">
+              Clinical Decision Support (AI)
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🧬</span> Differential Diagnosis Engine
+                </div>
+                <div class="feature-item-desc">
+                  As the doctor types or dictates symptoms, PlusMind™ surfaces
+                  ranked differential diagnoses with evidence-based probability
+                  scores.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">💊</span> Drug Interaction Checker
+                </div>
+                <div class="feature-item-desc">
+                  Real-time alerts for drug-drug, drug-allergy, and
+                  drug-condition contraindications at the moment of
+                  prescription.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📋</span> Evidence-Based Protocol Suggestions
+                </div>
+                <div class="feature-item-desc">
+                  When a diagnosis is confirmed, the system surfaces relevant
+                  clinical management protocol as a non-intrusive sidebar.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🔔</span> Preventive Care Reminders
+                </div>
+                <div class="feature-item-desc">
+                  Auto-flags when a patient is due for mammography, Pap smear,
+                  colorectal screening, vaccine boosters based on age and
+                  gender.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════ MODULE 02 — IPD ════════ -->
+    <div class="module-section" id="m02">
+      <div class="section-chip">Module 02</div>
+      <div class="module-block" style="--accent: var(--teal)">
+        <div class="module-header">
+          <div class="module-icon-box">🏨</div>
+          <div class="module-meta">
+            <div class="module-num">Module 02 · Inpatient Management</div>
+            <div class="module-name">IPD & Bed Intelligence</div>
+            <div class="module-tagline">
+              Real-time bed management across every ward, ICU, and branch —
+              powered by AI occupancy forecasting. From admission to discharge,
+              every touchpoint is automated, tracked, and optimized.
+            </div>
+            <div class="module-badges">
+              <span class="badge">NABH Standards</span
+              ><span class="badge">ICU Integration</span
+              ><span class="badge">Multi-Branch</span
+              ><span class="badge">Nurse Station</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--teal)">
+              Admission & Bed Management
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🛏️</span> Live Bed Board (Network-Wide)
+                </div>
+                <div class="feature-item-desc">
+                  Interactive real-time bed map showing all wards, rooms, beds
+                  across every Plus Max hospital — color-coded by occupancy,
+                  cleaning status, reserved, blocked.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🔮</span> AI Bed Demand Forecasting
+                </div>
+                <div class="feature-item-desc">
+                  PlusMind™ predicts tomorrow's admission volume by specialty
+                  based on OPD trends, seasonal disease patterns, historical
+                  data.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📝</span> Digital Admission Orders
+                </div>
+                <div class="feature-item-desc">
+                  Doctor's admission order — diet, activity level, nursing
+                  instructions, medication orders — entered digitally and routed
+                  automatically.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🧹</span> Housekeeping Automation
+                </div>
+                <div class="feature-item-desc">
+                  At discharge, system auto-triggers housekeeping task, tracks
+                  cleaning completion, marks bed available — compressing
+                  turnaround time.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--teal)">
+              Nursing Station & Ward Management
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">💉</span> Medication Administration Record
+                  (MAR)
+                </div>
+                <div class="feature-item-desc">
+                  Digital MAR with barcode scanning — nurse scans patient
+                  wristband and medication before administration. Verifies right
+                  patient, drug, dose, time.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📋</span> Nursing Care Plan Builder
+                </div>
+                <div class="feature-item-desc">
+                  Specialty-specific nursing care plans auto-generated from
+                  admission diagnosis. Nurses document care delivery creating
+                  auditable records.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">⏱️</span> Vital Signs Charting (Automated)
+                </div>
+                <div class="feature-item-desc">
+                  Bedside monitors auto-push vitals to ward chart. Deviation
+                  alerts (hypotension, tachycardia, SpO2 drop) notify duty
+                  doctor instantly.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🏥</span> ICU/CCU/NICU Specialized Dashboard
+                </div>
+                <div class="feature-item-desc">
+                  Critical care dashboards with ventilator settings, vasopressor
+                  dosing, sedation scoring (RASS), delirium screening (CAM-ICU).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════ MODULE 03 — LAB ════════ -->
+    <div class="module-section" id="m03">
+      <div class="section-chip">Module 03</div>
+      <div class="module-block" style="--accent: var(--crimson)">
+        <div class="module-header">
+          <div class="module-icon-box">🔬</div>
+          <div class="module-meta">
+            <div class="module-num">Module 03 · Diagnostics</div>
+            <div class="module-name">Laboratory Information System (LIS)</div>
+            <div class="module-tagline">
+              End-to-end laboratory management from sample collection to result
+              delivery — with direct instrument interfacing, AI result
+              interpretation flags, and zero-error sample tracking.
+            </div>
+            <div class="module-badges">
+              <span class="badge">200+ Instrument Interfaces</span
+              ><span class="badge">NABL Ready</span
+              ><span class="badge">HL7</span
+              ><span class="badge">Critical Value Alerts</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--crimson)">
+              Sample Management
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🏷️</span> Barcode / QR Sample Labeling
+                </div>
+                <div class="feature-item-desc">
+                  Every sample tube gets unique barcode label at collection —
+                  linked to patient, test ordered, collector ID, timestamp.
+                  Eliminates sample mix-up.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🗺️</span> Sample Journey Tracking
+                </div>
+                <div class="feature-item-desc">
+                  Full chain-of-custody visibility — collected → transported →
+                  received → analyzed → result validated → reported. Delay
+                  alerts to supervisor.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--crimson)">
+              Instrument Interface & Results
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🔗</span> Direct Analyzer Integration
+                </div>
+                <div class="feature-item-desc">
+                  Bi-directional interfacing with 200+ analyzers (Sysmex,
+                  Mindray, Roche, Abbott, Siemens) — test orders transmitted
+                  automatically, results auto-validated.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🧠</span> AI Result Interpretation Flags
+                </div>
+                <div class="feature-item-desc">
+                  PlusMind™ reviews results in context of patient's diagnosis,
+                  medications, history. Flags clinically significant results.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🚨</span> Critical Value Auto-Alert
+                </div>
+                <div class="feature-item-desc">
+                  Critical values (K+ > 6.5, glucose > 500, Hb < 5) immediately
+                  notify treating doctor via push, SMS, audible alert with
+                  mandatory acknowledgment.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════ MODULES 04-08 ════════ -->
+    <div class="module-section" id="m04">
+      <div class="section-chip">Module 04</div>
+      <div class="module-block" style="--accent: var(--blue)">
+        <div class="module-header">
+          <div class="module-icon-box">🩻</div>
+          <div class="module-meta">
+            <div class="module-num">Module 04 · Medical Imaging</div>
+            <div class="module-name">Radiology Information System & PACS</div>
+            <div class="module-tagline">
+              Full DICOM-compliant PACS with zero-footprint web viewer,
+              AI-assisted anomaly detection, and tele-radiology for branch
+              hospitals.
+            </div>
+            <div class="module-badges">
+              <span class="badge">DICOM</span><span class="badge">HL7 RIS</span
+              ><span class="badge">AI Radiology</span
+              ><span class="badge">Tele-Radiology</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--blue)">
+              Key Features
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🖥️</span> Zero-Footprint PACS Viewer
+                </div>
+                <div class="feature-item-desc">
+                  Full-featured DICOM viewer in web browser — no plugin, no
+                  installation. View X-rays, CTs, MRIs from any computer or
+                  iPad.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🧠</span> Chest X-Ray AI Analysis
+                </div>
+                <div class="feature-item-desc">
+                  Automated detection of pneumonia, pleural effusion,
+                  cardiomegaly, pneumothorax, nodules — with heatmap overlay.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">☢️</span> Radiation Dose Tracking
+                </div>
+                <div class="feature-item-desc">
+                  Cumulative radiation dose tracking per patient across all CT
+                  studies. Alerts when approaching safety thresholds.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-section" id="m05">
+      <div class="section-chip">Module 05</div>
+      <div class="module-block" style="--accent: var(--purple)">
+        <div class="module-header">
+          <div class="module-icon-box">🏥</div>
+          <div class="module-meta">
+            <div class="module-num">Module 05 · Surgical Operations</div>
+            <div class="module-name">
+              Operating Theatre & Surgical Suite Management
+            </div>
+            <div class="module-tagline">
+              Complete OT management from surgeon scheduling to post-operative
+              recovery — with AI-optimized utilization and digital WHO
+              checklists.
+            </div>
+            <div class="module-badges">
+              <span class="badge">WHO Surgical Safety</span
+              ><span class="badge">Anaesthesia Records</span
+              ><span class="badge">Implant Tracking</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--purple)">
+              Key Features
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📅</span> AI-Optimized OT Scheduling
+                </div>
+                <div class="feature-item-desc">
+                  PlusMind™ schedules cases to maximize utilization — accounting
+                  for surgeon availability, patient readiness, equipment, CSSD
+                  turnaround.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">✅</span> Digital WHO Safety Checklist
+                </div>
+                <div class="feature-item-desc">
+                  WHO Surgical Safety Checklist (Sign-In, Time-Out, Sign-Out)
+                  enforced digitally with mandatory team acknowledgment.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🔩</span> Implant & Prosthesis Tracking
+                </div>
+                <div class="feature-item-desc">
+                  Every implant logged with manufacturer, lot number, expiry,
+                  serial number — linked to patient record and auto-billed.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-section" id="m06">
+      <div class="section-chip">Module 06</div>
+      <div class="module-block" style="--accent: var(--green)">
+        <div class="module-header">
+          <div class="module-icon-box">💊</div>
+          <div class="module-meta">
+            <div class="module-num">Module 06 · Medication & Supply</div>
+            <div class="module-name">Pharmacy & Supply Chain Intelligence</div>
+            <div class="module-tagline">
+              Intelligent pharmacy management with AI-driven demand forecasting,
+              Schedule H/H1/X narcotic compliance, and patient-facing medicine
+              delivery.
+            </div>
+            <div class="module-badges">
+              <span class="badge">Schedule H/H1/X</span
+              ><span class="badge">FEFO Dispensing</span
+              ><span class="badge">GST Compliant</span
+              ><span class="badge">AI Forecasting</span>
+            </div>
+            <div class="world-first">
+              ★ World First — Real-time medicine delivery from hospital pharmacy
+              to patient's home linked to EMR prescription
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--green)">
+              Key Features
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🏷️</span> Barcode-Driven Dispensing
+                </div>
+                <div class="feature-item-desc">
+                  Every drug scanned against patient's digital prescription
+                  before dispensing. System verifies drug, dose, frequency,
+                  patient identity.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🔮</span> AI Demand Forecasting Engine
+                </div>
+                <div class="feature-item-desc">
+                  PlusMind™ analyzes 12 months consumption, seasonal patterns,
+                  surgery schedules to generate optimal purchase orders.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🛵</span> Home Medicine Delivery
+                </div>
+                <div class="feature-item-desc">
+                  Patient orders prescribed medications from Plus Max pharmacy
+                  via app. Order verified against active prescription, delivered
+                  with real-time tracking.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-section" id="m07">
+      <div class="section-chip">Module 07</div>
+      <div class="module-block" style="--accent: var(--orange)">
+        <div class="module-header">
+          <div class="module-icon-box">💰</div>
+          <div class="module-meta">
+            <div class="module-num">Module 07 · Financial Operations</div>
+            <div class="module-name">Revenue Cycle Management & Billing</div>
+            <div class="module-tagline">
+              Zero-leakage billing engine covering every revenue touchpoint with
+              AI that catches unbilled items in real time before discharge.
+            </div>
+            <div class="module-badges">
+              <span class="badge">Ayushman Bharat</span
+              ><span class="badge">300+ TPA</span
+              ><span class="badge">GST/e-Invoice</span
+              ><span class="badge">AI Leakage Detection</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--orange)">
+              Key Features
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">⚡</span> Auto-Billing from Clinical Orders
+                </div>
+                <div class="feature-item-desc">
+                  Every lab order, radiology request, procedure, OT case,
+                  pharmacy dispensing auto-posts to patient's running bill in
+                  real time.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🏛️</span> Ayushman Bharat PM-JAY
+                </div>
+                <div class="feature-item-desc">
+                  Native PM-JAY beneficiary verification, pre-authorization,
+                  claim filing, status tracking — all within billing module.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🧠</span> AI Revenue Leakage Detector
+                </div>
+                <div class="feature-item-desc">
+                  PlusMind™ audits every IP admission 3x daily — comparing
+                  clinical notes against running bill. Flags unbilled
+                  procedures, missing charges.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-section" id="m08">
+      <div class="section-chip">Module 08</div>
+      <div class="module-block" style="--accent: var(--indigo)">
+        <div class="module-header">
+          <div class="module-icon-box">👥</div>
+          <div class="module-meta">
+            <div class="module-num">Module 08 · Workforce Management</div>
+            <div class="module-name">HR, Payroll & Workforce Intelligence</div>
+            <div class="module-tagline">
+              Healthcare-specific HR system that understands duty rosters,
+              MCI-compliant doctor working hours, on-call management, CME
+              tracking, and payroll.
+            </div>
+            <div class="module-badges">
+              <span class="badge">MCI Compliant Hours</span
+              ><span class="badge">PF/ESI/TDS</span
+              ><span class="badge">Biometric</span
+              ><span class="badge">CME Tracking</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--indigo)">
+              Key Features
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📜</span> Doctor Credentialing & Privileging
+                </div>
+                <div class="feature-item-desc">
+                  Complete credential file per doctor — degree verification,
+                  MCI/NMC registration. Privilege matrix defining authorized
+                  procedures.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📅</span> Duty Roster Management
+                </div>
+                <div class="feature-item-desc">
+                  Monthly duty roster for doctors, nurses, technicians — with
+                  MCI-compliant working hour limits enforced, leave balance
+                  integration.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">💰</span> Automated Payroll Engine
+                </div>
+                <div class="feature-item-desc">
+                  Multi-grade payroll with auto-computation of PF (12%), ESI
+                  (3.25%), Professional Tax, TDS, LWF with monthly challans
+                  generated.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+     WORLD FIRST MODULES (09-12)
+════════════════════════════════════════════════════════════════════════ -->
+
+    <div class="module-section" id="m09">
+      <div class="section-chip">Module 09 · World's First</div>
+      <div class="module-block" style="--accent: var(--amber)">
+        <div class="module-header">
+          <div class="module-icon-box">🎓</div>
+          <div class="module-meta">
+            <div class="module-num">
+              Module 09 · Medical Education Technology
+            </div>
+            <div class="module-name">
+              Advanced Multi-Specialty Medical College LMS
+            </div>
+            <div class="module-tagline">
+              The world's first LMS natively integrated with a live hospital's
+              clinical operations — where students learn through real patients,
+              real cases, real data in real time.
+            </div>
+            <div class="module-badges">
+              <span class="badge">NMC Curriculum</span
+              ><span class="badge">MBBS/MD/DM</span
+              ><span class="badge">Competency-Based ME</span
+              ><span class="badge">AI Mentor</span>
+            </div>
+            <div class="world-first">
+              ★ World First — Live hospital-integrated LMS where student
+              learning is mapped to real patient cases occurring in the hospital
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--amber)">
+              Curriculum & Live Hospital Integration
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📚</span> NMC CBME Curriculum Engine
+                </div>
+                <div class="feature-item-desc">
+                  Entire NMC Competency-Based Medical Education curriculum for
+                  MBBS built into the platform — all 19 subjects, all
+                  competencies pre-loaded.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🏥</span> Real-Time Case Assignment
+                </div>
+                <div class="feature-item-desc">
+                  When a patient with interesting clinical presentation is
+                  admitted, LMS auto-identifies it as teaching case and notifies
+                  relevant student batch.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📓</span> Digital Case Log Book
+                </div>
+                <div class="feature-item-desc">
+                  NMC-mandated case log books maintained digitally. Students log
+                  every patient encounter with automatic timestamp and faculty
+                  countersignature.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🤖</span> AI Academic Mentor (PlusMind™)
+                </div>
+                <div class="feature-item-desc">
+                  Every student has access to PlusMind™ as 24/7 academic
+                  assistant — answers clinical queries, generates self-test
+                  questions, provides study schedules.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-section" id="m10">
+      <div class="section-chip">Module 10 · World's First</div>
+      <div class="module-block" style="--accent: var(--violet)">
+        <div class="module-header">
+          <div class="module-icon-box">🧠</div>
+          <div class="module-meta">
+            <div class="module-num">Module 10 · Intelligence Layer</div>
+            <div class="module-name">PlusMind™ — Native AI Engine</div>
+            <div class="module-tagline">
+              The central intelligence layer powering every module. Trained
+              continuously on Plus Max's own anonymized data, making the system
+              uniquely smarter.
+            </div>
+            <div class="module-badges">
+              <span class="badge">Clinical AI</span
+              ><span class="badge">Ops AI</span
+              ><span class="badge">Financial AI</span
+              ><span class="badge">Self-Learning</span>
+            </div>
+            <div class="world-first">
+              ★ World First — Self-learning hospital AI trained exclusively on
+              the host hospital's own data
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--violet)">
+              Clinical & Operational Intelligence
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🔮</span> Readmission Risk Predictor
+                </div>
+                <div class="feature-item-desc">
+                  Scores every inpatient's 30-day readmission risk at discharge
+                  using 47 clinical variables. High-risk patients trigger
+                  automatic follow-up call.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🦠</span> Sepsis Early Warning System
+                </div>
+                <div class="feature-item-desc">
+                  Monitors all inpatient vital signs and lab values
+                  continuously. Detects early sepsis and alerts treating team
+                  4–6 hours before deterioration.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🛏️</span> Bed Occupancy Forecasting
+                </div>
+                <div class="feature-item-desc">
+                  24–72 hour bed demand predictions by ward and specialty —
+                  accounting for seasonal patterns, upcoming surgery lists.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">💸</span> Revenue Leakage Real-Time Audit
+                </div>
+                <div class="feature-item-desc">
+                  Compares every clinical event against patient's bill 3 times
+                  daily. Flags unbilled procedures, missing charges before
+                  discharge.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-section" id="m11">
+      <div class="section-chip">Module 11</div>
+      <div class="module-block" style="--accent: var(--cyan)">
+        <div class="module-header">
+          <div class="module-icon-box">📊</div>
+          <div class="module-meta">
+            <div class="module-num">Module 11 · Leadership Intelligence</div>
+            <div class="module-name">Executive Command Centre</div>
+            <div class="module-tagline">
+              A real-time intelligence dashboard for the Plus Max board and
+              C-suite — showing the health of the entire hospital network from a
+              single screen.
+            </div>
+            <div class="module-badges">
+              <span class="badge">Real-Time</span
+              ><span class="badge">Multi-Branch</span
+              ><span class="badge">Custom KPI</span
+              ><span class="badge">Board Reports</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--cyan)">
+              Network KPI Dashboard
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🌐</span> Unified Network View
+                </div>
+                <div class="feature-item-desc">
+                  All Plus Max hospital branches on one screen — live bed
+                  occupancy, today's OPD footfall, revenue collected, surgeries
+                  in progress.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📊</span> Clinical KPIs (ALOS, BOR, ARPOB)
+                </div>
+                <div class="feature-item-desc">
+                  Average Length of Stay, Bed Occupancy Rate, Average Revenue
+                  Per Occupied Bed — auto-calculated in real time for each
+                  branch, ward, specialty.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📋</span> One-Click Board Report
+                </div>
+                <div class="feature-item-desc">
+                  Monthly board meeting MIS report auto-generated — branch-wise
+                  performance, departmental highlights, financial summary,
+                  quality metrics.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-section" id="m12">
+      <div class="section-chip">Module 12 · World's First</div>
+      <div class="module-block" style="--accent: var(--teal)">
+        <div class="module-header">
+          <div class="module-icon-box">📱</div>
+          <div class="module-meta">
+            <div class="module-num">Module 12 · Patient Engagement</div>
+            <div class="module-name">Patient Super-App & Care Connect</div>
+            <div class="module-tagline">
+              A branded Plus Max patient app that becomes the front door to the
+              entire hospital network — appointments, records, video
+              consultations, prescription management, medicine delivery, chronic
+              disease monitoring.
+            </div>
+            <div class="module-badges">
+              <span class="badge">iOS & Android</span
+              ><span class="badge">ABHA Linked</span
+              ><span class="badge">Telemedicine</span
+              ><span class="badge">Medicine Delivery</span>
+            </div>
+            <div class="world-first">
+              ★ World First — Unified patient app connecting routine checkups,
+              follow-up visits, chronic care monitoring, prescription refills,
+              and home medicine delivery
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--teal)">
+              Key Features
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📅</span> Multi-Branch Appointment Booking
+                </div>
+                <div class="feature-item-desc">
+                  Patients browse all Plus Max hospitals, all specialties, all
+                  doctors — with live slot availability. Book in under 30
+                  seconds.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🎥</span> Video Teleconsultation
+                </div>
+                <div class="feature-item-desc">
+                  Patients consult Plus Max specialists from home via encrypted
+                  video call — for follow-ups, prescription renewals,
+                  post-surgery check-ins.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">⏰</span> Medication Reminder & Adherence
+                </div>
+                <div class="feature-item-desc">
+                  Daily medication reminders push-notified at prescribed timing
+                  with tap to log "taken" or "skipped." Adherence rate tracked
+                  and shared with doctor.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🔁</span> Auto Refill for Chronic Medications
+                </div>
+                <div class="feature-item-desc">
+                  For long-term medications, patients enable auto-refill —
+                  system calculates next refill date and auto-dispatches
+                  delivery 3 days before running out.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════ MODULES 13-15 ════════ -->
+    <div class="module-section" id="m13">
+      <div class="section-chip">Module 13</div>
+      <div class="module-block" style="--accent: var(--lime)">
+        <div class="module-header">
+          <div class="module-icon-box">🏗️</div>
+          <div class="module-meta">
+            <div class="module-num">Module 13 · Infrastructure Management</div>
+            <div class="module-name">
+              Asset, Facility & Bio-Medical Engineering
+            </div>
+            <div class="module-tagline">
+              Tracks every biomedical equipment asset from purchase to disposal,
+              automates preventive maintenance, manages service contracts,
+              ensures regulatory calibration compliance.
+            </div>
+            <div class="module-badges">
+              <span class="badge">AERB Calibration</span
+              ><span class="badge">AMC Management</span
+              ><span class="badge">Predictive Maintenance</span
+              ><span class="badge">BMW Compliance</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--lime)">
+              Key Features
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🔧</span> Asset Registry (Complete)
+                </div>
+                <div class="feature-item-desc">
+                  Every biomedical equipment item — ventilators, ECG machines,
+                  defibrillators, CT scanner, MRI — registered with asset ID,
+                  serial number, warranty, QR-tagged.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📅</span> Preventive Maintenance Scheduler
+                </div>
+                <div class="feature-item-desc">
+                  Auto-generated PM schedules for all equipment based on
+                  manufacturer recommendations. PM tasks assigned to BME
+                  technicians with mobile checklists.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">♻️</span> Biomedical Waste (BMW) Compliance
+                </div>
+                <div class="feature-item-desc">
+                  Daily BMW generation logged by category (yellow, red, white,
+                  blue bags) by department. Monthly BMW returns generated
+                  automatically in CPCB format.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-section" id="m14">
+      <div class="section-chip">Module 14</div>
+      <div class="module-block" style="--accent: var(--rose)">
+        <div class="module-header">
+          <div class="module-icon-box">🔒</div>
+          <div class="module-meta">
+            <div class="module-num">Module 14 · Quality & Governance</div>
+            <div class="module-name">Compliance, Quality & Patient Safety</div>
+            <div class="module-tagline">
+              Continuous NABH compliance monitoring, incident management,
+              infection control, clinical audit, and patient safety programs —
+              all automated.
+            </div>
+            <div class="module-badges">
+              <span class="badge">NABH Autopilot</span
+              ><span class="badge">Incident Management</span
+              ><span class="badge">Infection Control</span
+              ><span class="badge">DISHA Compliant</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--rose)">
+              Key Features
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🏆</span> NABH Compliance Autopilot
+                </div>
+                <div class="feature-item-desc">
+                  NABH standards mapped to system processes — documentation
+                  auto-checked, policy review due dates tracked. Compliance
+                  score updated daily.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📝</span> Incident Reporting & Management
+                </div>
+                <div class="feature-item-desc">
+                  Any staff member can report adverse event, near-miss, patient
+                  safety concern from phone or terminal — anonymously if
+                  desired.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">🔐</span> DISHA & Health Data Privacy
+                </div>
+                <div class="feature-item-desc">
+                  Full compliance with India's Digital Information Security in
+                  Healthcare Act — patient consent management, data access
+                  logging, breach notification protocols.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-section" id="m15">
+      <div class="section-chip">Module 15</div>
+      <div class="module-block" style="--accent: var(--sky)">
+        <div class="module-header">
+          <div class="module-icon-box">☁️</div>
+          <div class="module-meta">
+            <div class="module-num">Module 15 · Technology Foundation</div>
+            <div class="module-name">
+              Cloud Infrastructure, Integration & Security
+            </div>
+            <div class="module-tagline">
+              Secure, always-on, infinitely scalable cloud infrastructure on AWS
+              India, with offline capability for rural branches and
+              enterprise-grade security.
+            </div>
+            <div class="module-badges">
+              <span class="badge">AWS Mumbai</span
+              ><span class="badge">99.99% SLA</span
+              ><span class="badge">AES-256</span
+              ><span class="badge">Zero-Trust</span
+              ><span class="badge">Offline Mode</span
+              ><span class="badge">HL7/FHIR API</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="feature-group">
+            <div class="feature-group-title" style="color: var(--sky)">
+              Key Features
+            </div>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">☁️</span> AWS Mumbai Region Deployment
+                </div>
+                <div class="feature-item-desc">
+                  Hosted on AWS ap-south-1 (Mumbai) with disaster recovery
+                  replica in ap-south-2 (Hyderabad). All data remains in India —
+                  DISHA compliant.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📶</span> Full Offline Mode
+                </div>
+                <div class="feature-item-desc">
+                  Branch hospitals in locations with unreliable internet can
+                  operate in full offline mode — all data syncs automatically
+                  when connectivity restored.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">⏰</span> 99.99% Uptime SLA
+                </div>
+                <div class="feature-item-desc">
+                  Contractually guaranteed 99.99% uptime — less than 52 minutes
+                  unplanned downtime per year. Auto-failover within 30 seconds.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-name">
+                  <span class="fi">📱</span> WhatsApp Business API
+                </div>
+                <div class="feature-item-desc">
+                  Native WhatsApp Business API for appointment confirmations,
+                  lab result notifications, prescription sharing, medication
+                  reminders, payment receipts.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+     PLUSMIND™ AI SHOWCASE SECTION
+════════════════════════════════════════════════════════════════════════ -->
+    <section class="ai-section" id="ai">
+      <div class="section-label">PlusMind™ AI Engine</div>
+      <h2 class="section-title">
+        The system that<br />thinks while you sleep.
+      </h2>
+      <p class="section-body">
+        PlusMind™ is the AI core embedded across every module. It's not a
+        chatbot — it's a clinical and operational intelligence layer trained on
+        Indian hospital data, continuously learning from your own network.
+      </p>
+
+      <div class="ai-grid">
+        <div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">🔮</div>
+            <div>
+              <h4>Readmission Risk Predictor</h4>
+              <p>
+                Flags patients at high risk of 30-day readmission before
+                discharge, enabling targeted follow-up that reduces bounce rates
+                and protects NABH scores.
+              </p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">🛏️</div>
+            <div>
+              <h4>Bed Demand Forecasting</h4>
+              <p>
+                Predicts tomorrow's admissions by specialty based on 90-day
+                seasonal patterns, OPD footfall trends, and referral network
+                signals.
+              </p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">💊</div>
+            <div>
+              <h4>Pharmacy Procurement AI</h4>
+              <p>
+                Learns your consumption patterns to generate optimal purchase
+                orders. Prevents both stockouts and the ₹40L+ problem of expired
+                medications.
+              </p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">💸</div>
+            <div>
+              <h4>Revenue Leakage Detector</h4>
+              <p>
+                AI audits every admission in real time to catch unbilled
+                procedures, missing implant charges, and dispensing without
+                billing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="ai-visual">
+            <div class="ai-visual-title">
+              ⬤ PlusMind™ Live Network Intelligence
+            </div>
+            <div class="ai-metric">
+              <span class="ai-metric-name"
+                ><span class="ai-pulse"></span>Network Bed Occupancy</span
+              >
+              <span class="ai-metric-value">78.4% → 83% projected</span>
+            </div>
+            <div class="ai-metric">
+              <span class="ai-metric-name"
+                ><span class="ai-pulse"></span>Revenue Leakage Caught
+                Today</span
+              >
+              <span class="ai-metric-value">₹2,34,000 recovered</span>
+            </div>
+            <div class="ai-metric">
+              <span class="ai-metric-name"
+                ><span class="ai-pulse"></span>High-Risk Readmission Flags</span
+              >
+              <span class="ai-metric-value">7 patients flagged</span>
+            </div>
+            <div class="ai-metric">
+              <span class="ai-metric-name"
+                ><span class="ai-pulse"></span>Pharmacy Reorder Alerts</span
+              >
+              <span class="ai-metric-value">12 items · auto-ordered</span>
+            </div>
+            <div class="ai-metric">
+              <span class="ai-metric-name"
+                ><span class="ai-pulse"></span>OT Utilization (Today)</span
+              >
+              <span class="ai-metric-value">91.2% (↑ 14% MoM)</span>
+            </div>
+            <div class="ai-metric">
+              <span class="ai-metric-name"
+                ><span class="ai-pulse"></span>NABH Compliance Score</span
+              >
+              <span class="ai-metric-value">96.8 / 100</span>
+            </div>
+            <div class="ai-metric">
+              <span class="ai-metric-name"
+                ><span class="ai-pulse"></span>International Patients
+                Active</span
+              >
+              <span class="ai-metric-value">34 (9 countries)</span>
+            </div>
+            <div class="ai-metric">
+              <span class="ai-metric-name"
+                ><span class="ai-pulse"></span>System Uptime</span
+              >
+              <span class="ai-metric-value">99.97% (30 days)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+     COMPETITIVE COMPARISON TABLE
+════════════════════════════════════════════════════════════════════════ -->
+    <section class="compare" id="compare">
+      <div class="section-label">Competitive Landscape</div>
+      <h2 class="section-title">
+        Why everything else<br />falls short for Plus Max.
+      </h2>
+      <p class="section-body">
+        We've mapped PlusmaxCare OS against the three most common HMS platforms
+        used in Indian hospital networks. The gap is not marginal — it's
+        structural.
+      </p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width: 28%">Capability</th>
+            <th class="our-col" style="width: 18%">PlusmaxCare OS ✦</th>
+            <th>Insta HMS</th>
+            <th>Practo Enterprise</th>
+            <th>Medscape HMS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-col">Multi-branch unified network</td>
+            <td class="our-col check">✓ Native</td>
+            <td class="partial">Partial</td>
+            <td class="cross">✗</td>
+            <td class="partial">Add-on</td>
+          </tr>
+          <tr>
+            <td class="feature-col">AI clinical decision support</td>
+            <td class="our-col check">✓ PlusMind™</td>
+            <td class="cross">✗</td>
+            <td class="partial">Basic</td>
+            <td class="cross">✗</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Medical college / academic module</td>
+            <td class="our-col check">✓ Full Module</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+          </tr>
+          <tr>
+            <td class="feature-col">International patient / medical tourism</td>
+            <td class="our-col check">✓ Native</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+          </tr>
+          <tr>
+            <td class="feature-col">ABHA health locker integration</td>
+            <td class="our-col check">✓ Native</td>
+            <td class="partial">Partial</td>
+            <td class="partial">Partial</td>
+            <td class="cross">✗</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Ayushman Bharat PM-JAY billing</td>
+            <td class="our-col check">✓ Native</td>
+            <td class="check">✓</td>
+            <td class="cross">✗</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td class="feature-col">PACS + AI radiology</td>
+            <td class="our-col check">✓ Built-in</td>
+            <td class="cross">✗ (3rd party)</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗ (3rd party)</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Revenue leakage AI detection</td>
+            <td class="our-col check">✓ Real-time</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Readmission risk prediction</td>
+            <td class="our-col check">✓ ML model</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Patient super-app (white-labeled)</td>
+            <td class="our-col check">✓ Branded App</td>
+            <td class="partial">Generic</td>
+            <td class="partial">Generic</td>
+            <td class="cross">✗</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Executive command centre (C-suite)</td>
+            <td class="our-col check">✓ Real-time</td>
+            <td class="partial">Basic reports</td>
+            <td class="partial">Basic reports</td>
+            <td class="partial">Basic reports</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Multi-currency international billing</td>
+            <td class="our-col check">✓ 15 currencies</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+          </tr>
+          <tr>
+            <td class="feature-col">NABH compliance autopilot</td>
+            <td class="our-col check">✓ Automated</td>
+            <td class="partial">Checklists only</td>
+            <td class="cross">✗</td>
+            <td class="partial">Checklists only</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Offline mode (rural branches)</td>
+            <td class="our-col check">✓ Full offline</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+            <td class="cross">✗</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Built for India (NMC / DISHA / GST)</td>
+            <td class="our-col check">✓ 100%</td>
+            <td class="partial">Mostly</td>
+            <td class="partial">Mostly</td>
+            <td class="partial">Mostly</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+     DIFFERENTIATORS SECTION
+════════════════════════════════════════════════════════════════════════ -->
+    <section class="diff" id="why">
+      <div class="section-label">Unfair Advantages</div>
+      <h2 class="section-title">
+        Three things no one<br />else can offer Plus Max.
+      </h2>
+
+      <div class="diff-row">
+        <div class="diff-item">
+          <div class="diff-crown">Only in PlusmaxCare OS</div>
+          <span class="big-icon">🎓</span>
+          <h3>Teaching Hospital Intelligence</h3>
+          <p>
+            The Academic Module bridges Plus Max Medical College with your
+            hospital network — auto-identifying teaching cases, tracking student
+            rotations on real wards, and building a living research data
+            registry. This makes your medical college a competitive moat, not
+            just a regulatory requirement.
+          </p>
+        </div>
+        <div class="diff-item">
+          <span class="big-icon">🌏</span>
+          <h3>Malaysia ↔ India Medical Bridge</h3>
+          <p>
+            Leveraging Plus Max Group's Malaysian corporate base, we can
+            configure a cross-border patient referral network — Malaysian
+            patients to India for affordable surgery, Indian diaspora in
+            Malaysia managed through the same EMR. A genuinely novel model in
+            Asian healthcare.
+          </p>
+        </div>
+        <div class="diff-item">
+          <span class="big-icon">♾️</span>
+          <h3>Infinitely Scalable Network OS</h3>
+          <p>
+            Adding Hospital No. 5 or No. 50 costs zero additional integration
+            effort. Every new Plus Max branch plugs into the existing OS
+            instantly — inheriting all AI models, shared patient records,
+            unified billing, and the same command centre dashboard. You build
+            once, scale forever.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+     IMPLEMENTATION TIMELINE
+════════════════════════════════════════════════════════════════════════ -->
+    <section class="impl" id="timeline">
+      <div class="section-label">Implementation Roadmap</div>
+      <h2 class="section-title">
+        From contract to<br />fully live in 9 months.
+      </h2>
+      <p class="section-body">
+        Our phased rollout ensures Salem Hospital is live and generating ROI
+        before we touch a single other branch — so you see proof before you
+        scale.
+      </p>
+
+      <div class="impl-phases">
+        <div class="impl-phase">
+          <div class="impl-phase-dot">1</div>
+          <div class="impl-phase-content">
+            <div class="impl-phase-timeline">Month 1–2</div>
+            <h3 class="impl-phase-name">Foundation & Discovery</h3>
+            <p class="impl-phase-desc">
+              Deep-dive assessment of current systems, data migration planning,
+              infrastructure setup on AWS Mumbai region, and customization of
+              the platform to Plus Max's specific clinical workflows, package
+              pricing, and branding requirements.
+            </p>
+            <div class="impl-phase-pills">
+              <span class="impl-pill">Infrastructure Setup</span>
+              <span class="impl-pill">Data Migration Planning</span>
+              <span class="impl-pill">Custom Configuration</span>
+              <span class="impl-pill">Staff Role Mapping</span>
+            </div>
+          </div>
+        </div>
+        <div class="impl-phase">
+          <div class="impl-phase-dot">2</div>
+          <div class="impl-phase-content">
+            <div class="impl-phase-timeline">Month 3–5</div>
+            <h3 class="impl-phase-name">Pilot: Salem Hospital Core Go-Live</h3>
+            <p class="impl-phase-desc">
+              Full live deployment of Modules 1–8 (EMR, IPD, Lab, Radiology, OT,
+              Pharmacy, Billing, HR) at Plus Max Medical College & Hospital,
+              Salem. Parallel running for 30 days, followed by full cutover with
+              zero data loss. Staff training in batches with 24/7 on-site
+              support.
+            </p>
+            <div class="impl-phase-pills">
+              <span class="impl-pill">Clinical Core Live</span>
+              <span class="impl-pill">Billing Live</span>
+              <span class="impl-pill">Staff Training</span>
+              <span class="impl-pill">30-day Parallel Run</span>
+            </div>
+          </div>
+        </div>
+        <div class="impl-phase">
+          <div class="impl-phase-dot">3</div>
+          <div class="impl-phase-content">
+            <div class="impl-phase-timeline">Month 6–7</div>
+            <h3 class="impl-phase-name">
+              Advanced Modules & Academic Integration
+            </h3>
+            <p class="impl-phase-desc">
+              Activate the Academic Module (Module 9), the Executive Command
+              Centre (Module 11), and PlusMind™ AI Engine. Patient Super-App
+              launches on iOS and Android under Plus Max branding.
+            </p>
+            <div class="impl-phase-pills">
+              <span class="impl-pill">Academic Module</span>
+              <span class="impl-pill">Patient App Launch</span>
+              <span class="impl-pill">PlusMind™ AI Active</span>
+              <span class="impl-pill">Command Centre</span>
+            </div>
+          </div>
+        </div>
+        <div class="impl-phase">
+          <div class="impl-phase-dot">4</div>
+          <div class="impl-phase-content">
+            <div class="impl-phase-timeline">Month 8–9</div>
+            <h3 class="impl-phase-name">Network Expansion & Optimization</h3>
+            <p class="impl-phase-desc">
+              Every new hospital branch in the Plus Max network goes live within
+              3 weeks. By month 9, the Executive Command Centre shows all
+              branches in one dashboard. PlusMind™ AI is now learning from
+              multi-branch data — getting smarter every day.
+            </p>
+            <div class="impl-phase-pills">
+              <span class="impl-pill">Branch 2 Go-Live</span>
+              <span class="impl-pill">Network AI Training</span>
+              <span class="impl-pill">NABH Audit Ready</span>
+              <span class="impl-pill">Malaysia Bridge Setup</span>
+            </div>
+          </div>
+        </div>
+        <div class="impl-phase">
+          <div class="impl-phase-dot">∞</div>
+          <div class="impl-phase-content">
+            <div class="impl-phase-timeline">Month 10 onwards</div>
+            <h3 class="impl-phase-name">
+              Continuous Intelligence & Feature Velocity
+            </h3>
+            <p class="impl-phase-desc">
+              Quarterly feature releases based on your clinical and operational
+              feedback. Dedicated PlusmaxCare Customer Success team. Annual
+              NABH/JCI audit support included. PlusMind™ models retrained
+              quarterly on your own anonymized network data.
+            </p>
+            <div class="impl-phase-pills">
+              <span class="impl-pill">Quarterly Releases</span>
+              <span class="impl-pill">Dedicated CSM</span>
+              <span class="impl-pill">NABH/JCI Support</span>
+              <span class="impl-pill">Model Retraining</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+     COMMERCIAL / PRICING SECTION
+════════════════════════════════════════════════════════════════════════ -->
+    <section class="commercial" id="pricing">
+      <div class="section-label">Commercial Proposal</div>
+      <h2 class="section-title">Priced to return<br />10× in Year One.</h2>
+      <p class="section-body">
+        PlusmaxCare OS is not a cost — it's the single highest-ROI investment
+        Plus Max can make. A 200-bed hospital losing ₹40L/year in revenue
+        leakage alone will see full payback in under 8 months.
+      </p>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-tier">Starter Network</div>
+          <div class="price-name">Launchpad</div>
+          <div class="price-desc">
+            For the first anchor hospital. Full core clinical + billing
+            platform.
+          </div>
+
+          <div class="price-divider"></div>
+          <ul class="price-includes">
+            <li>Modules 1–8 (Clinical + Billing + HR)</li>
+            <li>Up to 500 beds, unlimited users</li>
+            <li>PlusMind™ AI core features</li>
+            <li>Patient App (branded)</li>
+            <li>3 months on-site implementation</li>
+            <li>24×7 support (L1 + L2)</li>
+          </ul>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-tier">Network Enterprise</div>
+          <div class="price-name">Command Edition</div>
+          <div class="price-desc">
+            Full platform for the entire Plus Max hospital network, unlimited
+            branches.
+          </div>
+
+          <div class="price-divider"></div>
+          <ul class="price-includes">
+            <li>All 15 Modules — complete platform</li>
+            <li>Unlimited branches, unlimited beds</li>
+            <li>Full PlusMind™ AI suite</li>
+            <li>Academic & Research Module</li>
+            <li>Executive Command Centre (board-level)</li>
+            <li>Malaysia–India patient bridge</li>
+            <li>Branded Patient Super-App (iOS + Android)</li>
+            <li>Dedicated implementation team (9 months)</li>
+            <li>NABH/JCI audit support included</li>
+            <li>Dedicated Customer Success Manager</li>
+            <li>Quarterly AI model retraining</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-tier">Strategic Partnership</div>
+          <div class="price-name">Equity Partner</div>
+          <div class="price-desc">
+            For Plus Max to co-own PlusmaxCare OS and white-label it across
+            Indian hospital groups.
+          </div>
+          <div class="price-amount">Custom <span>deal</span></div>
+          <div class="price-note">
+            Revenue share model · Platform equity available
+          </div>
+          <div class="price-divider"></div>
+          <ul class="price-includes">
+            <li>Everything in Command Edition</li>
+            <li>White-label rights for 3rd party hospitals</li>
+            <li>Revenue share on external deployments</li>
+            <li>Joint IP ownership on Plus Max-funded features</li>
+            <li>Preferred pricing for 10+ hospital network</li>
+            <li>First-mover data advantage in your markets</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+     WHY ACCEPT / CTA SECTION
+════════════════════════════════════════════════════════════════════════ -->
+    <section class="why" id="close">
+      <div class="section-label">The Business Case</div>
+      <h2 class="section-title">Five reasons the board<br />cannot say no.</h2>
+
+      <div class="why-grid">
+        <div class="why-reasons">
+          <div class="why-reason">
+            <div class="why-reason-num">01</div>
+            <div>
+              <h4>You're building hospitals in India now — not later.</h4>
+              <p>
+                Every day a new hospital opens without PlusmaxCare OS is a day
+                of revenue leakage, data fragmentation, and missed patient
+                experience moments. The cost of delay compounds. Starting at
+                Salem gives you a proven, live platform before Branch 2 opens.
+              </p>
+            </div>
+          </div>
+          <div class="why-reason">
+            <div class="why-reason-num">02</div>
+            <div>
+              <h4>No one else built the Academic Module — ever.</h4>
+              <p>
+                Plus Max Medical College is your strategic moat. Connecting it
+                to your hospital network through a single OS is something no
+                competitor, no government hospital, and no other private group
+                has done in India. It makes you structurally different from
+                Apollo, Fortis, and Manipal.
+              </p>
+            </div>
+          </div>
+          <div class="why-reason">
+            <div class="why-reason-num">03</div>
+            <div>
+              <h4>
+                Your Malaysia headquarters is an untapped referral machine.
+              </h4>
+              <p>
+                The Malaysia–India patient bridge module turns Plus Max Group's
+                dual geography from a legal fact into a revenue channel.
+                Malaysian Tamils, Indian diaspora, and medical tourists — all
+                funneled into your hospitals through software you own.
+              </p>
+            </div>
+          </div>
+          <div class="why-reason">
+            <div class="why-reason-num">04</div>
+            <div>
+              <h4>ROI is measurable within 90 days of go-live.</h4>
+              <p>
+                Revenue leakage detection alone typically recovers ₹25–50L in
+                the first quarter at a 200-bed hospital. Pharmacy optimization
+                saves another ₹15–30L annually. The platform pays for its own
+                annual fee in the first 90 days — making every year after that
+                pure profit improvement.
+              </p>
+            </div>
+          </div>
+          <div class="why-reason">
+            <div class="why-reason-num">05</div>
+            <div>
+              <h4>Data is your most valuable long-term asset.</h4>
+              <p>
+                Every patient encounter, every clinical outcome, every
+                operational decision entered into PlusmaxCare OS belongs to Plus
+                Max — not to a SaaS vendor who can hold you hostage. Your
+                anonymized network data becomes a research asset, an AI training
+                asset, and a competitive intelligence asset that appreciates
+                with time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════════════════ -->
+    <footer>
+      <div>
+        <div class="footer-brand">
+          Plusmax<span>Care</span> OS<small
+            >Hospital Intelligence Platform</small
+          >
+        </div>
+      </div>
+      <div class="footer-meta">
+        Exclusively proposed for<br />
+        <strong style="color: #ffffff">Plus Max Group of Companies</strong
+        ><br />
+        Malaysia HQ · Salem, Tamil Nadu, India<br /><br />
+        Confidential & Proprietary · 2026<br />
+        <span style="font-size: 11px; color: rgba(255, 255, 255, 0.5)"
+          >15 Modules · 189+ Features · 3 World Firsts</span
+        >
+      </div>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+
+            // Apply different animation types based on element
+            const animationClasses = [
+              "animate-on-scroll",
+              "animate-slide-left",
+              "animate-slide-right",
+              "animate-scale",
+              "animate-rotate",
+            ];
+            const randomClass =
+              animationClasses[
+                Math.floor(Math.random() * animationClasses.length)
+              ];
+
+            // Add stagger delay for child elements with varied animations
+            const children = entry.target.querySelectorAll(
+              ".hero-badge, .problem-card, .arch-layer, .toc-item, .module-block, .feature-item, .diff-item, .impl-phase, .price-card, .why-reason",
+            );
+            children.forEach((child, index) => {
+              child.style.animationDelay = `${index * 0.15}s`;
+              child.classList.add(randomClass, "visible");
+
+              // Add stagger classes
+              const staggerClass = `stagger-${(index % 8) + 1}`;
+              child.classList.add(staggerClass);
+            });
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections with different animation types
+      document
+        .querySelectorAll("section, .module-section, .toc, .arch-diagram")
+        .forEach((section, index) => {
+          const animationTypes = [
+            "animate-on-scroll",
+            "animate-slide-left",
+            "animate-slide-right",
+            "animate-scale",
+            "animate-rotate",
+          ];
+          section.classList.add(animationTypes[index % animationTypes.length]);
+          observer.observe(section);
+        });
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Parallax effect for hero background
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector(".hero");
+        if (hero) {
+          hero.style.backgroundPositionY = scrolled * 0.5 + "px";
+        }
+      });
+
+      // Counter animation for hero badges
+      const animateCounters = () => {
+        document.querySelectorAll(".hero-badge .num").forEach((counter) => {
+          const target = counter.textContent;
+          const numeric = target.replace(/\D/g, "");
+          if (numeric && !isNaN(numeric)) {
+            let current = 0;
+            const increment = parseInt(numeric) / 50;
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= parseInt(numeric)) {
+                counter.textContent = target;
+                clearInterval(timer);
+              } else {
+                counter.textContent = target.replace(
+                  numeric,
+                  Math.floor(current),
+                );
+              }
+            }, 30);
+          }
+        });
+      };
+
+      // Trigger counter animation when hero is visible
+      const heroObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounters();
+              heroObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      const hero = document.querySelector(".hero");
+      if (hero) heroObserver.observe(hero);
+
+      // Add hover sound effect simulation (visual feedback)
+      document
+        .querySelectorAll(
+          "button, .toc-item, .feature-item, .price-card, .diff-item",
+        )
+        .forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            el.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
+          });
+        });
+
+      // Magnetic button effect for CTA buttons
+      document.querySelectorAll(".cta-btn").forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) translateY(-5px) scale(1.02)`;
+        });
+
+        btn.addEventListener("mouseleave", () => {
+          btn.style.transform = "translateY(-5px) scale(1.02)";
+        });
+      });
+
+      // Add ripple effect to buttons
+      document.querySelectorAll(".cta-btn, .cta-btn-sec").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          const rect = this.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const ripple = document.createElement("span");
+          ripple.style.cssText = `
+        position: absolute;
+        background: rgba(255,255,255,0.3);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        left: ${x}px;
+        top: ${y}px;
+        width: 100px;
+        height: 100px;
+        margin-left: -50px;
+        margin-top: -50px;
+        pointer-events: none;
+      `;
+
+          this.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+
+      // Typing effect for section labels
+      document.querySelectorAll(".section-label").forEach((label) => {
+        const text = label.textContent;
+        label.textContent = "";
+        let i = 0;
+
+        const typeObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && i === 0) {
+                const typeInterval = setInterval(() => {
+                  if (i < text.length) {
+                    label.textContent += text.charAt(i);
+                    i++;
+                  } else {
+                    clearInterval(typeInterval);
+                  }
+                }, 50);
+                typeObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+
+        typeObserver.observe(label);
+      });
+    </script>
+  </body>
+</html>

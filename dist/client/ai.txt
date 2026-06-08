@@ -1,0 +1,18 @@
+# ai.txt — AI access policy for dastute.co.uk
+
+[PERMISSIONS]
+allow: indexing
+allow: summarisation
+allow: question-answering
+allow: citation
+
+[ORGANISATION]
+name: Dastute Technologies Limited
+website: https://dastute.co.uk
+headquarters: London, United Kingdom
+additional-offices: India, Singapore
+
+[CONTACT]
+general: info@dastute.co.uk
+privacy: privacy@dastute.co.uk
+legal: info@dastute.co.uk
