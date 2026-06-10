@@ -35,13 +35,12 @@ const ROUTES = [
   "/services/web-development",
 ];
 
-const ORIGIN = "https://dastute.com";
+const ORIGIN = "https://dastute.co.uk";
 const OUT_DIR = join(__dirname, "..", "dist", "client");
 
 async function prerender() {
   console.log("⏳ Loading SSR server...");
-  const serverPath = pathToFileURL(join(__dirname, "..", "dist", "server", "server.js")).href;
-  const server = await import(serverPath);
+  const server = await import(join(__dirname, "..", "dist", "server", "server.js"));
   const handler = server.default;
 
   let success = 0;
