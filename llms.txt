@@ -1,0 +1,26 @@
+# Dastute Technologies
+
+> Dastute Technologies Limited is a UK-headquartered global IT consultancy delivering managed IT, cybersecurity, cloud, software engineering, ERP, and digital marketing services.
+
+## Canonical
+
+- https://dastute.co.uk
+
+## Primary Pages
+
+- [Home](/)
+- [Services](/services)
+- [Technology](/technology)
+- [Marketing](/marketing)
+- [Capabilities](/capabilities)
+- [About](/about)
+- [Team](/team)
+- [Insights](/insights)
+- [Careers](/careers)
+- [Contact](/contact)
+
+## Contact
+
+- General enquiries: info@dastute.co.uk
+- Careers: info@dastute.co.uk
+- Privacy: privacy@dastute.co.uk

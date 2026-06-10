@@ -1,0 +1,9 @@
+/* humanstxt.org */
+
+Company: Dastute Technologies Limited
+Website: https://dastute.co.uk
+Contact: info@dastute.co.uk
+Locations: London | India | Singapore
+
+Stack: TanStack Start, React 19, TypeScript, Tailwind CSS
+Hosting: Cloudflare-compatible SSR

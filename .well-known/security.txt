@@ -1,0 +1,7 @@
+Contact: mailto:info@dastute.co.uk
+Contact: https://dastute.co.uk/contact
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://dastute.co.uk/.well-known/security.txt
+Policy: https://dastute.co.uk/terms
+Hiring: https://dastute.co.uk/careers
