@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://dastute.co.uk/sitemap.xml
-
-Disallow: /.git/

@@ -2,7 +2,8 @@ import { Link } from "@tanstack/react-router";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-foreground text-background px-4 sm:px-6 py-4 sm:py-6">
+    <footer className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 text-white px-4 sm:px-6 py-4 sm:py-6">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
       <div className="max-w-7xl mx-auto">
         {/* Top section */}
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
@@ -35,17 +36,18 @@ export function SiteFooter() {
               Practice
             </p>
             <div className="flex flex-col gap-0 text-xs text-white/80 leading-tight">
-              <Link
-                to="/services"
-                className="hover:text-white transition-colors block"
-              >
-                Services
-              </Link>
+
               <Link
                 to="/technology"
                 className="hover:text-white transition-colors block"
               >
                 Technology
+              </Link>
+              <Link
+                to="/products"
+                className="hover:text-white transition-colors block"
+              >
+                Products
               </Link>
               <Link
                 to="/marketing"

@@ -1,28 +1,48 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd } from "@/lib/seo";
+import { buildBreadcrumbJsonLd, buildPersonJsonLd, buildStandardPageHead } from "@/lib/seo";
+
+const TEAM_MEMBERS = [
+  {
+    name: "SANJAY KR",
+    role: "Founder & CEO",
+    practice: "Leadership",
+    bio: "President of Dastute overseeing all business operations. Entrepreneur, Founder of Kira-Tech Labs, Founder of Dastute Switcher Technologies LLP. Member at Google Developer Groups, ASME and active Software Developer.",
+  },
+  {
+    name: "ANANDA KUMAR N",
+    role: "Investor & Strategic Advisor",
+    practice: "Advisory",
+    bio: "Ananda Kumar N brings over 24 years of distinguished professional experience to Dastute's advisory board - including more than 15 years at C-suite level across Fintech, Strategy, Corporate Finance, Business Development, and Operations, spanning global markets across Asia, the Middle East, and beyond.",
+  },
+  {
+    name: "DR. MANJARI ANANDAN, DBA",
+    role: "Chief Technology Officer",
+    practice: "Technology",
+    bio: "Dr. Manjari leads Dastute's global engineering organisation, setting the standards for software architecture, cloud infrastructure, cybersecurity practices, data engineering, and research and innovation. Her approach is defined by a belief that technology must solve real business problems - not showcase engineering complexity - and that security, scalability, and maintainability must be designed in from the start, never bolted on afterwards.",
+  },
+  {
+    name: "SMITHA SRIHARSHA",
+    role: "Chief Security Advisor",
+    practice: "Technology / Security",
+    bio: "As Chief Security Advisor, Smitha brings over 22 years of experience in cybersecurity, defining Dastute's security philosophy, overseeing the quality and rigour of all cybersecurity service delivery, and ensuring that our security practices - from CREST-aligned penetration testing and SOC operations to compliance advisory and Red Team engagements - reflect the highest professional standards in the industry.",
+  },
+  {
+    name: "PRASANNA KUMAR M (SALES ELEPHANT)",
+    role: "Chief Marketing Officer",
+    practice: "Growth & Marketing",
+    bio: "A seasoned B2B technology marketing leader, Prasanna brings a results-first philosophy to everything Dastute communicates externally - from brand identity and content strategy to demand generation, ABM campaigns, digital marketing, and partner marketing. His approach is rooted in the belief that great marketing does not just build awareness - it builds trust, and trust drives the long-term client relationships that define exceptional technology companies.",
+  },
+];
 
 export const Route = createFileRoute("/team")({
   head: () => ({
-    meta: [
-      { title: "Leadership Team — Dastute Technologies" },
-      {
-        name: "description",
-        content:
-          "Meet the leadership team behind Dastute Technologies. Founded by Sanjay with a team of senior practitioners in software engineering, blockchain, product management and advisory.",
-      },
-      {
-        property: "og:title",
-        content: "Leadership Team — Dastute Technologies",
-      },
-      {
-        property: "og:description",
-        content:
-          "Experienced leadership spanning software engineering, blockchain, product management and enterprise advisory.",
-      },
-      { property: "og:url", content: "/team" },
-    ],
-    links: [{ rel: "canonical", href: "/team" }],
+    ...buildStandardPageHead({
+      title: "Leadership Team - Dastute Technologies",
+      description: "Meet the leadership team behind Dastute Technologies. Founded by Sanjay with a team of senior practitioners in software engineering, blockchain, product management and advisory.",
+      path: "/team",
+      ogDescription: "Experienced leadership spanning software engineering, blockchain, product management and enterprise advisory.",
+    }),
     scripts: [
       {
         type: "application/ld+json",
@@ -33,45 +53,23 @@ export const Route = createFileRoute("/team")({
           ]),
         ),
       },
+      ...TEAM_MEMBERS.map((member) => ({
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildPersonJsonLd({
+            name: member.name,
+            jobTitle: member.role,
+            description: member.bio,
+            path: `/team#${member.name.toLowerCase().replace(/\s+/g, "-")}`,
+          }),
+        ),
+      })),
     ],
   }),
   component: TeamPage,
 });
 
 function TeamPage() {
-  const team = [
-    {
-      name: "SANJAY KR",
-      role: "Founder & CEO",
-      practice: "Leadership",
-      bio: "President of Dastute overseeing all business operations. Entrepreneur, Founder of Kira-Tech Labs, Founder of Dastute Switcher Technologies LLP. Member at Google Developer Groups, ASME and active Software Developer.",
-    },
-    {
-      name: "ANANDA KUMAR N",
-      role: "Investor & Strategic Advisor",
-      practice: "Advisory",
-      bio: "Ananda Kumar N brings over 24 years of distinguished professional experience to Dastute's advisory board — including more than 15 years at C-suite level across Fintech, Strategy, Corporate Finance, Business Development, and Operations, spanning global markets across Asia, the Middle East, and beyond.",
-    },
-    {
-      name: "DR. MANJARI ANANDAN, DBA",
-      role: "Chief Technology Officer",
-      practice: "Technology",
-      bio: "Dr. Manjari leads Dastute's global engineering organisation, setting the standards for software architecture, cloud infrastructure, cybersecurity practices, data engineering, and research and innovation. Her approach is defined by a belief that technology must solve real business problems — not showcase engineering complexity — and that security, scalability, and maintainability must be designed in from the start, never bolted on afterwards.",
-    },
-    {
-      name: "SMITHA SRIHARSHA",
-      role: "Chief Security Advisor",
-      practice: "Technology / Security",
-      bio: "As Chief Security Advisor, Smitha defines Dastute's security philosophy, oversees the quality and rigour of all cybersecurity service delivery, and ensures that our security practices — from CREST-aligned penetration testing and SOC operations to compliance advisory and Red Team engagements — reflect the highest professional standards in the industry.",
-    },
-    {
-      name: "PRASANNA KUMAR M (SALES ELEPHANT)",
-      role: "Chief Marketing Officer",
-      practice: "Growth & Marketing",
-      bio: "A seasoned B2B technology marketing leader, Prasanna brings a results-first philosophy to everything Dastute communicates externally — from brand identity and content strategy to demand generation, ABM campaigns, digital marketing, and partner marketing. His approach is rooted in the belief that great marketing does not just build awareness — it builds trust, and trust drives the long-term client relationships that define exceptional technology companies.",
-    },
-  ];
-
   return (
     <SiteLayout>
       {/* Hero */}
@@ -94,14 +92,14 @@ function TeamPage() {
           <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
             When you work with Dastute, you're working with a team who
             understands your pain points and your goals. We forge real
-            partnerships — not just vendor relationships — to deliver outcomes
+            partnerships - not just vendor relationships - to deliver outcomes
             that matter.
           </p>
         </div>
       </section>
 
       {/* Stats Bar */}
-      <section className="border-y border-border">
+      <section className="section-gradient border-y border-border">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 md:divide-x divide-border">
           {[
             { k: "Founded", v: "2023" },
@@ -132,7 +130,7 @@ function TeamPage() {
           <div className="h-px flex-1 bg-border" />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-          {team.map((member) => (
+          {TEAM_MEMBERS.map((member) => (
             <div
               key={member.name}
               className="bg-background p-4 sm:p-8 md:p-10 group hover:bg-foreground hover:text-background transition-colors duration-300"

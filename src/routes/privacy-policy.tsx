@@ -36,8 +36,9 @@ export const Route = createFileRoute("/privacy-policy")({
 function PrivacyPolicyPage() {
   return (
     <SiteLayout>
-      <section className="px-6 py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary block mb-6">
+      <section className="section-hero-dark">
+        <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
           / Legal
         </span>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-8">
@@ -46,7 +47,9 @@ function PrivacyPolicyPage() {
         <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-16">
           Last updated: 1 January 2026
         </p>
-      </section>
+      
+        </div>
+</section>
 
       <section className="border-t border-border">
         <div className="max-w-4xl mx-auto px-6 py-16 space-y-16">

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { useState } from "react";
 import { buildBreadcrumbJsonLd } from "@/lib/seo";
+import { useFormSubmit } from "@/lib/useFormSubmit";
 
 export const Route = createFileRoute("/request-audit")({
   head: () => ({
@@ -73,13 +74,15 @@ function Field({
 }
 
 function RequestAuditPage() {
+  const { status, handleSubmit } = useFormSubmit();
   const [auditType, setAuditType] = useState<AuditType>(null);
 
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="px-6 py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary block mb-6">
+      <section className="section-hero-dark">
+        <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
           / Request an Audit
         </span>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-12">
@@ -92,10 +95,12 @@ function RequestAuditPage() {
           senior practitioners deliver audit-grade analysis with actionable
           recommendations.
         </p>
-      </section>
+      
+        </div>
+</section>
 
       {/* Audit Type Selection */}
-      <section className="border-y border-border">
+      <section className="section-gradient border-y border-border">
         <div className="grid md:grid-cols-2 md:divide-x divide-border">
           <button
             onClick={() => setAuditType("smart-contract")}
@@ -195,12 +200,7 @@ function RequestAuditPage() {
 
           <form
             className="grid md:grid-cols-[1fr_2fr] gap-16"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert(
-                "Thanks — our team will review your request and respond within one business day.",
-              );
-            }}
+            onSubmit={handleSubmit}
           >
             {/* Sidebar Info */}
             <div className="space-y-10">
@@ -387,10 +387,21 @@ function RequestAuditPage() {
 
               <button
                 type="submit"
-                className="bg-foreground text-background px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors"
+                disabled={status === 'submitting'}
+                className="bg-foreground text-background px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors disabled:opacity-50"
               >
-                Submit Audit Request →
+                {status === 'submitting' ? 'Sending...' : 'Submit Audit Request →'}
               </button>
+              {status === 'success' && (
+                <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-500 rounded-md text-sm mt-4">
+                  Thanks — our team will review your request and respond within one business day.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-md text-sm mt-4">
+                  Something went wrong. Please try again or email us directly at info@dastute.co.uk.
+                </div>
+              )}
             </div>
           </form>
         </section>

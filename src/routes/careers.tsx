@@ -183,7 +183,7 @@ function CareersPage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="border-y border-border">
+      <section className="section-gradient border-y border-border">
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 md:divide-x divide-border">
           {[
             { k: "Growth", v: "Rapid Global Scale" },
@@ -228,7 +228,7 @@ function CareersPage() {
       </section>
 
       {/* Perks */}
-      <section className="border-y border-border">
+      <section className="section-gradient border-y border-border">
         <div className="max-w-7xl mx-auto">
           <div className="p-8 md:p-12">
             <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-12">

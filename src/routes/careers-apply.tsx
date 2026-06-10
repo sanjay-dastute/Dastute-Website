@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd } from "@/lib/seo";
+import { useFormSubmit } from "@/lib/useFormSubmit";
 
 // NOTE: Job application submissions are sent to info@dastute.co.uk via Formspree
 // Update the formspree form ID in the action attribute if needed
@@ -75,29 +76,31 @@ function Field({
 }
 
 function CareerApplicationPage() {
+  const { status, handleSubmit } = useFormSubmit();
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="px-4 sm:px-6 py-16 sm:py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-primary block mb-4 sm:mb-6">
+      <section className="section-hero-dark">
+        <div className="relative px-4 sm:px-6 py-16 sm:py-24 md:py-32 max-w-7xl mx-auto">
+        <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-4 sm:mb-6">
           / Careers
         </span>
-        <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-12 sm:mb-16">
-          Apply for a role.
+        <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-12 sm:mb-16 text-white">
+          Apply for a <span className="text-gradient-primary">role.</span>
         </h1>
-        <p className="max-w-2xl text-base sm:text-lg text-muted-foreground mb-8">
+        <p className="max-w-2xl text-base sm:text-lg text-slate-300 mb-8">
           We're building a global team of experienced practitioners across
           software engineering, cloud architecture, cybersecurity, product
           management, and advisory. Submit your application below.
         </p>
+        </div>
       </section>
 
       {/* Application Form */}
-      <section className="border-t border-border px-4 sm:px-6 py-16 sm:py-24 max-w-4xl mx-auto">
+      <section className="section-gradient border-t border-border px-4 sm:px-6 py-16 sm:py-24 max-w-4xl mx-auto">
         <form
           className="space-y-4 sm:space-y-6"
-          action="https://formspree.io/f/mleqdrdo"
-          method="POST"
+          onSubmit={handleSubmit}
         >
           {/* Personal Information */}
           <div>
@@ -308,10 +311,21 @@ function CareerApplicationPage() {
           <div className="pt-4 border-t border-border">
             <button
               type="submit"
-              className="bg-foreground text-background px-6 sm:px-8 py-3 sm:py-4 text-[10px] sm:text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors min-h-[44px] w-full sm:w-auto"
+              disabled={status === 'submitting'}
+              className="btn-gradient rounded-full px-6 sm:px-8 py-3 sm:py-4 text-[10px] sm:text-xs font-bold uppercase tracking-widest min-h-[44px] w-full sm:w-auto disabled:opacity-50"
             >
-              Submit Application →
+              {status === 'submitting' ? 'Submitting...' : 'Submit Application →'}
             </button>
+            {status === 'success' && (
+              <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-500 rounded-md text-sm mt-4">
+                Thank you! Your application has been successfully submitted. We will review it shortly.
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-md text-sm mt-4">
+                Something went wrong. Please try again or email us directly at info@dastute.co.uk.
+              </div>
+            )}
             <p className="text-[12px] sm:text-xs text-muted-foreground mt-4">
               We review all applications and will contact promising candidates
               within 2 weeks. Thank you for your interest in Dastute
@@ -322,8 +336,9 @@ function CareerApplicationPage() {
       </section>
 
       {/* What We Offer */}
-      <section className="border-t border-border px-4 sm:px-6 py-16 sm:py-24 max-w-7xl mx-auto">
-        <h2 className="text-lg sm:text-xl font-bold mb-8 pb-4 border-b border-border">
+      <section className="section-dark px-4 sm:px-6 py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto">
+        <h2 className="text-lg sm:text-xl font-bold mb-8 pb-4 border-b border-white/10 text-white">
           Why Join Dastute?
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -353,13 +368,15 @@ function CareerApplicationPage() {
               desc: "We believe in sustainable work practices and respect your time",
             },
           ].map((benefit, i) => (
-            <div key={i}>
-              <h4 className="font-bold mb-2">{benefit.title}</h4>
-              <p className="text-sm text-muted-foreground">{benefit.desc}</p>
+            <div key={i} className="glass-card-dark rounded-3xl p-6">
+              <h4 className="font-bold mb-2 text-white">{benefit.title}</h4>
+              <p className="text-sm text-slate-300">{benefit.desc}</p>
             </div>
           ))}
+        </div>
         </div>
       </section>
     </SiteLayout>
   );
 }
+

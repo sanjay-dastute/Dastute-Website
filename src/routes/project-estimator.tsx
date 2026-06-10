@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { useState } from "react";
 import { buildBreadcrumbJsonLd } from "@/lib/seo";
+import { useFormSubmit } from "@/lib/useFormSubmit";
 
 export const Route = createFileRoute("/project-estimator")({
   head: () => ({
@@ -94,6 +95,7 @@ const TIMELINES = [
 ];
 
 function ProjectEstimatorPage() {
+  const { status, handleSubmit } = useFormSubmit();
   const [step, setStep] = useState(1);
   const [practice, setPractice] = useState<string | null>(null);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
@@ -123,8 +125,9 @@ function ProjectEstimatorPage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="px-6 py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary block mb-6">
+      <section className="section-hero-dark">
+        <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
           / Project Estimator
         </span>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-12">
@@ -136,10 +139,12 @@ function ProjectEstimatorPage() {
           Answer a few questions about your project and we'll prepare a tailored
           proposal within two business days. No commitment required.
         </p>
-      </section>
+      
+        </div>
+</section>
 
       {/* Progress Bar */}
-      <section className="border-y border-border">
+      <section className="section-gradient border-y border-border">
         <div className="max-w-7xl mx-auto grid grid-cols-4 md:divide-x divide-border">
           {STEPS.map((s) => (
             <div
@@ -200,7 +205,7 @@ function ProjectEstimatorPage() {
                     setPractice(p.key);
                     setSelectedServices([]);
                   }}
-                  className={`bg-background p-8 md:p-10 text-left group transition-colors duration-300 ${
+                  className={`flex flex-col items-start bg-background p-8 md:p-10 text-left group transition-colors duration-300 ${
                     practice === p.key
                       ? "bg-foreground text-background"
                       : "hover:bg-foreground hover:text-background"
@@ -405,12 +410,7 @@ function ProjectEstimatorPage() {
               {/* Contact form */}
               <form
                 className="space-y-6"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  alert(
-                    "Thanks — we'll prepare your proposal and respond within two business days.",
-                  );
-                }}
+                onSubmit={handleSubmit}
               >
                 <div className="flex items-end gap-6 mb-4">
                   <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
@@ -510,10 +510,21 @@ function ProjectEstimatorPage() {
                 </div>
                 <button
                   type="submit"
-                  className="bg-foreground text-background px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors"
+                  disabled={status === 'submitting'}
+                  className="bg-foreground text-background px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors disabled:opacity-50"
                 >
-                  Get My Proposal →
+                  {status === 'submitting' ? 'Sending...' : 'Get My Proposal →'}
                 </button>
+                {status === 'success' && (
+                  <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-500 rounded-md text-sm mt-4">
+                    Thank you. We'll prepare your proposal and respond within two business days.
+                  </div>
+                )}
+                {status === 'error' && (
+                  <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-md text-sm mt-4">
+                    Something went wrong. Please try again or email us directly at info@dastute.co.uk.
+                  </div>
+                )}
               </form>
             </div>
           </div>

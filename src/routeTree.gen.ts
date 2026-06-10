@@ -13,22 +13,6 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TechnologyRouteImport } from './routes/technology'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as ServiceWebDevelopmentRouteImport } from './routes/service-web-development'
-import { Route as ServiceStaffingRouteImport } from './routes/service-staffing'
-import { Route as ServiceRedBlueTeamRouteImport } from './routes/service-red-blue-team'
-import { Route as ServiceNetworkRouteImport } from './routes/service-network'
-import { Route as ServiceMobileRouteImport } from './routes/service-mobile'
-import { Route as ServiceMarketingRouteImport } from './routes/service-marketing'
-import { Route as ServiceManagedItRouteImport } from './routes/service-managed-it'
-import { Route as ServiceIosRouteImport } from './routes/service-ios'
-import { Route as ServiceErpRouteImport } from './routes/service-erp'
-import { Route as ServiceCyberSecurityRouteImport } from './routes/service-cyber-security'
-import { Route as ServiceCustomSoftwareRouteImport } from './routes/service-custom-software'
-import { Route as ServiceConsultingRouteImport } from './routes/service-consulting'
-import { Route as ServiceCloudRouteImport } from './routes/service-cloud'
-import { Route as ServiceBlockchainRouteImport } from './routes/service-blockchain'
-import { Route as ServiceAndroidRouteImport } from './routes/service-android'
 import { Route as RequestAuditRouteImport } from './routes/request-audit'
 import { Route as ProjectEstimatorRouteImport } from './routes/project-estimator'
 import { Route as ProductsRouteImport } from './routes/products'
@@ -43,6 +27,17 @@ import { Route as CareersRouteImport } from './routes/careers'
 import { Route as CapabilitiesRouteImport } from './routes/capabilities'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesWebDevelopmentRouteImport } from './routes/services/web-development'
+import { Route as ServicesNetworkRouteImport } from './routes/services/network'
+import { Route as ServicesMobileRouteImport } from './routes/services/mobile'
+import { Route as ServicesMarketingRouteImport } from './routes/services/marketing'
+import { Route as ServicesManagedItRouteImport } from './routes/services/managed-it'
+import { Route as ServicesErpRouteImport } from './routes/services/erp'
+import { Route as ServicesCyberSecurityRouteImport } from './routes/services/cyber-security'
+import { Route as ServicesCustomSoftwareRouteImport } from './routes/services/custom-software'
+import { Route as ServicesConsultingRouteImport } from './routes/services/consulting'
+import { Route as ServicesCloudRouteImport } from './routes/services/cloud'
+import { Route as ServicesBlockchainRouteImport } from './routes/services/blockchain'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -62,86 +57,6 @@ const TeamRoute = TeamRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceWebDevelopmentRoute = ServiceWebDevelopmentRouteImport.update({
-  id: '/service-web-development',
-  path: '/service-web-development',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceStaffingRoute = ServiceStaffingRouteImport.update({
-  id: '/service-staffing',
-  path: '/service-staffing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceRedBlueTeamRoute = ServiceRedBlueTeamRouteImport.update({
-  id: '/service-red-blue-team',
-  path: '/service-red-blue-team',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceNetworkRoute = ServiceNetworkRouteImport.update({
-  id: '/service-network',
-  path: '/service-network',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceMobileRoute = ServiceMobileRouteImport.update({
-  id: '/service-mobile',
-  path: '/service-mobile',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceMarketingRoute = ServiceMarketingRouteImport.update({
-  id: '/service-marketing',
-  path: '/service-marketing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceManagedItRoute = ServiceManagedItRouteImport.update({
-  id: '/service-managed-it',
-  path: '/service-managed-it',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceIosRoute = ServiceIosRouteImport.update({
-  id: '/service-ios',
-  path: '/service-ios',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceErpRoute = ServiceErpRouteImport.update({
-  id: '/service-erp',
-  path: '/service-erp',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceCyberSecurityRoute = ServiceCyberSecurityRouteImport.update({
-  id: '/service-cyber-security',
-  path: '/service-cyber-security',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceCustomSoftwareRoute = ServiceCustomSoftwareRouteImport.update({
-  id: '/service-custom-software',
-  path: '/service-custom-software',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceConsultingRoute = ServiceConsultingRouteImport.update({
-  id: '/service-consulting',
-  path: '/service-consulting',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceCloudRoute = ServiceCloudRouteImport.update({
-  id: '/service-cloud',
-  path: '/service-cloud',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceBlockchainRoute = ServiceBlockchainRouteImport.update({
-  id: '/service-blockchain',
-  path: '/service-blockchain',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServiceAndroidRoute = ServiceAndroidRouteImport.update({
-  id: '/service-android',
-  path: '/service-android',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RequestAuditRoute = RequestAuditRouteImport.update({
@@ -214,6 +129,61 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesWebDevelopmentRoute = ServicesWebDevelopmentRouteImport.update({
+  id: '/services/web-development',
+  path: '/services/web-development',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesNetworkRoute = ServicesNetworkRouteImport.update({
+  id: '/services/network',
+  path: '/services/network',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesMobileRoute = ServicesMobileRouteImport.update({
+  id: '/services/mobile',
+  path: '/services/mobile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesMarketingRoute = ServicesMarketingRouteImport.update({
+  id: '/services/marketing',
+  path: '/services/marketing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesManagedItRoute = ServicesManagedItRouteImport.update({
+  id: '/services/managed-it',
+  path: '/services/managed-it',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesErpRoute = ServicesErpRouteImport.update({
+  id: '/services/erp',
+  path: '/services/erp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesCyberSecurityRoute = ServicesCyberSecurityRouteImport.update({
+  id: '/services/cyber-security',
+  path: '/services/cyber-security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesCustomSoftwareRoute = ServicesCustomSoftwareRouteImport.update({
+  id: '/services/custom-software',
+  path: '/services/custom-software',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesConsultingRoute = ServicesConsultingRouteImport.update({
+  id: '/services/consulting',
+  path: '/services/consulting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesCloudRoute = ServicesCloudRouteImport.update({
+  id: '/services/cloud',
+  path: '/services/cloud',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesBlockchainRoute = ServicesBlockchainRouteImport.update({
+  id: '/services/blockchain',
+  path: '/services/blockchain',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -230,26 +200,21 @@ export interface FileRoutesByFullPath {
   '/products': typeof ProductsRoute
   '/project-estimator': typeof ProjectEstimatorRoute
   '/request-audit': typeof RequestAuditRoute
-  '/service-android': typeof ServiceAndroidRoute
-  '/service-blockchain': typeof ServiceBlockchainRoute
-  '/service-cloud': typeof ServiceCloudRoute
-  '/service-consulting': typeof ServiceConsultingRoute
-  '/service-custom-software': typeof ServiceCustomSoftwareRoute
-  '/service-cyber-security': typeof ServiceCyberSecurityRoute
-  '/service-erp': typeof ServiceErpRoute
-  '/service-ios': typeof ServiceIosRoute
-  '/service-managed-it': typeof ServiceManagedItRoute
-  '/service-marketing': typeof ServiceMarketingRoute
-  '/service-mobile': typeof ServiceMobileRoute
-  '/service-network': typeof ServiceNetworkRoute
-  '/service-red-blue-team': typeof ServiceRedBlueTeamRoute
-  '/service-staffing': typeof ServiceStaffingRoute
-  '/service-web-development': typeof ServiceWebDevelopmentRoute
-  '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/technology': typeof TechnologyRoute
   '/terms': typeof TermsRoute
+  '/services/blockchain': typeof ServicesBlockchainRoute
+  '/services/cloud': typeof ServicesCloudRoute
+  '/services/consulting': typeof ServicesConsultingRoute
+  '/services/custom-software': typeof ServicesCustomSoftwareRoute
+  '/services/cyber-security': typeof ServicesCyberSecurityRoute
+  '/services/erp': typeof ServicesErpRoute
+  '/services/managed-it': typeof ServicesManagedItRoute
+  '/services/marketing': typeof ServicesMarketingRoute
+  '/services/mobile': typeof ServicesMobileRoute
+  '/services/network': typeof ServicesNetworkRoute
+  '/services/web-development': typeof ServicesWebDevelopmentRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -266,26 +231,21 @@ export interface FileRoutesByTo {
   '/products': typeof ProductsRoute
   '/project-estimator': typeof ProjectEstimatorRoute
   '/request-audit': typeof RequestAuditRoute
-  '/service-android': typeof ServiceAndroidRoute
-  '/service-blockchain': typeof ServiceBlockchainRoute
-  '/service-cloud': typeof ServiceCloudRoute
-  '/service-consulting': typeof ServiceConsultingRoute
-  '/service-custom-software': typeof ServiceCustomSoftwareRoute
-  '/service-cyber-security': typeof ServiceCyberSecurityRoute
-  '/service-erp': typeof ServiceErpRoute
-  '/service-ios': typeof ServiceIosRoute
-  '/service-managed-it': typeof ServiceManagedItRoute
-  '/service-marketing': typeof ServiceMarketingRoute
-  '/service-mobile': typeof ServiceMobileRoute
-  '/service-network': typeof ServiceNetworkRoute
-  '/service-red-blue-team': typeof ServiceRedBlueTeamRoute
-  '/service-staffing': typeof ServiceStaffingRoute
-  '/service-web-development': typeof ServiceWebDevelopmentRoute
-  '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/technology': typeof TechnologyRoute
   '/terms': typeof TermsRoute
+  '/services/blockchain': typeof ServicesBlockchainRoute
+  '/services/cloud': typeof ServicesCloudRoute
+  '/services/consulting': typeof ServicesConsultingRoute
+  '/services/custom-software': typeof ServicesCustomSoftwareRoute
+  '/services/cyber-security': typeof ServicesCyberSecurityRoute
+  '/services/erp': typeof ServicesErpRoute
+  '/services/managed-it': typeof ServicesManagedItRoute
+  '/services/marketing': typeof ServicesMarketingRoute
+  '/services/mobile': typeof ServicesMobileRoute
+  '/services/network': typeof ServicesNetworkRoute
+  '/services/web-development': typeof ServicesWebDevelopmentRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -303,26 +263,21 @@ export interface FileRoutesById {
   '/products': typeof ProductsRoute
   '/project-estimator': typeof ProjectEstimatorRoute
   '/request-audit': typeof RequestAuditRoute
-  '/service-android': typeof ServiceAndroidRoute
-  '/service-blockchain': typeof ServiceBlockchainRoute
-  '/service-cloud': typeof ServiceCloudRoute
-  '/service-consulting': typeof ServiceConsultingRoute
-  '/service-custom-software': typeof ServiceCustomSoftwareRoute
-  '/service-cyber-security': typeof ServiceCyberSecurityRoute
-  '/service-erp': typeof ServiceErpRoute
-  '/service-ios': typeof ServiceIosRoute
-  '/service-managed-it': typeof ServiceManagedItRoute
-  '/service-marketing': typeof ServiceMarketingRoute
-  '/service-mobile': typeof ServiceMobileRoute
-  '/service-network': typeof ServiceNetworkRoute
-  '/service-red-blue-team': typeof ServiceRedBlueTeamRoute
-  '/service-staffing': typeof ServiceStaffingRoute
-  '/service-web-development': typeof ServiceWebDevelopmentRoute
-  '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/technology': typeof TechnologyRoute
   '/terms': typeof TermsRoute
+  '/services/blockchain': typeof ServicesBlockchainRoute
+  '/services/cloud': typeof ServicesCloudRoute
+  '/services/consulting': typeof ServicesConsultingRoute
+  '/services/custom-software': typeof ServicesCustomSoftwareRoute
+  '/services/cyber-security': typeof ServicesCyberSecurityRoute
+  '/services/erp': typeof ServicesErpRoute
+  '/services/managed-it': typeof ServicesManagedItRoute
+  '/services/marketing': typeof ServicesMarketingRoute
+  '/services/mobile': typeof ServicesMobileRoute
+  '/services/network': typeof ServicesNetworkRoute
+  '/services/web-development': typeof ServicesWebDevelopmentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -341,26 +296,21 @@ export interface FileRouteTypes {
     | '/products'
     | '/project-estimator'
     | '/request-audit'
-    | '/service-android'
-    | '/service-blockchain'
-    | '/service-cloud'
-    | '/service-consulting'
-    | '/service-custom-software'
-    | '/service-cyber-security'
-    | '/service-erp'
-    | '/service-ios'
-    | '/service-managed-it'
-    | '/service-marketing'
-    | '/service-mobile'
-    | '/service-network'
-    | '/service-red-blue-team'
-    | '/service-staffing'
-    | '/service-web-development'
-    | '/services'
     | '/sitemap.xml'
     | '/team'
     | '/technology'
     | '/terms'
+    | '/services/blockchain'
+    | '/services/cloud'
+    | '/services/consulting'
+    | '/services/custom-software'
+    | '/services/cyber-security'
+    | '/services/erp'
+    | '/services/managed-it'
+    | '/services/marketing'
+    | '/services/mobile'
+    | '/services/network'
+    | '/services/web-development'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -377,26 +327,21 @@ export interface FileRouteTypes {
     | '/products'
     | '/project-estimator'
     | '/request-audit'
-    | '/service-android'
-    | '/service-blockchain'
-    | '/service-cloud'
-    | '/service-consulting'
-    | '/service-custom-software'
-    | '/service-cyber-security'
-    | '/service-erp'
-    | '/service-ios'
-    | '/service-managed-it'
-    | '/service-marketing'
-    | '/service-mobile'
-    | '/service-network'
-    | '/service-red-blue-team'
-    | '/service-staffing'
-    | '/service-web-development'
-    | '/services'
     | '/sitemap.xml'
     | '/team'
     | '/technology'
     | '/terms'
+    | '/services/blockchain'
+    | '/services/cloud'
+    | '/services/consulting'
+    | '/services/custom-software'
+    | '/services/cyber-security'
+    | '/services/erp'
+    | '/services/managed-it'
+    | '/services/marketing'
+    | '/services/mobile'
+    | '/services/network'
+    | '/services/web-development'
   id:
     | '__root__'
     | '/'
@@ -413,26 +358,21 @@ export interface FileRouteTypes {
     | '/products'
     | '/project-estimator'
     | '/request-audit'
-    | '/service-android'
-    | '/service-blockchain'
-    | '/service-cloud'
-    | '/service-consulting'
-    | '/service-custom-software'
-    | '/service-cyber-security'
-    | '/service-erp'
-    | '/service-ios'
-    | '/service-managed-it'
-    | '/service-marketing'
-    | '/service-mobile'
-    | '/service-network'
-    | '/service-red-blue-team'
-    | '/service-staffing'
-    | '/service-web-development'
-    | '/services'
     | '/sitemap.xml'
     | '/team'
     | '/technology'
     | '/terms'
+    | '/services/blockchain'
+    | '/services/cloud'
+    | '/services/consulting'
+    | '/services/custom-software'
+    | '/services/cyber-security'
+    | '/services/erp'
+    | '/services/managed-it'
+    | '/services/marketing'
+    | '/services/mobile'
+    | '/services/network'
+    | '/services/web-development'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -450,26 +390,21 @@ export interface RootRouteChildren {
   ProductsRoute: typeof ProductsRoute
   ProjectEstimatorRoute: typeof ProjectEstimatorRoute
   RequestAuditRoute: typeof RequestAuditRoute
-  ServiceAndroidRoute: typeof ServiceAndroidRoute
-  ServiceBlockchainRoute: typeof ServiceBlockchainRoute
-  ServiceCloudRoute: typeof ServiceCloudRoute
-  ServiceConsultingRoute: typeof ServiceConsultingRoute
-  ServiceCustomSoftwareRoute: typeof ServiceCustomSoftwareRoute
-  ServiceCyberSecurityRoute: typeof ServiceCyberSecurityRoute
-  ServiceErpRoute: typeof ServiceErpRoute
-  ServiceIosRoute: typeof ServiceIosRoute
-  ServiceManagedItRoute: typeof ServiceManagedItRoute
-  ServiceMarketingRoute: typeof ServiceMarketingRoute
-  ServiceMobileRoute: typeof ServiceMobileRoute
-  ServiceNetworkRoute: typeof ServiceNetworkRoute
-  ServiceRedBlueTeamRoute: typeof ServiceRedBlueTeamRoute
-  ServiceStaffingRoute: typeof ServiceStaffingRoute
-  ServiceWebDevelopmentRoute: typeof ServiceWebDevelopmentRoute
-  ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TeamRoute: typeof TeamRoute
   TechnologyRoute: typeof TechnologyRoute
   TermsRoute: typeof TermsRoute
+  ServicesBlockchainRoute: typeof ServicesBlockchainRoute
+  ServicesCloudRoute: typeof ServicesCloudRoute
+  ServicesConsultingRoute: typeof ServicesConsultingRoute
+  ServicesCustomSoftwareRoute: typeof ServicesCustomSoftwareRoute
+  ServicesCyberSecurityRoute: typeof ServicesCyberSecurityRoute
+  ServicesErpRoute: typeof ServicesErpRoute
+  ServicesManagedItRoute: typeof ServicesManagedItRoute
+  ServicesMarketingRoute: typeof ServicesMarketingRoute
+  ServicesMobileRoute: typeof ServicesMobileRoute
+  ServicesNetworkRoute: typeof ServicesNetworkRoute
+  ServicesWebDevelopmentRoute: typeof ServicesWebDevelopmentRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -500,118 +435,6 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-web-development': {
-      id: '/service-web-development'
-      path: '/service-web-development'
-      fullPath: '/service-web-development'
-      preLoaderRoute: typeof ServiceWebDevelopmentRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-staffing': {
-      id: '/service-staffing'
-      path: '/service-staffing'
-      fullPath: '/service-staffing'
-      preLoaderRoute: typeof ServiceStaffingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-red-blue-team': {
-      id: '/service-red-blue-team'
-      path: '/service-red-blue-team'
-      fullPath: '/service-red-blue-team'
-      preLoaderRoute: typeof ServiceRedBlueTeamRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-network': {
-      id: '/service-network'
-      path: '/service-network'
-      fullPath: '/service-network'
-      preLoaderRoute: typeof ServiceNetworkRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-mobile': {
-      id: '/service-mobile'
-      path: '/service-mobile'
-      fullPath: '/service-mobile'
-      preLoaderRoute: typeof ServiceMobileRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-marketing': {
-      id: '/service-marketing'
-      path: '/service-marketing'
-      fullPath: '/service-marketing'
-      preLoaderRoute: typeof ServiceMarketingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-managed-it': {
-      id: '/service-managed-it'
-      path: '/service-managed-it'
-      fullPath: '/service-managed-it'
-      preLoaderRoute: typeof ServiceManagedItRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-ios': {
-      id: '/service-ios'
-      path: '/service-ios'
-      fullPath: '/service-ios'
-      preLoaderRoute: typeof ServiceIosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-erp': {
-      id: '/service-erp'
-      path: '/service-erp'
-      fullPath: '/service-erp'
-      preLoaderRoute: typeof ServiceErpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-cyber-security': {
-      id: '/service-cyber-security'
-      path: '/service-cyber-security'
-      fullPath: '/service-cyber-security'
-      preLoaderRoute: typeof ServiceCyberSecurityRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-custom-software': {
-      id: '/service-custom-software'
-      path: '/service-custom-software'
-      fullPath: '/service-custom-software'
-      preLoaderRoute: typeof ServiceCustomSoftwareRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-consulting': {
-      id: '/service-consulting'
-      path: '/service-consulting'
-      fullPath: '/service-consulting'
-      preLoaderRoute: typeof ServiceConsultingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-cloud': {
-      id: '/service-cloud'
-      path: '/service-cloud'
-      fullPath: '/service-cloud'
-      preLoaderRoute: typeof ServiceCloudRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-blockchain': {
-      id: '/service-blockchain'
-      path: '/service-blockchain'
-      fullPath: '/service-blockchain'
-      preLoaderRoute: typeof ServiceBlockchainRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-android': {
-      id: '/service-android'
-      path: '/service-android'
-      fullPath: '/service-android'
-      preLoaderRoute: typeof ServiceAndroidRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/request-audit': {
@@ -712,6 +535,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/web-development': {
+      id: '/services/web-development'
+      path: '/services/web-development'
+      fullPath: '/services/web-development'
+      preLoaderRoute: typeof ServicesWebDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/network': {
+      id: '/services/network'
+      path: '/services/network'
+      fullPath: '/services/network'
+      preLoaderRoute: typeof ServicesNetworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/mobile': {
+      id: '/services/mobile'
+      path: '/services/mobile'
+      fullPath: '/services/mobile'
+      preLoaderRoute: typeof ServicesMobileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/marketing': {
+      id: '/services/marketing'
+      path: '/services/marketing'
+      fullPath: '/services/marketing'
+      preLoaderRoute: typeof ServicesMarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/managed-it': {
+      id: '/services/managed-it'
+      path: '/services/managed-it'
+      fullPath: '/services/managed-it'
+      preLoaderRoute: typeof ServicesManagedItRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/erp': {
+      id: '/services/erp'
+      path: '/services/erp'
+      fullPath: '/services/erp'
+      preLoaderRoute: typeof ServicesErpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/cyber-security': {
+      id: '/services/cyber-security'
+      path: '/services/cyber-security'
+      fullPath: '/services/cyber-security'
+      preLoaderRoute: typeof ServicesCyberSecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/custom-software': {
+      id: '/services/custom-software'
+      path: '/services/custom-software'
+      fullPath: '/services/custom-software'
+      preLoaderRoute: typeof ServicesCustomSoftwareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/consulting': {
+      id: '/services/consulting'
+      path: '/services/consulting'
+      fullPath: '/services/consulting'
+      preLoaderRoute: typeof ServicesConsultingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/cloud': {
+      id: '/services/cloud'
+      path: '/services/cloud'
+      fullPath: '/services/cloud'
+      preLoaderRoute: typeof ServicesCloudRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/blockchain': {
+      id: '/services/blockchain'
+      path: '/services/blockchain'
+      fullPath: '/services/blockchain'
+      preLoaderRoute: typeof ServicesBlockchainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -730,26 +630,21 @@ const rootRouteChildren: RootRouteChildren = {
   ProductsRoute: ProductsRoute,
   ProjectEstimatorRoute: ProjectEstimatorRoute,
   RequestAuditRoute: RequestAuditRoute,
-  ServiceAndroidRoute: ServiceAndroidRoute,
-  ServiceBlockchainRoute: ServiceBlockchainRoute,
-  ServiceCloudRoute: ServiceCloudRoute,
-  ServiceConsultingRoute: ServiceConsultingRoute,
-  ServiceCustomSoftwareRoute: ServiceCustomSoftwareRoute,
-  ServiceCyberSecurityRoute: ServiceCyberSecurityRoute,
-  ServiceErpRoute: ServiceErpRoute,
-  ServiceIosRoute: ServiceIosRoute,
-  ServiceManagedItRoute: ServiceManagedItRoute,
-  ServiceMarketingRoute: ServiceMarketingRoute,
-  ServiceMobileRoute: ServiceMobileRoute,
-  ServiceNetworkRoute: ServiceNetworkRoute,
-  ServiceRedBlueTeamRoute: ServiceRedBlueTeamRoute,
-  ServiceStaffingRoute: ServiceStaffingRoute,
-  ServiceWebDevelopmentRoute: ServiceWebDevelopmentRoute,
-  ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TeamRoute: TeamRoute,
   TechnologyRoute: TechnologyRoute,
   TermsRoute: TermsRoute,
+  ServicesBlockchainRoute: ServicesBlockchainRoute,
+  ServicesCloudRoute: ServicesCloudRoute,
+  ServicesConsultingRoute: ServicesConsultingRoute,
+  ServicesCustomSoftwareRoute: ServicesCustomSoftwareRoute,
+  ServicesCyberSecurityRoute: ServicesCyberSecurityRoute,
+  ServicesErpRoute: ServicesErpRoute,
+  ServicesManagedItRoute: ServicesManagedItRoute,
+  ServicesMarketingRoute: ServicesMarketingRoute,
+  ServicesMobileRoute: ServicesMobileRoute,
+  ServicesNetworkRoute: ServicesNetworkRoute,
+  ServicesWebDevelopmentRoute: ServicesWebDevelopmentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

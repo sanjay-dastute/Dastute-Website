@@ -5,6 +5,7 @@ import {
   buildLocalBusinessJsonLd,
   buildStandardPageHead,
 } from "@/lib/seo";
+import { useFormSubmit } from "@/lib/useFormSubmit";
 
 // NOTE: Form submissions are sent to info@dastute.co.uk via Formspree
 // Update the formspree form ID in the action attribute if needed
@@ -88,23 +89,25 @@ function Field({
 }
 
 function ContactPage() {
+  const { status, handleSubmit } = useFormSubmit();
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="px-4 sm:px-6 py-16 sm:py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-primary block mb-4 sm:mb-6">
+      <section className="section-hero-dark">
+        <div className="relative px-4 sm:px-6 py-16 sm:py-24 md:py-32 max-w-7xl mx-auto">
+        <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-4 sm:mb-6">
           / Contact
         </span>
-        <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-6">
-          Let&apos;s talk about your technology challenges.
+        <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-6 text-white">
+          Let&apos;s talk about your <span className="text-gradient-primary">technology challenges.</span>
         </h1>
-        <p className="max-w-3xl text-sm sm:text-lg text-muted-foreground leading-relaxed mb-12 sm:mb-16">
+        <p className="max-w-3xl text-sm sm:text-lg text-slate-300 leading-relaxed mb-12 sm:mb-16">
           Whether you need a consultation, project estimate, or a technology
           audit, our team is ready to help. We respond to every enquiry within
           one business day.
         </p>
 
-        <div className="grid md:grid-cols-[1fr_2fr] gap-8 sm:gap-16 border-t border-border pt-8 sm:pt-12">
+        <div className="grid md:grid-cols-[1fr_2fr] gap-8 sm:gap-16 border-t border-white/10 pt-8 sm:pt-12">
           {/* Office Contacts */}
           <div className="space-y-6 sm:space-y-10">
             <div>
@@ -176,8 +179,7 @@ function ContactPage() {
           {/* Contact Form */}
           <form
             className="space-y-4 sm:space-y-6"
-            action="https://formspree.io/f/mleqdrdo"
-            method="POST"
+            onSubmit={handleSubmit}
           >
             <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               <Field label="First Name" name="firstName" required />
@@ -269,24 +271,37 @@ function ContactPage() {
             </p>
             <button
               type="submit"
-              className="bg-foreground text-background px-6 sm:px-8 py-3 sm:py-4 text-[10px] sm:text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors min-h-[44px]"
+              disabled={status === 'submitting'}
+              className="btn-gradient rounded-full px-6 sm:px-8 py-3 sm:py-4 text-[10px] sm:text-xs font-bold uppercase tracking-widest min-h-[44px] disabled:opacity-50"
             >
-              Send Message — We&apos;ll Reply Within 1 Business Day
+              {status === 'submitting' ? "Sending..." : "Send Message — We'll Reply Within 1 Business Day"}
             </button>
+            {status === 'success' && (
+              <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-500 rounded-md text-sm mt-4">
+                Thank you. Your message has been sent successfully. We will get back to you shortly.
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-md text-sm mt-4">
+                Something went wrong. Please try again or email us directly at info@dastute.co.uk.
+              </div>
+            )}
           </form>
+        </div>
         </div>
       </section>
 
       {/* Fast Track Options */}
-      <section className="border-t border-border px-6 py-24 max-w-7xl mx-auto">
+      <section className="section-gradient px-6 py-24">
+        <div className="max-w-7xl mx-auto">
         <div className="flex items-end gap-6 mb-16">
-          <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+          <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600">
             Fast-Track Options
           </h2>
           <div className="h-px flex-1 bg-border" />
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          <article className="border border-border rounded-lg p-6">
+          <article className="glass-card-strong rounded-3xl p-6 accent-top-blue">
             <h3 className="font-bold text-lg mb-3">Free Technology Audit</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Request a no-obligation audit and receive a prioritized report on
@@ -294,12 +309,12 @@ function ContactPage() {
             </p>
             <a
               href="/request-audit"
-              className="text-sm text-primary hover:underline"
+              className="btn-gradient inline-flex items-center rounded-full px-4 py-2 text-sm"
             >
               Request Free Audit →
             </a>
           </article>
-          <article className="border border-border rounded-lg p-6">
+          <article className="glass-card-strong rounded-3xl p-6 accent-top-violet">
             <h3 className="font-bold text-lg mb-3">Project Estimator</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Get a ballpark budget and timeline in minutes. Useful for early
@@ -307,13 +322,15 @@ function ContactPage() {
             </p>
             <a
               href="/project-estimator"
-              className="text-sm text-primary hover:underline"
+              className="btn-gradient inline-flex items-center rounded-full px-4 py-2 text-sm"
             >
               Use Project Estimator →
             </a>
           </article>
         </div>
+        </div>
       </section>
     </SiteLayout>
   );
 }
+

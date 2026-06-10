@@ -81,20 +81,23 @@ const STACK = [
 function CapabilitiesPage() {
   return (
     <SiteLayout>
-      <section className="px-6 py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary block mb-6">
+      <section className="section-hero-dark">
+        <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
           / Capabilities
         </span>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl text-white">
           Specialist disciplines.
           <br />
           Integrated delivery.
         </h1>
-        <p className="mt-8 max-w-xl text-muted-foreground text-lg">
+        <p className="mt-8 max-w-xl text-slate-300 text-lg">
           High-performance technology capabilities and result-driven marketing
           tools designed to operate in unified alignment.
         </p>
-      </section>
+      
+        </div>
+</section>
 
       <section className="border-t border-border">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 md:divide-x divide-border">

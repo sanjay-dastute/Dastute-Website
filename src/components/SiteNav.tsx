@@ -5,19 +5,20 @@ export function SiteNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link to="/" className="font-bold tracking-tighter text-xl uppercase">
             Dastute
           </Link>
           <div className="hidden lg:flex gap-4 xl:gap-6 text-[10px] lg:text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
+
             <Link
-              to="/services"
+              to="/products"
               className="hover:text-primary transition-colors"
               activeProps={{ className: "text-primary" }}
             >
-              Services
+              Products
             </Link>
             <Link
               to="/technology"
@@ -55,6 +56,13 @@ export function SiteNav() {
               About
             </Link>
             <Link
+              to="/team"
+              className="hover:text-primary transition-colors"
+              activeProps={{ className: "text-primary" }}
+            >
+              Team
+            </Link>
+            <Link
               to="/contact"
               className="hover:text-primary transition-colors"
               activeProps={{ className: "text-primary" }}
@@ -65,7 +73,7 @@ export function SiteNav() {
         </div>
         <div className="flex items-center gap-4">
           <div className="font-mono text-[8px] sm:text-[10px] text-muted-foreground hidden sm:block">
-            COIMBATORE &bull; 11.0168° N, 76.9558° E
+            LONDON &bull; 51.5275° N, 0.0888° W
           </div>
           {/* Mobile hamburger */}
           <button
@@ -90,13 +98,14 @@ export function SiteNav() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-md max-h-[calc(100vh-64px)] overflow-y-auto">
           <div className="px-4 sm:px-6 py-4 sm:py-6 flex flex-col gap-3 sm:gap-4 text-[10px] sm:text-[11px] font-medium uppercase tracking-widest">
+
             <Link
-              to="/services"
+              to="/products"
               className="py-2 hover:text-primary transition-colors"
               activeProps={{ className: "text-primary" }}
               onClick={() => setMobileOpen(false)}
             >
-              Services
+              Products
             </Link>
             <Link
               to="/technology"

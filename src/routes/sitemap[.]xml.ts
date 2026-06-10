@@ -9,7 +9,7 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries = [
           { path: "/", priority: "1.0" },
-          { path: "/services", priority: "0.9" },
+
           { path: "/technology", priority: "0.9" },
           { path: "/marketing", priority: "0.9" },
           { path: "/process", priority: "0.8" },
@@ -20,15 +20,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/service-cloud", priority: "0.8" },
           { path: "/service-web-development", priority: "0.8" },
           { path: "/service-mobile", priority: "0.8" },
-          { path: "/service-android", priority: "0.7" },
-          { path: "/service-ios", priority: "0.7" },
           { path: "/service-blockchain", priority: "0.7" },
           { path: "/service-erp", priority: "0.7" },
           { path: "/service-network", priority: "0.7" },
           { path: "/service-custom-software", priority: "0.7" },
-          { path: "/service-staffing", priority: "0.7" },
           { path: "/service-marketing", priority: "0.7" },
-          { path: "/service-red-blue-team", priority: "0.7" },
           { path: "/capabilities", priority: "0.8" },
           { path: "/about", priority: "0.7" },
           { path: "/team", priority: "0.7" },

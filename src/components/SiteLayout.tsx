@@ -110,40 +110,7 @@ const SERVICE_FAQ_MAP: Record<
         "Most MVP mobile apps are delivered in approximately 8 to 16 weeks depending on features and integrations.",
     },
   ],
-  "/service-android": [
-    {
-      question: "Do you build native Android apps?",
-      answer:
-        "Yes. We deliver native Android applications with Kotlin and modern Android architecture patterns.",
-    },
-    {
-      question: "Can you integrate Android apps with enterprise systems?",
-      answer:
-        "Yes. We integrate with APIs, identity providers, analytics, and enterprise back-office platforms.",
-    },
-    {
-      question: "Do you support maintenance and updates?",
-      answer:
-        "Yes. We provide release management, compatibility updates, and feature enhancements.",
-    },
-  ],
-  "/service-ios": [
-    {
-      question: "Do you build native iOS apps with Swift?",
-      answer:
-        "Yes. We build native iOS apps using Swift and modern Apple frameworks for high performance and reliability.",
-    },
-    {
-      question: "Can you integrate Face ID and Apple ecosystem features?",
-      answer:
-        "Yes. We implement platform capabilities such as biometrics, notifications, and secure keychain workflows where relevant.",
-    },
-    {
-      question: "Do you handle App Store review requirements?",
-      answer:
-        "Yes. We prepare required metadata and compliance artifacts to support smooth App Store submission.",
-    },
-  ],
+
   "/service-blockchain": [
     {
       question: "What blockchain services do you provide?",
@@ -212,23 +179,7 @@ const SERVICE_FAQ_MAP: Record<
         "We use clear architecture, testing, documentation, and handover standards to ensure long-term maintainability.",
     },
   ],
-  "/service-staffing": [
-    {
-      question: "What roles can you provide?",
-      answer:
-        "We provide vetted engineers, architects, security specialists, and delivery talent for contract and permanent roles.",
-    },
-    {
-      question: "How quickly can you provide candidates?",
-      answer:
-        "Initial shortlists are typically delivered quickly after role calibration and requirement confirmation.",
-    },
-    {
-      question: "Do you support UK compliance requirements?",
-      answer:
-        "Yes. We support relevant UK hiring and contractor compliance workflows, including IR35-aligned processes where applicable.",
-    },
-  ],
+
   "/service-marketing": [
     {
       question: "What marketing channels do you cover?",
@@ -246,23 +197,6 @@ const SERVICE_FAQ_MAP: Record<
         "Yes. We support B2B and B2C programs with strategy tailored to audience, cycle length, and acquisition model.",
     },
   ],
-  "/service-red-blue-team": [
-    {
-      question: "What is the purpose of red and blue team testing?",
-      answer:
-        "It validates how effectively your organization can prevent, detect, respond to, and recover from realistic attack scenarios.",
-    },
-    {
-      question: "Do you provide actionable remediation guidance?",
-      answer:
-        "Yes. We provide prioritized remediation actions with technical detail and executive context.",
-    },
-    {
-      question: "Can we run recurring exercises?",
-      answer:
-        "Yes. Recurring exercises improve maturity over time and validate control improvements release by release.",
-    },
-  ],
 };
 
 export function SiteLayout({ children }: { children: ReactNode }) {
@@ -275,6 +209,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     <div className="site-ambient min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
       <div aria-hidden className="ambient-orb ambient-orb-a" />
       <div aria-hidden className="ambient-orb ambient-orb-b" />
+      <div aria-hidden className="ambient-orb ambient-orb-c" />
       {serviceFaqItems ? (
         <script
           type="application/ld+json"

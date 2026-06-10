@@ -9,6 +9,12 @@ import type {
   Service,
   WebPage,
   WithContext,
+  HowTo,
+  HowToStep,
+  BlogPosting,
+  Person,
+  SoftwareApplication,
+  Review,
 } from "schema-dts";
 
 const BASE_URL = "https://dastute.co.uk";
@@ -43,6 +49,19 @@ interface StandardPageHeadInput {
   keywords?: string;
   ogDescription?: string;
   ogImage?: string;
+}
+
+export interface HowToStepInput {
+  name: string;
+  text: string;
+  url?: string;
+}
+
+export interface HowToJsonLdInput {
+  name: string;
+  description: string;
+  step: HowToStepInput[];
+  totalTime?: string;
 }
 
 interface ServiceJsonLdInput {
@@ -80,6 +99,29 @@ interface WebPageJsonLdInput {
   description: string;
 }
 
+export interface BlogPostingJsonLdInput {
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName: string;
+  path: string;
+}
+
+export interface PersonJsonLdInput {
+  name: string;
+  jobTitle: string;
+  description?: string;
+  path: string;
+}
+
+export interface SoftwareAppJsonLdInput {
+  name: string;
+  description: string;
+  applicationCategory: string;
+  path: string;
+}
+
 const ORGANIZATION_SCHEMA: Organization = {
   "@type": "Organization",
   name: SITE_NAME,
@@ -114,8 +156,14 @@ export function buildStandardPageHead(input: StandardPageHeadInput) {
         content: input.ogDescription ?? input.description,
       },
       input.ogImage ? { name: "twitter:image", content: input.ogImage } : null,
-    ].filter(Boolean),
-    links: [{ rel: "canonical", href: url }],
+    ].filter((v): v is NonNullable<typeof v> => v != null),
+    links: [
+      { rel: "canonical", href: url },
+      { rel: "alternate", hrefLang: "x-default", href: url },
+      { rel: "alternate", hrefLang: "en-GB", href: url },
+      { rel: "alternate", hrefLang: "en-IN", href: url },
+      { rel: "alternate", hrefLang: "en-SG", href: url },
+    ],
   };
 }
 
@@ -282,4 +330,106 @@ export function buildJobPostingListJsonLd(
     },
     url: absoluteUrl(pagePath),
   }));
+}
+
+export function buildHowToJsonLd(
+  input: HowToJsonLdInput,
+): WithContext<HowTo> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: input.name,
+    description: input.description,
+    ...(input.totalTime ? { totalTime: input.totalTime } : {}),
+    step: input.step.map((s, idx) => ({
+      "@type": "HowToStep",
+      position: idx + 1,
+      name: s.name,
+      text: s.text,
+      ...(s.url ? { url: absoluteUrl(s.url) } : {}),
+    })),
+  };
+}
+
+export function buildBlogPostingJsonLd(
+  input: BlogPostingJsonLdInput,
+): WithContext<BlogPosting> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: input.headline,
+    description: input.description,
+    datePublished: input.datePublished,
+    dateModified: input.dateModified ?? input.datePublished,
+    author: {
+      "@type": "Person",
+      name: input.authorName,
+    },
+    publisher: ORGANIZATION_SCHEMA,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": absoluteUrl(input.path),
+    },
+    url: absoluteUrl(input.path),
+  };
+}
+
+export function buildPersonJsonLd(
+  input: PersonJsonLdInput,
+): WithContext<Person> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: input.name,
+    jobTitle: input.jobTitle,
+    ...(input.description ? { description: input.description } : {}),
+    url: absoluteUrl(input.path),
+    worksFor: ORGANIZATION_SCHEMA,
+  };
+}
+
+export function buildSoftwareAppJsonLd(
+  input: SoftwareAppJsonLdInput,
+): WithContext<SoftwareApplication> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: input.name,
+    description: input.description,
+    applicationCategory: input.applicationCategory,
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    url: absoluteUrl(input.path),
+    publisher: ORGANIZATION_SCHEMA,
+  };
+}
+export interface ReviewJsonLdInput {
+  authorName: string;
+  reviewBody: string;
+  itemReviewedName: string;
+}
+
+export function buildReviewJsonLd(input: ReviewJsonLdInput): WithContext<Review> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: input.authorName,
+    },
+    reviewBody: input.reviewBody,
+    itemReviewed: {
+      "@type": "Organization",
+      name: input.itemReviewedName,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+      bestRating: "5",
+    },
+  };
 }

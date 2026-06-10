@@ -6,22 +6,22 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       {
-        title: "About Dastute Technologies — Global IT Consulting & Solutions",
+        title: "About Dastute Technologies | Trusted Technology Partner",
       },
       {
         name: "description",
         content:
-          "Dastute Technologies was founded in 2023 to bring together the personal service of local IT providers with the power of a national network. Offices in UK, India and Singapore delivering enterprise IT solutions.",
+          "Dastute Technologies is a global IT services company serving businesses across India, Singapore, and the UK. We deliver practical IT, software, and cybersecurity services.",
       },
       {
         property: "og:title",
         content:
-          "About Dastute Technologies — Global IT Consulting & Solutions",
+          "About Dastute Technologies | Trusted Technology Partner",
       },
       {
         property: "og:description",
         content:
-          "Passionate. Respectful. Unified. Empowered. We're on a mission to simplify IT for a complex world.",
+          "We help organizations simplify operations, improve resilience, and scale with confidence through practical IT and software services.",
       },
       { property: "og:url", content: "/about" },
     ],
@@ -44,209 +44,238 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <SiteLayout>
-      {/* Hero */}
-      <section className="px-4 sm:px-6 py-16 sm:py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-primary block mb-4 sm:mb-6">
-          / About
-        </span>
-        <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-8 sm:mb-12">
-          Simplifying IT for a complex world.
-        </h1>
-        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl">
-          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-            At Dastute, we're on a mission to bring together the personal
-            service of local IT providers with the power of a national network.
-            We believe that's simpler than it sounds. Our offices offer
-            high-touch IT services that clients love, from highly experienced
-            local team members.
-          </p>
-          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-            We understand that business can be chaotic. That's where we come in.
-            We're focused on adding some much-needed balance to the mix. We
-            forge real partnerships with our clients — when you work with us,
-            you're working with a team who understands your pain points and your
-            goals.
+      {/* Hero Section */}
+      <section className="section-hero-dark">
+        <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
+            / About Us
+          </span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] max-w-5xl text-white">
+            Trusted Technology Partner for Business Growth.
+          </h1>
+          <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
+            We help organizations simplify operations, improve resilience, and scale with confidence through practical IT and software services.
           </p>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="border-y border-border">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 md:divide-x divide-border">
-          {[
-            { k: "Founded", v: "2023" },
-            { k: "Headquarters", v: "Coimbatore, India" },
-            { k: "Global Offices", v: "UK · India · SG" },
-            { k: "Entity", v: "Co. No. 17019407" },
-          ].map((s) => (
-            <div
-              key={s.k}
-              className="p-4 sm:p-8 md:p-12 border-b md:border-b-0 border-border"
-            >
-              <p className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mb-2 sm:mb-4">
-                {s.k}
-              </p>
-              <p className="text-lg sm:text-2xl font-bold tracking-tight">
-                {s.v}
+      {/* Who We Are & Mission */}
+      <section className="bg-slate-50 border-b border-border">
+        <div className="max-w-7xl mx-auto p-6 py-16 md:py-24">
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-600 block mb-4">
+                / Who We Are
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
+                Innovation Built On Reliability
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Dastute Technologies Limited is a global IT services company serving businesses across India, Singapore, and the UK. Our teams combine engineering depth with business understanding to deliver technology that works in real-world conditions.
               </p>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* The Beginning */}
-      <section className="px-4 sm:px-6 py-16 sm:py-24 max-w-7xl mx-auto">
-        <div className="flex items-end gap-4 sm:gap-6 mb-12 sm:mb-16">
-          <h2 className="text-[8px] sm:text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            The Beginning
-          </h2>
-          <div className="h-px flex-1 bg-border" />
-        </div>
-        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl">
-          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-            The Dastute journey began in 2023 when a few friends got together
-            and started planning for the future of IT Growth. What started as a
-            shared vision quickly became a global consultancy spanning three
-            continents.
-          </p>
-          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-            Today, we strategically deploy and support technology, ultimately
-            becoming your virtual CIO. That stability and long-term view carry
-            over to our services and solutions, which scale as your business
-            grows. We combine technology and business expertise with exceptional
-            care to build long-term, trusted relationships.
-          </p>
-        </div>
-      </section>
-
-      {/* Core Culture */}
-      <section className="border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-          <div className="flex items-end gap-4 sm:gap-6 mb-12 sm:mb-16">
-            <h2 className="text-[8px] sm:text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-              Our Culture
-            </h2>
-            <div className="h-px flex-1 bg-border" />
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
-            {[
-              {
-                n: "01",
-                t: "Passionate",
-                d: "We are intensely enthusiastic about providing a superior experience to every client we serve.",
-              },
-              {
-                n: "02",
-                t: "Respectful",
-                d: "We are polite and kind to one another, even when it gets tough. Mutual respect drives everything we do.",
-              },
-              {
-                n: "03",
-                t: "Ownership",
-                d: "We are empowered to do our jobs and work towards a common goal. Everyone takes responsibility for outcomes.",
-              },
-              {
-                n: "04",
-                t: "Unified",
-                d: "We work as a team and trust each other to create a seamless experience across every engagement.",
-              },
-            ].map((v) => (
-              <div key={v.n}>
-                <span className="font-mono text-[8px] sm:text-xs text-primary">
-                  {v.n}
-                </span>
-                <h4 className="font-bold text-base sm:text-lg mt-3 sm:mt-4 mb-2 sm:mb-3">
-                  {v.t}
-                </h4>
-                <p className="text-[12px] sm:text-sm text-muted-foreground leading-relaxed">
-                  {v.d}
+            <div className="space-y-6">
+              <div className="glass-card-strong p-8 rounded-3xl border border-slate-200 accent-top-blue">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Our Mission</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Enable organizations to operate smarter with secure, scalable, and cost-effective digital solutions.
                 </p>
               </div>
-            ))}
+              <div className="glass-card-strong p-8 rounded-3xl border border-slate-200 accent-top-emerald">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Our Vision</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Be the trusted long-term technology partner for businesses navigating continuous change.
+                </p>
+              </div>
+              <div className="glass-card-strong p-8 rounded-3xl border border-slate-200 accent-top-indigo">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Our Approach</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Listen first, design with purpose, and execute with accountability from discovery through support.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Client Benefits */}
-      <section className="px-4 sm:px-6 py-16 sm:py-24 max-w-7xl mx-auto">
-        <div className="flex items-end gap-4 sm:gap-6 mb-12 sm:mb-16">
-          <h2 className="text-[8px] sm:text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            Why Clients Choose Us
+      {/* Our Story */}
+      <section className="bg-white border-b border-border">
+        <div className="max-w-4xl mx-auto p-6 py-16 md:py-24 text-center">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-600 block mb-4">
+            / Our Story
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-8">
+            Our Story in Detail
           </h2>
-          <div className="h-px flex-1 bg-border" />
-        </div>
-        <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-8">
-          {[
-            { icon: "🎯", label: "Client-Oriented" },
-            { icon: "🔒", label: "Independent" },
-            { icon: "⚡", label: "Competent" },
-            { icon: "📊", label: "Results-Driven" },
-            { icon: "🛠️", label: "Problem-Solving" },
-            { icon: "👁️", label: "Transparent" },
-          ].map((b) => (
-            <div
-              key={b.label}
-              className="text-center p-6 border border-border hover:border-primary transition-colors"
-            >
-              <span className="text-2xl block mb-3">{b.icon}</span>
-              <span className="text-sm font-bold">{b.label}</span>
-            </div>
-          ))}
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed text-left">
+            <p>
+              Dastute Technologies Limited started as a small group of engineers supporting local businesses that needed reliable IT without enterprise price tags. As clients grew, so did their requirements: higher uptime expectations, stronger security controls, and global operations. Rather than staying as a small "IT shop," Dastute invested in building repeatable processes, documented playbooks, and a training pipeline to support customers at scale.
+            </p>
+            <p>
+              Today, the company supports organisations across India, Singapore, and the UK, but still operates with the responsiveness and ownership mindset of a local partner. Every new hire is trained not only on tools and platforms, but also on communication, documentation standards, and client empathy.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* 4-Phase Delivery Process */}
-      <section className="border-t border-border px-6 py-24 max-w-7xl mx-auto">
-        <div className="flex items-end gap-6 mb-16">
-          <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            Our 4-Phase Delivery Process
-          </h2>
-          <div className="h-px flex-1 bg-border" />
-        </div>
-        <div className="grid md:grid-cols-4 gap-12">
-          {[
-            {
-              n: "01",
-              t: "Discovery",
-              d: "Stakeholder interviews, infrastructure audit, risk assessment, and requirements gathering to define the real problem.",
-            },
-            {
-              n: "02",
-              t: "Architecture",
-              d: "Solution design, technology selection, roadmap creation, and resource planning to build the right blueprint.",
-            },
-            {
-              n: "03",
-              t: "Development",
-              d: "Agile sprints, continuous integration, quality assurance, and progress reporting with weekly visibility.",
-            },
-            {
-              n: "04",
-              t: "Deployment",
-              d: "Go-live execution, knowledge transfer, monitoring setup, and ongoing support for long-term success.",
-            },
-          ].map((p) => (
-            <div key={p.n}>
-              <span className="font-mono text-xs text-primary">{p.n}</span>
-              <h4 className="font-bold text-lg mt-4 mb-3">{p.t}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {p.d}
+      {/* Value Delivery */}
+      <section className="section-gradient border-b border-border">
+        <div className="max-w-7xl mx-auto p-6 py-16 md:py-24">
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-rose-600 block mb-4">
+              / Value Delivery
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
+              How We Deliver Value
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="glass-card-strong p-8 rounded-3xl border border-slate-200">
+              <i className="fas fa-bullseye text-3xl text-rose-500 mb-6"></i>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Business-First Thinking</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Technology decisions are evaluated against business impact: revenue, risk, cost, and time-to-market.
               </p>
             </div>
-          ))}
+            <div className="glass-card-strong p-8 rounded-3xl border border-slate-200">
+              <i className="fas fa-shield-check text-3xl text-emerald-500 mb-6"></i>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Security Embedded Everywhere</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                From managed IT to web development and cloud, each engagement includes a security perspective, not just functionality.
+              </p>
+            </div>
+            <div className="glass-card-strong p-8 rounded-3xl border border-slate-200">
+              <i className="fas fa-chart-line text-3xl text-blue-500 mb-6"></i>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Measurable Outcomes</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Uptime, response times, ticket volumes, deployment frequency, and incident metrics are tracked and shared with clients so value is visible, not assumed.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Global Presence */}
-      <section className="border-t border-border">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="flex items-end gap-6 mb-16">
+      {/* Global Delivery & UK Operations */}
+      <section className="bg-slate-900 text-slate-300 border-b border-border">
+        <div className="max-w-7xl mx-auto p-6 py-16 md:py-24">
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-4">
+                / Global Delivery
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+                Global Presence, Local Accountability
+              </h2>
+              <div className="space-y-6 leading-relaxed">
+                <p>
+                  Dastute operates with distributed teams but local accountability. For each client, a primary account manager and vCIO are assigned and remain consistent throughout the engagement. This avoids the common problem of constantly changing contacts and ensures continuity of context.
+                </p>
+                <p>
+                  Regional presence in India, Singapore, and the UK enables coverage across time zones and access to a broad talent pool while still providing local contact points where required.
+                </p>
+              </div>
+            </div>
+
+            <div className="glass-card-dark p-8 rounded-3xl border-t-2 border-t-blue-500">
+              <h3 className="text-2xl font-bold text-white mb-4">Our UK Market Commitment</h3>
+              <div className="space-y-4 text-sm leading-relaxed text-slate-400">
+                <p>
+                  Dastute Technologies Limited is incorporated in England and Wales under Company Number 17019407 and operates from the United Kingdom providing technology consulting, managed IT services, cybersecurity, and digital transformation to British enterprises, mid-market organisations, and public sector bodies.
+                </p>
+                <p>
+                  Our UK practice operates in full compliance with UK GDPR, the Data Protection Act 2018, the UK Cyber Essentials Plus framework, and the National Cyber Security Centre (NCSC) Cyber Assessment Framework (CAF). We are committed to supporting the UK Government's ambition to make Britain a global leader in cybersecurity and digital infrastructure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack & Standards */}
+      <section className="bg-slate-50 border-b border-border">
+        <div className="max-w-7xl mx-auto p-6 py-16 md:py-24">
+          <div className="mb-12">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-indigo-600 block mb-4">
+              / Standards
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
+              Tech Stack & Security Standards
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
+              These capabilities allow Dastute to design and deliver end-to-end solutions - from core infrastructure and security controls to user-facing applications and integrations.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-3">Core Technology Capabilities</h3>
+              <ul className="space-y-6">
+                <li>
+                  <h4 className="font-bold text-slate-900 mb-2">Cloud & Infrastructure</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">AWS, Azure, Google Cloud, Kubernetes, Docker, Terraform, Helm, CI/CD tooling.</p>
+                </li>
+                <li>
+                  <h4 className="font-bold text-slate-900 mb-2">Applications & Data</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">Node.js, Python, .NET, modern web frameworks (React, Next.js, Vue.js), mobile stacks (Swift, Kotlin, React Native, Flutter), and relational/non-relational databases.</p>
+                </li>
+                <li>
+                  <h4 className="font-bold text-slate-900 mb-2">Networking & Operations</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">Enterprise networking (Cisco, Meraki), monitoring and observability, backup and disaster recovery platforms.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div className="glass-card-strong p-8 rounded-3xl border border-slate-200 bg-white">
+              <h3 className="text-xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-3">Company-Wide Security Approach</h3>
+              <ul className="space-y-5 text-sm text-slate-600">
+                <li className="flex gap-3">
+                  <i className="fas fa-check text-emerald-500 mt-1"></i>
+                  <div>
+                    <span className="font-bold text-slate-900">Security by Design:</span> Security requirements and threat modelling are built into architecture and design discussions for every project, not bolted on later.
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <i className="fas fa-check text-emerald-500 mt-1"></i>
+                  <div>
+                    <span className="font-bold text-slate-900">Secure SDLC:</span> Coding standards, peer reviews, SAST/DAST tooling, and dependency scanning are integrated into CI/CD pipelines.
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <i className="fas fa-check text-emerald-500 mt-1"></i>
+                  <div>
+                    <span className="font-bold text-slate-900">Encryption Everywhere:</span> Strong encryption for data in transit (TLS) and at rest across databases, object storage, backups, and logs.
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <i className="fas fa-check text-emerald-500 mt-1"></i>
+                  <div>
+                    <span className="font-bold text-slate-900">Governance & Compliance:</span> Delivery practices aligned with ISO 27001, SOC 2, PCI-DSS, HIPAA, and GDPR expectations.
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <i className="fas fa-check text-emerald-500 mt-1"></i>
+                  <div>
+                    <span className="font-bold text-slate-900">Monitoring & Response:</span> Centralised logging, SIEM integration, and documented incident response procedures.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Offices Map/List */}
+      <section className="bg-white px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end gap-6 mb-12">
             <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
               We Are Global
             </h2>
             <div className="h-px flex-1 bg-border" />
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+          <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
             {[
               {
                 region: "India (HQ)",
@@ -263,26 +292,21 @@ function AboutPage() {
                 offices: ["London"],
                 phone: "+44 7423 021644",
               },
-              {
-                region: "Partners",
-                offices: ["AWS", "Google Cloud", "Microsoft", "Salesforce"],
-                phone: null,
-              },
             ].map((loc) => (
               <div
                 key={loc.region}
-                className="bg-background p-8 hover:bg-foreground hover:text-background transition-colors duration-300 group"
+                className="bg-background p-8 hover:bg-slate-50 transition-colors duration-300 group"
               >
-                <span className="font-mono text-[10px] uppercase tracking-widest text-primary group-hover:text-background/60 block mb-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-primary block mb-6">
                   {loc.region}
                 </span>
                 <ul className="space-y-2 text-sm mb-6">
                   {loc.offices.map((o) => (
                     <li key={o} className="flex items-start gap-2">
-                      <span className="font-mono text-[10px] text-primary group-hover:text-background/60 mt-1">
+                      <span className="font-mono text-[10px] text-primary mt-1">
                         →
                       </span>
-                      <span className="text-muted-foreground group-hover:text-background/70">
+                      <span className="text-slate-600 font-medium">
                         {o}
                       </span>
                     </li>
@@ -291,7 +315,7 @@ function AboutPage() {
                 {loc.phone && (
                   <a
                     href={`tel:${loc.phone.replace(/\s/g, "")}`}
-                    className="text-sm text-muted-foreground group-hover:text-background/70 font-mono"
+                    className="text-sm text-slate-500 font-mono hover:text-primary transition-colors"
                   >
                     {loc.phone}
                   </a>
