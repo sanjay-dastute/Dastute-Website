@@ -128,6 +128,7 @@ export const ORGANIZATION_SCHEMA: Organization = {
   "@type": "Organization",
   name: SITE_NAME,
   url: BASE_URL,
+  logo: `${BASE_URL}/logo.png`,
 };
 
 function absoluteUrl(path: string): string {
@@ -161,10 +162,6 @@ export function buildStandardPageHead(input: StandardPageHeadInput) {
     ].filter((v): v is NonNullable<typeof v> => v != null),
     links: [
       { rel: "canonical", href: url },
-      { rel: "alternate", hrefLang: "x-default", href: url },
-      { rel: "alternate", hrefLang: "en-GB", href: url },
-      { rel: "alternate", hrefLang: "en-IN", href: url },
-      { rel: "alternate", hrefLang: "en-SG", href: url },
     ],
   };
 }
@@ -191,6 +188,7 @@ export function buildLocalBusinessJsonLd(
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: input.name ?? SITE_NAME,
+    image: `${BASE_URL}/logo.png`,
     description: input.description,
     url: absoluteUrl(input.path),
     telephone: input.telephone,
@@ -254,7 +252,10 @@ export function buildWebSiteJsonLd(): WithContext<WebSite> {
     url: BASE_URL,
     potentialAction: {
       "@type": "SearchAction",
-      target: `${BASE_URL}/search?q={search_term_string}`,
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${BASE_URL}/search?q={search_term_string}`
+      },
       "query-input": "required name=search_term_string",
     } as SearchAction,
   };
