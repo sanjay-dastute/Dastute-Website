@@ -19,7 +19,7 @@ export const Route = createFileRoute("/capabilities")({
       },
       { property: "og:url", content: "/capabilities" },
     ],
-    links: [{ rel: "canonical", href: "/capabilities" }],
+    links: [{ rel: "canonical", href: "https://dastute.co.uk/capabilities" }],
     scripts: [
       {
         type: "application/ld+json",

@@ -19,7 +19,7 @@ export const Route = createFileRoute("/careers")({
       },
       { property: "og:url", content: "/careers" },
     ],
-    links: [{ rel: "canonical", href: "/careers" }],
+    links: [{ rel: "canonical", href: "https://dastute.co.uk/careers" }],
     scripts: [
       {
         type: "application/ld+json",

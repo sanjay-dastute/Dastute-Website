@@ -25,7 +25,7 @@ export const Route = createFileRoute("/about")({
       },
       { property: "og:url", content: "/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://dastute.co.uk/about" }],
     scripts: [
       {
         type: "application/ld+json",

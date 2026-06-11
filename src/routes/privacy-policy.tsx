@@ -17,7 +17,7 @@ export const Route = createFileRoute("/privacy-policy")({
       },
       { property: "og:url", content: "/privacy-policy" },
     ],
-    links: [{ rel: "canonical", href: "/privacy-policy" }],
+    links: [{ rel: "canonical", href: "https://dastute.co.uk/privacy-policy" }],
     scripts: [
       {
         type: "application/ld+json",

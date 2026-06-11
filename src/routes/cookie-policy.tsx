@@ -14,7 +14,7 @@ export const Route = createFileRoute("/cookie-policy")({
       { property: "og:title", content: "Cookie Policy — Dastute Technologies" },
       { property: "og:url", content: "/cookie-policy" },
     ],
-    links: [{ rel: "canonical", href: "/cookie-policy" }],
+    links: [{ rel: "canonical", href: "https://dastute.co.uk/cookie-policy" }],
     scripts: [
       {
         type: "application/ld+json",

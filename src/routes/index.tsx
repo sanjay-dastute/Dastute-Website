@@ -222,7 +222,7 @@ export const Route = createFileRoute("/")({
         content: "https://dastute.co.uk/images/og-home.jpg",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://dastute.co.uk/" }],
     scripts: [
       {
         type: "application/ld+json",

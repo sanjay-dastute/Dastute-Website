@@ -24,7 +24,7 @@ export const Route = createFileRoute("/request-audit")({
       },
       { property: "og:url", content: "/request-audit" },
     ],
-    links: [{ rel: "canonical", href: "/request-audit" }],
+    links: [{ rel: "canonical", href: "https://dastute.co.uk/request-audit" }],
     scripts: [
       {
         type: "application/ld+json",

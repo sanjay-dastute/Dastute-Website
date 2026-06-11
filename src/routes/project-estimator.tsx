@@ -24,7 +24,7 @@ export const Route = createFileRoute("/project-estimator")({
       },
       { property: "og:url", content: "/project-estimator" },
     ],
-    links: [{ rel: "canonical", href: "/project-estimator" }],
+    links: [{ rel: "canonical", href: "https://dastute.co.uk/project-estimator" }],
     scripts: [
       {
         type: "application/ld+json",
