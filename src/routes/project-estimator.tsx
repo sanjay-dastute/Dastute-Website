@@ -557,6 +557,41 @@ function ProjectEstimatorPage() {
           )}
         </div>
       </section>
+
+      {/* Estimator Process Details */}
+      <section className="bg-slate-50 py-24 px-6 dark:bg-slate-900/50 border-t border-border">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-end gap-6 mb-12">
+            <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600">
+              How the Estimation Process Works
+            </h2>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+          
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-xl font-bold mb-3">1. Requirements Review & Discovery</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                Once you submit your project brief through our estimator tool, our senior solutions architects will review your requirements. We carefully analyze your selected technology stacks, desired capabilities, and timeline constraints. If we identify any immediate technical risks or missing dependencies in your brief, we will highlight these in our initial response. This ensures that the proposal we provide is built on realistic assumptions and proven engineering practices, not just guesswork.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-bold mb-3">2. Tailored Proposal & Budget Mapping</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                Within two business days, you will receive a comprehensive proposal outline. This document will break down your requested budget tier into specific engineering sprints and deliverables. Whether you are migrating a monolithic application to a microservices architecture, launching a high-security Web3 protocol, or designing a brand identity from scratch, we provide clear resource allocation. We transparently map out exactly where your budget is being deployed across front-end development, backend infrastructure, security auditing, and project management.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold mb-3">3. Strategy Call & Scope Refinement</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                The initial estimate is designed to serve as a baseline for discussion. Following the proposal delivery, we schedule a 30-minute strategy call with our technical leads. During this consultation, we refine the project scope, discuss potential cost-saving architectural decisions, and finalize the Statement of Work (SOW). Our goal is to align our global delivery capabilities with your exact business objectives, ensuring a high-ROI engagement with absolutely zero hidden costs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </SiteLayout>
   );
 }

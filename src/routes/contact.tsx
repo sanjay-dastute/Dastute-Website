@@ -328,6 +328,45 @@ function ContactPage() {
         </div>
         </div>
       </section>
+
+      {/* Contact FAQ */}
+      <section className="bg-slate-50 py-24 px-6 dark:bg-slate-900/50">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-end gap-6 mb-12">
+            <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600">
+              Frequently Asked Questions
+            </h2>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+          
+          <div className="grid sm:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-bold text-base mb-2">How quickly do you respond to enquiries?</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                We strive to review and respond to all inbound requests within one business day. For urgent security incidents or immediate IT infrastructure failures, please state "URGENT" in your message body, and our rapid response team will prioritize your ticket.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-base mb-2">Do you provide ongoing support after a project?</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Absolutely. Transitioning a completed project into a fully managed service is a core part of our offering. We offer dedicated Service Level Agreements (SLAs), 24/7 proactive system monitoring, routine security patching, and ongoing cloud cost optimization to ensure your new technology remains robust long after the initial launch.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-base mb-2">Where are your teams located?</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Dastute Technologies operates with a global footprint. Our corporate headquarters and primary client engagement teams are based in London, United Kingdom. We also maintain extensive delivery and engineering hubs across India (Coimbatore, Chennai, Bangalore) and Singapore, allowing us to provide continuous "follow-the-sun" support for global enterprise clients.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-base mb-2">What industries do you specialize in?</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                While our technology expertise is highly transferable, we have deep, specialized experience working within highly regulated sectors. This includes Healthcare (navigating HIPAA and strict data privacy laws), FinTech (building secure financial platforms and smart contracts), and Manufacturing (deploying reliable ERP integrations and secure supply-chain networks).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </SiteLayout>
   );
 }

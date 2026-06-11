@@ -117,6 +117,33 @@ function CapabilitiesPage() {
           ))}
         </div>
       </section>
+
+      <section className="bg-slate-50 py-24 px-6 dark:bg-slate-900/50">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-end gap-6 mb-12">
+            <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600">
+              Our Methodology
+            </h2>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+          
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-xl font-bold mb-3">A Unified Approach to Enterprise Technology</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                At Dastute Technologies, we believe that isolated IT systems lead to operational inefficiencies and heightened security risks. Our capabilities are deliberately structured to provide end-to-end coverage across your entire digital infrastructure. By unifying managed IT services, cloud architecture, and proactive cyber security under one strategic vision, we eliminate the friction commonly experienced when managing multiple vendors. This integrated approach ensures that every software deployment is secure by design, and every cloud migration is optimized for long-term scalability and cost efficiency.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-bold mb-3">Senior-Led Delivery Across Global Hubs</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                Our capability matrix is powered by a globally distributed team of senior engineers and consultants operating from our headquarters in London, and our dedicated delivery centers in India and Singapore. This "follow-the-sun" model guarantees continuous 24/7 monitoring and rapid incident response. Furthermore, it allows us to deploy specialized talent precisely when and where it is needed—whether that involves architecting complex smart contracts, migrating legacy ERP systems, or running sophisticated red-team penetration tests. Our cross-functional teams collaborate seamlessly to deliver high-performance solutions tailored strictly to your business objectives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </SiteLayout>
   );
 }

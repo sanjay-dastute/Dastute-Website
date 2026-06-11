@@ -411,7 +411,7 @@ function RequestAuditPage() {
       <section className="px-6 py-24 max-w-7xl mx-auto border-t border-border">
         <div className="flex items-end gap-6 mb-16">
           <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            Our Audit Process
+            Our Detailed Audit Methodology
           </h2>
           <div className="h-px flex-1 bg-border" />
         </div>
@@ -419,23 +419,23 @@ function RequestAuditPage() {
           {[
             {
               n: "01",
-              t: "Scope",
-              d: "We review your submission and define the exact scope, timeline and deliverables within 48 hours.",
+              t: "Scoping & Discovery",
+              d: "We begin every audit with a comprehensive review of your submission. Within 48 hours, our senior architects will define the exact scope of work, timeline constraints, and deliverable format. For technical audits, this includes repository access setup and initial static analysis. For brand audits, we identify key stakeholders for interviews.",
             },
             {
               n: "02",
-              t: "Analyse",
-              d: "Senior practitioners conduct line-by-line review (technical) or stakeholder interviews and competitive mapping (brand).",
+              t: "Deep Analysis",
+              d: "Our senior practitioners execute the core assessment. For smart contracts, this involves manual line-by-line review, formal verification, fuzz testing, and architectural assessment to uncover hidden vulnerabilities. For brand audits, we conduct extensive competitive mapping, market perception analysis, and visual identity stress-testing.",
             },
             {
               n: "03",
-              t: "Report",
-              d: "A prioritised findings document with severity ratings, supporting evidence and clear remediation steps.",
+              t: "Reporting & Presentation",
+              d: "We compile our findings into a highly structured, prioritized document. Technical audits receive a severity matrix (Critical to Low) with supporting exploit evidence and precise remediation steps. Brand audits receive a strategic recommendations deck highlighting messaging gaps and market positioning opportunities.",
             },
             {
               n: "04",
-              t: "Remediate",
-              d: "Optional follow-up engagement to address findings, re-test and issue a final audit certificate.",
+              t: "Remediation & Certification",
+              d: "Post-audit, we offer an optional follow-up engagement to directly address the highlighted findings. Our engineering or creative teams can implement the necessary fixes, re-test the environment, and ultimately issue a final audit certificate or brand playbook to verify the newly secured standard.",
             },
           ].map((p) => (
             <div key={p.n}>
@@ -446,6 +446,13 @@ function RequestAuditPage() {
               </p>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-20 p-8 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-border">
+          <h3 className="font-bold text-xl mb-4">Why Request an Audit from Dastute?</h3>
+          <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+            In an era of rapid technological advancement and fierce market competition, operating on assumptions is a liability. Dastute Technologies provides enterprise-grade audits designed to eliminate blind spots. Whether you are preparing for a critical mainnet launch, seeking compliance with stringent data regulations (like ISO 27001), or planning a global rebranding campaign, our independent assessments provide the clarity required for executive decision-making. We do not just run automated tools; our audits are led by seasoned industry veterans who understand the nuanced context of your specific business environment.
+          </p>
         </div>
       </section>
     </SiteLayout>
