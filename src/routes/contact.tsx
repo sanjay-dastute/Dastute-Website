@@ -367,6 +367,48 @@ function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Global Operations Overview - SEO Text Expansion */}
+      <section className="bg-white py-24 px-6 dark:bg-slate-950 border-t border-border">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div className="flex items-end gap-6 mb-12">
+            <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600">
+              Global Operations & Support Infrastructure
+            </h2>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold mb-4">Enterprise Technology Solutions Driven by Global Expertise</h3>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              At Dastute Technologies, we understand that modern enterprises require far more than just a localized IT support desk. They require a globally integrated technology partner capable of architecting, deploying, and maintaining mission-critical infrastructure across multiple time zones. From our corporate headquarters in London to our extensive engineering hubs in India and Singapore, we provide true 24/7 "follow-the-sun" support. This means that whether you are experiencing a critical server outage at 2 AM in London or require urgent smart contract debugging before a major protocol launch in Singapore, a senior engineer is always online, alert, and ready to act.
+            </p>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+              Our unique operating model bridges the gap between high-level strategic consulting and granular technical execution. When you contact our team, you are not simply placed into a queue to speak with a tier-1 triage agent. Instead, your enquiry is immediately routed to a domain specialist. If you are reaching out regarding a complex cloud migration, your initial consultation will involve an AWS or Azure certified architect. If you are enquiring about our cybersecurity audit services, you will speak directly with a seasoned penetration tester. We believe in stripping away administrative friction so that we can immediately begin solving your core technical challenges.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold mb-4">Comprehensive Coverage Across the Technology Stack</h3>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              We provide a holistic suite of services designed to serve as an end-to-end technology partner for growing enterprises. Our Managed IT Services division handles the daily operational burden of endpoint management, server patching, proactive network monitoring, and helpdesk support, freeing your internal teams to focus on strategic growth. Concurrently, our Cloud Architecture team designs highly resilient, auto-scaling environments across AWS, Google Cloud Platform (GCP), and Microsoft Azure, ensuring that your applications remain highly available even during massive traffic spikes.
+            </p>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Security is woven into the fabric of every project we undertake. Our dedicated Cybersecurity division offers comprehensive threat modeling, rigorous penetration testing, and continuous Security Information and Event Management (SIEM) via our Security Operations Center (SOC). We regularly assist organizations in achieving stringent compliance frameworks, including ISO 27001, SOC 2, and Cyber Essentials Plus. By integrating security at the foundational level rather than treating it as an afterthought, we dramatically reduce the attack surface of our clients' networks and applications.
+            </p>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+              Furthermore, our Software Engineering and Blockchain practices build custom, high-performance applications tailored to your exact specifications. From complex Enterprise Resource Planning (ERP) integrations to decentralized finance (DeFi) protocols and smart contracts, our developers utilize modern frameworks like React, Node.js, Rust, and Solidity to deliver robust, scalable code. We pair these engineering capabilities with our Brand and Digital Marketing division, ensuring that once your product is launched, it is positioned correctly in the market, supported by compelling visual identity, 3D product rendering, and aggressive SEO and performance marketing campaigns.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold mb-4">Commitment to Excellence and Rapid Response</h3>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+              Our commitment to our clients is defined by rapid responsiveness, unwavering technical rigor, and absolute transparency. When you fill out the contact form above, you trigger an automated workflow that alerts our senior leadership team. We analyze your provided information, assess the necessary resources, and formulate an initial response strategy before we even send our first reply. We respect your time, which is why we guarantee a response within one business day, complete with actionable next steps. Whether you represent an early-stage startup looking to build a Minimum Viable Product (MVP) or an established multinational corporation seeking to overhaul its legacy infrastructure, Dastute Technologies has the experience, the talent, and the global reach to drive your digital transformation forward.
+            </p>
+          </div>
+        </div>
+      </section>
     </SiteLayout>
   );
 }
