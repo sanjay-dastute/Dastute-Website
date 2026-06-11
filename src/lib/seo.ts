@@ -420,6 +420,11 @@ export function buildSoftwareAppJsonLd(
       price: "0",
       priceCurrency: "USD",
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      ratingCount: "1",
+    },
     url: absoluteUrl(input.path),
     publisher: ORGANIZATION_SCHEMA,
   };
