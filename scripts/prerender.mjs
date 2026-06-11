@@ -40,7 +40,9 @@ const OUT_DIR = join(__dirname, "..", "dist", "client");
 
 async function prerender() {
   console.log("⏳ Loading SSR server...");
-  const server = await import(join(__dirname, "..", "dist", "server", "server.js"));
+  const serverPath = join(__dirname, "..", "dist", "server", "index.js");
+  const serverUrl = pathToFileURL(serverPath).href;
+  const server = await import(serverUrl);
   const handler = server.default;
 
   let success = 0;
