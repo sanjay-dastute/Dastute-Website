@@ -11,11 +11,6 @@ export const Route = createFileRoute("/services/network")({
         content:
           "Enterprise SD-WAN, MPLS, LAN/WAN, wireless, and 24/7 network monitoring from Dastute Technologies. Reliable, secure connectivity across UK.",
       },
-      {
-        name: "keywords",
-        content:
-          "network connectivity, SD-WAN, MPLS, LAN, WAN, wireless network, network monitoring, network security, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "GB" },

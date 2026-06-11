@@ -11,11 +11,6 @@ export const Route = createFileRoute("/services/cloud")({
         content:
           "AWS, Azure, and Google Cloud migration, management, and optimisation. Kubernetes, CI/CD, and 99.99% uptime SLAs from Dastute Technologies.",
       },
-      {
-        name: "keywords",
-        content:
-          "cloud migration UK, AWS consulting UK, Azure managed services UK, Kubernetes managed service UK, DevOps consulting UK, cloud cost optimisation, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "GB" },

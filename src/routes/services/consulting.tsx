@@ -11,11 +11,6 @@ export const Route = createFileRoute("/services/consulting")({
         content:
           "Strategic IT consulting, digital transformation advisory, and vendor selection from Dastute Technologies. Independent IT strategy across the UK.",
       },
-      {
-        name: "keywords",
-        content:
-          "IT consulting UK, virtual CIO UK, IT strategy UK, fractional CTO UK, IT due diligence UK, technology roadmap UK, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "GB" },

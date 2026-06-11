@@ -84,9 +84,7 @@ export const Route = createFileRoute("/products")({
       description:
         "Discover a secure, enterprise-grade platform with ERP, HRMS, CRM, WMS, AI Agents, and Hospitality modules built to outperform legacy systems, solve operational pain points, and adapt for future-ready growth.",
       path: "/products",
-      keywords:
-        "enterprise software platform, secure enterprise software, modular ERP software, enterprise HRMS software, privacy-focused CRM software, warehouse management software, private AI agents for business, hospitality management software, secure business operations platform, enterprise automation software, future-ready enterprise platform, software for regulated industries, integrated business management system, scalable enterprise modules, compliance-focused enterprise software",
-    }),
+      }),
     scripts: [
       {
         type: "application/ld+json",

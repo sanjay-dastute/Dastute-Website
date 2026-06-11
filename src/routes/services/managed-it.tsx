@@ -11,11 +11,6 @@ export const Route = createFileRoute("/services/managed-it")({
         content:
           "24/7 helpdesk, proactive monitoring, vCIO advisory, and guaranteed SLAs. Flat-rate managed IT from Dastute Technologies across UK, India, and Singapore.",
       },
-      {
-        name: "keywords",
-        content:
-          "managed IT services UK, IT managed service provider UK, helpdesk support UK, 24/7 IT support UK, vCIO services UK, patch management UK, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "GB" },

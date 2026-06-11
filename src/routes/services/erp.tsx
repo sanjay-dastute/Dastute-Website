@@ -11,11 +11,6 @@ export const Route = createFileRoute("/services/erp")({
         content:
           "SAP, Microsoft Dynamics, and Oracle ERP implementation from Dastute Technologies. Streamline finance, HR, supply chain, and manufacturing.",
       },
-      {
-        name: "keywords",
-        content:
-          "ERP implementation UK, SAP partner UK, Microsoft Dynamics 365 UK, ERP consultants UK, Oracle ERP UK, ERP customisation, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "GB" },

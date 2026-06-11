@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildServiceListJsonLd, buildReviewJsonLd } from "@/lib/seo";
 
 const SERVICE_SUMMARY =
-  "Dastute Technologies Limited delivers end-to-end IT consulting, managed services, cybersecurity (Red & Blue Team), cloud management, software development, digital marketing, and IT staffing solutions to ambitious businesses in the UK, India, and Singapore.";
+  "Dastute Technologies delivers enterprise IT consulting, managed services, cybersecurity, cloud, and software development to businesses in the UK and globally.";
 
 const SERVICE_ITEMS = [
   {
@@ -195,11 +195,6 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Managed IT & Software Development UK | Dastute Technologies" },
       { name: "description", content: SERVICE_SUMMARY },
-      {
-        name: "keywords",
-        content:
-          "managed IT services, cybersecurity, cloud services, web development, mobile app development, blockchain, ERP, IT consulting, digital marketing, IT staffing",
-      },
       {
         property: "og:title",
         content: "Managed IT & Software Development UK | Dastute Technologies",

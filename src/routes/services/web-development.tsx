@@ -11,11 +11,6 @@ export const Route = createFileRoute("/services/web-development")({
         content:
           "Custom web applications with React, Next.js, Node.js, and API development from Dastute Technologies. Enterprise-grade web solutions delivered on time.",
       },
-      {
-        name: "keywords",
-        content:
-          "web development, React, Next.js, Node.js, full-stack development, API development, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "GB" },

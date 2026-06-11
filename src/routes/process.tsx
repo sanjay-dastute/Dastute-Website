@@ -14,9 +14,7 @@ export const Route = createFileRoute("/process")({
       description:
         "Dastute's four-phase delivery methodology: Discovery & Planning, Architecture & Design, Development & Iteration, Deployment & Support. Predictable outcomes. Zero disruption.",
       path: "/process",
-      keywords:
-        "IT delivery process UK, software development methodology London, agile IT delivery UK, Dastute delivery process",
-    }),
+      }),
     scripts: [
       {
         type: "application/ld+json",

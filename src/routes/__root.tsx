@@ -110,11 +110,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Dastute Technologies is a global IT consultancy delivering Managed Services, Cyber Security, Cloud, Web & Mobile Development, Blockchain, ERP and IT Consulting across the UK, India and Singapore.",
         },
         { name: "author", content: "Dastute Technologies Limited" },
-        {
-          name: "keywords",
-          content:
-            "IT consulting, managed services, cyber security, cloud services, web development, mobile development, blockchain, ERP solutions, IT staffing, digital marketing, Dastute Technologies",
-        },
         { property: "og:site_name", content: "Dastute Technologies" },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },

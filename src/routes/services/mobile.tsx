@@ -14,11 +14,6 @@ export const Route = createFileRoute("/services/mobile")({
         content:
           "Cross-platform mobile app development with React Native and Flutter. One codebase, iOS and Android. Save 70% vs dual native. Dastute UK.",
       },
-      {
-        name: "keywords",
-        content:
-          "hybrid app development UK, React Native developer UK, Flutter app development UK, cross-platform mobile app UK, React Native agency UK, Flutter development UK, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "GB" },

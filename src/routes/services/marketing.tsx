@@ -11,11 +11,6 @@ export const Route = createFileRoute("/services/marketing")({
         content:
           "Data-driven digital marketing from Dastute. SEO, PPC, social media, content marketing, email automation, and full-funnel analytics. Measurable ROI across every channel.",
       },
-      {
-        name: "keywords",
-        content:
-          "digital marketing UK, SEO agency UK, PPC management, content marketing services, social media marketing UK, marketing analytics, CRO, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "theme-color", content: "#1a56db" },

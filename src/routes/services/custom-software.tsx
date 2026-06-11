@@ -11,11 +11,6 @@ export const Route = createFileRoute("/services/custom-software")({
         content:
           "Bespoke enterprise software development - SaaS platforms, process automation, legacy modernisation, and microservices. Dastute Technologies, UK.",
       },
-      {
-        name: "keywords",
-        content:
-          "custom software development, bespoke software, SaaS development, legacy modernisation, process automation, enterprise software, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "GB" },

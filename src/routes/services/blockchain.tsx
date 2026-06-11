@@ -14,11 +14,6 @@ export const Route = createFileRoute("/services/blockchain")({
         content:
           "Smart contract development, DeFi, NFT marketplaces, and security audits from Dastute Technologies. Scalable Web3 solutions for enterprise.",
       },
-      {
-        name: "keywords",
-        content:
-          "enterprise blockchain UK, supply chain blockchain UK, smart contract audit, blockchain development company UK, RWA tokenisation UK, DeFi development, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "GB" },

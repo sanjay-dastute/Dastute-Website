@@ -11,11 +11,6 @@ export const Route = createFileRoute("/services/cyber-security")({
         content:
           "VAPT, SOC monitoring, ISO 27001 compliance, and penetration testing from Dastute Technologies. Enterprise cybersecurity, 24/7 protection.",
       },
-      {
-        name: "keywords",
-        content:
-          "cybersecurity company UK, penetration testing UK, red team UK, CREST pentesting, cyber security services UK, SOC as a service UK, ISO 27001 UK, UK Cyber Essentials, Dastute Technologies",
-      },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "GB" },
