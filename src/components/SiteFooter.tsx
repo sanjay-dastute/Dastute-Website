@@ -185,7 +185,6 @@ export function SiteFooter() {
             <a href="https://github.com/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub</a>
             <a href="https://www.crunchbase.com/organization/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">Crunchbase</a>
             <a href="https://clutch.co/profile/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">Clutch</a>
-            <a href="https://www.g2.com/products/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">G2</a>
             <a href="https://www.trustpilot.com/review/dastute.co.uk" target="_blank" rel="noopener noreferrer" className="hover:text-white">Trustpilot</a>
           </div>
         </div>
