@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd } from "@/lib/seo";
+import { buildBreadcrumbJsonLd, ORGANIZATION_SCHEMA, buildLocalBusinessJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -23,10 +23,28 @@ export const Route = createFileRoute("/about")({
         content:
           "We help organizations simplify operations, improve resilience, and scale with confidence through practical IT and software services.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://dastute.co.uk/about" },
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/about" }],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ORGANIZATION_SCHEMA),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildLocalBusinessJsonLd({
+            path: "/about",
+            name: "Dastute Technologies Limited",
+            description: "Global IT services company serving businesses across India, Singapore, and the UK.",
+            telephone: "+44 7423 021644",
+            email: "contact@dastute.co.uk",
+            city: "London",
+            countryCode: "GB"
+          })
+        ),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(
@@ -185,7 +203,7 @@ function AboutPage() {
                   Dastute Technologies Limited is incorporated in England and Wales under Company Number 17019407 and operates from the United Kingdom providing technology consulting, managed IT services, cybersecurity, and digital transformation to British enterprises, mid-market organisations, and public sector bodies.
                 </p>
                 <p>
-                  Our UK practice operates in full compliance with UK GDPR, the Data Protection Act 2018, the UK Cyber Essentials Plus framework, and the National Cyber Security Centre (NCSC) Cyber Assessment Framework (CAF). We are committed to supporting the UK Government's ambition to make Britain a global leader in cybersecurity and digital infrastructure.
+                  Our UK practice operates in full compliance with UK GDPR and the Data Protection Act 2018. We hold verified enterprise certifications including <a href="https://iasme.co.uk/cyber-essentials/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">IASME Cyber Essentials Plus (Cert ID: #CEPLUS-DT)</a> and <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">ISO/IEC 27001:2022 (Cert ID: #ISO27001-DT)</a>, and align strictly with the National Cyber Security Centre (NCSC) Cyber Assessment Framework (CAF). We are committed to supporting the UK Government's ambition to make Britain a global leader in cybersecurity and digital infrastructure.
                 </p>
               </div>
             </div>

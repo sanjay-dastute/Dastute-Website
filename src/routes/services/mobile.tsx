@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services/mobile")({
     meta: [
       {
         title:
-          "Mobile App Development UK | React Native &amp; Flutter | Dastute",
+          "Mobile App Development London & UK | Dastute Technologies",
       },
       {
         name: "description",
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/services/mobile")({
       {
         property: "og:title",
         content:
-          "Hybrid App Development | React Native &amp; Flutter | Dastute Technologies",
+          "Mobile App Development London & UK | Dastute Technologies",
       },
       {
         property: "og:description",
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/services/mobile")({
       {
         name: "twitter:title",
         content:
-          "Hybrid App Development | React Native &amp; Flutter | Dastute Technologies",
+          "Mobile App Development London & UK | Dastute Technologies",
       },
       {
         name: "twitter:description",
@@ -115,7 +115,7 @@ function Page() {
             / Mobile App Development
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-5xl text-white">
-            One Codebase. Two Stores. 70% Cost Saving.
+            Mobile app development London & UK. One codebase. 70% cost saving.
             <br />
             <span className="text-gradient-primary">Ship Faster with React Native & Flutter.</span>
           </h1>

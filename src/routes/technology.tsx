@@ -7,7 +7,7 @@ import {
 } from "@/lib/seo";
 
 const technologyPageHead = buildStandardPageHead({
-  title: "Technology Services — Dastute Technologies",
+  title: "IT Services & Managed Technology Solutions UK | Dastute",
   description:
     "Managed IT Services, Cyber Security, Cloud, Web & App Development, Blockchain, ERP, Network Connectivity and IT Consulting from Dastute Technologies.",
   ogDescription:
@@ -263,7 +263,7 @@ function TechnologyPage() {
             / Technology Practice
           </span>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl text-white">
-            Infrastructure, security
+            Managed IT Services, security
             <br />
             <span className="text-gradient-primary">and software — simplified.</span>
           </h1>

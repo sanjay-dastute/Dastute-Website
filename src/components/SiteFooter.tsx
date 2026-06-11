@@ -50,6 +50,12 @@ export function SiteFooter() {
                 Products
               </Link>
               <Link
+                to="/pricing"
+                className="hover:text-white transition-colors block"
+              >
+                Pricing
+              </Link>
+              <Link
                 to="/marketing"
                 className="hover:text-white transition-colors block"
               >
@@ -87,10 +93,10 @@ export function SiteFooter() {
                 Careers
               </Link>
               <Link
-                to="/insights"
+                to="/case-studies"
                 className="hover:text-white transition-colors block"
               >
-                Insights
+                Case Studies
               </Link>
             </div>
           </div>
@@ -116,6 +122,18 @@ export function SiteFooter() {
                 className="hover:text-white transition-colors block"
               >
                 Project Estimator
+              </Link>
+              <Link
+                to="/insights"
+                className="hover:text-white transition-colors block"
+              >
+                Insights & FAQs
+              </Link>
+              <Link
+                to="/resources/glossary"
+                className="hover:text-white transition-colors block"
+              >
+                IT Glossary
               </Link>
             </div>
           </div>
@@ -157,13 +175,18 @@ export function SiteFooter() {
               Terms
             </Link>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/dastute-switcher-technologies"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white"
             >
               LinkedIn
             </a>
+            <a href="https://github.com/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub</a>
+            <a href="https://www.crunchbase.com/organization/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">Crunchbase</a>
+            <a href="https://clutch.co/profile/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">Clutch</a>
+            <a href="https://www.g2.com/products/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">G2</a>
+            <a href="https://www.trustpilot.com/review/dastute.co.uk" target="_blank" rel="noopener noreferrer" className="hover:text-white">Trustpilot</a>
           </div>
         </div>
       </div>

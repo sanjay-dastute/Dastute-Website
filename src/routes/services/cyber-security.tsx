@@ -5,11 +5,11 @@ import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/services/cyber-security")({
   head: () => ({
     meta: [
-      { title: "Cyber Security Services | Dastute Technologies Limited" },
+      { title: "Penetration Testing & Cybersecurity Services UK | Dastute" },
       {
         name: "description",
         content:
-          "VAPT, SOC monitoring, ISO 27001 compliance, and penetration testing from Dastute Technologies. Enterprise cybersecurity, 24/7 protection.",
+          "Managed SOC UK, ISO 27001 compliance services UK, Cyber Essentials certification UK, and penetration testing services for small business and enterprise.",
       },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
@@ -18,12 +18,12 @@ export const Route = createFileRoute("/services/cyber-security")({
       { name: "theme-color", content: "#1a56db" },
       {
         property: "og:title",
-        content: "Cyber Security Services | Dastute Technologies Limited",
+        content: "Penetration Testing & Cybersecurity Services UK | Dastute",
       },
       {
         property: "og:description",
         content:
-          "VAPT, SOC monitoring, ISO 27001 compliance, and penetration testing from Dastute Technologies. Enterprise cybersecurity, 24/7 protection.",
+          "Managed SOC UK, ISO 27001 compliance services UK, Cyber Essentials certification UK, and penetration testing services for small business and enterprise.",
       },
       { property: "og:type", content: "website" },
       {
@@ -39,12 +39,12 @@ export const Route = createFileRoute("/services/cyber-security")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "Cyber Security Services | Dastute Technologies Limited",
+        content: "Penetration Testing & Cybersecurity Services UK | Dastute",
       },
       {
         name: "twitter:description",
         content:
-          "VAPT, SOC monitoring, ISO 27001 compliance, and penetration testing from Dastute Technologies. Enterprise cybersecurity, 24/7 protection.",
+          "Managed SOC UK, ISO 27001 compliance services UK, Cyber Essentials certification UK, and penetration testing services for small business and enterprise.",
       },
       { name: "twitter:site", content: "@DastuteTech" },
       {
@@ -116,9 +116,9 @@ function Page() {
             / Cyber Security
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-5xl text-white">
-            Think Like an Attacker. Defend Like a Professional.
+            Cybersecurity services UK small business and enterprise.
             <br />
-            <span className="text-gradient-primary">Test Your True Security Posture.</span>
+            <span className="text-gradient-primary">Penetration testing & managed SOC UK.</span>
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
             Real security requires adversarial thinking. Dastute's Red Team operators simulate nation-state and APT tactics to find what scanners cannot. Our Blue Team analysts detect, respond, and harden — building security operations that catch real threats, not just textbook ones.

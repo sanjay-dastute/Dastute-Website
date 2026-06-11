@@ -15,6 +15,8 @@ import type {
   Person,
   SoftwareApplication,
   Review,
+  WebSite,
+  SearchAction,
 } from "schema-dts";
 
 const BASE_URL = "https://dastute.co.uk";
@@ -122,7 +124,7 @@ export interface SoftwareAppJsonLdInput {
   path: string;
 }
 
-const ORGANIZATION_SCHEMA: Organization = {
+export const ORGANIZATION_SCHEMA: Organization = {
   "@type": "Organization",
   name: SITE_NAME,
   url: BASE_URL,
@@ -241,6 +243,20 @@ export function buildWebPageJsonLd(
       url: BASE_URL,
     },
     publisher: ORGANIZATION_SCHEMA,
+  };
+}
+
+export function buildWebSiteJsonLd(): WithContext<WebSite> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: BASE_URL,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${BASE_URL}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    } as SearchAction,
   };
 }
 

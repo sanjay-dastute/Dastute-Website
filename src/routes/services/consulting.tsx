@@ -5,7 +5,7 @@ import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/services/consulting")({
   head: () => ({
     meta: [
-      { title: "IT Consulting &amp; Advisory | Dastute Technologies Limited" },
+      { title: "IT Consulting Firm London & Advisory | Dastute" },
       {
         name: "description",
         content:
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/services/consulting")({
       { name: "theme-color", content: "#1a56db" },
       {
         property: "og:title",
-        content: "IT Consulting &amp; Advisory | Dastute Technologies Limited",
+        content: "IT Consulting Firm London & Advisory | Dastute",
       },
       {
         property: "og:description",
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/services/consulting")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "IT Consulting &amp; Advisory | Dastute Technologies Limited",
+        content: "IT Consulting Firm London & Advisory | Dastute",
       },
       {
         name: "twitter:description",
@@ -110,7 +110,7 @@ function Page() {
             / IT Consulting & Advisory
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-5xl text-white">
-            Independent IT Strategy That Aligns Technology With Your Business Goals
+            IT Consulting Firm London: Independent IT Strategy
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
             Technology roadmapping, digital transformation advisory, vendor selection, and IT due diligence - delivered by senior consultants with deep industry experience. We give you independent, business-aligned advice - not vendor-biased recommendations.

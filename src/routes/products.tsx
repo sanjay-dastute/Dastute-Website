@@ -5,14 +5,15 @@ import {
   buildCollectionPageJsonLd,
   buildStandardPageHead,
   buildSoftwareAppJsonLd,
+  buildFaqJsonLd,
 } from "@/lib/seo";
 
 const MODULES = [
   {
-    name: "ERP Module",
+    name: "Dastute ERP",
     eyebrow:
       "ERP Software for Finance, Procurement, Inventory, and Supply Chain Control",
-    text: "The ERP Module is designed for organizations that need tighter control over finance, procurement, inventory, and supply-chain execution. It reduces friction caused by manual approvals, disconnected purchasing records, inconsistent stock visibility, and delayed reporting.",
+    text: "Dastute ERP is designed for organizations that need tighter control over finance, procurement, inventory, and supply-chain execution. It reduces friction caused by manual approvals, disconnected purchasing records, inconsistent stock visibility, and delayed reporting.",
     benefits: [
       "Centralized financial and procurement workflows",
       "Better inventory accuracy and supply-chain visibility",
@@ -20,10 +21,10 @@ const MODULES = [
     ],
   },
   {
-    name: "HRMS Module",
+    name: "Dastute HRMS",
     eyebrow:
       "HRMS Software for Secure Workforce Management and Payroll Integrity",
-    text: "The HRMS Module enables organizations to manage workforce operations with stronger privacy, cleaner approval flows, and better payroll governance. It is built to solve fragmented employee records, access-control weaknesses, manual compliance handling, and inconsistent audit trails.",
+    text: "Dastute HRMS enables organizations to manage workforce operations with stronger privacy, cleaner approval flows, and better payroll governance. It is built to solve fragmented employee records, access-control weaknesses, manual compliance handling, and inconsistent audit trails.",
     benefits: [
       "Centralized employee data with role-based access controls",
       "Payroll integrity and accountable approval workflows",
@@ -31,10 +32,10 @@ const MODULES = [
     ],
   },
   {
-    name: "CRM Module",
+    name: "Dastute CRM",
     eyebrow:
       "CRM Software for Customer Lifecycle Management, Consent Control, and Data Protection",
-    text: "The CRM Module helps organizations build stronger customer relationships without compromising privacy, retention governance, or operational efficiency. It addresses inconsistent lead tracking, poor handoffs, weak consent management, and scattered customer records.",
+    text: "Dastute CRM helps organizations build stronger customer relationships without compromising privacy, retention governance, or operational efficiency. It addresses inconsistent lead tracking, poor handoffs, weak consent management, and scattered customer records.",
     benefits: [
       "Unified customer records across sales and service functions",
       "Consent-aware workflows and stronger privacy management",
@@ -42,10 +43,10 @@ const MODULES = [
     ],
   },
   {
-    name: "WMS Module",
+    name: "Dastute WMS",
     eyebrow:
       "WMS Software for Warehouse Execution, Inventory Accuracy, and Fulfilment Orchestration",
-    text: "The WMS Module delivers precise warehouse control, reliable inventory movement, and scalable fulfilment operations. It improves stock accuracy, traceability, and visibility across multiple storage or fulfilment locations.",
+    text: "Dastute WMS delivers precise warehouse control, reliable inventory movement, and scalable fulfilment operations. It improves stock accuracy, traceability, and visibility across multiple storage or fulfilment locations.",
     benefits: [
       "Multi-location inventory visibility and control",
       "Traceable stock movements with auditable records",
@@ -53,10 +54,10 @@ const MODULES = [
     ],
   },
   {
-    name: "AI Agents Module",
+    name: "Dastute AI Agents",
     eyebrow:
       "Private AI Agents for Enterprise Workflow Automation and Controlled Intelligence",
-    text: "The AI Agents Module brings private, controlled AI orchestration into enterprise workflows without exposing sensitive operational data to unmanaged environments. It supports safer automation for repetitive and information-heavy tasks.",
+    text: "Dastute AI Agents bring private, controlled AI orchestration into enterprise workflows without exposing sensitive operational data to unmanaged environments. It supports safer automation for repetitive and information-heavy tasks.",
     benefits: [
       "Controlled AI usage within enterprise-defined boundaries",
       "Better governance for prompts, outputs, and access",
@@ -64,10 +65,10 @@ const MODULES = [
     ],
   },
   {
-    name: "Hospitality Module",
+    name: "Dastute Hospitality",
     eyebrow:
       "Hospitality Software for PMS, POS, Guest Profiles, and Revenue Operations",
-    text: "The Hospitality Module is designed for hotels, hospitality groups, and service-led businesses that need unified control over guest operations, transactions, and service workflows. It improves service consistency and transaction oversight.",
+    text: "Dastute Hospitality is designed for hotels, hospitality groups, and service-led businesses that need unified control over guest operations, transactions, and service workflows. It improves service consistency and transaction oversight.",
     benefits: [
       "Connected PMS and POS operations",
       "Better guest profile visibility and service coordination",
@@ -80,12 +81,18 @@ export const Route = createFileRoute("/products")({
   head: () => ({
     ...buildStandardPageHead({
       title:
-        "Enterprise ERP, HRMS, CRM, WMS, AI Agents & Hospitality Platform | Secure, Scalable Business Software",
+        "Secure, Scalable Enterprise Software Platform | Dastute",
       description:
         "Discover a secure, enterprise-grade platform with ERP, HRMS, CRM, WMS, AI Agents, and Hospitality modules built to outperform legacy systems, solve operational pain points, and adapt for future-ready growth.",
       path: "/products",
       }),
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildFaqJsonLd("/products#faq", FAQ_ITEMS)
+        ),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(
@@ -144,30 +151,24 @@ const INDUSTRY_SOLUTIONS = [
 
 const FAQ_ITEMS = [
   {
-    question:
-      "What makes this enterprise software platform different from traditional business systems?",
-    answer:
-      "This platform unifies ERP, HRMS, CRM, WMS, AI Agents, and Hospitality capabilities in a secure, modular architecture that reduces silos, improves governance, and supports future scalability.",
+    question: "What makes the Dastute Enterprise Platform different from traditional business systems?",
+    answer: "The Dastute Enterprise Platform is different because it unifies ERP, HRMS, CRM, WMS, and AI Agents into a single, natively secure ecosystem. Unlike traditional systems that rely on fragile third-party integrations, our unified architecture actively eliminates data silos, enforces consistent governance policies, and reduces total licensing costs.",
   },
   {
-    question: "Is this platform suitable for regulated industries?",
-    answer:
-      "Yes. The platform is designed for organizations that need stronger audit trails, privacy controls, policy-driven access, and traceable workflows across critical operations.",
+    question: "Is Dastute Enterprise Platform suitable for regulated industries?",
+    answer: "Yes, the Dastute Enterprise Platform is highly suitable for regulated industries like healthcare and finance. It is engineered with security-first principles, providing immutable audit trails, granular privacy controls, and policy-driven role-based access. This ensures compliance with stringent regulations like GDPR, HIPAA, and PCI-DSS while maintaining efficient operational workflows.",
   },
   {
     question: "Can businesses start with one module and expand later?",
-    answer:
-      "Yes. The modular structure allows organizations to begin with the functions they need today and expand into additional workflows as business requirements evolve.",
+    answer: "Yes, businesses can start with a single module, such as the CRM or HRMS, and seamlessly expand later. Our modular architecture allows organizations to solve immediate operational bottlenecks today, while providing a frictionless path to activate additional enterprise workflows as their technical requirements and business models evolve.",
   },
   {
-    question: "How does the platform address customer pain points?",
-    answer:
-      "It focuses on the most common enterprise software challenges, including disconnected systems, weak visibility, poor interoperability, compliance pressure, manual processes, and limited adaptability.",
+    question: "How does the Dastute platform address customer pain points?",
+    answer: "The Dastute Enterprise Platform addresses customer pain points by eliminating disconnected systems, breaking down data silos, and replacing manual compliance checks with automated governance. By providing a single source of truth across all departments, it directly resolves issues related to poor interoperability, weak operational visibility, and rigid vendor lock-in.",
   },
   {
-    question: "Is the AI Agents Module safe for enterprise use?",
-    answer:
-      "The AI Agents Module is designed for controlled, private enterprise use with stronger prompt governance, bounded data access, and support for secure workflow automation.",
+    question: "Is Dastute AI Agents safe for enterprise use?",
+    answer: "Yes, Dastute AI Agents is completely safe for enterprise use because it operates within a private, controlled environment. Unlike public generative AI tools, our module enforces strict prompt governance, utilizes bounded data access, and ensures sensitive intellectual property never leaves your organization's managed infrastructure.",
   },
 ];
 
@@ -180,11 +181,11 @@ function ProductsPage() {
             / Products
           </span>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] max-w-5xl text-white">
-            Enterprise Software Platform Built for <span className="text-gradient-primary">Security, Scale, and Future Adaptability</span>
+            Dastute Enterprise Platform Built for <span className="text-gradient-primary">Security, Scale, and Future Adaptability</span>
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
             Modern organizations need more than disconnected tools, rigid
-            workflows, and expensive legacy platforms. This enterprise platform
+            workflows, and expensive legacy platforms. The Dastute Enterprise Platform
             brings ERP, HRMS, CRM, WMS, AI Agents, and Hospitality operations into
             one secure ecosystem designed to solve today's operational pain points
             while preparing teams for tomorrow's business models.
@@ -214,7 +215,7 @@ function ProductsPage() {
           <p className="max-w-4xl text-base md:text-lg text-muted-foreground leading-relaxed">
             Most enterprises struggle with fragmented software environments,
             duplicate data, reporting delays, poor system integration, rising
-            licensing costs, and inflexible vendor roadmaps. This platform
+            licensing costs, and inflexible vendor roadmaps. The Dastute Enterprise Platform
             addresses those issues with tightly connected modules that support
             finance, workforce management, customer operations, warehousing,
             AI-led workflows, and hospitality execution from a single
@@ -225,7 +226,7 @@ function ProductsPage() {
 
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-          Why Businesses Choose This Platform Over Traditional Enterprise
+          Why Businesses Choose the Dastute Enterprise Platform Over Traditional Enterprise
           Systems
         </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -326,7 +327,7 @@ function ProductsPage() {
           Many top-tier enterprise platforms offer strong functionality, but
           customers often face high total cost of ownership, slow implementation
           cycles, vendor lock-in, excessive customization dependency, poor
-          module interoperability, and complex user experiences. This platform
+          module interoperability, and complex user experiences. The Dastute Enterprise Platform
           is built to challenge those limitations with a more connected,
           security-focused, and adaptable product strategy.
         </p>
@@ -355,14 +356,14 @@ function ProductsPage() {
           <p className="max-w-4xl text-base md:text-lg text-muted-foreground leading-relaxed">
             Enterprise software should not only solve current issues; it should
             also support future expansion, AI adoption, compliance changes, new
-            business models, and deeper automation. This platform is built with
+            business models, and deeper automation. The Dastute Enterprise Platform is built with
             that long-term view in mind, helping organizations evolve without
             being trapped by static systems.
           </p>
         </div>
       </section>
 
-      <section className="px-6 py-20 max-w-7xl mx-auto">
+      <section id="faq" className="px-6 py-20 max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
           Frequently Asked Questions
         </h2>

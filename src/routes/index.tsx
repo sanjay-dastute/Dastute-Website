@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd, buildServiceListJsonLd, buildReviewJsonLd } from "@/lib/seo";
+import { buildBreadcrumbJsonLd, buildServiceListJsonLd, buildReviewJsonLd, buildWebSiteJsonLd, buildHowToJsonLd } from "@/lib/seo";
 
 const SERVICE_SUMMARY =
-  "Dastute Technologies delivers enterprise IT consulting, managed services, cybersecurity, cloud, and software development to businesses in the UK and globally.";
+  "Dastute Technologies delivers managed IT services, advanced cybersecurity, scalable cloud solutions, and bespoke software development to ambitious UK businesses.";
 
 const SERVICE_ITEMS = [
   {
@@ -193,11 +193,11 @@ const INDUSTRIES = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Managed IT & Software Development UK | Dastute Technologies" },
+      { title: "Managed IT Services & IT Support Company London | Dastute" },
       { name: "description", content: SERVICE_SUMMARY },
       {
         property: "og:title",
-        content: "Managed IT & Software Development UK | Dastute Technologies",
+        content: "Managed IT Services & IT Support Company London | Dastute",
       },
       { property: "og:description", content: SERVICE_SUMMARY },
       { property: "og:type", content: "website" },
@@ -209,7 +209,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "Managed IT & Software Development UK | Dastute Technologies",
+        content: "Managed IT Services & IT Support Company London | Dastute",
       },
       { name: "twitter:description", content: SERVICE_SUMMARY },
       {
@@ -219,6 +219,23 @@ export const Route = createFileRoute("/")({
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/" }],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildWebSiteJsonLd()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildHowToJsonLd({
+            name: "How Dastute Delivers Managed IT Services",
+            description: "Our simple, transparent, and effective 4-step process for onboarding and managing your enterprise IT infrastructure.",
+            step: PROCESS_STEPS.map((step) => ({
+              name: step.title,
+              text: step.description,
+            })),
+          })
+        ),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(
@@ -294,7 +311,7 @@ export const Route = createFileRoute("/")({
             },
           ],
           sameAs: [
-            "https://www.linkedin.com/company/dastute-technologies",
+            "https://www.linkedin.com/company/dastute-switcher-technologies",
             "https://twitter.com/DastuteTech",
           ],
         }),
@@ -326,17 +343,18 @@ function Home() {
               </div>
               <div className="max-w-3xl space-y-6">
                 <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
-                  Technology leadership for ambitious businesses.
+                  <span className="sr-only">Managed IT Services London & UK IT Support Company. </span>
+                  Managed IT services for SMEs and ambitious businesses.
                   <br />
                   <span className="text-gradient-primary">
                     Secure, scalable, and ready to grow.
                   </span>
                 </h1>
                 <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                  We design, secure and run the infrastructure, applications,
-                  cloud environments and support layers that keep modern
-                  companies moving. Every engagement is structured around
-                  measurable outcomes, not just ticket volume.
+                  We provide expert managed IT services, advanced cybersecurity,
+                  scalable cloud solutions, and bespoke software development to
+                  keep modern companies moving. Every engagement is structured
+                  around measurable outcomes, not just ticket volume.
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
@@ -430,9 +448,11 @@ function Home() {
               {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((logo, idx) => (
                 <div
                   key={`${logo}-${idx}`}
+                  role="img"
+                  aria-label={`${logo} client logo`}
                   className="glass-card-strong rounded-2xl px-8 py-4 text-center text-sm text-slate-600 whitespace-nowrap flex items-center justify-center transition-all hover:text-primary hover:border-primary/30 min-w-[220px]"
                 >
-                  {logo}
+                  <span aria-hidden="true">{logo}</span>
                 </div>
               ))}
             </div>

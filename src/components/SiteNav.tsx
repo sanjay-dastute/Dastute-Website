@@ -21,6 +21,13 @@ export function SiteNav() {
               Products
             </Link>
             <Link
+              to="/pricing"
+              className="hover:text-primary transition-colors"
+              activeProps={{ className: "text-primary" }}
+            >
+              Pricing
+            </Link>
+            <Link
               to="/technology"
               className="hover:text-primary transition-colors"
               activeProps={{ className: "text-primary" }}
@@ -34,13 +41,7 @@ export function SiteNav() {
             >
               Marketing
             </Link>
-            <Link
-              to="/insights"
-              className="hover:text-primary transition-colors"
-              activeProps={{ className: "text-primary" }}
-            >
-              Insights
-            </Link>
+
             <Link
               to="/careers"
               className="hover:text-primary transition-colors"
@@ -108,6 +109,14 @@ export function SiteNav() {
               Products
             </Link>
             <Link
+              to="/pricing"
+              className="py-2 hover:text-primary transition-colors"
+              activeProps={{ className: "text-primary" }}
+              onClick={() => setMobileOpen(false)}
+            >
+              Pricing
+            </Link>
+            <Link
               to="/technology"
               className="py-2 hover:text-primary transition-colors"
               activeProps={{ className: "text-primary" }}
@@ -123,14 +132,7 @@ export function SiteNav() {
             >
               Marketing
             </Link>
-            <Link
-              to="/insights"
-              className="py-2 hover:text-primary transition-colors"
-              activeProps={{ className: "text-primary" }}
-              onClick={() => setMobileOpen(false)}
-            >
-              Insights
-            </Link>
+
             <Link
               to="/careers"
               className="py-2 hover:text-primary transition-colors"

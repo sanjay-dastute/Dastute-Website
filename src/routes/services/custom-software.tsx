@@ -116,7 +116,7 @@ function Page() {
             / Custom Software
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-5xl text-white">
-            Bespoke Custom Software Built Around the Way Your Business Works
+            Custom software development UK. Built around the way your business works.
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
             We provide fully customised solutions, whether extending existing products your clients currently use, or building highly bespoke software from scratch. Delivered globally by well-skilled developers across every major tech stack.

@@ -1,18 +1,81 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd, buildFaqJsonLd, buildBlogPostingJsonLd, buildStandardPageHead } from "@/lib/seo";
 import { useState } from "react";
-import { useFormSubmit } from "@/lib/useFormSubmit";
+import {
+  buildBreadcrumbJsonLd,
+  buildCollectionPageJsonLd,
+  buildFaqJsonLd,
+  buildStandardPageHead,
+} from "@/lib/seo";
+
+const FAQ_ITEMS = [
+  {
+    question: "What is included in managed IT services?",
+    answer: "Managed IT services typically include proactive network monitoring, remote helpdesk support, cybersecurity management, data backup, and strategic IT consulting. By bundling these core disciplines, managed service providers (MSPs) ensure your entire technology infrastructure remains secure, operational, and aligned with your long-term business goals.",
+  },
+  {
+    question: "How much does managed IT support cost in the UK?",
+    answer: "We offer the best pricing in the market compared to other IT companies. Because every business is unique, we calculate our pricing entirely according to your specific project requirements, timeline, and complexity, ensuring you receive enterprise-grade service without paying for features you don't need.",
+  },
+  {
+    question: "What is the difference between IT support and managed services?",
+    answer: "The difference is that IT support is reactive, fixing broken systems on a break-fix basis, whereas managed services are proactive. A managed service provider continuously monitors your network, applies security patches, and upgrades systems before problems cause operational downtime or financial loss.",
+  },
+  {
+    question: "Do small businesses need managed IT services?",
+    answer: "Yes, small businesses need managed IT services because they face the exact same cybersecurity threats as large enterprises but lack the budget for internal security teams. An MSP provides enterprise-grade protection, reliable backups, and expert IT guidance at a fraction of the cost of hiring full-time staff.",
+  },
+  {
+    question: "What are the benefits of using a managed service provider (MSP)?",
+    answer: "The primary benefits of using an MSP include predictable monthly IT costs, reduced operational downtime, enhanced cybersecurity posture, and access to a broad pool of technical specialists. This allows your internal team to focus entirely on core business growth rather than troubleshooting daily technology issues.",
+  },
+  {
+    question: "How do I choose a managed IT service provider in the UK?",
+    answer: "Choose a managed IT service provider by evaluating their average response times, industry-specific expertise, and cybersecurity certifications like Cyber Essentials Plus. You should also request transparent pricing models, ask for existing client references, and ensure their Service Level Agreement (SLA) guarantees rapid issue resolution.",
+  },
+  {
+    question: "What is co-managed IT support?",
+    answer: "Co-managed IT support is a partnership model where an external MSP collaborates alongside your existing internal IT department. The MSP typically handles time-consuming tasks like 24/7 network monitoring, patch management, and advanced cybersecurity, allowing your internal team to focus on strategic, revenue-generating technology projects.",
+  },
+  {
+    question: "Does managed IT include cybersecurity?",
+    answer: "Yes, modern managed IT services inherently include baseline cybersecurity such as antivirus, firewall management, and email filtering. However, businesses facing high-risk threats should request advanced security packages that feature Endpoint Detection and Response (EDR), 24/7 Security Operations Center (SOC) monitoring, and compliance auditing.",
+  },
+  {
+    question: "How quickly should a managed IT provider respond to issues?",
+    answer: "A premium managed IT provider should respond to critical technical issues within 15 to 30 minutes. Most industry-standard Service Level Agreements (SLAs) guarantee triage within an hour for medium priority tickets, ensuring your business operations suffer minimal disruption during unexpected outages or security incidents.",
+  },
+  {
+    question: "Can managed IT services help with cloud migration?",
+    answer: "Yes, managed IT services expertly handle cloud migration by assessing your current infrastructure, selecting the appropriate cloud environment (AWS, Azure, or Google Cloud), and safely transferring your data. Following the migration, the MSP provides continuous cloud optimization to manage costs and enforce strict access controls.",
+  }
+];
 
 export const Route = createFileRoute("/insights")({
   head: () => ({
     ...buildStandardPageHead({
-      title: "Insights & Blog — Dastute Technologies",
-      description: "Expert insights on cybersecurity, cloud computing, ERP, AI integration and IT strategy from Dastute Technologies. Case studies, industry analysis and thought leadership.",
+      title: "Technology Insights & Expert Articles | Dastute Technologies Blog",
+      description: "Expert perspectives on cloud (AWS/Azure/GCP), cybersecurity, AI, digital transformation, ERP, blockchain, and IT strategy from Dastute Technologies' practice leads.",
       path: "/insights",
-      ogDescription: "Cybersecurity analysis, cloud strategy, ERP insights, AI integration guides and IT industry thought leadership.",
+      keywords: "IT insights blog UK, technology articles London, cybersecurity blog UK, cloud computing articles, AI insights UK, digital transformation blog",
     }),
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildCollectionPageJsonLd({
+            path: "/insights",
+            name: "Technology Insights & Expert Articles",
+            description: "Expert perspectives from Dastute practice leads on cloud, cybersecurity, AI, ERP, and IT strategy.",
+          }),
+        ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildFaqJsonLd("/insights#faq", FAQ_ITEMS)
+        ),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(
@@ -22,495 +85,316 @@ export const Route = createFileRoute("/insights")({
           ]),
         ),
       },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(buildFaqJsonLd("/insights#faq", FAQ_ITEMS)),
-      },
-      ...ARTICLES.map((article) => ({
-        type: "application/ld+json",
-        children: JSON.stringify(
-          buildBlogPostingJsonLd({
-            headline: article.title,
-            description: article.excerpt,
-            datePublished: new Date(article.date).toISOString(),
-            authorName: "Dastute Technologies",
-            path: `/insights/${article.slug}`,
-          }),
-        ),
-      })),
     ],
   }),
   component: InsightsPage,
 });
 
-type Category =
-  | "All"
-  | "Cybersecurity"
-  | "IT Strategy"
-  | "Development"
-  | "Case Study";
-
-interface Article {
-  slug: string;
-  category: Exclude<Category, "All">;
-  date: string;
-  readTime: string;
-  title: string;
-  excerpt: string;
-  tags: string[];
-  featured?: boolean;
-}
-
-const ARTICLES: Article[] = [
+const ALL_ARTICLES = [
   {
-    slug: "enterprise-grade-ai-integration",
-    category: "IT Strategy",
-    date: "31 May 2025",
-    readTime: "12 min read",
-    title: "Enterprise-Grade AI Integration: From Concept to Deployment",
-    excerpt:
-      "A comprehensive guide to integrating AI solutions into enterprise workflows. From identifying use cases and selecting the right models to deployment architecture and measuring ROI across your organisation.",
-    tags: ["AI", "Enterprise", "Integration"],
-    featured: true,
-  },
-  {
-    slug: "cybersecurity-takeaways-china-breach",
-    category: "Cybersecurity",
-    date: "10 Apr 2023",
-    readTime: "8 min read",
-    title: "4 Cybersecurity Takeaways from China's Largest Data Breach",
-    excerpt:
-      "Analysing the lessons learned from one of the largest data breaches in history and what it means for your organisation's security posture, incident response planning and data governance frameworks.",
-    tags: ["Data Breach", "Security", "Governance"],
-    featured: true,
-  },
-  {
-    slug: "top-5-email-security-tips",
-    category: "Cybersecurity",
-    date: "10 Apr 2023",
-    readTime: "6 min read",
-    title: "Top 5 Tips for Solving the Email Security Problem",
-    excerpt:
-      "Email remains the primary attack vector for cyber threats. We break down the five most impactful measures your organisation can implement today to dramatically reduce email-borne risk.",
-    tags: ["Email Security", "Phishing", "Best Practices"],
-  },
-  {
-    slug: "cybersecurity-mistakes-2023",
-    category: "Cybersecurity",
-    date: "10 Apr 2023",
-    readTime: "7 min read",
-    title: "What You Shouldn't Be Doing with Your Cybersecurity in 2023",
-    excerpt:
-      "Common cybersecurity anti-patterns that leave organisations exposed. From over-reliance on perimeter defences to neglecting employee training — the mistakes costing businesses millions.",
-    tags: ["Security", "Best Practices", "Risk"],
-  },
-  {
-    slug: "startups-cutting-cloud-costs",
-    category: "IT Strategy",
-    date: "10 Apr 2023",
-    readTime: "9 min read",
-    title: "How Startups Are Cutting Cloud Costs, Renegotiating Deals",
-    excerpt:
-      "With VC funding tightening, startups are getting creative with cloud spend. Strategies for FinOps optimisation, reserved instance planning and negotiating better deals with AWS, Azure and GCP.",
-    tags: ["Cloud", "FinOps", "Startups"],
-  },
-  {
-    slug: "it-business-alignment-elements",
-    category: "IT Strategy",
-    date: "10 Apr 2023",
-    readTime: "7 min read",
-    title: "5 Impactful Elements That Promote IT and Business Alignment",
-    excerpt:
-      "Bridging the gap between IT operations and business strategy. Five proven frameworks for aligning technology investments with commercial outcomes and securing executive buy-in.",
-    tags: ["IT Strategy", "Business", "Alignment"],
-  },
-  {
-    slug: "sage-100-erp-vs-cloud",
-    category: "IT Strategy",
-    date: "7 Apr 2023",
+    title: "Azure vs AWS vs Google Cloud: Which Platform is Right for Your Business in 2026?",
+    date: "15 Jan 2026",
+    category: "CLOUD",
+    summary: "A comprehensive breakdown of the big three cloud providers. Which one offers the best cost optimization for your specific enterprise workloads?",
+    tags: ["AWS", "AZURE", "GCP"],
     readTime: "10 min read",
-    title: "Financials Face-off: Sage 100 ERP vs. Cloud",
-    excerpt:
-      "A detailed comparison of on-premise Sage 100 ERP against cloud-native alternatives. TCO analysis, migration considerations, and which path makes sense for different business scales.",
-    tags: ["ERP", "Cloud", "Sage"],
+    link: "/contact"
   },
   {
-    slug: "chatgpt-revolutionizing-information",
-    category: "IT Strategy",
-    date: "18 Mar 2023",
-    readTime: "6 min read",
-    title: "How Chat GPT is Revolutionizing the Way We Find Information",
-    excerpt:
-      "Exploring the transformative impact of large language models on information retrieval, business operations and the future of knowledge work across enterprise organisations.",
-    tags: ["AI", "ChatGPT", "Innovation"],
+    title: "Enterprise-Grade AI Integration: From Concept to Deployment",
+    date: "31 May 2025",
+    category: "IT STRATEGY",
+    summary: "A comprehensive guide to integrating AI solutions into enterprise workflows. From identifying use cases and selecting the right models to deployment architecture and measuring ROI across your organisation.",
+    tags: ["AI", "ENTERPRISE", "INTEGRATION"],
+    readTime: "12 min read"
   },
   {
-    slug: "heavy-equipment-manufacturer-solutions",
-    category: "Case Study",
+    title: "4 Cybersecurity Takeaways from China's Largest Data Breach",
     date: "10 Apr 2023",
-    readTime: "5 min read",
+    category: "CYBERSECURITY",
+    summary: "Analysing the lessons learned from one of the largest data breaches in history and what it means for your organisation's security posture, incident response planning and data governance frameworks.",
+    tags: ["DATA BREACH", "SECURITY", "GOVERNANCE"],
+    readTime: "8 min read"
+  },
+  {
+    title: "Top 5 Tips for Solving the Email Security Problem",
+    date: "10 Apr 2023",
+    category: "CYBERSECURITY",
+    summary: "Email remains the primary attack vector for cyber threats. We break down the five most impactful measures your organisation can implement today to dramatically reduce email-borne risk.",
+    tags: ["EMAIL SECURITY", "PHISHING", "BEST PRACTICES"],
+    readTime: "6 min read"
+  },
+  {
+    title: "What You Shouldn't Be Doing with Your Cybersecurity in 2023",
+    date: "10 Apr 2023",
+    category: "CYBERSECURITY",
+    summary: "Common cybersecurity anti-patterns that leave organisations exposed. From over-reliance on perimeter defences to neglecting employee training — the mistakes costing businesses millions.",
+    tags: [],
+    readTime: "7 min read"
+  },
+  {
     title: "Heavy Equipment Manufacturer Finds Concrete Solutions",
-    excerpt:
-      "How a leading manufacturing firm modernised their IT infrastructure and ERP systems, achieving significant efficiency gains and cost savings through strategic technology deployment.",
-    tags: ["Manufacturing", "ERP", "Case Study"],
-  },
-  {
-    slug: "supply-chain-management-uniwell",
-    category: "Case Study",
     date: "10 Apr 2023",
-    readTime: "5 min read",
-    title: "Healthy Supply Chain Management Positions UniWell for Growth",
-    excerpt:
-      "UniWell's journey to optimising their supply chain through intelligent automation, real-time analytics and integrated ERP systems that positioned them for sustained growth.",
-    tags: ["Supply Chain", "Healthcare", "Growth"],
-  },
-  {
-    slug: "ai-public-safety-travel-app-london",
-    category: "Case Study",
-    date: "20 Mar 2023",
-    readTime: "6 min read",
-    title: "Strategic Move to AI-supported Public Safety Travel App in London",
-    excerpt:
-      "Building an AI-powered travel safety application for London, leveraging machine learning for real-time threat assessment and route optimisation in public transportation.",
-    tags: ["AI", "Public Safety", "London"],
-  },
-  {
-    slug: "insurance-provider-big-data-migration",
-    category: "Case Study",
-    date: "20 Mar 2023",
-    readTime: "7 min read",
-    title: "Major Insurance Provider Saves $750k/month with Big Data Migration",
-    excerpt:
-      "A comprehensive case study on migrating a major insurance provider's legacy data infrastructure to the cloud, achieving $750,000 in monthly cost savings while improving performance.",
-    tags: ["Big Data", "Insurance", "Cloud Migration"],
-  },
-  {
-    slug: "next-gen-erp-dental-insurer",
-    category: "Development",
-    date: "10 Apr 2023",
-    readTime: "5 min read",
-    title:
-      "Next Generation ERP Brings Transformational Change to Dental Insurer",
-    excerpt:
-      "Implementing a next-generation ERP platform for a dental insurance provider, transforming operations from claims processing to member engagement with measurable ROI.",
-    tags: ["ERP", "Insurance", "Transformation"],
-  },
-  {
-    slug: "paysafe-intelligent-automation",
-    category: "Case Study",
-    date: "20 Mar 2023",
-    readTime: "6 min read",
-    title:
-      "Delivering Enterprise-wide Efficiencies at Paysafe via Intelligent Automation",
-    excerpt:
-      "How intelligent automation transformed Paysafe's enterprise operations, reducing manual processes, improving accuracy and enabling the team to focus on strategic initiatives.",
-    tags: ["Automation", "Fintech", "Enterprise"],
-  },
+    category: "CASE STUDY",
+    summary: "How Dastute engineered an end-to-end ERP and network transformation for a multinational heavy equipment manufacturer, generating $750k/month in operational savings.",
+    tags: ["ERP", "MANUFACTURING", "CASE STUDY"],
+    readTime: "5 min read"
+  }
 ];
 
-const CATEGORIES: Category[] = [
-  "All",
-  "Cybersecurity",
-  "IT Strategy",
-  "Development",
-  "Case Study",
-];
-
-const FAQ_ITEMS = [
-  {
-    question: "What is your average response time?",
-    answer:
-      "Our average response time is 3 minutes with 24/7 helpdesk coverage and dedicated engineers assigned to each client.",
-  },
-  {
-    question: "Do you offer services outside India?",
-    answer:
-      "Yes. We operate in India, Singapore, and the United Kingdom, serving global clients with remote and on-site capabilities.",
-  },
-  {
-    question: "What industries do you specialise in?",
-    answer:
-      "We specialise in manufacturing, logistics, healthcare, finance, fintech, non-profit, consulting, and consumer platforms.",
-  },
-  {
-    question: "How does your pricing work?",
-    answer:
-      "We offer predictable flat-rate monthly pricing with no hidden fees, plus project pricing for software and transformation engagements.",
-  },
-  {
-    question: "Can you handle both IT support and development?",
-    answer:
-      "Absolutely. We provide managed IT, cybersecurity, cloud services and custom development under one unified delivery model.",
-  },
-];
+const CATEGORIES = ["ALL", "CYBERSECURITY", "IT STRATEGY", "CLOUD", "CASE STUDY"];
 
 function InsightsPage() {
-  const { status, handleSubmit } = useFormSubmit();
-  const [active, setActive] = useState<Category>("All");
-
-  const filtered =
-    active === "All" ? ARTICLES : ARTICLES.filter((a) => a.category === active);
-  const featuredArticle = ARTICLES.find((a) => a.featured);
+  const [activeFilter, setActiveFilter] = useState("ALL");
+  
+  const filteredArticles = ALL_ARTICLES.filter(
+    (article) => activeFilter === "ALL" || article.category === activeFilter
+  );
 
   return (
     <SiteLayout>
-      {/* Hero */}
-      <section className="section-hero-dark">
-        <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
-          / Insights
-        </span>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-12">
-          Industry insights.
-          <br />
-          Expert perspectives.
-        </h1>
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl">
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            Deep-dives into cybersecurity, cloud strategy, ERP implementation,
-            AI integration and IT operations. Practical insights shaped by the
-            projects we deliver for clients every week.
-          </p>
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            From case studies demonstrating $750k/month savings to actionable
-            cybersecurity guidance — every article is written by practitioners,
-            not a marketing team.
-          </p>
+      {/* Hero Section */}
+      <section className="bg-slate-900 text-white border-b border-slate-800 relative overflow-hidden">
+        {/* Subtle background glow effect */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-3xl mix-blend-screen pointer-events-none transition-opacity duration-1000 ease-out"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 py-20 md:py-32 relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6 font-semibold">
+            / INSIGHTS
+          </span>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1] mb-12 max-w-4xl text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400">
+            Industry insights.<br/>Expert perspectives.
+          </h1>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl text-slate-300 text-lg md:text-xl leading-relaxed">
+            <p className="transition-all duration-700 delay-150">
+              Deep-dives into cybersecurity, cloud strategy, ERP implementation, AI integration and IT operations. Practical insights shaped by the projects we deliver for clients every week.
+            </p>
+            <p className="transition-all duration-700 delay-300">
+              From case studies demonstrating $750k/month savings to actionable cybersecurity guidance — every article is written by practitioners, not a marketing team.
+            </p>
+          </div>
         </div>
-      
-        </div>
-</section>
+      </section>
 
-      {/* Featured Article */}
-      {featuredArticle && (
-        <section className="section-gradient border-y border-border">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 md:divide-x divide-border">
-            <div className="p-12 group hover:bg-foreground hover:text-background transition-colors duration-500">
-              <div className="flex justify-between items-start mb-16">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-primary group-hover:text-background/60">
-                  Featured
+      {/* Featured / Split Layout */}
+      <section className="bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
+          
+          {/* Left: Featured */}
+          <div className="p-6 md:p-12 lg:p-16 group cursor-pointer transition-colors duration-500 hover:bg-white relative overflow-hidden">
+            {/* Subtle hover gradient */}
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-50/0 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <div className="relative z-10">
+              <div className="flex justify-between items-center mb-8">
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-600 font-bold group-hover:scale-105 transition-transform origin-left">
+                  FEATURED
                 </span>
-                <span className="font-mono text-[10px] text-muted-foreground group-hover:text-background/50">
-                  {featuredArticle.date}
+                <span className="font-mono text-xs text-slate-500">
+                  31 May 2025
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-                {featuredArticle.title}
+              
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-slate-900 mb-6 group-hover:text-blue-700 transition-colors duration-300">
+                Enterprise-Grade AI Integration:<br/>From Concept to Deployment
               </h2>
-              <p className="text-muted-foreground group-hover:text-background/70 mb-8 leading-relaxed">
-                {featuredArticle.excerpt}
+              
+              <p className="text-slate-600 text-lg leading-relaxed mb-10 max-w-xl group-hover:text-slate-900 transition-colors duration-300">
+                A comprehensive guide to integrating AI solutions into enterprise workflows. From identifying use cases and selecting the right models to deployment architecture and measuring ROI across your organisation.
               </p>
-              <div className="flex items-center justify-between">
-                <div className="flex flex-wrap gap-2">
-                  {featuredArticle.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="px-3 py-1 border border-current/20 rounded-full text-[10px] uppercase"
-                    >
-                      {t}
+
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="flex gap-2">
+                  {["AI", "ENTERPRISE", "INTEGRATION"].map(tag => (
+                    <span key={tag} className="px-4 py-1.5 rounded-full border border-slate-300 text-xs font-mono font-semibold text-slate-700 bg-white group-hover:border-blue-200 group-hover:shadow-sm transition-all">
+                      {tag}
                     </span>
                   ))}
                 </div>
-                <span className="font-mono text-[10px] text-muted-foreground group-hover:text-background/50">
-                  {featuredArticle.readTime}
+                <span className="font-mono text-xs text-slate-500">
+                  12 min read
                 </span>
               </div>
             </div>
-
-            <div className="p-12 flex flex-col justify-between border-t md:border-t-0 border-border">
-              <div>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground block mb-8">
-                  Latest by Category
-                </span>
-                <div className="space-y-6">
-                  {["Cybersecurity", "IT Strategy", "Case Study"].map((cat) => {
-                    const latest = ARTICLES.find((a) => a.category === cat);
-                    return latest ? (
-                      <div
-                        key={cat}
-                        className="border-b border-border pb-6 last:border-0 last:pb-0"
-                      >
-                        <span className="font-mono text-[10px] text-primary uppercase">
-                          {cat}
-                        </span>
-                        <h4 className="font-bold mt-2 mb-1">{latest.title}</h4>
-                        <span className="text-sm text-muted-foreground">
-                          {latest.date} · {latest.readTime}
-                        </span>
-                      </div>
-                    ) : null;
-                  })}
-                </div>
-              </div>
-
-              {/* Newsletter CTA */}
-              <div className="mt-12 pt-8 border-t border-border">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground block mb-4">
-                  Stay Updated
-                </span>
-                <p className="text-sm text-muted-foreground mb-4">
-                  IT strategy and cybersecurity insights, delivered to your
-                  inbox. No spam.
-                </p>
-                <form
-                  className="flex flex-col gap-2"
-                  onSubmit={handleSubmit}
-                >
-                  <div className="flex gap-2">
-                  <input
-                    type="email"
-                    placeholder="you@company.com"
-                    required
-                    className="flex-1 bg-transparent border-b border-border focus:border-primary outline-none py-2 text-sm transition-colors"
-                  />
-                  <button
-                    type="submit"
-                    disabled={status === 'submitting'}
-                    className="bg-foreground text-background px-5 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-primary transition-colors disabled:opacity-50"
-                  >
-                    {status === 'submitting' ? '...' : 'Subscribe'}
-                  </button>
-                  </div>
-                  {status === 'success' && (
-                    <div className="p-3 bg-green-500/10 border border-green-500/20 text-green-500 rounded-md text-xs mt-2">
-                      Thanks — you're on the list.
-                    </div>
-                  )}
-                  {status === 'error' && (
-                    <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-500 rounded-md text-xs mt-2">
-                      Failed to subscribe. Try again later.
-                    </div>
-                  )}
-                </form>
-              </div>
-            </div>
           </div>
-        </section>
-      )}
 
-      {/* Filter + Article Listing */}
-      <section className="px-6 py-24 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
-          <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            All Articles
-          </h3>
-          <div className="flex flex-wrap gap-3">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                className={`px-4 py-2 text-[10px] font-bold uppercase tracking-widest border transition-colors ${
-                  active === cat
-                    ? "bg-foreground text-background border-foreground"
-                    : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid gap-px bg-border">
-          {filtered.map((article) => (
-            <article
-              key={article.slug}
-              className="bg-background p-8 md:p-10 group hover:bg-foreground hover:text-background transition-colors duration-300"
-            >
-              <div className="grid md:grid-cols-[160px_1fr_200px] gap-6 md:gap-12 items-start">
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-primary group-hover:text-background/60 block mb-2">
-                    {article.category}
-                  </span>
-                  <span className="font-mono text-[10px] text-muted-foreground group-hover:text-background/50">
-                    {article.date}
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-3">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-background/70 leading-relaxed mb-4">
-                    {article.excerpt}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {article.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="px-3 py-1 border border-current/20 rounded-full text-[10px] uppercase"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex md:flex-col md:items-end justify-between md:justify-start gap-4">
-                  <span className="font-mono text-[10px] text-muted-foreground group-hover:text-background/50">
-                    {article.readTime}
-                  </span>
-                  <div className="size-10 rounded-full border border-current grid place-items-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    ↗
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="section-gradient py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="space-y-4 text-center">
-            <p className="text-sm uppercase tracking-[0.35em] text-primary">
-              FAQ
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Frequently Asked Questions
-            </h2>
-            <p className="mx-auto max-w-2xl text-base text-slate-600">
-              Quick answers to the questions prospects ask most often.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-4">
-            {FAQ_ITEMS.map((faq) => (
-              <details
-                key={faq.question}
-                className="glass-card-strong rounded-3xl p-6"
-              >
-                <summary className="cursor-pointer text-lg font-semibold text-slate-900">
-                  {faq.question}
-                </summary>
-                <p className="mt-4 text-slate-600">{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-6 pb-24 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-end">
-          <div>
-            <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Have an IT challenge you'd like us to cover?
+          {/* Right: Latest & Newsletter */}
+          <div className="p-6 md:p-12 lg:p-16 bg-slate-50/50">
+            <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold mb-8">
+              LATEST BY CATEGORY
             </h3>
-            <p className="mt-4 text-muted-foreground max-w-md">
-              We write about the problems our clients face. If there's a
-              cybersecurity, cloud or IT strategy challenge on your mind, let us
-              know.
+            
+            <div className="flex flex-col gap-6 divide-y divide-slate-200 mb-12">
+              {[
+                { cat: "CYBERSECURITY", title: "4 Cybersecurity Takeaways from China's Largest Data Breach", date: "10 Apr 2023 · 8 min read" },
+                { cat: "IT STRATEGY", title: "Enterprise-Grade AI Integration: From Concept to Deployment", date: "31 May 2025 · 12 min read" },
+                { cat: "CASE STUDY", title: "Heavy Equipment Manufacturer Finds Concrete Solutions", date: "10 Apr 2023 · 5 min read" }
+              ].map((item, idx) => (
+                <div key={idx} className={`pt-${idx === 0 ? '2' : '6'} group cursor-pointer`}>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-blue-600 block mb-2 font-bold group-hover:translate-x-1 transition-transform">{item.cat}</span>
+                  <h4 className="text-lg font-bold text-slate-900 mb-2 leading-snug group-hover:text-blue-600 transition-colors">{item.title}</h4>
+                  <p className="text-sm text-slate-500 font-mono">{item.date}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-8 border-t border-slate-200">
+              <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                STAY UPDATED
+              </h3>
+              <p className="text-sm text-slate-600 mb-6">
+                IT strategy and cybersecurity insights, delivered to your inbox. No spam.
+              </p>
+              <form className="flex border border-slate-300 rounded overflow-hidden shadow-sm focus-within:ring-2 ring-blue-500/20 focus-within:border-blue-500 transition-all" onSubmit={(e) => e.preventDefault()}>
+                <input 
+                  type="email" 
+                  placeholder="you@company.com" 
+                  className="flex-1 px-4 py-3 outline-none text-sm"
+                  required
+                />
+                <button type="submit" className="bg-slate-900 text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-blue-600 transition-colors">
+                  SUBSCRIBE
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* All Articles */}
+      <section className="bg-white border-b border-slate-200 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          
+          {/* Header & Filter */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-slate-200 pb-8 mb-12">
+            <h2 className="font-mono text-sm uppercase tracking-[0.2em] text-slate-500 font-bold">
+              ALL ARTICLES
+            </h2>
+            <div className="flex flex-wrap gap-2 md:gap-0 font-mono text-[10px] md:text-xs font-bold tracking-widest text-slate-500">
+              {CATEGORIES.map((cat) => (
+                <button 
+                  key={cat}
+                  onClick={() => setActiveFilter(cat)}
+                  className={`px-4 py-2 border transition-all duration-300 ${
+                    activeFilter === cat 
+                      ? "bg-slate-900 text-white border-slate-900 shadow-md transform -translate-y-0.5" 
+                      : "border-slate-200 hover:bg-slate-50 hover:border-slate-300"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* List */}
+          <div className="flex flex-col divide-y divide-slate-100 min-h-[500px]">
+            {filteredArticles.length === 0 ? (
+              <div className="py-20 text-center text-slate-500 animate-in fade-in duration-500">
+                No articles found for this category.
+              </div>
+            ) : (
+              filteredArticles.map((article, i) => (
+                <div 
+                  key={`${article.title}-${i}`} 
+                  className="py-12 group animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
+                  {article.link ? (
+                    <Link to={article.link} className="block group-hover:opacity-80 transition-opacity">
+                      <ArticleRow article={article} />
+                    </Link>
+                  ) : (
+                    <div className="cursor-pointer">
+                      <ArticleRow article={article} />
+                    </div>
+                  )}
+                </div>
+              ))
+            )}
+          </div>
+
+        </div>
+      </section>
+
+      {/* Knowledge Hub FAQs */}
+      <section id="faq" className="bg-slate-50 border-b border-slate-200">
+        <div className="max-w-4xl mx-auto p-6 py-20 md:py-32">
+          <div className="mb-16 text-center">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-600 block mb-4 font-bold">
+              / KNOWLEDGE HUB
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+              Managed IT Services FAQs
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Everything you need to know before partnering with a Managed Service Provider in the UK.
             </p>
           </div>
-          <div className="flex md:justify-end gap-4">
-            <Link
-              to="/contact"
-              className="btn-glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
-            >
-              Get in touch <span aria-hidden>↗</span>
-            </Link>
+
+          <div className="space-y-6">
+            {FAQ_ITEMS.map((faq, i) => (
+              <div 
+                key={i} 
+                className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-slate-300 transition-all duration-300 group"
+              >
+                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors">{faq.question}</h3>
+                <p className="text-slate-600 leading-relaxed text-base">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+      
     </SiteLayout>
+  );
+}
+
+function ArticleRow({ article }: { article: any }) {
+  return (
+    <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-start relative">
+      {/* Category / Date */}
+      <div className="md:col-span-2 flex flex-col gap-2">
+        <span className="font-mono text-[10px] uppercase tracking-widest text-blue-600 font-bold group-hover:translate-x-1 transition-transform duration-300">
+          {article.category}
+        </span>
+        <span className="font-mono text-[10px] text-slate-500">
+          {article.date}
+        </span>
+      </div>
+
+      {/* Content */}
+      <div className="md:col-span-8 flex flex-col items-start">
+        <h3 className="text-2xl font-bold text-slate-900 mb-4 leading-snug group-hover:text-blue-700 transition-colors duration-300">
+          {article.title}
+        </h3>
+        <p className="text-slate-600 leading-relaxed text-base mb-6 group-hover:text-slate-800 transition-colors">
+          {article.summary}
+        </p>
+        {article.tags && article.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {article.tags.map((tag: string) => (
+              <span key={tag} className="px-3 py-1 rounded-full border border-slate-200 text-[10px] font-mono font-semibold text-slate-600 bg-white group-hover:border-blue-200 group-hover:text-blue-700 transition-colors">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Read Time */}
+      <div className="md:col-span-2 md:text-right">
+        <span className="font-mono text-[10px] text-slate-500 flex items-center justify-end gap-2">
+          {article.readTime}
+          {/* Subtle arrow that appears on hover */}
+          <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-blue-600">
+            →
+          </span>
+        </span>
+      </div>
+    </div>
   );
 }

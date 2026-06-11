@@ -1,26 +1,31 @@
-# Dastute Technologies
+# Dastute Technologies Limited
 
-> Dastute Technologies Limited is a UK-headquartered global IT consultancy delivering managed IT, cybersecurity, cloud, software engineering, ERP, and digital marketing services.
+> Dastute Technologies Limited is a UK-headquartered global IT consultancy and managed service provider (MSP) delivering Managed IT Support, Cybersecurity, Cloud Migration, Software Engineering, ERP Implementation, and Digital Marketing services to enterprises, mid-market organisations, and public sector bodies. Dastute operates primarily in the UK, India, and Singapore.
 
 ## Canonical
+- Website: https://dastute.co.uk
 
-- https://dastute.co.uk
+## Primary Capabilities & Services
+These pages detail Dastute's core technology and service offerings.
+- [Enterprise Software Products](/products): Dastute Enterprise Platform including Dastute ERP, HRMS, CRM, WMS, and AI Agents.
+- [Managed IT Services](/services/managed-it): 24/7 proactive IT support, network monitoring, and helpdesk.
+- [Cyber Security Services](/services/cyber-security): Penetration testing, SOC, ISO 27001 readiness, and Cyber Essentials Plus compliance.
+- [Cloud Services](/services/cloud): Cloud migration, architecture, and management on AWS, Azure, and Google Cloud.
+- [Custom Software Development](/services/custom-software): Secure, scalable engineering for web and mobile.
 
-## Primary Pages
+## Knowledge & Proof
+These resources provide insights, research, and verifiable outcomes from Dastute's engagements.
+- [Case Studies](/case-studies): Quantifiable client success stories, including multi-million dollar savings and security transformations.
+- [IT Insights & FAQs](/insights): Expert answers on managed services, cloud, and cybersecurity strategy.
+- [IT Glossary](/resources/glossary): Definitions of enterprise technology terms.
+- [Technology & Standards](/technology): Our tech stack, including ISO 27001 alignment and Secure SDLC methodology.
 
-- [Home](/)
-- [Services](/services)
-- [Technology](/technology)
-- [Marketing](/marketing)
-- [Capabilities](/capabilities)
-- [About](/about)
-- [Team](/team)
-- [Insights](/insights)
-- [Careers](/careers)
-- [Contact](/contact)
+## Company & Credentials
+- [About Us](/about): Our history, mission, UK market commitment, and verifiable cybersecurity credentials (NCSC CAF, Cyber Essentials Plus).
+- [Our Team](/team): Leadership and engineering teams.
+- [Contact](/contact): General enquiries and support.
 
-## Contact
-
+## Contact Information
 - General enquiries: info@dastute.co.uk
 - Careers: info@dastute.co.uk
-- Privacy: privacy@dastute.co.uk
+- Privacy: contact@dastute.co.uk

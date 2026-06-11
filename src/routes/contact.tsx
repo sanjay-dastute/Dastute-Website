@@ -87,7 +87,7 @@ function Field({
 }
 
 function ContactPage() {
-  const { status, handleSubmit } = useFormSubmit();
+  const { status, handleSubmit, errorMessage } = useFormSubmit();
   return (
     <SiteLayout>
       {/* Hero */}
@@ -281,7 +281,7 @@ function ContactPage() {
             )}
             {status === 'error' && (
               <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-md text-sm mt-4">
-                Something went wrong. Please try again or email us directly at info@dastute.co.uk.
+                {errorMessage || "Something went wrong. Please try again or email us directly at info@dastute.co.uk."}
               </div>
             )}
           </form>

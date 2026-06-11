@@ -5,7 +5,7 @@ import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/services/managed-it")({
   head: () => ({
     meta: [
-      { title: "Managed IT Services | Dastute Technologies Limited" },
+      { title: "Managed IT Services London & UK | Dastute Technologies" },
       {
         name: "description",
         content:
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/services/managed-it")({
       { name: "theme-color", content: "#1a56db" },
       {
         property: "og:title",
-        content: "Managed IT Services | Dastute Technologies Limited",
+        content: "Managed IT Services London & UK | Dastute Technologies",
       },
       {
         property: "og:description",
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/services/managed-it")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "Managed IT Services | Dastute Technologies Limited",
+        content: "Managed IT Services London & UK | Dastute Technologies",
       },
       {
         name: "twitter:description",
@@ -110,7 +110,7 @@ function Page() {
             / Managed IT
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-5xl text-white">
-            Proactive IT Management That Keeps Your Business Running 24/7
+            Proactive Managed IT Services London & UK. We Keep Your Business Running 24/7.
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
             From helpdesk support to virtual CIO advisory - our managed IT services give you a fully staffed IT department at a predictable flat-rate cost, with an average 3-minute response time and guaranteed SLAs.

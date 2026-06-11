@@ -95,7 +95,7 @@ const TIMELINES = [
 ];
 
 function ProjectEstimatorPage() {
-  const { status, handleSubmit } = useFormSubmit();
+  const { status, handleSubmit, errorMessage } = useFormSubmit();
   const [step, setStep] = useState(1);
   const [practice, setPractice] = useState<string | null>(null);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
@@ -522,7 +522,7 @@ function ProjectEstimatorPage() {
                 )}
                 {status === 'error' && (
                   <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-md text-sm mt-4">
-                    Something went wrong. Please try again or email us directly at info@dastute.co.uk.
+                    {errorMessage || "Something went wrong. Please try again or email us directly at info@dastute.co.uk."}
                   </div>
                 )}
               </form>

@@ -18,10 +18,12 @@ import { Route as ProjectEstimatorRouteImport } from './routes/project-estimator
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as MarketingRouteImport } from './routes/marketing'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as CareersApplyRouteImport } from './routes/careers-apply'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as CapabilitiesRouteImport } from './routes/capabilities'
@@ -32,12 +34,32 @@ import { Route as ServicesNetworkRouteImport } from './routes/services/network'
 import { Route as ServicesMobileRouteImport } from './routes/services/mobile'
 import { Route as ServicesMarketingRouteImport } from './routes/services/marketing'
 import { Route as ServicesManagedItRouteImport } from './routes/services/managed-it'
+import { Route as ServicesItStaffingRouteImport } from './routes/services/it-staffing'
 import { Route as ServicesErpRouteImport } from './routes/services/erp'
 import { Route as ServicesCyberSecurityRouteImport } from './routes/services/cyber-security'
 import { Route as ServicesCustomSoftwareRouteImport } from './routes/services/custom-software'
 import { Route as ServicesConsultingRouteImport } from './routes/services/consulting'
 import { Route as ServicesCloudRouteImport } from './routes/services/cloud'
 import { Route as ServicesBlockchainRouteImport } from './routes/services/blockchain'
+import { Route as ResourcesZeroTrustArchitectureRouteImport } from './routes/resources/zero-trust-architecture'
+import { Route as ResourcesWhatIsVcioRouteImport } from './routes/resources/what-is-vcio'
+import { Route as ResourcesSocExplainedRouteImport } from './routes/resources/soc-explained'
+import { Route as ResourcesRansomwareRecoveryRouteImport } from './routes/resources/ransomware-recovery'
+import { Route as ResourcesPenetrationTestingExplainedRouteImport } from './routes/resources/penetration-testing-explained'
+import { Route as ResourcesItStaffingVsInHouseRouteImport } from './routes/resources/it-staffing-vs-in-house'
+import { Route as ResourcesIso27001ChecklistRouteImport } from './routes/resources/iso-27001-checklist'
+import { Route as ResourcesInHouseItVsManagedServicesRouteImport } from './routes/resources/in-house-it-vs-managed-services'
+import { Route as ResourcesGlossaryRouteImport } from './routes/resources/glossary'
+import { Route as ResourcesGenerativeAiEnterpriseRouteImport } from './routes/resources/generative-ai-enterprise'
+import { Route as ResourcesErpVsSapRouteImport } from './routes/resources/erp-vs-sap'
+import { Route as ResourcesCyberEssentialsGuideRouteImport } from './routes/resources/cyber-essentials-guide'
+import { Route as ResourcesCloudMigrationCostGuideRouteImport } from './routes/resources/cloud-migration-cost-guide'
+import { Route as ResourcesBlockchainSupplyChainRouteImport } from './routes/resources/blockchain-supply-chain'
+import { Route as ResourcesBcdrGuideRouteImport } from './routes/resources/bcdr-guide'
+import { Route as ResourcesAiAgentsEnterpriseGuideRouteImport } from './routes/resources/ai-agents-enterprise-guide'
+import { Route as IndustriesManufacturingRouteImport } from './routes/industries/manufacturing'
+import { Route as IndustriesHealthcareRouteImport } from './routes/industries/healthcare'
+import { Route as IndustriesFintechRouteImport } from './routes/industries/fintech'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -84,6 +106,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MarketingRoute = MarketingRouteImport.update({
   id: '/marketing',
   path: '/marketing',
@@ -102,6 +129,11 @@ const CookiePolicyRoute = CookiePolicyRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareersApplyRoute = CareersApplyRouteImport.update({
@@ -154,6 +186,11 @@ const ServicesManagedItRoute = ServicesManagedItRouteImport.update({
   path: '/services/managed-it',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesItStaffingRoute = ServicesItStaffingRouteImport.update({
+  id: '/services/it-staffing',
+  path: '/services/it-staffing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesErpRoute = ServicesErpRouteImport.update({
   id: '/services/erp',
   path: '/services/erp',
@@ -184,6 +221,112 @@ const ServicesBlockchainRoute = ServicesBlockchainRouteImport.update({
   path: '/services/blockchain',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResourcesZeroTrustArchitectureRoute =
+  ResourcesZeroTrustArchitectureRouteImport.update({
+    id: '/resources/zero-trust-architecture',
+    path: '/resources/zero-trust-architecture',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesWhatIsVcioRoute = ResourcesWhatIsVcioRouteImport.update({
+  id: '/resources/what-is-vcio',
+  path: '/resources/what-is-vcio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesSocExplainedRoute = ResourcesSocExplainedRouteImport.update({
+  id: '/resources/soc-explained',
+  path: '/resources/soc-explained',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRansomwareRecoveryRoute =
+  ResourcesRansomwareRecoveryRouteImport.update({
+    id: '/resources/ransomware-recovery',
+    path: '/resources/ransomware-recovery',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesPenetrationTestingExplainedRoute =
+  ResourcesPenetrationTestingExplainedRouteImport.update({
+    id: '/resources/penetration-testing-explained',
+    path: '/resources/penetration-testing-explained',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesItStaffingVsInHouseRoute =
+  ResourcesItStaffingVsInHouseRouteImport.update({
+    id: '/resources/it-staffing-vs-in-house',
+    path: '/resources/it-staffing-vs-in-house',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesIso27001ChecklistRoute =
+  ResourcesIso27001ChecklistRouteImport.update({
+    id: '/resources/iso-27001-checklist',
+    path: '/resources/iso-27001-checklist',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesInHouseItVsManagedServicesRoute =
+  ResourcesInHouseItVsManagedServicesRouteImport.update({
+    id: '/resources/in-house-it-vs-managed-services',
+    path: '/resources/in-house-it-vs-managed-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesGlossaryRoute = ResourcesGlossaryRouteImport.update({
+  id: '/resources/glossary',
+  path: '/resources/glossary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesGenerativeAiEnterpriseRoute =
+  ResourcesGenerativeAiEnterpriseRouteImport.update({
+    id: '/resources/generative-ai-enterprise',
+    path: '/resources/generative-ai-enterprise',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesErpVsSapRoute = ResourcesErpVsSapRouteImport.update({
+  id: '/resources/erp-vs-sap',
+  path: '/resources/erp-vs-sap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesCyberEssentialsGuideRoute =
+  ResourcesCyberEssentialsGuideRouteImport.update({
+    id: '/resources/cyber-essentials-guide',
+    path: '/resources/cyber-essentials-guide',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesCloudMigrationCostGuideRoute =
+  ResourcesCloudMigrationCostGuideRouteImport.update({
+    id: '/resources/cloud-migration-cost-guide',
+    path: '/resources/cloud-migration-cost-guide',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesBlockchainSupplyChainRoute =
+  ResourcesBlockchainSupplyChainRouteImport.update({
+    id: '/resources/blockchain-supply-chain',
+    path: '/resources/blockchain-supply-chain',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesBcdrGuideRoute = ResourcesBcdrGuideRouteImport.update({
+  id: '/resources/bcdr-guide',
+  path: '/resources/bcdr-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesAiAgentsEnterpriseGuideRoute =
+  ResourcesAiAgentsEnterpriseGuideRouteImport.update({
+    id: '/resources/ai-agents-enterprise-guide',
+    path: '/resources/ai-agents-enterprise-guide',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const IndustriesManufacturingRoute = IndustriesManufacturingRouteImport.update({
+  id: '/industries/manufacturing',
+  path: '/industries/manufacturing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesHealthcareRoute = IndustriesHealthcareRouteImport.update({
+  id: '/industries/healthcare',
+  path: '/industries/healthcare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesFintechRoute = IndustriesFintechRouteImport.update({
+  id: '/industries/fintech',
+  path: '/industries/fintech',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -191,10 +334,12 @@ export interface FileRoutesByFullPath {
   '/capabilities': typeof CapabilitiesRoute
   '/careers': typeof CareersRoute
   '/careers-apply': typeof CareersApplyRoute
+  '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
   '/insights': typeof InsightsRoute
   '/marketing': typeof MarketingRoute
+  '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/process': typeof ProcessRoute
   '/products': typeof ProductsRoute
@@ -204,12 +349,32 @@ export interface FileRoutesByFullPath {
   '/team': typeof TeamRoute
   '/technology': typeof TechnologyRoute
   '/terms': typeof TermsRoute
+  '/industries/fintech': typeof IndustriesFintechRoute
+  '/industries/healthcare': typeof IndustriesHealthcareRoute
+  '/industries/manufacturing': typeof IndustriesManufacturingRoute
+  '/resources/ai-agents-enterprise-guide': typeof ResourcesAiAgentsEnterpriseGuideRoute
+  '/resources/bcdr-guide': typeof ResourcesBcdrGuideRoute
+  '/resources/blockchain-supply-chain': typeof ResourcesBlockchainSupplyChainRoute
+  '/resources/cloud-migration-cost-guide': typeof ResourcesCloudMigrationCostGuideRoute
+  '/resources/cyber-essentials-guide': typeof ResourcesCyberEssentialsGuideRoute
+  '/resources/erp-vs-sap': typeof ResourcesErpVsSapRoute
+  '/resources/generative-ai-enterprise': typeof ResourcesGenerativeAiEnterpriseRoute
+  '/resources/glossary': typeof ResourcesGlossaryRoute
+  '/resources/in-house-it-vs-managed-services': typeof ResourcesInHouseItVsManagedServicesRoute
+  '/resources/iso-27001-checklist': typeof ResourcesIso27001ChecklistRoute
+  '/resources/it-staffing-vs-in-house': typeof ResourcesItStaffingVsInHouseRoute
+  '/resources/penetration-testing-explained': typeof ResourcesPenetrationTestingExplainedRoute
+  '/resources/ransomware-recovery': typeof ResourcesRansomwareRecoveryRoute
+  '/resources/soc-explained': typeof ResourcesSocExplainedRoute
+  '/resources/what-is-vcio': typeof ResourcesWhatIsVcioRoute
+  '/resources/zero-trust-architecture': typeof ResourcesZeroTrustArchitectureRoute
   '/services/blockchain': typeof ServicesBlockchainRoute
   '/services/cloud': typeof ServicesCloudRoute
   '/services/consulting': typeof ServicesConsultingRoute
   '/services/custom-software': typeof ServicesCustomSoftwareRoute
   '/services/cyber-security': typeof ServicesCyberSecurityRoute
   '/services/erp': typeof ServicesErpRoute
+  '/services/it-staffing': typeof ServicesItStaffingRoute
   '/services/managed-it': typeof ServicesManagedItRoute
   '/services/marketing': typeof ServicesMarketingRoute
   '/services/mobile': typeof ServicesMobileRoute
@@ -222,10 +387,12 @@ export interface FileRoutesByTo {
   '/capabilities': typeof CapabilitiesRoute
   '/careers': typeof CareersRoute
   '/careers-apply': typeof CareersApplyRoute
+  '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
   '/insights': typeof InsightsRoute
   '/marketing': typeof MarketingRoute
+  '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/process': typeof ProcessRoute
   '/products': typeof ProductsRoute
@@ -235,12 +402,32 @@ export interface FileRoutesByTo {
   '/team': typeof TeamRoute
   '/technology': typeof TechnologyRoute
   '/terms': typeof TermsRoute
+  '/industries/fintech': typeof IndustriesFintechRoute
+  '/industries/healthcare': typeof IndustriesHealthcareRoute
+  '/industries/manufacturing': typeof IndustriesManufacturingRoute
+  '/resources/ai-agents-enterprise-guide': typeof ResourcesAiAgentsEnterpriseGuideRoute
+  '/resources/bcdr-guide': typeof ResourcesBcdrGuideRoute
+  '/resources/blockchain-supply-chain': typeof ResourcesBlockchainSupplyChainRoute
+  '/resources/cloud-migration-cost-guide': typeof ResourcesCloudMigrationCostGuideRoute
+  '/resources/cyber-essentials-guide': typeof ResourcesCyberEssentialsGuideRoute
+  '/resources/erp-vs-sap': typeof ResourcesErpVsSapRoute
+  '/resources/generative-ai-enterprise': typeof ResourcesGenerativeAiEnterpriseRoute
+  '/resources/glossary': typeof ResourcesGlossaryRoute
+  '/resources/in-house-it-vs-managed-services': typeof ResourcesInHouseItVsManagedServicesRoute
+  '/resources/iso-27001-checklist': typeof ResourcesIso27001ChecklistRoute
+  '/resources/it-staffing-vs-in-house': typeof ResourcesItStaffingVsInHouseRoute
+  '/resources/penetration-testing-explained': typeof ResourcesPenetrationTestingExplainedRoute
+  '/resources/ransomware-recovery': typeof ResourcesRansomwareRecoveryRoute
+  '/resources/soc-explained': typeof ResourcesSocExplainedRoute
+  '/resources/what-is-vcio': typeof ResourcesWhatIsVcioRoute
+  '/resources/zero-trust-architecture': typeof ResourcesZeroTrustArchitectureRoute
   '/services/blockchain': typeof ServicesBlockchainRoute
   '/services/cloud': typeof ServicesCloudRoute
   '/services/consulting': typeof ServicesConsultingRoute
   '/services/custom-software': typeof ServicesCustomSoftwareRoute
   '/services/cyber-security': typeof ServicesCyberSecurityRoute
   '/services/erp': typeof ServicesErpRoute
+  '/services/it-staffing': typeof ServicesItStaffingRoute
   '/services/managed-it': typeof ServicesManagedItRoute
   '/services/marketing': typeof ServicesMarketingRoute
   '/services/mobile': typeof ServicesMobileRoute
@@ -254,10 +441,12 @@ export interface FileRoutesById {
   '/capabilities': typeof CapabilitiesRoute
   '/careers': typeof CareersRoute
   '/careers-apply': typeof CareersApplyRoute
+  '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
   '/insights': typeof InsightsRoute
   '/marketing': typeof MarketingRoute
+  '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/process': typeof ProcessRoute
   '/products': typeof ProductsRoute
@@ -267,12 +456,32 @@ export interface FileRoutesById {
   '/team': typeof TeamRoute
   '/technology': typeof TechnologyRoute
   '/terms': typeof TermsRoute
+  '/industries/fintech': typeof IndustriesFintechRoute
+  '/industries/healthcare': typeof IndustriesHealthcareRoute
+  '/industries/manufacturing': typeof IndustriesManufacturingRoute
+  '/resources/ai-agents-enterprise-guide': typeof ResourcesAiAgentsEnterpriseGuideRoute
+  '/resources/bcdr-guide': typeof ResourcesBcdrGuideRoute
+  '/resources/blockchain-supply-chain': typeof ResourcesBlockchainSupplyChainRoute
+  '/resources/cloud-migration-cost-guide': typeof ResourcesCloudMigrationCostGuideRoute
+  '/resources/cyber-essentials-guide': typeof ResourcesCyberEssentialsGuideRoute
+  '/resources/erp-vs-sap': typeof ResourcesErpVsSapRoute
+  '/resources/generative-ai-enterprise': typeof ResourcesGenerativeAiEnterpriseRoute
+  '/resources/glossary': typeof ResourcesGlossaryRoute
+  '/resources/in-house-it-vs-managed-services': typeof ResourcesInHouseItVsManagedServicesRoute
+  '/resources/iso-27001-checklist': typeof ResourcesIso27001ChecklistRoute
+  '/resources/it-staffing-vs-in-house': typeof ResourcesItStaffingVsInHouseRoute
+  '/resources/penetration-testing-explained': typeof ResourcesPenetrationTestingExplainedRoute
+  '/resources/ransomware-recovery': typeof ResourcesRansomwareRecoveryRoute
+  '/resources/soc-explained': typeof ResourcesSocExplainedRoute
+  '/resources/what-is-vcio': typeof ResourcesWhatIsVcioRoute
+  '/resources/zero-trust-architecture': typeof ResourcesZeroTrustArchitectureRoute
   '/services/blockchain': typeof ServicesBlockchainRoute
   '/services/cloud': typeof ServicesCloudRoute
   '/services/consulting': typeof ServicesConsultingRoute
   '/services/custom-software': typeof ServicesCustomSoftwareRoute
   '/services/cyber-security': typeof ServicesCyberSecurityRoute
   '/services/erp': typeof ServicesErpRoute
+  '/services/it-staffing': typeof ServicesItStaffingRoute
   '/services/managed-it': typeof ServicesManagedItRoute
   '/services/marketing': typeof ServicesMarketingRoute
   '/services/mobile': typeof ServicesMobileRoute
@@ -287,10 +496,12 @@ export interface FileRouteTypes {
     | '/capabilities'
     | '/careers'
     | '/careers-apply'
+    | '/case-studies'
     | '/contact'
     | '/cookie-policy'
     | '/insights'
     | '/marketing'
+    | '/pricing'
     | '/privacy-policy'
     | '/process'
     | '/products'
@@ -300,12 +511,32 @@ export interface FileRouteTypes {
     | '/team'
     | '/technology'
     | '/terms'
+    | '/industries/fintech'
+    | '/industries/healthcare'
+    | '/industries/manufacturing'
+    | '/resources/ai-agents-enterprise-guide'
+    | '/resources/bcdr-guide'
+    | '/resources/blockchain-supply-chain'
+    | '/resources/cloud-migration-cost-guide'
+    | '/resources/cyber-essentials-guide'
+    | '/resources/erp-vs-sap'
+    | '/resources/generative-ai-enterprise'
+    | '/resources/glossary'
+    | '/resources/in-house-it-vs-managed-services'
+    | '/resources/iso-27001-checklist'
+    | '/resources/it-staffing-vs-in-house'
+    | '/resources/penetration-testing-explained'
+    | '/resources/ransomware-recovery'
+    | '/resources/soc-explained'
+    | '/resources/what-is-vcio'
+    | '/resources/zero-trust-architecture'
     | '/services/blockchain'
     | '/services/cloud'
     | '/services/consulting'
     | '/services/custom-software'
     | '/services/cyber-security'
     | '/services/erp'
+    | '/services/it-staffing'
     | '/services/managed-it'
     | '/services/marketing'
     | '/services/mobile'
@@ -318,10 +549,12 @@ export interface FileRouteTypes {
     | '/capabilities'
     | '/careers'
     | '/careers-apply'
+    | '/case-studies'
     | '/contact'
     | '/cookie-policy'
     | '/insights'
     | '/marketing'
+    | '/pricing'
     | '/privacy-policy'
     | '/process'
     | '/products'
@@ -331,12 +564,32 @@ export interface FileRouteTypes {
     | '/team'
     | '/technology'
     | '/terms'
+    | '/industries/fintech'
+    | '/industries/healthcare'
+    | '/industries/manufacturing'
+    | '/resources/ai-agents-enterprise-guide'
+    | '/resources/bcdr-guide'
+    | '/resources/blockchain-supply-chain'
+    | '/resources/cloud-migration-cost-guide'
+    | '/resources/cyber-essentials-guide'
+    | '/resources/erp-vs-sap'
+    | '/resources/generative-ai-enterprise'
+    | '/resources/glossary'
+    | '/resources/in-house-it-vs-managed-services'
+    | '/resources/iso-27001-checklist'
+    | '/resources/it-staffing-vs-in-house'
+    | '/resources/penetration-testing-explained'
+    | '/resources/ransomware-recovery'
+    | '/resources/soc-explained'
+    | '/resources/what-is-vcio'
+    | '/resources/zero-trust-architecture'
     | '/services/blockchain'
     | '/services/cloud'
     | '/services/consulting'
     | '/services/custom-software'
     | '/services/cyber-security'
     | '/services/erp'
+    | '/services/it-staffing'
     | '/services/managed-it'
     | '/services/marketing'
     | '/services/mobile'
@@ -349,10 +602,12 @@ export interface FileRouteTypes {
     | '/capabilities'
     | '/careers'
     | '/careers-apply'
+    | '/case-studies'
     | '/contact'
     | '/cookie-policy'
     | '/insights'
     | '/marketing'
+    | '/pricing'
     | '/privacy-policy'
     | '/process'
     | '/products'
@@ -362,12 +617,32 @@ export interface FileRouteTypes {
     | '/team'
     | '/technology'
     | '/terms'
+    | '/industries/fintech'
+    | '/industries/healthcare'
+    | '/industries/manufacturing'
+    | '/resources/ai-agents-enterprise-guide'
+    | '/resources/bcdr-guide'
+    | '/resources/blockchain-supply-chain'
+    | '/resources/cloud-migration-cost-guide'
+    | '/resources/cyber-essentials-guide'
+    | '/resources/erp-vs-sap'
+    | '/resources/generative-ai-enterprise'
+    | '/resources/glossary'
+    | '/resources/in-house-it-vs-managed-services'
+    | '/resources/iso-27001-checklist'
+    | '/resources/it-staffing-vs-in-house'
+    | '/resources/penetration-testing-explained'
+    | '/resources/ransomware-recovery'
+    | '/resources/soc-explained'
+    | '/resources/what-is-vcio'
+    | '/resources/zero-trust-architecture'
     | '/services/blockchain'
     | '/services/cloud'
     | '/services/consulting'
     | '/services/custom-software'
     | '/services/cyber-security'
     | '/services/erp'
+    | '/services/it-staffing'
     | '/services/managed-it'
     | '/services/marketing'
     | '/services/mobile'
@@ -381,10 +656,12 @@ export interface RootRouteChildren {
   CapabilitiesRoute: typeof CapabilitiesRoute
   CareersRoute: typeof CareersRoute
   CareersApplyRoute: typeof CareersApplyRoute
+  CaseStudiesRoute: typeof CaseStudiesRoute
   ContactRoute: typeof ContactRoute
   CookiePolicyRoute: typeof CookiePolicyRoute
   InsightsRoute: typeof InsightsRoute
   MarketingRoute: typeof MarketingRoute
+  PricingRoute: typeof PricingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProcessRoute: typeof ProcessRoute
   ProductsRoute: typeof ProductsRoute
@@ -394,12 +671,32 @@ export interface RootRouteChildren {
   TeamRoute: typeof TeamRoute
   TechnologyRoute: typeof TechnologyRoute
   TermsRoute: typeof TermsRoute
+  IndustriesFintechRoute: typeof IndustriesFintechRoute
+  IndustriesHealthcareRoute: typeof IndustriesHealthcareRoute
+  IndustriesManufacturingRoute: typeof IndustriesManufacturingRoute
+  ResourcesAiAgentsEnterpriseGuideRoute: typeof ResourcesAiAgentsEnterpriseGuideRoute
+  ResourcesBcdrGuideRoute: typeof ResourcesBcdrGuideRoute
+  ResourcesBlockchainSupplyChainRoute: typeof ResourcesBlockchainSupplyChainRoute
+  ResourcesCloudMigrationCostGuideRoute: typeof ResourcesCloudMigrationCostGuideRoute
+  ResourcesCyberEssentialsGuideRoute: typeof ResourcesCyberEssentialsGuideRoute
+  ResourcesErpVsSapRoute: typeof ResourcesErpVsSapRoute
+  ResourcesGenerativeAiEnterpriseRoute: typeof ResourcesGenerativeAiEnterpriseRoute
+  ResourcesGlossaryRoute: typeof ResourcesGlossaryRoute
+  ResourcesInHouseItVsManagedServicesRoute: typeof ResourcesInHouseItVsManagedServicesRoute
+  ResourcesIso27001ChecklistRoute: typeof ResourcesIso27001ChecklistRoute
+  ResourcesItStaffingVsInHouseRoute: typeof ResourcesItStaffingVsInHouseRoute
+  ResourcesPenetrationTestingExplainedRoute: typeof ResourcesPenetrationTestingExplainedRoute
+  ResourcesRansomwareRecoveryRoute: typeof ResourcesRansomwareRecoveryRoute
+  ResourcesSocExplainedRoute: typeof ResourcesSocExplainedRoute
+  ResourcesWhatIsVcioRoute: typeof ResourcesWhatIsVcioRoute
+  ResourcesZeroTrustArchitectureRoute: typeof ResourcesZeroTrustArchitectureRoute
   ServicesBlockchainRoute: typeof ServicesBlockchainRoute
   ServicesCloudRoute: typeof ServicesCloudRoute
   ServicesConsultingRoute: typeof ServicesConsultingRoute
   ServicesCustomSoftwareRoute: typeof ServicesCustomSoftwareRoute
   ServicesCyberSecurityRoute: typeof ServicesCyberSecurityRoute
   ServicesErpRoute: typeof ServicesErpRoute
+  ServicesItStaffingRoute: typeof ServicesItStaffingRoute
   ServicesManagedItRoute: typeof ServicesManagedItRoute
   ServicesMarketingRoute: typeof ServicesMarketingRoute
   ServicesMobileRoute: typeof ServicesMobileRoute
@@ -472,6 +769,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/marketing': {
       id: '/marketing'
       path: '/marketing'
@@ -498,6 +802,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers-apply': {
@@ -570,6 +881,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesManagedItRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/it-staffing': {
+      id: '/services/it-staffing'
+      path: '/services/it-staffing'
+      fullPath: '/services/it-staffing'
+      preLoaderRoute: typeof ServicesItStaffingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/erp': {
       id: '/services/erp'
       path: '/services/erp'
@@ -612,6 +930,139 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesBlockchainRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/resources/zero-trust-architecture': {
+      id: '/resources/zero-trust-architecture'
+      path: '/resources/zero-trust-architecture'
+      fullPath: '/resources/zero-trust-architecture'
+      preLoaderRoute: typeof ResourcesZeroTrustArchitectureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/what-is-vcio': {
+      id: '/resources/what-is-vcio'
+      path: '/resources/what-is-vcio'
+      fullPath: '/resources/what-is-vcio'
+      preLoaderRoute: typeof ResourcesWhatIsVcioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/soc-explained': {
+      id: '/resources/soc-explained'
+      path: '/resources/soc-explained'
+      fullPath: '/resources/soc-explained'
+      preLoaderRoute: typeof ResourcesSocExplainedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/ransomware-recovery': {
+      id: '/resources/ransomware-recovery'
+      path: '/resources/ransomware-recovery'
+      fullPath: '/resources/ransomware-recovery'
+      preLoaderRoute: typeof ResourcesRansomwareRecoveryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/penetration-testing-explained': {
+      id: '/resources/penetration-testing-explained'
+      path: '/resources/penetration-testing-explained'
+      fullPath: '/resources/penetration-testing-explained'
+      preLoaderRoute: typeof ResourcesPenetrationTestingExplainedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/it-staffing-vs-in-house': {
+      id: '/resources/it-staffing-vs-in-house'
+      path: '/resources/it-staffing-vs-in-house'
+      fullPath: '/resources/it-staffing-vs-in-house'
+      preLoaderRoute: typeof ResourcesItStaffingVsInHouseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/iso-27001-checklist': {
+      id: '/resources/iso-27001-checklist'
+      path: '/resources/iso-27001-checklist'
+      fullPath: '/resources/iso-27001-checklist'
+      preLoaderRoute: typeof ResourcesIso27001ChecklistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/in-house-it-vs-managed-services': {
+      id: '/resources/in-house-it-vs-managed-services'
+      path: '/resources/in-house-it-vs-managed-services'
+      fullPath: '/resources/in-house-it-vs-managed-services'
+      preLoaderRoute: typeof ResourcesInHouseItVsManagedServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/glossary': {
+      id: '/resources/glossary'
+      path: '/resources/glossary'
+      fullPath: '/resources/glossary'
+      preLoaderRoute: typeof ResourcesGlossaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/generative-ai-enterprise': {
+      id: '/resources/generative-ai-enterprise'
+      path: '/resources/generative-ai-enterprise'
+      fullPath: '/resources/generative-ai-enterprise'
+      preLoaderRoute: typeof ResourcesGenerativeAiEnterpriseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/erp-vs-sap': {
+      id: '/resources/erp-vs-sap'
+      path: '/resources/erp-vs-sap'
+      fullPath: '/resources/erp-vs-sap'
+      preLoaderRoute: typeof ResourcesErpVsSapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/cyber-essentials-guide': {
+      id: '/resources/cyber-essentials-guide'
+      path: '/resources/cyber-essentials-guide'
+      fullPath: '/resources/cyber-essentials-guide'
+      preLoaderRoute: typeof ResourcesCyberEssentialsGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/cloud-migration-cost-guide': {
+      id: '/resources/cloud-migration-cost-guide'
+      path: '/resources/cloud-migration-cost-guide'
+      fullPath: '/resources/cloud-migration-cost-guide'
+      preLoaderRoute: typeof ResourcesCloudMigrationCostGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/blockchain-supply-chain': {
+      id: '/resources/blockchain-supply-chain'
+      path: '/resources/blockchain-supply-chain'
+      fullPath: '/resources/blockchain-supply-chain'
+      preLoaderRoute: typeof ResourcesBlockchainSupplyChainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/bcdr-guide': {
+      id: '/resources/bcdr-guide'
+      path: '/resources/bcdr-guide'
+      fullPath: '/resources/bcdr-guide'
+      preLoaderRoute: typeof ResourcesBcdrGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/ai-agents-enterprise-guide': {
+      id: '/resources/ai-agents-enterprise-guide'
+      path: '/resources/ai-agents-enterprise-guide'
+      fullPath: '/resources/ai-agents-enterprise-guide'
+      preLoaderRoute: typeof ResourcesAiAgentsEnterpriseGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/manufacturing': {
+      id: '/industries/manufacturing'
+      path: '/industries/manufacturing'
+      fullPath: '/industries/manufacturing'
+      preLoaderRoute: typeof IndustriesManufacturingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/healthcare': {
+      id: '/industries/healthcare'
+      path: '/industries/healthcare'
+      fullPath: '/industries/healthcare'
+      preLoaderRoute: typeof IndustriesHealthcareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/fintech': {
+      id: '/industries/fintech'
+      path: '/industries/fintech'
+      fullPath: '/industries/fintech'
+      preLoaderRoute: typeof IndustriesFintechRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -621,10 +1072,12 @@ const rootRouteChildren: RootRouteChildren = {
   CapabilitiesRoute: CapabilitiesRoute,
   CareersRoute: CareersRoute,
   CareersApplyRoute: CareersApplyRoute,
+  CaseStudiesRoute: CaseStudiesRoute,
   ContactRoute: ContactRoute,
   CookiePolicyRoute: CookiePolicyRoute,
   InsightsRoute: InsightsRoute,
   MarketingRoute: MarketingRoute,
+  PricingRoute: PricingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProcessRoute: ProcessRoute,
   ProductsRoute: ProductsRoute,
@@ -634,12 +1087,34 @@ const rootRouteChildren: RootRouteChildren = {
   TeamRoute: TeamRoute,
   TechnologyRoute: TechnologyRoute,
   TermsRoute: TermsRoute,
+  IndustriesFintechRoute: IndustriesFintechRoute,
+  IndustriesHealthcareRoute: IndustriesHealthcareRoute,
+  IndustriesManufacturingRoute: IndustriesManufacturingRoute,
+  ResourcesAiAgentsEnterpriseGuideRoute: ResourcesAiAgentsEnterpriseGuideRoute,
+  ResourcesBcdrGuideRoute: ResourcesBcdrGuideRoute,
+  ResourcesBlockchainSupplyChainRoute: ResourcesBlockchainSupplyChainRoute,
+  ResourcesCloudMigrationCostGuideRoute: ResourcesCloudMigrationCostGuideRoute,
+  ResourcesCyberEssentialsGuideRoute: ResourcesCyberEssentialsGuideRoute,
+  ResourcesErpVsSapRoute: ResourcesErpVsSapRoute,
+  ResourcesGenerativeAiEnterpriseRoute: ResourcesGenerativeAiEnterpriseRoute,
+  ResourcesGlossaryRoute: ResourcesGlossaryRoute,
+  ResourcesInHouseItVsManagedServicesRoute:
+    ResourcesInHouseItVsManagedServicesRoute,
+  ResourcesIso27001ChecklistRoute: ResourcesIso27001ChecklistRoute,
+  ResourcesItStaffingVsInHouseRoute: ResourcesItStaffingVsInHouseRoute,
+  ResourcesPenetrationTestingExplainedRoute:
+    ResourcesPenetrationTestingExplainedRoute,
+  ResourcesRansomwareRecoveryRoute: ResourcesRansomwareRecoveryRoute,
+  ResourcesSocExplainedRoute: ResourcesSocExplainedRoute,
+  ResourcesWhatIsVcioRoute: ResourcesWhatIsVcioRoute,
+  ResourcesZeroTrustArchitectureRoute: ResourcesZeroTrustArchitectureRoute,
   ServicesBlockchainRoute: ServicesBlockchainRoute,
   ServicesCloudRoute: ServicesCloudRoute,
   ServicesConsultingRoute: ServicesConsultingRoute,
   ServicesCustomSoftwareRoute: ServicesCustomSoftwareRoute,
   ServicesCyberSecurityRoute: ServicesCyberSecurityRoute,
   ServicesErpRoute: ServicesErpRoute,
+  ServicesItStaffingRoute: ServicesItStaffingRoute,
   ServicesManagedItRoute: ServicesManagedItRoute,
   ServicesMarketingRoute: ServicesMarketingRoute,
   ServicesMobileRoute: ServicesMobileRoute,

@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services/blockchain")({
     meta: [
       {
         title:
-          "Blockchain &amp; NFT Development | Dastute Technologies Limited",
+          "Blockchain Development Company UK | Dastute Technologies",
       },
       {
         name: "description",
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/services/blockchain")({
       {
         property: "og:title",
         content:
-          "Blockchain &amp; NFT Development | Dastute Technologies Limited",
+          "Blockchain Development Company UK | Dastute Technologies",
       },
       {
         property: "og:description",
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/services/blockchain")({
       {
         name: "twitter:title",
         content:
-          "Blockchain &amp; NFT Development | Dastute Technologies Limited",
+          "Blockchain Development Company UK | Dastute Technologies",
       },
       {
         name: "twitter:description",
@@ -118,7 +118,7 @@ function Page() {
             / Blockchain
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-5xl text-white">
-            Enterprise Blockchain & Web3 Engineering for Real-World Value
+            Blockchain Development Company UK. Web3 Engineering for Real-World Value.
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
             Supply chain traceability, trade finance automation, tokenisation of real-world assets, smart contract development, and CREST-aligned security audits. We build enterprise blockchain solutions that solve operational problems — not speculative ones. Web3 with the governance of Web2.

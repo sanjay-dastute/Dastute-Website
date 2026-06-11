@@ -69,19 +69,19 @@ export const Route = createFileRoute("/marketing")({
 const FAQ_ITEMS = [
   {
     question: "What is included in digital marketing services?",
-    answer: "Digital marketing services typically include Search Engine Optimisation (SEO), Pay-Per-Click (PPC) advertising, social media management, email marketing, content strategy, and conversion rate optimisation (CRO). These services work together to build brand awareness and drive qualified leads.",
+    answer: "Digital marketing services include Search Engine Optimisation (SEO), Pay-Per-Click (PPC) advertising, social media management, email automation, content creation, and conversion rate optimisation (CRO). Together, these six core disciplines work systematically to increase your brand's online visibility, capture high-intent search traffic, and convert website visitors into qualified leads.",
   },
   {
-    question: "How long does it take to see results from SEO?",
-    answer: "Significant SEO results usually take between 3 to 6 months to materialize. SEO is a long-term strategy that involves technical website improvements, ongoing high-quality content creation, and authoritative link building to establish trust with search engines.",
+    question: "How long does SEO take?",
+    answer: "SEO takes between 3 to 6 months to show significant results, though competitive industries may require 9 to 12 months. This timeframe is necessary because search engines need time to crawl, evaluate, and index technical website improvements, newly published authoritative content, and newly acquired inbound backlinks.",
   },
   {
     question: "Why is brand strategy important?",
-    answer: "Brand strategy defines your company's core positioning, messaging framework, and visual identity. A strong brand strategy ensures consistency across all touchpoints, which builds trust with consumers, differentiates you from competitors, and ultimately drives higher marketing ROI.",
+    answer: "Brand strategy is important because it defines your company's core positioning, target audience, and messaging framework before you spend money on advertising. A documented strategy ensures absolute consistency across every marketing channel, which builds consumer trust, differentiates you from competitors, and ultimately lowers your customer acquisition costs.",
   },
   {
     question: "How do you measure marketing ROI?",
-    answer: "We measure marketing ROI by tracking clear KPIs aligned with business goals: Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS), lead conversion rates, and lifetime value (LTV). We provide transparent, data-driven dashboard reports for all campaigns.",
+    answer: "You measure marketing ROI by tracking direct business KPIs such as Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS), lead conversion rates, and customer lifetime value (LTV). We deploy custom analytics dashboards that map these precise financial metrics back to specific campaigns, ad groups, and organic search queries.",
   }
 ];
 
@@ -177,9 +177,9 @@ function MarketingPage() {
             / Creative Practice
           </span>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl text-white">
-            Positioning, campaigns
+            Digital marketing agency UK
             <br />
-            <span className="text-gradient-primary">and full-funnel growth.</span>
+            <span className="text-gradient-primary">and SEO services London.</span>
           </h1>
           <p className="mt-8 max-w-xl text-slate-300 text-lg">
             Five creative and marketing disciplines designed to help you stand

@@ -5,7 +5,7 @@ import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/services/cloud")({
   head: () => ({
     meta: [
-      { title: "Cloud Services | Dastute Technologies Limited" },
+      { title: "Cloud & AWS Migration Services UK | Dastute" },
       {
         name: "description",
         content:
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/services/cloud")({
       { name: "theme-color", content: "#1a56db" },
       {
         property: "og:title",
-        content: "Cloud Services | Dastute Technologies Limited",
+        content: "Cloud & AWS Migration Services UK | Dastute",
       },
       {
         property: "og:description",
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/services/cloud")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "Cloud Services | Dastute Technologies Limited",
+        content: "Cloud & AWS Migration Services UK | Dastute",
       },
       {
         name: "twitter:description",
@@ -107,7 +107,7 @@ function Page() {
             / Cloud Services
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-5xl text-white">
-            Cloud Infrastructure Engineered for Scale, Security and Savings
+            Cloud migration services UK & AWS infrastructure management.
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
             Seamless cloud migration, Kubernetes orchestration, CI/CD pipelines, and multi-cloud management on AWS, Azure, and Google Cloud. We design systems handling 100K+ requests/sec with 99.99% uptime SLAs.
