@@ -170,7 +170,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               minValue: 10,
               maxValue: 50,
             },
-            sameAs: ["https://dastute.com", "https://dastute.co.uk"],
+            sameAs: ["https://dastute.co.uk"],
             address: [
               {
                 "@type": "PostalAddress",
