@@ -87,7 +87,7 @@ async function prerender() {
       const outPath =
         route === "/"
           ? join(OUT_DIR, "index.html")
-          : join(OUT_DIR, ...route.slice(1).split("/"), "index.html");
+          : join(OUT_DIR, ...route.slice(1).split("/")) + ".html";
 
       await mkdir(dirname(outPath), { recursive: true });
       await writeFile(outPath, html, "utf-8");
