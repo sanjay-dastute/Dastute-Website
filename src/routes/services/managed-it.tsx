@@ -9,7 +9,7 @@ export const Route = createFileRoute("/services/managed-it")({
       {
         name: "description",
         content:
-          "24/7 helpdesk, proactive monitoring, vCIO advisory, and guaranteed SLAs. Flat-rate managed IT from Dastute Technologies across UK, India, and Singapore.",
+          "Looking for reliable managed IT services London? Get 24/7 helpdesk, proactive monitoring, vCIO advisory, and guaranteed SLAs at a flat rate.",
       },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/services/managed-it")({
       {
         property: "og:description",
         content:
-          "24/7 helpdesk, proactive monitoring, vCIO advisory, and guaranteed SLAs. Flat-rate managed IT from Dastute Technologies across UK, India, and Singapore.",
+          "Looking for reliable managed IT services London? Get 24/7 helpdesk, proactive monitoring, vCIO advisory, and guaranteed SLAs at a flat rate.",
       },
       { property: "og:type", content: "website" },
       {
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/services/managed-it")({
       {
         name: "twitter:description",
         content:
-          "24/7 helpdesk, proactive monitoring, vCIO advisory, and guaranteed SLAs. Flat-rate managed IT from Dastute Technologies across UK, India, and Singapore.",
+          "Looking for reliable managed IT services London? Get 24/7 helpdesk, proactive monitoring, vCIO advisory, and guaranteed SLAs at a flat rate.",
       },
       { name: "twitter:site", content: "@DastuteTech" },
       {
@@ -54,21 +54,6 @@ export const Route = createFileRoute("/services/managed-it")({
     ],
     links: [
       { rel: "canonical", href: "https://dastute.co.uk/services/managed-it" },
-      { rel: "icon", href: "/favicon-32x32.png", type: "image/png" },
-      { rel: "icon", href: "/favicon-16x16.png", type: "image/png" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-      },
-      { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-      { rel: "dns-prefetch", href: "https://cdnjs.cloudflare.com" },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-      },
     ],
     scripts: [
       {
@@ -113,7 +98,7 @@ function Page() {
             Proactive Managed IT Services London & UK. We Keep Your Business Running 24/7.
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
-            From helpdesk support to virtual CIO advisory - our managed IT services give you a fully staffed IT department at a predictable flat-rate cost, with an average 3-minute response time and guaranteed SLAs.
+            Stop worrying about IT issues. Our expert team provides 24/7 helpdesk support, proactive monitoring, and strategic vCIO advice. You get a fully staffed IT department for a predictable flat-rate cost.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
@@ -164,7 +149,7 @@ function Page() {
               Your Complete IT Department - Without the Overhead
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Managing technology in-house is expensive, unpredictable, and increasingly complex. Dastute's Managed IT Services give you access to a team of certified specialists across cybersecurity, cloud, networking, and software - all under one predictable monthly fee. We proactively monitor, maintain, and optimise your entire IT environment so issues are resolved before users notice them.
+              Managing IT in-house is costly and complex. Our managed IT services London team provides certified experts for a flat monthly fee. We monitor, fix, and optimize your systems 24/7. This stops issues before they affect your staff.
             </p>
           </div>
 
@@ -235,7 +220,7 @@ function Page() {
               <span className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2 block">Core</span>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">24/7 Helpdesk & User Support</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Multi-tier helpdesk support available 24 hours a day, 365 days a year via phone, email, and live chat. Average 3-minute response time. Dedicated engineers assigned to your account who know your environment — no scripted call centres, no knowledge gap.
+                Get 24/7 helpdesk support via phone, email, or chat. We answer in 3 minutes on average. You get dedicated engineers who know your setup. We do not use scripted call centres.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Avg 3-min response time</li>
@@ -248,7 +233,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-emerald">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Proactive Infrastructure Monitoring</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Real-time monitoring of servers, networks, endpoints, and cloud resources using enterprise-grade RMM tools. Automated anomaly detection and pre-emptive remediation resolve 70% of issues before users are impacted — shifting your IT from reactive chaos to predictable reliability.
+                We monitor your servers, networks, and cloud 24/7. Our tools detect and fix 70% of issues before you even notice them. Say goodbye to IT downtime.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> 24/7 real-time monitoring</li>
@@ -262,7 +247,7 @@ function Page() {
               <span className="text-xs font-bold uppercase tracking-widest text-violet-600 mb-2 block">Popular</span>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Virtual CIO (vCIO) Services</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                A dedicated senior technology strategist attends your leadership and board meetings, builds your annual IT roadmap, manages vendor relationships, and aligns your technology investments with business objectives. The strategic clarity of a full-time CIO at a fraction of the cost.
+                Get a dedicated technology strategist for your board meetings. They build your IT roadmap and manage vendors. You get the value of a full-time CIO for less.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Quarterly business reviews</li>
@@ -275,7 +260,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-amber">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Endpoint Security & Protection</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Enterprise endpoint detection and response (EDR) across every laptop, desktop, server, and mobile device in your organisation — powered by CrowdStrike or SentinelOne. Real-time threat detection, automated quarantine, and full forensic investigation capabilities.
+                We protect all your devices with enterprise security tools. We detect threats in real-time and block them instantly. Your data stays safe.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> CrowdStrike / SentinelOne EDR</li>
@@ -288,7 +273,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-rose">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Patch & Vulnerability Management</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Automated and scheduled patching across all operating systems, applications, firmware, and network devices — keeping your estate current without disrupting operations. Monthly vulnerability scan reports identify unpatched risks before attackers do.
+                We update your systems and software automatically. This happens quietly in the background. We also scan for risks every month to keep hackers out.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Automated OS & app patching</li>
@@ -301,7 +286,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-blue">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Backup, DR & Business Continuity</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Automated daily backups with encrypted off-site replication and point-in-time recovery for servers, Microsoft 365, and cloud workloads. Defined Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) with quarterly DR tests.
+                We back up your data daily and store it safely off-site. This includes servers and Microsoft 365. We also run regular tests to ensure fast recovery.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Daily encrypted backups</li>
