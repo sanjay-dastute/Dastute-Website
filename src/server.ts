@@ -100,12 +100,21 @@ export default {
           headers: {
             "Content-Type": "text/markdown",
             "X-Markdown-Tokens": markdown.length.toString(),
-            "Cache-Control": normalized.headers.get("Cache-Control") || "public, max-age=60"
+            "Cache-Control": normalized.headers.get("Cache-Control") || "public, max-age=60",
+            "Link": "</.well-known/agent-skills/index.json>; rel=\"agent-skills\", </.well-known/api-catalog>; rel=\"api-catalog\""
           }
         });
       }
 
-      return normalized;
+      // Add Link headers to HTML response
+      const headers = new Headers(normalized.headers);
+      headers.set("Link", "</.well-known/agent-skills/index.json>; rel=\"agent-skills\", </.well-known/api-catalog>; rel=\"api-catalog\"");
+
+      return new Response(normalized.body, {
+        status: normalized.status,
+        statusText: normalized.statusText,
+        headers
+      });
     } catch (error) {
       console.error(error);
       return brandedErrorResponse();
