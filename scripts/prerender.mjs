@@ -5,7 +5,6 @@ import { fileURLToPath, pathToFileURL } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const ROUTES = [
-  "/",
   "/about",
   "/capabilities",
   "/careers",
