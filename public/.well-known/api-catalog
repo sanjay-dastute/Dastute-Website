@@ -1,3 +1,13 @@
 {
-  "linkset": []
+  "linkset": [
+    {
+      "anchor": "https://dastute.co.uk/api",
+      "service-doc": [
+        {"href": "https://dastute.co.uk/docs", "type": "text/html"}
+      ],
+      "status": [
+        {"href": "https://dastute.co.uk/api/health", "type": "application/json"}
+      ]
+    }
+  ]
 }

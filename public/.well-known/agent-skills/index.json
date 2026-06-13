@@ -1,4 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/cloudflare/agent-skills-discovery-rfc/main/schema.json",
-  "skills": []
+  "skills": [
+    {
+      "name": "contact_sales",
+      "type": "webmcp",
+      "description": "Contact the Dastute sales team",
+      "url": "https://dastute.co.uk",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
 }
