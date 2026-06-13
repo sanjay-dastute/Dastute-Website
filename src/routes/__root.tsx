@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -287,6 +288,29 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && "navigator" in window) {
+      // @ts-expect-error - WebMCP is not in standard lib types yet
+      if (window.navigator.modelContext) {
+        // @ts-expect-error
+        window.navigator.modelContext.provideContext({
+          tools: [
+            {
+              name: "contact_sales",
+              description: "Contact the Dastute sales team",
+              inputSchema: { type: "object", properties: {} },
+              execute: async () => {
+                router.navigate({ to: "/contact" });
+                return "Navigated to contact page";
+              },
+            },
+          ],
+        });
+      }
+    }
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -295,3 +319,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+

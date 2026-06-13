@@ -1,0 +1,11 @@
+{
+  "$schema": "https://mcp.schema.json",
+  "serverInfo": {
+    "name": "Dastute",
+    "version": "1.0.0"
+  },
+  "capabilities": {},
+  "endpoints": {
+    "transport": "https://dastute.co.uk/mcp"
+  }
+}
