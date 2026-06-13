@@ -84,12 +84,25 @@ export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
+      
+      // Determine if this is an agent requesting markdown
+      const originalAccept = request.headers.get("accept") || "";
+      const isMarkdownRequest = originalAccept.includes("text/markdown");
+      
+      // If it's a markdown request, we must fool TanStack Start into rendering HTML
+      // otherwise it throws a 500 "Only HTML requests are supported here" error.
+      let handlerRequest = request;
+      if (isMarkdownRequest) {
+        handlerRequest = new Request(request.url, request);
+        handlerRequest.headers.set("Accept", "text/html, " + originalAccept);
+      }
+
+      const response = await handler.fetch(handlerRequest, env, ctx);
       const normalized = await normalizeCatastrophicSsrResponse(response);
 
       // Markdown for Agents feature fallback
       if (
-        request.headers.get("accept")?.includes("text/markdown") &&
+        isMarkdownRequest &&
         normalized.headers.get("content-type")?.includes("text/html") &&
         normalized.status === 200
       ) {
