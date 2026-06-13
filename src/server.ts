@@ -2,6 +2,7 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+import { convertHtmlToMarkdown } from "./lib/markdown";
 
 type ServerEntry = {
   fetch: (
@@ -84,7 +85,27 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const normalized = await normalizeCatastrophicSsrResponse(response);
+
+      // Markdown for Agents feature fallback
+      if (
+        request.headers.get("accept")?.includes("text/markdown") &&
+        normalized.headers.get("content-type")?.includes("text/html") &&
+        normalized.status === 200
+      ) {
+        const html = await normalized.clone().text();
+        const markdown = convertHtmlToMarkdown(html);
+        return new Response(markdown, {
+          status: 200,
+          headers: {
+            "Content-Type": "text/markdown",
+            "X-Markdown-Tokens": markdown.length.toString(),
+            "Cache-Control": normalized.headers.get("Cache-Control") || "public, max-age=60"
+          }
+        });
+      }
+
+      return normalized;
     } catch (error) {
       console.error(error);
       return brandedErrorResponse();
