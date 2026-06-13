@@ -17,7 +17,7 @@ export const Route = createFileRoute("/capabilities")({
         content:
           "Global IT consultancy capabilities with senior-led delivery in UK, India and Singapore.",
       },
-      { property: "og:url", content: "/capabilities" },
+      { property: "og:url", content: "https://dastute.co.uk/capabilities" },
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/capabilities" }],
     scripts: [

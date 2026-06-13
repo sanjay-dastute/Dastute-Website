@@ -15,7 +15,7 @@ export const Route = createFileRoute("/terms")({
         property: "og:title",
         content: "Terms of Service — Dastute Technologies",
       },
-      { property: "og:url", content: "/terms" },
+      { property: "og:url", content: "https://dastute.co.uk/terms" },
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/terms" }],
     scripts: [

@@ -48,7 +48,6 @@ interface StandardPageHeadInput {
   title: string;
   description: string;
   path: string;
-  keywords?: string;
   ogDescription?: string;
   ogImage?: string;
 }
@@ -142,7 +141,6 @@ export function buildStandardPageHead(input: StandardPageHeadInput) {
     meta: [
       { title: input.title },
       { name: "description", content: input.description },
-      input.keywords ? { name: "keywords", content: input.keywords } : null,
       { property: "og:title", content: input.title },
       {
         property: "og:description",

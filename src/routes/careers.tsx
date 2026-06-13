@@ -17,7 +17,7 @@ export const Route = createFileRoute("/careers")({
         content:
           "Growth, competitive insurance, training reimbursement, performance bonuses and happy hours.",
       },
-      { property: "og:url", content: "/careers" },
+      { property: "og:url", content: "https://dastute.co.uk/careers" },
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/careers" }],
     scripts: [

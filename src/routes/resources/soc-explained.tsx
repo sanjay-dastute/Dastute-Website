@@ -8,7 +8,7 @@ export const Route = createFileRoute("/resources/soc-explained")({
       title: "What is a SOC? Security Operations Center Explained",
       description: "Learn how a 24/7 Security Operations Center (SOC) detects, analyzes, and responds to active cyber threats while you sleep. A real-world triage scenario.",
       path: "/resources/soc-explained",
-      keywords: "what is a SOC, security operations center UK, outsourced SOC services, 24/7 cyber monitoring",
+
     }),
     scripts: [
       {

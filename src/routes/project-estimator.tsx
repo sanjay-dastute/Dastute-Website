@@ -22,7 +22,7 @@ export const Route = createFileRoute("/project-estimator")({
         content:
           "Scope your next technology or creative engagement in under 5 minutes.",
       },
-      { property: "og:url", content: "/project-estimator" },
+      { property: "og:url", content: "https://dastute.co.uk/project-estimator" },
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/project-estimator" }],
     scripts: [

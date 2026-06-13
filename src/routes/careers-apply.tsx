@@ -25,7 +25,7 @@ export const Route = createFileRoute("/careers-apply")({
         content:
           "Join our global team across UK, India, and Singapore. Apply for engineering, advisory, and operational roles.",
       },
-      { property: "og:url", content: "/careers-apply" },
+      { property: "og:url", content: "https://dastute.co.uk/careers-apply" },
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/careers-apply" }],
     scripts: [

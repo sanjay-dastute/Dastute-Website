@@ -8,7 +8,7 @@ export const Route = createFileRoute("/resources/bcdr-guide")({
       title: "Business Continuity & Disaster Recovery (BCDR) Guide",
       description: "Learn the difference between simple backups and a true BCDR strategy. Explore a real-world server failure scenario and instantaneous failover.",
       path: "/resources/bcdr-guide",
-      keywords: "business continuity disaster recovery, BCDR vs backups, instantaneous failover, RTO and RPO explained",
+
     }),
     scripts: [
       {

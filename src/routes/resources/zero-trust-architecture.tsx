@@ -8,7 +8,7 @@ export const Route = createFileRoute("/resources/zero-trust-architecture")({
       title: "What is Zero Trust Architecture? | Real-World Cybersecurity Scenario",
       description: "Understand why perimeter defense is dead. Explore a real-world scenario of how Zero Trust Architecture prevents devastating data breaches by enforcing continuous authentication.",
       path: "/resources/zero-trust-architecture",
-      keywords: "Zero Trust Architecture UK, what is zero trust security, zero trust vs VPN, continuous authentication",
+
     }),
     scripts: [
       {

@@ -22,7 +22,7 @@ export const Route = createFileRoute("/request-audit")({
         content:
           "Smart contract audits and brand audits from senior practitioners.",
       },
-      { property: "og:url", content: "/request-audit" },
+      { property: "og:url", content: "https://dastute.co.uk/request-audit" },
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/request-audit" }],
     scripts: [

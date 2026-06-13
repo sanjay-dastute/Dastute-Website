@@ -12,7 +12,7 @@ export const Route = createFileRoute("/cookie-policy")({
           "Cookie Policy for Dastute Technologies Limited. Information about the cookies we use and how to manage your preferences.",
       },
       { property: "og:title", content: "Cookie Policy — Dastute Technologies" },
-      { property: "og:url", content: "/cookie-policy" },
+      { property: "og:url", content: "https://dastute.co.uk/cookie-policy" },
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/cookie-policy" }],
     scripts: [

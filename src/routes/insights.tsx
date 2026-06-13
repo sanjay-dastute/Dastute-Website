@@ -57,7 +57,7 @@ export const Route = createFileRoute("/insights")({
       title: "Technology Insights & Expert Articles | Dastute Technologies Blog",
       description: "Expert perspectives on cloud (AWS/Azure/GCP), cybersecurity, AI, digital transformation, ERP, blockchain, and IT strategy from Dastute Technologies' practice leads.",
       path: "/insights",
-      keywords: "IT insights blog UK, technology articles London, cybersecurity blog UK, cloud computing articles, AI insights UK, digital transformation blog",
+
     }),
     scripts: [
       {

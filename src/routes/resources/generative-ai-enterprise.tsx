@@ -8,7 +8,7 @@ export const Route = createFileRoute("/resources/generative-ai-enterprise")({
       title: "Generative AI in the Enterprise | Real-World Automation Scenario",
       description: "How are businesses actually using Generative AI beyond just chatting? Explore a real-world scenario of AI automating massive data analysis and saving hundreds of hours.",
       path: "/resources/generative-ai-enterprise",
-      keywords: "generative AI for enterprise UK, AI automation consulting, how to use AI in business, secure enterprise AI",
+
     }),
     scripts: [
       {
