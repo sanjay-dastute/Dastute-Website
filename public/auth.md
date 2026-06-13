@@ -1,4 +1,4 @@
-# Auth.md
+# auth.md
 
 This website serves as a public corporate informational site for Dastute Technologies Limited.
 

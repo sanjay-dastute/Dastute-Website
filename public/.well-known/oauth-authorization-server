@@ -7,8 +7,12 @@
   "response_types_supported": [],
   "grant_types_supported": [],
   "agent_auth": {
+    "skill": "https://isitagentready.com/.well-known/agent-skills/auth-md/SKILL.md",
     "register_uri": "https://dastute.co.uk/auth.md",
-    "supported_identity_types": [],
-    "supported_credential_types": []
+    "identity_types_supported": ["anonymous"],
+    "anonymous": {
+      "credential_types_supported": ["personal_access_token"]
+    },
+    "claim_uri": "https://dastute.co.uk/auth.md"
   }
 }

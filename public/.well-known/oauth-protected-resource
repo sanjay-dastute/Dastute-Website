@@ -1,4 +1,6 @@
 {
   "resource": "https://dastute.co.uk",
-  "authorization_servers": []
+  "authorization_servers": ["https://dastute.co.uk"],
+  "scopes_supported": [],
+  "bearer_methods_supported": ["header"]
 }
