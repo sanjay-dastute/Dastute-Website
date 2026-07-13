@@ -57,6 +57,13 @@ export function SiteNav() {
               About
             </Link>
             <Link
+              to="/blog"
+              className="hover:text-primary transition-colors"
+              activeProps={{ className: "text-primary" }}
+            >
+              Blog
+            </Link>
+            <Link
               to="/team"
               className="hover:text-primary transition-colors"
               activeProps={{ className: "text-primary" }}
@@ -148,6 +155,14 @@ export function SiteNav() {
               onClick={() => setMobileOpen(false)}
             >
               About
+            </Link>
+            <Link
+              to="/blog"
+              className="py-2 hover:text-primary transition-colors"
+              activeProps={{ className: "text-primary" }}
+              onClick={() => setMobileOpen(false)}
+            >
+              Blog
             </Link>
             <Link
               to="/team"

@@ -124,6 +124,12 @@ export function SiteFooter() {
                 Project Estimator
               </Link>
               <Link
+                to="/blog"
+                className="hover:text-white transition-colors block"
+              >
+                Blog
+              </Link>
+              <Link
                 to="/insights"
                 className="hover:text-white transition-colors block"
               >
