@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd, buildServiceListJsonLd, buildReviewJsonLd, buildWebSiteJsonLd, buildHowToJsonLd } from "@/lib/seo";
+import { FaqSection } from "@/components/FaqSection";
+import { FAQS } from "@/lib/faqs";
+import { buildBreadcrumbJsonLd, buildServiceListJsonLd, buildReviewJsonLd, buildWebSiteJsonLd, buildHowToJsonLd, buildFaqJsonLd } from "@/lib/seo";
 
 const SERVICE_SUMMARY =
   "Dastute Technologies delivers managed IT services, advanced cybersecurity, scalable cloud solutions, and bespoke software development to ambitious UK businesses.";
@@ -219,6 +221,10 @@ export const Route = createFileRoute("/")({
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/" }],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildFaqJsonLd("/", FAQS["home"])),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(buildWebSiteJsonLd()),
@@ -800,6 +806,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <FaqSection items={FAQS["home"]} />
 
     </SiteLayout>
   );

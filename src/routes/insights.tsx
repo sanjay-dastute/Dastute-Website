@@ -54,8 +54,8 @@ const FAQ_ITEMS = [
 export const Route = createFileRoute("/insights")({
   head: () => ({
     ...buildStandardPageHead({
-      title: "Technology Insights & Expert Articles | Dastute Technologies Blog",
-      description: "Expert perspectives on cloud (AWS/Azure/GCP), cybersecurity, AI, digital transformation, ERP, blockchain, and IT strategy from Dastute Technologies' practice leads.",
+      title: "Technology Insights & Expert Articles | Dastute",
+      description: "Expert insights on cloud (AWS, Azure, GCP), cybersecurity, AI, ERP, blockchain and IT strategy from the practice leads at Dastute Technologies.",
       path: "/insights",
 
     }),

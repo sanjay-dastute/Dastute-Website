@@ -112,6 +112,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "author", content: "Dastute Technologies Limited" },
         { property: "og:site_name", content: "Dastute Technologies" },
         { property: "og:type", content: "website" },
+        { property: "og:image", content: "https://dastute.co.uk/og-image.png" },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { name: "twitter:image", content: "https://dastute.co.uk/og-image.png" },
         { name: "twitter:card", content: "summary_large_image" },
         {
           property: "og:title",

@@ -10,9 +10,9 @@ import {
 export const Route = createFileRoute("/blog")({
   head: () => ({
     ...buildStandardPageHead({
-      title: "Blog | Dastute Technologies — IT Insights, Guides & Industry Updates",
+      title: "IT Blog: Guides & Industry Updates | Dastute Technologies",
       description:
-        "Stay ahead with expert blog posts on managed IT services, cybersecurity, cloud strategy, ERP, AI, digital transformation and technology best practices from Dastute Technologies.",
+        "Expert articles on managed IT, cybersecurity, cloud strategy, ERP, AI and digital transformation from the team at Dastute Technologies.",
       path: "/blog",
     }),
     scripts: [

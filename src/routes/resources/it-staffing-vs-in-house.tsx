@@ -6,7 +6,7 @@ export const Route = createFileRoute("/resources/it-staffing-vs-in-house")({
   head: () => ({
     ...buildStandardPageHead({
       title: "IT Staff Augmentation vs In-house Hiring UK | Dastute",
-      description: "Compare IT staff augmentation vs in-house hiring in the UK. Learn how to scale your development team, reduce hiring costs, and access niche software engineering skills instantly.",
+      description: "IT staff augmentation vs in-house hiring in the UK: compare costs, speed and access to niche engineering skills to scale your team the right way.",
       path: "/resources/it-staffing-vs-in-house",
     }),
     scripts: [
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/resources/it-staffing-vs-in-house")({
         children: JSON.stringify(
           buildBlogPostingJsonLd({
             headline: "IT Staff Augmentation vs In-house Hiring UK | Dastute",
-            description: "Compare IT staff augmentation vs in-house hiring in the UK. Learn how to scale your development team, reduce hiring costs, and access niche software engineering skills instantly.",
+            description: "IT staff augmentation vs in-house hiring in the UK: compare costs, speed and access to niche engineering skills to scale your team the right way.",
             datePublished: "2026-04-29T19:38:10.909Z",
             authorName: "Sanjay Dastute",
             path: "/resources/it-staffing-vs-in-house",

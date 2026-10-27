@@ -12,7 +12,7 @@ export const Route = createFileRoute("/process")({
     ...buildStandardPageHead({
       title: "Our Delivery Process | Dastute Technologies",
       description:
-        "Dastute's four-phase delivery methodology: Discovery & Planning, Architecture & Design, Development & Iteration, Deployment & Support. Predictable outcomes. Zero disruption.",
+        "Our four-phase delivery process: discovery, architecture, iterative development and deployment with ongoing support. Predictable outcomes, zero disruption.",
       path: "/process",
       }),
     scripts: [

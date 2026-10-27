@@ -5,8 +5,8 @@ import { buildBreadcrumbJsonLd, buildStandardPageHead } from "@/lib/seo";
 export const Route = createFileRoute("/resources/zero-trust-architecture")({
   head: () => ({
     ...buildStandardPageHead({
-      title: "What is Zero Trust Architecture? | Real-World Cybersecurity Scenario",
-      description: "Understand why perimeter defense is dead. Explore a real-world scenario of how Zero Trust Architecture prevents devastating data breaches by enforcing continuous authentication.",
+      title: "What Is Zero Trust Architecture? A Real Scenario | Dastute",
+      description: "What is Zero Trust architecture? A real-world scenario showing how continuous verification stops data breaches that perimeter security misses.",
       path: "/resources/zero-trust-architecture",
 
     }),

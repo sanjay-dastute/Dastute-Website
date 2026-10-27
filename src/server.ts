@@ -80,9 +80,28 @@ async function normalizeCatastrophicSsrResponse(
   return brandedErrorResponse();
 }
 
+const AGENT_LINK_HEADER =
+  "</.well-known/agent-skills/index.json>; rel=\"agent-skills\", </.well-known/api-catalog>; rel=\"api-catalog\"";
+
+// Start HSTS at one day; raise to a year once www/https redirects are proven stable.
+const SECURITY_HEADERS: Record<string, string> = {
+  "Strict-Transport-Security": "max-age=86400",
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "SAMEORIGIN",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+};
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      // Router answers "/path/" with a 307; search engines need a permanent redirect
+      const url = new URL(request.url);
+      if (url.pathname.length > 1 && url.pathname.endsWith("/")) {
+        url.pathname = url.pathname.replace(/\/+$/, "") || "/";
+        return Response.redirect(url.toString(), 301);
+      }
+
       const handler = await getServerEntry();
       
       // Determine if this is an agent requesting markdown
@@ -114,14 +133,17 @@ export default {
             "Content-Type": "text/markdown",
             "X-Markdown-Tokens": markdown.length.toString(),
             "Cache-Control": normalized.headers.get("Cache-Control") || "public, max-age=60",
-            "Link": "</.well-known/agent-skills/index.json>; rel=\"agent-skills\", </.well-known/api-catalog>; rel=\"api-catalog\""
+            "Link": AGENT_LINK_HEADER,
+            ...SECURITY_HEADERS,
           }
         });
       }
 
-      // Add Link headers to HTML response
       const headers = new Headers(normalized.headers);
-      headers.set("Link", "</.well-known/agent-skills/index.json>; rel=\"agent-skills\", </.well-known/api-catalog>; rel=\"api-catalog\"");
+      headers.set("Link", AGENT_LINK_HEADER);
+      for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
+        headers.set(name, value);
+      }
 
       return new Response(normalized.body, {
         status: normalized.status,

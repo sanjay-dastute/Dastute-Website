@@ -5,7 +5,7 @@ import { buildBreadcrumbJsonLd, buildStandardPageHead } from "@/lib/seo";
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     ...buildStandardPageHead({
-      title: "Case Studies | IT Consulting & Software Development Success Stories",
+      title: "Case Studies: IT & Software Success Stories | Dastute",
       description: "Read how Dastute has helped UK enterprises across Healthcare, Fintech, and Manufacturing scale securely with advanced cloud, AI, and cybersecurity solutions.",
       path: "/case-studies",
     }),

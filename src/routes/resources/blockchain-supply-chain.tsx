@@ -6,7 +6,7 @@ export const Route = createFileRoute("/resources/blockchain-supply-chain")({
   head: () => ({
     ...buildStandardPageHead({
       title: "Blockchain in Supply Chain Management | Dastute Guide",
-      description: "Learn how blockchain technology and smart contracts are revolutionizing supply chain management through immutable tracking, counterfeit prevention, and automated settlements.",
+      description: "How blockchain and smart contracts improve supply chains: immutable tracking, counterfeit prevention and automated settlements, explained.",
       path: "/resources/blockchain-supply-chain",
     }),
     scripts: [
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/resources/blockchain-supply-chain")({
         children: JSON.stringify(
           buildBlogPostingJsonLd({
             headline: "Blockchain in Supply Chain Management | Dastute Guide",
-            description: "Learn how blockchain technology and smart contracts are revolutionizing supply chain management through immutable tracking, counterfeit prevention, and automated settlements.",
+            description: "How blockchain and smart contracts improve supply chains: immutable tracking, counterfeit prevention and automated settlements, explained.",
             datePublished: "2026-01-23T17:27:16.363Z",
             authorName: "Sanjay Dastute",
             path: "/resources/blockchain-supply-chain",

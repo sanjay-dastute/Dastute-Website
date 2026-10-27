@@ -9,7 +9,7 @@ export const Route = createFileRoute("/careers")({
       {
         name: "description",
         content:
-          "Join Dastute Technologies. We are a rapidly growing global IT consultancy putting our people first. Competitive benefits, performance bonuses, training and certification reimbursement.",
+          "Careers at Dastute Technologies, a growing global IT consultancy. Competitive benefits, performance bonuses, and paid training and certifications.",
       },
       { property: "og:title", content: "Careers — Dastute Technologies" },
       {

@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Dastute Technologies is a global IT services company serving businesses across India, Singapore, and the UK. We deliver practical IT, software, and cybersecurity services.",
+          "Dastute Technologies is a global IT services company serving businesses in the UK, India and Singapore with practical IT, software and cybersecurity services.",
       },
       {
         property: "og:title",

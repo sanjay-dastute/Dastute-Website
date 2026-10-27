@@ -16,7 +16,7 @@ export const Route = createFileRoute("/contact")({
     ...buildStandardPageHead({
       title: "Contact Dastute Technologies | London · India · Singapore",
       description:
-        "Contact Dastute Technologies Limited. London HQ: 128 City Road, EC1V 2NX. UK: +44 7423021644. India: +91 9940941959. Singapore: +65-87722877. Email: contact@dastute.co.uk. 1-day response.",
+        "Contact Dastute Technologies. London office: 128 City Road, EC1V 2NX. Call +44 7423 021644 or email info@dastute.co.uk. We reply within 1 business day.",
       path: "/contact",
       ogDescription:
         "Contact our London HQ and global delivery teams in India and Singapore. We respond to all enquiries within one business day.",

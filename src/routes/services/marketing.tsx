@@ -1,15 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "@/lib/seo";
+import { FaqSection } from "@/components/FaqSection";
+import { FAQS } from "@/lib/faqs";
+import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/services/marketing")({
   head: () => ({
     meta: [
-      { title: "Digital Marketing Services UK | SEO, PPC & Analytics | Dastute" },
+      { title: "Digital Marketing UK | SEO, PPC & Analytics | Dastute" },
       {
         name: "description",
         content:
-          "Data-driven digital marketing from Dastute. SEO, PPC, social media, content marketing, email automation, and full-funnel analytics. Measurable ROI across every channel.",
+          "Data-driven digital marketing: SEO, PPC, social media, content, email automation and full-funnel analytics, with measurable ROI on every channel.",
       },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
@@ -57,6 +59,10 @@ export const Route = createFileRoute("/services/marketing")({
       { rel: "canonical", href: "https://dastute.co.uk/services/marketing" },
     ],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildFaqJsonLd("/services/marketing", FAQS["marketing"])),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(
@@ -357,6 +363,8 @@ function Page() {
       </section>
 
       {/* Engagement Process */}
+      <FaqSection items={FAQS["marketing"]} />
+
       <section id="process" className="bg-white">
         <div className="max-w-7xl mx-auto p-6 py-16 md:py-24">
           <div className="mb-16">

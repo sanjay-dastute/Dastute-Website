@@ -14,7 +14,7 @@ export const Route = createFileRoute("/careers-apply")({
       {
         name: "description",
         content:
-          "Submit your application to join Dastute Technologies. We're looking for talented professionals in software engineering, cloud architecture, cybersecurity, and more.",
+          "Apply to join Dastute Technologies. We hire talented professionals in software engineering, cloud architecture, cybersecurity and more.",
       },
       {
         property: "og:title",

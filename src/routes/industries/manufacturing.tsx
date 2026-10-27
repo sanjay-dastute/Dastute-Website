@@ -5,7 +5,7 @@ import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib
 export const Route = createFileRoute("/industries/manufacturing")({
   head: () => ({
     meta: [
-      { title: "IT Support for Manufacturing UK | Industrial IT Services | Dastute" },
+      { title: "Manufacturing IT Support UK | Industrial IT | Dastute" },
       {
         name: "description",
         content:
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/industries/manufacturing")({
       { name: "theme-color", content: "#1a56db" },
       {
         property: "og:title",
-        content: "IT Support for Manufacturing UK | Industrial IT Services | Dastute",
+        content: "Manufacturing IT Support UK | Industrial IT | Dastute",
       },
       {
         property: "og:description",
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/industries/manufacturing")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "IT Support for Manufacturing UK | Industrial IT Services | Dastute",
+        content: "Manufacturing IT Support UK | Industrial IT | Dastute",
       },
       {
         name: "twitter:description",

@@ -39,7 +39,7 @@ export const Route = createFileRoute("/team")({
   head: () => ({
     ...buildStandardPageHead({
       title: "Leadership Team - Dastute Technologies",
-      description: "Meet the leadership team behind Dastute Technologies. Founded by Sanjay with a team of senior practitioners in software engineering, blockchain, product management and advisory.",
+      description: "Meet the leadership team behind Dastute Technologies: senior practitioners in software engineering, blockchain, product management and technology advisory.",
       path: "/team",
       ogDescription: "Experienced leadership spanning software engineering, blockchain, product management and enterprise advisory.",
     }),

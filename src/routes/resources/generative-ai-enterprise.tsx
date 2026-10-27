@@ -6,7 +6,7 @@ export const Route = createFileRoute("/resources/generative-ai-enterprise")({
   head: () => ({
     ...buildStandardPageHead({
       title: "Generative AI in the Enterprise | Real-World Automation Scenario",
-      description: "How are businesses actually using Generative AI beyond just chatting? Explore a real-world scenario of AI automating massive data analysis and saving hundreds of hours.",
+      description: "How businesses use generative AI beyond chatbots: a real-world scenario of AI automating large-scale data analysis and saving hundreds of hours.",
       path: "/resources/generative-ai-enterprise",
 
     }),

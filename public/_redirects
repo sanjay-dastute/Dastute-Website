@@ -1,4 +1,7 @@
-/pages/service-android /pages/service-mobile 301
-/pages/service-ios /pages/service-mobile 301
-/pages/service-staffing /capabilities 301
-/pages/service-red-blue-team /pages/service-cyber-security 301
+/pages/service-android /services/mobile 301
+/pages/service-ios /services/mobile 301
+/pages/service-mobile /services/mobile 301
+/pages/service-staffing /services/it-staffing 301
+/pages/service-red-blue-team /services/cyber-security 301
+/pages/service-cyber-security /services/cyber-security 301
+/pages/service-* /services/:splat 301

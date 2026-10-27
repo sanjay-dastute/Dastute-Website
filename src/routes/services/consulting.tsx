@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd, buildServiceJsonLd } from "@/lib/seo";
+import { FaqSection } from "@/components/FaqSection";
+import { FAQS } from "@/lib/faqs";
+import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/services/consulting")({
   head: () => ({
@@ -71,6 +73,10 @@ export const Route = createFileRoute("/services/consulting")({
       },
     ],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildFaqJsonLd("/services/consulting", FAQS["consulting"])),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(
@@ -456,6 +462,8 @@ function Page() {
       </section>
 
       {/* CTA */}
+      <FaqSection items={FAQS["consulting"]} />
+
       <section className="bg-background">
         <div className="max-w-4xl mx-auto p-6 py-24 text-center">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">

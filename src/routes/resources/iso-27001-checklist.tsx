@@ -6,7 +6,7 @@ export const Route = createFileRoute("/resources/iso-27001-checklist")({
   head: () => ({
     ...buildStandardPageHead({
       title: "ISO 27001 Certification Checklist UK | Dastute Guide",
-      description: "A complete step-by-step checklist for achieving ISO 27001 certification in the UK. Understand ISMS implementation, Annex A controls, and the Stage 1 and 2 audit process.",
+      description: "Step-by-step ISO 27001 certification checklist for UK businesses: ISMS implementation, Annex A controls, and the Stage 1 and Stage 2 audits.",
       path: "/resources/iso-27001-checklist",
     }),
     scripts: [
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/resources/iso-27001-checklist")({
         children: JSON.stringify(
           buildBlogPostingJsonLd({
             headline: "ISO 27001 Certification Checklist UK | Dastute Guide",
-            description: "A complete step-by-step checklist for achieving ISO 27001 certification in the UK. Understand ISMS implementation, Annex A controls, and the Stage 1 and 2 audit process.",
+            description: "Step-by-step ISO 27001 certification checklist for UK businesses: ISMS implementation, Annex A controls, and the Stage 1 and Stage 2 audits.",
             datePublished: "2026-04-16T02:10:54.545Z",
             authorName: "Sanjay Dastute",
             path: "/resources/iso-27001-checklist",

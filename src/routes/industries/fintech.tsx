@@ -5,7 +5,7 @@ import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib
 export const Route = createFileRoute("/industries/fintech")({
   head: () => ({
     meta: [
-      { title: "IT Services for Fintech UK | Financial Software Solutions | Dastute" },
+      { title: "Fintech IT Services UK | Financial Software | Dastute" },
       {
         name: "description",
         content:
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/industries/fintech")({
       { name: "theme-color", content: "#1a56db" },
       {
         property: "og:title",
-        content: "IT Services for Fintech UK | Financial Software Solutions | Dastute",
+        content: "Fintech IT Services UK | Financial Software | Dastute",
       },
       {
         property: "og:description",
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/industries/fintech")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "IT Services for Fintech UK | Financial Software Solutions | Dastute",
+        content: "Fintech IT Services UK | Financial Software | Dastute",
       },
       {
         name: "twitter:description",

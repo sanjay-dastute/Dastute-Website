@@ -83,7 +83,7 @@ export const Route = createFileRoute("/products")({
       title:
         "Secure, Scalable Enterprise Software Platform | Dastute",
       description:
-        "Discover a secure, enterprise-grade platform with ERP, HRMS, CRM, WMS, AI Agents, and Hospitality modules built to outperform legacy systems, solve operational pain points, and adapt for future-ready growth.",
+        "A secure, enterprise-grade platform with ERP, HRMS, CRM, WMS, AI Agents and Hospitality modules, built to replace legacy systems and scale with your business.",
       path: "/products",
       }),
     scripts: [

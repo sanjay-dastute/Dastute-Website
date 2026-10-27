@@ -6,7 +6,7 @@ export const Route = createFileRoute("/resources/ransomware-recovery")({
   head: () => ({
     ...buildStandardPageHead({
       title: "Ransomware Recovery Strategy | Real-World Attack Scenario",
-      description: "Discover exactly how ransomware operators execute double-extortion attacks, and how robust BCDR and immutable backups ensure rapid recovery without paying the ransom.",
+      description: "How double-extortion ransomware attacks work, and how BCDR planning and immutable backups let you recover fast without paying the ransom.",
       path: "/resources/ransomware-recovery",
 
     }),

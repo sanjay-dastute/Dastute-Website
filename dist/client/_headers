@@ -4,6 +4,8 @@
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=86400
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
 /
   Link: </.well-known/agent-skills/index.json>; rel="agent-skills"
   Link: </.well-known/api-catalog>; rel="api-catalog"
