@@ -271,7 +271,7 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "Dastute Technologies Limited",
           url: "https://dastute.co.uk",
-          logo: "https://dastute.co.uk/images/logo.png",
+          logo: "https://dastute.co.uk/logo.png",
           telephone: "+44-7423021644",
           email: "contact@dastute.co.uk",
           address: {
@@ -417,15 +417,6 @@ function Home() {
                         <p className="mt-2 text-sm text-slate-300">{copy}</p>
                       </article>
                     ))}
-                  </div>
-                  <div className="mt-5 rounded-2xl border border-blue-400/15 bg-blue-500/10 p-4 text-sm text-slate-300">
-                    <p className="font-semibold text-white">
-                      Premium experience, executive-ready presentation
-                    </p>
-                    <p className="mt-1">
-                      The visual layer is designed to feel calm, intentional and
-                      performance-led, matching the tone of the broader site.
-                    </p>
                   </div>
                 </div>
               </div>

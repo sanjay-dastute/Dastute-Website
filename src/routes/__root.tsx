@@ -14,7 +14,6 @@ import { CookieConsentBanner } from "@/components/CookieConsentBanner";
 import { SiteLayout } from "@/components/SiteLayout";
 
 const GTM_ID = "GTM-K8GD6FJB";
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
 
 function NotFoundComponent() {
   return (
@@ -256,9 +255,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         {
           children: `(function(w,d,s,l,i){try{if(w.localStorage.getItem('dastute_cookie_consent')!=='accepted'){return;}w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode&&f.parentNode.insertBefore(j,f);}catch(e){}})(window,document,'script','dataLayer','${GTM_ID}');`,
-        },
-        {
-          children: `try{if(window.localStorage.getItem('dastute_cookie_consent')==='accepted'){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}';document.head.appendChild(s);window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${GA_MEASUREMENT_ID}');}}catch(e){}`,
         },
         {
           children: `var fa = document.createElement('link'); fa.rel = 'stylesheet'; fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'; document.head.appendChild(fa);`,
