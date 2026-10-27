@@ -522,7 +522,7 @@ function ProjectEstimatorPage() {
                 )}
                 {status === 'error' && (
                   <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-md text-sm mt-4">
-                    {errorMessage || "Something went wrong. Please try again or email us directly at info@dastute.co.uk."}
+                    {errorMessage || "Something went wrong. Please try again or email us directly at contact@dastute.co.uk."}
                   </div>
                 )}
               </form>

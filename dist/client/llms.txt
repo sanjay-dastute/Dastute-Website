@@ -26,6 +26,6 @@ These resources provide insights, research, and verifiable outcomes from Dastute
 - [Contact](/contact): General enquiries and support.
 
 ## Contact Information
-- General enquiries: info@dastute.co.uk
-- Careers: info@dastute.co.uk
+- General enquiries: contact@dastute.co.uk
+- Careers: contact@dastute.co.uk
 - Privacy: contact@dastute.co.uk

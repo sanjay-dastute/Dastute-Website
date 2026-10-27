@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const FALLBACK_ERROR =
-  "Something went wrong sending your message. Please try again or email us directly at info@dastute.co.uk.";
+  "Something went wrong sending your message. Please try again or email us directly at contact@dastute.co.uk.";
 
 export function useFormSubmit() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');

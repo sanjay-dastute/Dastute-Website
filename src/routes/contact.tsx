@@ -7,7 +7,7 @@ import {
 } from "@/lib/seo";
 import { useFormSubmit } from "@/lib/useFormSubmit";
 
-// NOTE: Form submissions are sent to info@dastute.co.uk via Formspree
+// NOTE: Form submissions are sent to info@dastute.co.uk via FormSubmit (src/lib/useFormSubmit.ts)
 // Update the formspree form ID in the action attribute if needed
 // Formspree endpoint format: https://formspree.io/f/{FORM_ID}
 
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/contact")({
     ...buildStandardPageHead({
       title: "Contact Dastute Technologies | London · India · Singapore",
       description:
-        "Contact Dastute Technologies. London office: 128 City Road, EC1V 2NX. Call +44 7423 021644 or email info@dastute.co.uk. We reply within 1 business day.",
+        "Contact Dastute Technologies. London office: 128 City Road, EC1V 2NX. Call +44 7423 021644 or email contact@dastute.co.uk. We reply within 1 business day.",
       path: "/contact",
       ogDescription:
         "Contact our London HQ and global delivery teams in India and Singapore. We respond to all enquiries within one business day.",
@@ -281,7 +281,7 @@ function ContactPage() {
             )}
             {status === 'error' && (
               <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-md text-sm mt-4">
-                {errorMessage || "Something went wrong. Please try again or email us directly at info@dastute.co.uk."}
+                {errorMessage || "Something went wrong. Please try again or email us directly at contact@dastute.co.uk."}
               </div>
             )}
           </form>

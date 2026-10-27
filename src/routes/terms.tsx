@@ -305,10 +305,10 @@ function TermsPage() {
               <p className="text-sm mb-1">Dastute Technologies Limited</p>
               <p className="text-sm mb-1">128 City Road, London, EC1V 2NX</p>
               <a
-                href="mailto:info@dastute.co.uk"
+                href="mailto:contact@dastute.co.uk"
                 className="text-sm text-primary hover:underline"
               >
-                info@dastute.co.uk
+                contact@dastute.co.uk
               </a>
             </div>
           </div>

@@ -13,6 +13,6 @@ headquarters: London, United Kingdom
 additional-offices: India, Singapore
 
 [CONTACT]
-general: info@dastute.co.uk
+general: contact@dastute.co.uk
 privacy: privacy@dastute.co.uk
-legal: info@dastute.co.uk
+legal: contact@dastute.co.uk

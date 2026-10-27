@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd } from "@/lib/seo";
 import { useFormSubmit } from "@/lib/useFormSubmit";
 
-// NOTE: Job application submissions are sent to info@dastute.co.uk via Formspree
+// NOTE: Job application submissions are sent to info@dastute.co.uk via FormSubmit (src/lib/useFormSubmit.ts)
 // Update the formspree form ID in the action attribute if needed
 // Formspree endpoint format: https://formspree.io/f/{FORM_ID}
 
@@ -323,7 +323,7 @@ function CareerApplicationPage() {
             )}
             {status === 'error' && (
               <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-md text-sm mt-4">
-                {errorMessage || "Something went wrong. Please try again or email us directly at info@dastute.co.uk."}
+                {errorMessage || "Something went wrong. Please try again or email us directly at contact@dastute.co.uk."}
               </div>
             )}
             <p className="text-[12px] sm:text-xs text-muted-foreground mt-4">

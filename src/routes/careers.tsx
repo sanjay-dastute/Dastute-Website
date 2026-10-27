@@ -288,7 +288,7 @@ function CareersPage() {
                 </div>
                 <div className="flex md:justify-end">
                   <a
-                    href={`mailto:info@dastute.co.uk?subject=Application: ${role.title}`}
+                    href={`mailto:contact@dastute.co.uk?subject=Application: ${role.title}`}
                     className="inline-flex items-center gap-2 px-5 py-3 border border-current text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:border-primary hover:text-white transition-colors"
                   >
                     Apply <span aria-hidden>↗</span>
@@ -321,7 +321,7 @@ function CareersPage() {
               Apply Now <span aria-hidden>↗</span>
             </Link>
             <a
-              href="mailto:info@dastute.co.uk"
+              href="mailto:contact@dastute.co.uk"
               className="inline-flex items-center justify-center sm:justify-start gap-2 bg-primary text-white px-4 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-sm font-medium hover:opacity-90 transition-opacity"
             >
               Email Us <span aria-hidden>↗</span>

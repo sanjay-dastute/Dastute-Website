@@ -173,7 +173,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             legalName: "Dastute Technologies Limited",
             url: "https://dastute.co.uk",
             logo: "https://dastute.co.uk/logo.png",
-            email: "info@dastute.co.uk",
+            email: "contact@dastute.co.uk",
             telephone: "+447423021644",
             description:
               "Simplifying IT for a complex world. Global IT consultancy delivering Managed Services, Cyber Security, Cloud, Web & Mobile Development, Blockchain, ERP and IT Consulting.",
