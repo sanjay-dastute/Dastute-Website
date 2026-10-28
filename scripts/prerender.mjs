@@ -38,6 +38,7 @@ const ROUTES = [
   "/industries/fintech",
   "/industries/manufacturing",
   "/case-studies",
+  "/resources",
   "/resources/in-house-it-vs-managed-services",
   "/resources/cyber-essentials-guide",
   "/resources/what-is-vcio",

@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd, buildStandardPageHead } from "@/lib/seo";
+import { FaqSection } from "@/components/FaqSection";
+import { FAQS } from "@/lib/faqs";
+import { buildBlogPostingJsonLd, buildBreadcrumbJsonLd, buildFaqJsonLd, buildStandardPageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/resources/ransomware-recovery")({
   head: () => ({
@@ -11,6 +13,23 @@ export const Route = createFileRoute("/resources/ransomware-recovery")({
 
     }),
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBlogPostingJsonLd({
+            headline: "Ransomware Recovery Strategy: A Real-World Attack Scenario",
+            description: "How double-extortion ransomware attacks work, and how BCDR planning and immutable backups let you recover fast without paying the ransom.",
+            datePublished: "2026-06-11T16:22:14+01:00",
+            dateModified: "2026-10-28T00:00:00+00:00",
+            authorName: "Sanjay Dastute",
+            path: "/resources/ransomware-recovery",
+          }),
+        ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildFaqJsonLd("/resources/ransomware-recovery", FAQS["ransomware"])),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(
@@ -52,6 +71,13 @@ function Page() {
       {/* Content */}
       <section className="bg-white py-24">
         <div className="max-w-3xl mx-auto px-6 prose prose-lg prose-slate">
+          <h2>What Is Ransomware Recovery?</h2>
+          <p>
+            <strong>Ransomware recovery is the process of containing a ransomware attack, removing the attacker and restoring systems and data from clean backups without paying the ransom.</strong> Its success depends almost entirely on preparation done before the attack: immutable backups, a tested recovery plan and the ability to detect intruders early.
+          </p>
+
+          <hr className="my-12 border-slate-200" />
+
           <h2>The Modern Ransomware Threat</h2>
           <p>
             Ransomware has evolved from simple automated viruses into highly targeted, human-operated campaigns. Today’s threat actors don't just encrypt your files; they steal them first. This is known as <strong>double-extortion</strong>. If you refuse to pay the ransom to decrypt your files, they threaten to leak your sensitive customer data to the public internet, inviting massive GDPR fines and reputational ruin.
@@ -94,6 +120,52 @@ function Page() {
             <li><strong>Zero Ransom Paid:</strong> The business is operational again within 15 minutes, with zero data loss, entirely circumventing the attacker's leverage.</li>
           </ul>
 
+          <h2>The First 24 Hours: A Ransomware Response Checklist</h2>
+          <ol>
+            <li><strong>Isolate, don't power off.</strong> Disconnect affected machines from the network but leave them running where possible, as memory can hold evidence.</li>
+            <li><strong>Activate your incident response plan.</strong> Bring together IT, leadership, legal and communications, and record every decision with a timestamp.</li>
+            <li><strong>Secure your backups.</strong> Confirm that backup systems are disconnected and unaffected before the attacker can reach them.</li>
+            <li><strong>Reset credentials.</strong> Assume administrator and service accounts are compromised and reset them from a clean device.</li>
+            <li><strong>Identify the scope.</strong> Determine which systems are encrypted, what data may have been stolen and how the attacker got in.</li>
+            <li><strong>Notify the right people.</strong> Report to the NCSC and Action Fraud, inform your cyber insurer, and assess whether you must notify the ICO.</li>
+            <li><strong>Restore in priority order.</strong> Rebuild critical systems from known-clean backups, patch the entry point and monitor closely for the attacker returning.</li>
+          </ol>
+
+          <h2>Should You Pay the Ransom?</h2>
+          <p>
+            The NCSC and UK law enforcement advise organisations not to pay. Payment does not guarantee working decryption keys, does not stop stolen data from being leaked or sold, and marks your organisation as willing to pay, which invites repeat attacks. Payments can also breach sanctions law if the group behind the attack is a sanctioned entity. The most reliable way to avoid facing the decision is to have backups an attacker cannot touch.
+          </p>
+
+          <h2>Building Ransomware-Resilient Backups</h2>
+          <p>
+            Attackers now deliberately hunt for and delete backups before triggering encryption. A resilient backup strategy follows the <strong>3-2-1-1-0 rule</strong>:
+          </p>
+          <ul>
+            <li><strong>3</strong> copies of your data,</li>
+            <li><strong>2</strong> different types of storage,</li>
+            <li><strong>1</strong> copy kept off-site,</li>
+            <li><strong>1</strong> copy that is immutable or offline, so it cannot be altered or deleted even with admin credentials,</li>
+            <li><strong>0</strong> errors when restores are tested.</li>
+          </ul>
+          <p>
+            Test restores regularly. A backup that has never been restored is an assumption, not a recovery plan. Our <Link to="/resources/bcdr-guide">BCDR guide</Link> explains how to set recovery time and recovery point objectives for each system.
+          </p>
+
+          <h2>Ransomware and Your UK GDPR Obligations</h2>
+          <p>
+            If personal data was stolen or made unavailable, the attack is likely to be a personal data breach. Under UK GDPR you must report notifiable breaches to the Information Commissioner's Office (ICO) within 72 hours of becoming aware of them, and tell affected individuals without undue delay when there is a high risk to them. Keep a record of every breach, even those you decide not to report.
+          </p>
+
+          <h2>How to Prevent Ransomware</h2>
+          <ul>
+            <li>Enforce multi-factor authentication on email, remote access and all admin accounts.</li>
+            <li>Patch internet-facing systems quickly, especially VPNs, firewalls and remote desktop services.</li>
+            <li>Deploy endpoint detection and response (EDR) with <Link to="/resources/soc-explained">24/7 SOC monitoring</Link>, because attackers often operate overnight and at weekends.</li>
+            <li>Train staff to recognise phishing, one of the most common ways attackers get in.</li>
+            <li>Apply <Link to="/resources/zero-trust-architecture">Zero Trust</Link> principles so one compromised account cannot reach every server.</li>
+            <li>Validate your defences with regular <Link to="/resources/penetration-testing-explained">penetration testing</Link>.</li>
+          </ul>
+
           <div className="mt-16 p-8 bg-slate-900 rounded-2xl border border-slate-800 text-center">
             <h3 className="text-2xl font-bold text-white mb-4 mt-0">Could your business survive an attack today?</h3>
             <p className="text-slate-300 mb-8">
@@ -105,6 +177,7 @@ function Page() {
           </div>
         </div>
       </section>
+      <FaqSection items={FAQS["ransomware"]} />
     </SiteLayout>
   );
 }

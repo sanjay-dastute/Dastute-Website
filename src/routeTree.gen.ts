@@ -30,6 +30,7 @@ import { Route as CapabilitiesRouteImport } from './routes/capabilities'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ResourcesIndexRouteImport } from './routes/resources/index'
 import { Route as ServicesWebDevelopmentRouteImport } from './routes/services/web-development'
 import { Route as ServicesNetworkRouteImport } from './routes/services/network'
 import { Route as ServicesMobileRouteImport } from './routes/services/mobile'
@@ -165,6 +166,11 @@ const AboutRoute = AboutRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesIndexRoute = ResourcesIndexRouteImport.update({
+  id: '/resources/',
+  path: '/resources/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesWebDevelopmentRoute = ServicesWebDevelopmentRouteImport.update({
@@ -387,6 +393,7 @@ export interface FileRoutesByFullPath {
   '/services/mobile': typeof ServicesMobileRoute
   '/services/network': typeof ServicesNetworkRoute
   '/services/web-development': typeof ServicesWebDevelopmentRoute
+  '/resources/': typeof ResourcesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -441,6 +448,7 @@ export interface FileRoutesByTo {
   '/services/mobile': typeof ServicesMobileRoute
   '/services/network': typeof ServicesNetworkRoute
   '/services/web-development': typeof ServicesWebDevelopmentRoute
+  '/resources': typeof ResourcesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -496,6 +504,7 @@ export interface FileRoutesById {
   '/services/mobile': typeof ServicesMobileRoute
   '/services/network': typeof ServicesNetworkRoute
   '/services/web-development': typeof ServicesWebDevelopmentRoute
+  '/resources/': typeof ResourcesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -552,6 +561,7 @@ export interface FileRouteTypes {
     | '/services/mobile'
     | '/services/network'
     | '/services/web-development'
+    | '/resources/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -606,6 +616,7 @@ export interface FileRouteTypes {
     | '/services/mobile'
     | '/services/network'
     | '/services/web-development'
+    | '/resources'
   id:
     | '__root__'
     | '/'
@@ -660,6 +671,7 @@ export interface FileRouteTypes {
     | '/services/mobile'
     | '/services/network'
     | '/services/web-development'
+    | '/resources/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -715,6 +727,7 @@ export interface RootRouteChildren {
   ServicesMobileRoute: typeof ServicesMobileRoute
   ServicesNetworkRoute: typeof ServicesNetworkRoute
   ServicesWebDevelopmentRoute: typeof ServicesWebDevelopmentRoute
+  ResourcesIndexRoute: typeof ResourcesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -864,6 +877,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/': {
+      id: '/resources/'
+      path: '/resources'
+      fullPath: '/resources/'
+      preLoaderRoute: typeof ResourcesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/web-development': {
@@ -1141,6 +1161,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesMobileRoute: ServicesMobileRoute,
   ServicesNetworkRoute: ServicesNetworkRoute,
   ServicesWebDevelopmentRoute: ServicesWebDevelopmentRoute,
+  ResourcesIndexRoute: ResourcesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

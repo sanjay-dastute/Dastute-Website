@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd, buildStandardPageHead } from "@/lib/seo";
+import { FaqSection } from "@/components/FaqSection";
+import { FAQS } from "@/lib/faqs";
+import { buildBlogPostingJsonLd, buildBreadcrumbJsonLd, buildFaqJsonLd, buildStandardPageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/resources/bcdr-guide")({
   head: () => ({
@@ -11,6 +13,23 @@ export const Route = createFileRoute("/resources/bcdr-guide")({
 
     }),
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBlogPostingJsonLd({
+            headline: "Business Continuity & Disaster Recovery (BCDR) Guide",
+            description: "Learn the difference between simple backups and a true BCDR strategy. Explore a real-world server failure scenario and instantaneous failover.",
+            datePublished: "2026-06-11T16:22:14+01:00",
+            dateModified: "2026-10-28T00:00:00+00:00",
+            authorName: "Sanjay Dastute",
+            path: "/resources/bcdr-guide",
+          }),
+        ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildFaqJsonLd("/resources/bcdr-guide", FAQS["bcdr"])),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(
@@ -52,6 +71,13 @@ function Page() {
       {/* Content */}
       <section className="bg-white py-24">
         <div className="max-w-3xl mx-auto px-6 prose prose-lg prose-slate">
+          <h2>What Is BCDR?</h2>
+          <p>
+            <strong>BCDR (business continuity and disaster recovery) is the combined plan that keeps a business operating during a disruption and restores its IT systems and data afterwards.</strong> Business continuity covers people, processes and communication; disaster recovery covers the technical restoration of systems, applications and data.
+          </p>
+
+          <hr className="my-12 border-slate-200" />
+
           <h2>The RTO and RPO Equation</h2>
           <p>
             Many businesses believe they are protected because they back up their data to the cloud every night. But having the data and actually being able to use it are two completely different things.
@@ -93,6 +119,58 @@ function Page() {
             Modern BCDR solutions replicate every local snapshot to a secure, geographically distant data center. In the event of a total site disaster, your IT provider can spin up your entire server infrastructure within the cloud, allowing your team to access their critical applications securely from home via VPN while a new physical office is secured.
           </p>
 
+          <h2>RTO and RPO Explained</h2>
+          <p>
+            Two numbers drive every BCDR plan:
+          </p>
+          <ul>
+            <li><strong>Recovery Time Objective (RTO):</strong> the maximum time a system can be unavailable before the impact becomes unacceptable. An RTO of 4 hours means the system must be running again within 4 hours.</li>
+            <li><strong>Recovery Point Objective (RPO):</strong> the maximum amount of data you can afford to lose, measured in time. An RPO of 1 hour means backups or replication must run at least hourly.</li>
+          </ul>
+          <p>
+            Lower RTOs and RPOs cost more to achieve, so set them per system based on business impact rather than applying one target to everything.
+          </p>
+          <table>
+            <thead>
+              <tr><th>System tier</th><th>Example</th><th>Typical approach</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Critical</strong></td><td>Payment processing, core ERP</td><td>Continuous replication to a standby environment; recovery in minutes</td></tr>
+              <tr><td><strong>Important</strong></td><td>Email, CRM, file storage</td><td>Frequent backups with rapid cloud restore; recovery in hours</td></tr>
+              <tr><td><strong>Standard</strong></td><td>Archives, internal tools</td><td>Daily backups; recovery within a day or two</td></tr>
+            </tbody>
+          </table>
+
+          <h2>How to Build a BCDR Plan in 6 Steps</h2>
+          <ol>
+            <li><strong>Business impact analysis.</strong> List your critical business functions, the systems they depend on and the cost of each hour of downtime.</li>
+            <li><strong>Risk assessment.</strong> Identify likely threats: ransomware, hardware failure, cloud outages, power loss, flooding or loss of key staff.</li>
+            <li><strong>Set RTOs and RPOs</strong> for each system based on the impact analysis.</li>
+            <li><strong>Design the recovery strategy.</strong> Choose backup, replication and failover technology that meets those targets, including at least one immutable copy.</li>
+            <li><strong>Document the plan.</strong> Record roles, contact details, step-by-step recovery runbooks and communication templates for staff, customers and regulators.</li>
+            <li><strong>Test and update.</strong> Run tabletop exercises and real restore tests at least annually, and update the plan whenever systems or people change.</li>
+          </ol>
+
+          <h2>Cloud Disaster Recovery (DRaaS)</h2>
+          <p>
+            Disaster Recovery as a Service replicates your servers to a cloud platform such as Azure or AWS, so they can be started there if your primary environment fails. It removes the need for a second physical data centre and lets SMEs achieve recovery times that once required enterprise budgets. See our <Link to="/resources/cloud-migration-cost-guide">cloud migration cost guide</Link> for typical cloud pricing considerations.
+          </p>
+
+          <h2>BCDR Testing: The Step Most Businesses Skip</h2>
+          <p>
+            An untested plan usually fails at the worst moment: passwords are missing, runbooks are out of date or backups turn out to be incomplete. Schedule:
+          </p>
+          <ul>
+            <li><strong>Quarterly</strong> restore tests of individual files and systems.</li>
+            <li><strong>Annual</strong> full failover or tabletop exercises with leadership.</li>
+            <li><strong>After every major change</strong>, such as a new system, a migration or key staff leaving.</li>
+          </ul>
+
+          <h2>BCDR and Compliance</h2>
+          <p>
+            Business continuity is a requirement in <Link to="/resources/iso-27001-checklist">ISO 27001</Link> (information security aspects of business continuity) and is expected by regulators, insurers and enterprise customers during supplier due diligence. A documented, tested BCDR plan is also your strongest defence against <Link to="/resources/ransomware-recovery">ransomware</Link>.
+          </p>
+
           <div className="mt-16 p-8 bg-blue-50 rounded-2xl border border-blue-100 text-center">
             <h3 className="text-2xl font-bold text-slate-900 mb-4 mt-0">Calculate Your True Cost of Downtime</h3>
             <p className="text-slate-600 mb-8">
@@ -104,6 +182,7 @@ function Page() {
           </div>
         </div>
       </section>
+      <FaqSection items={FAQS["bcdr"]} />
     </SiteLayout>
   );
 }

@@ -150,7 +150,7 @@ function Page() {
       <section className="border-b border-border bg-background">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4">
           {[
-            { value: "CREST", label: "Certified Operators" },
+            { value: "CREST · CEH", label: "Certified Testers" },
             { value: "MITRE ATT&CK", label: "Framework Aligned" },
             { value: "24/7", label: "SOC Monitoring" },
             { value: "Purple Team", label: "Collaborative Exercises" },
@@ -195,8 +195,8 @@ function Page() {
                 color: "accent-top-blue"
               },
               {
-                title: "CREST Penetration Testing",
-                desc: "Web app, mobile, API, cloud, and internal network penetration testing by CREST-certified operators using OWASP, PTES, and OSSTMM methodologies.",
+                title: "Penetration Testing",
+                desc: "Web app, mobile, API, cloud, and internal network penetration testing by CREST-certified and CEH-certified testers using OWASP, PTES, and OSSTMM methodologies.",
                 color: "accent-top-violet"
               },
               {
@@ -256,9 +256,9 @@ function Page() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-2">CREST Penetration Testing</h4>
+                  <h4 className="font-bold text-slate-900 mb-2">Penetration Testing</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Web application, mobile, API, internal network, and cloud infrastructure penetration testing by CREST-certified operators. OWASP, PTES, and OSSTMM methodologies. Detailed CVSS-scored reports with proof-of-concept evidence and prioritised remediation guidance.
+                    Web application, mobile, API, internal network, and cloud infrastructure penetration testing by CREST-certified and CEH-certified testers. OWASP, PTES, and OSSTMM methodologies. Detailed CVSS-scored reports with proof-of-concept evidence and prioritised remediation guidance.
                   </p>
                 </div>
                 <div>
@@ -276,7 +276,7 @@ function Page() {
                 <div>
                   <h4 className="font-bold text-slate-900 mb-2">Smart Contract & Web3 Security Audit</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    CREST-aligned smart contract auditing against OWASP Smart Contract Top 10 and SWC Registry. We have prevented exploits valued at over $50M through pre-deployment auditing. Covers re-entrancy, arithmetic overflow, access control, and economic attack vectors.
+                    Rigorous smart contract auditing against OWASP Smart Contract Top 10 and SWC Registry. We have prevented exploits valued at over $50M through pre-deployment auditing. Covers re-entrancy, arithmetic overflow, access control, and economic attack vectors.
                   </p>
                 </div>
                 <div className="p-5 bg-rose-50 border border-rose-100 rounded-2xl">
@@ -531,7 +531,7 @@ function Page() {
           <div className="flex flex-wrap justify-center gap-3">
             {[
               "OWASP ZAP", "Burp Suite", "Nmap", "Metasploit", "Nessus", "Wireshark",
-              "CREST", "ISO 27001", "HIPAA", "PCI-DSS", "SOC 2", "CrowdStrike", "Splunk",
+              "OWASP", "ISO 27001", "HIPAA", "PCI-DSS", "SOC 2", "CrowdStrike", "Splunk",
               "Datadog", "Cobalt Strike", "Sliver", "Empire", "BloodHound", "Impacket",
               "Responder", "Microsoft Sentinel", "Splunk Enterprise Security", "IBM QRadar",
               "CrowdStrike Falcon", "SentinelOne", "Microsoft Defender for Endpoint",

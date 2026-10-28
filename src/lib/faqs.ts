@@ -74,6 +74,11 @@ export const FAQS: Record<string, Faq[]> = {
   ],
   "cyber-security": [
     {
+      question: "Are your security consultants certified?",
+      answer:
+        "Yes. Our team includes CREST-certified and CEH-certified penetration testers, certified SOC analysts and a certified Data Protection Officer (DPO), so testing, monitoring and privacy work are all led by qualified specialists.",
+    },
+    {
       question: "What is the difference between red team and blue team security?",
       answer:
         "A red team attacks your organisation the way a real adversary would to find weaknesses. A blue team defends it by monitoring, detecting and responding to threats. Purple team exercises combine both so defences improve from each attack.",
@@ -246,6 +251,116 @@ export const FAQS: Record<string, Faq[]> = {
       question: "Which industries do you market for?",
       answer:
         "We work with financial services and fintech, healthcare and pharma, B2B technology and SaaS, legal and professional services, e-commerce and retail, and manufacturing.",
+    },
+  ],
+  "zero-trust": [
+    {
+      question: "What is Zero Trust in simple terms?",
+      answer:
+        "Zero Trust means never trusting a user or device just because it is on your network. Every access request is checked against identity, device health and context, and users only get the access they need.",
+    },
+    {
+      question: "Does Zero Trust replace a VPN?",
+      answer:
+        "Usually, yes. Zero Trust Network Access (ZTNA) connects users to individual applications instead of the whole network, which removes the broad access a stolen VPN login would give an attacker.",
+    },
+    {
+      question: "Is Zero Trust only for large enterprises?",
+      answer:
+        "No. SMEs can adopt Zero Trust in phases, starting with multi-factor authentication, device compliance checks and least-privilege permissions, often using tools they already license such as Microsoft 365.",
+    },
+    {
+      question: "How long does a Zero Trust implementation take?",
+      answer:
+        "Core identity and device controls can typically be in place within weeks. A full architecture, including network segmentation and VPN replacement, is usually delivered in phases over several months.",
+    },
+  ],
+  ransomware: [
+    {
+      question: "What should I do first if we are hit by ransomware?",
+      answer:
+        "Isolate affected devices from the network without switching them off, activate your incident response plan, protect your backups, and contact your IT security provider, the NCSC and your cyber insurer.",
+    },
+    {
+      question: "Should we pay a ransomware demand?",
+      answer:
+        "The NCSC and UK law enforcement advise against paying. Payment does not guarantee your data back, does not stop stolen data being leaked, and can invite repeat attacks.",
+    },
+    {
+      question: "Do we have to report a ransomware attack to the ICO?",
+      answer:
+        "If personal data was accessed, stolen or made unavailable and the breach poses a risk to individuals, UK GDPR requires you to report it to the ICO within 72 hours of becoming aware of it.",
+    },
+    {
+      question: "What is an immutable backup?",
+      answer:
+        "An immutable backup is a copy of your data that cannot be changed or deleted for a set period, even by an administrator. It ensures attackers cannot destroy your recovery point.",
+    },
+  ],
+  soc: [
+    {
+      question: "What does SOC stand for?",
+      answer:
+        "SOC stands for Security Operations Centre: a team of analysts and supporting technology that monitors an organisation's systems 24/7 to detect, investigate and respond to cyber threats.",
+    },
+    {
+      question: "What is the difference between a SOC and a SIEM?",
+      answer:
+        "A SIEM is software that collects and correlates security logs. A SOC is the team and processes that use the SIEM and other tools to investigate alerts and respond to incidents.",
+    },
+    {
+      question: "Do small businesses need a SOC?",
+      answer:
+        "Attackers target businesses of every size and often strike outside office hours. A managed SOC gives SMEs 24/7 monitoring and response without the cost of building an in-house team.",
+    },
+    {
+      question: "What is SOC-as-a-Service?",
+      answer:
+        "SOC-as-a-Service is an outsourced, subscription-based security operations centre. The provider supplies the analysts, SIEM, threat intelligence and response capability for a predictable monthly fee.",
+    },
+  ],
+  bcdr: [
+    {
+      question: "What is the difference between business continuity and disaster recovery?",
+      answer:
+        "Business continuity keeps the whole business operating during a disruption, covering people, processes and communication. Disaster recovery is the technical part: restoring IT systems and data.",
+    },
+    {
+      question: "What are RTO and RPO?",
+      answer:
+        "RTO (Recovery Time Objective) is how quickly a system must be restored. RPO (Recovery Point Objective) is how much data, measured in time, you can afford to lose.",
+    },
+    {
+      question: "How often should we test our disaster recovery plan?",
+      answer:
+        "Test individual restores quarterly, run a full failover or tabletop exercise at least once a year, and retest after any major change to systems or staff.",
+    },
+    {
+      question: "Is cloud backup enough for disaster recovery?",
+      answer:
+        "Not on its own. Backups protect data, but disaster recovery also needs a way to run systems again quickly, such as replication to a standby cloud environment, plus a documented and tested plan.",
+    },
+  ],
+  genai: [
+    {
+      question: "What is generative AI used for in business?",
+      answer:
+        "Businesses use generative AI to extract data from documents, summarise information, draft emails and reports, assist with code and answer staff questions from internal knowledge.",
+    },
+    {
+      question: "Is generative AI safe to use with company data?",
+      answer:
+        "It can be, if you use enterprise-grade tools that do not train on your data, control who can access what, and set a clear AI usage policy with human review for important outputs.",
+    },
+    {
+      question: "Does using AI with personal data comply with UK GDPR?",
+      answer:
+        "It can, but you need a lawful basis for the processing, and higher-risk uses usually require a Data Protection Impact Assessment (DPIA). The ICO publishes guidance on AI and data protection.",
+    },
+    {
+      question: "How should a business start with generative AI?",
+      answer:
+        "Start with one or two high-value internal tasks where people review the output, measure the time saved, put governance in place, and then scale to further processes.",
     },
   ],
   "custom-software": [

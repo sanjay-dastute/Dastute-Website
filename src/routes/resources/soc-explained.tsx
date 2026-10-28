@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd, buildStandardPageHead } from "@/lib/seo";
+import { FaqSection } from "@/components/FaqSection";
+import { FAQS } from "@/lib/faqs";
+import { buildBlogPostingJsonLd, buildBreadcrumbJsonLd, buildFaqJsonLd, buildStandardPageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/resources/soc-explained")({
   head: () => ({
@@ -11,6 +13,23 @@ export const Route = createFileRoute("/resources/soc-explained")({
 
     }),
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBlogPostingJsonLd({
+            headline: "What Is a SOC? Security Operations Centre Explained",
+            description: "Learn how a 24/7 Security Operations Center (SOC) detects, analyzes, and responds to active cyber threats while you sleep. A real-world triage scenario.",
+            datePublished: "2026-06-11T16:22:14+01:00",
+            dateModified: "2026-10-28T00:00:00+00:00",
+            authorName: "Sanjay Dastute",
+            path: "/resources/soc-explained",
+          }),
+        ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildFaqJsonLd("/resources/soc-explained", FAQS["soc"])),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(
@@ -91,6 +110,62 @@ function Page() {
             If the business in that scenario did not have a 24/7 SOC, the attack would have progressed unhindered. By Monday morning, the attacker would have spent 30 hours inside the network, deploying ransomware across all servers and stealing customer data. The cost of recovery would be astronomical.
           </p>
 
+          <h2>What Does a SOC Actually Do?</h2>
+          <ul>
+            <li><strong>Continuous monitoring:</strong> watching logs and alerts from endpoints, servers, cloud platforms, email and firewalls around the clock.</li>
+            <li><strong>Threat detection:</strong> using SIEM correlation rules, threat intelligence and behavioural analytics to separate real attacks from noise.</li>
+            <li><strong>Triage and investigation:</strong> analysts confirm whether an alert is malicious, establish its scope and identify the affected systems.</li>
+            <li><strong>Incident response:</strong> containing threats by isolating devices, disabling accounts and blocking malicious addresses.</li>
+            <li><strong>Threat hunting:</strong> proactively searching for attackers who have evaded automated detection.</li>
+            <li><strong>Reporting and improvement:</strong> incident reports, trend analysis and recommendations that strengthen your defences over time.</li>
+          </ul>
+
+          <h2>Inside the SOC: Tier 1, 2 and 3 Analysts</h2>
+          <table>
+            <thead>
+              <tr><th>Tier</th><th>Role</th><th>Typical responsibilities</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Tier 1</strong></td><td>Triage analyst</td><td>Reviews incoming alerts, filters false positives and escalates genuine threats</td></tr>
+              <tr><td><strong>Tier 2</strong></td><td>Incident responder</td><td>Investigates confirmed incidents, determines scope and leads containment</td></tr>
+              <tr><td><strong>Tier 3</strong></td><td>Threat hunter / specialist</td><td>Hunts for advanced threats, performs malware analysis and tunes detections</td></tr>
+            </tbody>
+          </table>
+
+          <h2>The Technology Behind a SOC</h2>
+          <ul>
+            <li><strong>SIEM (Security Information and Event Management):</strong> collects and correlates logs from across your environment, for example Microsoft Sentinel or Splunk.</li>
+            <li><strong>EDR / XDR:</strong> agents on endpoints that detect malicious behaviour and allow remote isolation, such as Microsoft Defender for Endpoint, CrowdStrike Falcon or SentinelOne.</li>
+            <li><strong>SOAR:</strong> automation that runs response playbooks in seconds, such as disabling a compromised account.</li>
+            <li><strong>Threat intelligence feeds:</strong> up-to-date information on attacker infrastructure, malware and techniques, often mapped to the MITRE ATT&amp;CK framework.</li>
+          </ul>
+
+          <h2>In-House SOC vs Managed SOC</h2>
+          <table>
+            <thead>
+              <tr><th></th><th>In-house SOC</th><th>Managed SOC (SOC-as-a-Service)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>24/7 coverage</strong></td><td>Needs a large team working shifts</td><td>Included as standard</td></tr>
+              <tr><td><strong>Set-up time</strong></td><td>Many months to hire and build</td><td>Weeks to onboard</td></tr>
+              <tr><td><strong>Cost</strong></td><td>Salaries, tools and training</td><td>Predictable subscription</td></tr>
+              <tr><td><strong>Expertise</strong></td><td>Limited to the people you hire</td><td>Shared specialists and threat intelligence across many clients</td></tr>
+              <tr><td><strong>Best for</strong></td><td>Large enterprises with dedicated security budgets</td><td>SMEs and mid-market businesses</td></tr>
+            </tbody>
+          </table>
+
+          <h2>How to Choose a Managed SOC Provider</h2>
+          <ul>
+            <li>Confirm that monitoring is genuinely staffed 24/7, including weekends and bank holidays.</li>
+            <li>Ask whether the SOC can <strong>respond</strong>, for example by isolating devices, or only alerts you.</li>
+            <li>Check which of your systems will be covered: endpoints, Microsoft 365, cloud, firewalls and servers.</li>
+            <li>Ask for sample incident reports and agreed response times.</li>
+            <li>Make sure the service supports your compliance needs, such as <Link to="/resources/iso-27001-checklist">ISO 27001</Link> and UK GDPR.</li>
+          </ul>
+          <p>
+            A SOC works best alongside preventative controls such as <Link to="/resources/zero-trust-architecture">Zero Trust</Link> and a tested <Link to="/resources/ransomware-recovery">ransomware recovery plan</Link>.
+          </p>
+
           <div className="mt-16 p-8 bg-blue-50 rounded-2xl border border-blue-100 text-center">
             <h3 className="text-2xl font-bold text-slate-900 mb-4 mt-0">Who is watching your network tonight?</h3>
             <p className="text-slate-600 mb-8">
@@ -102,6 +177,7 @@ function Page() {
           </div>
         </div>
       </section>
+      <FaqSection items={FAQS["soc"]} />
     </SiteLayout>
   );
 }

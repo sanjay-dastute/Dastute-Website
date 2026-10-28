@@ -25,7 +25,7 @@ const TEAM_MEMBERS = [
     name: "SMITHA SRIHARSHA",
     role: "Chief Security Advisor",
     practice: "Technology / Security",
-    bio: "As Chief Security Advisor, Smitha brings over 22 years of experience in cybersecurity, defining Dastute's security philosophy, overseeing the quality and rigour of all cybersecurity service delivery, and ensuring that our security practices - from CREST-aligned penetration testing and SOC operations to compliance advisory and Red Team engagements - reflect the highest professional standards in the industry.",
+    bio: "As Chief Security Advisor, Smitha brings over 22 years of experience in cybersecurity, defining Dastute's security philosophy, overseeing the quality and rigour of all cybersecurity service delivery, and ensuring that our security practices - from penetration testing by CREST- and CEH-certified testers and SOC operations to compliance advisory and Red Team engagements - reflect the highest professional standards in the industry.",
   },
   {
     name: "PRASANNA KUMAR M (SALES ELEPHANT)",

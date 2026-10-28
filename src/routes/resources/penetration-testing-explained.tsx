@@ -193,7 +193,7 @@ function Page() {
             Secure Your Infrastructure
           </h2>
           <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-            Dastute's certified ethical hackers provide CREST-aligned penetration testing for networks, web applications, and cloud environments.
+            Dastute's CREST-certified and CEH-certified testers provide penetration testing following OWASP, PTES and NIST SP 800-115 methodologies for networks, web applications, and cloud environments.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

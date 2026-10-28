@@ -136,6 +136,12 @@ export function SiteFooter() {
                 Insights & FAQs
               </Link>
               <Link
+                to="/resources"
+                className="hover:text-white transition-colors block"
+              >
+                Guides & Resources
+              </Link>
+              <Link
                 to="/resources/glossary"
                 className="hover:text-white transition-colors block"
               >

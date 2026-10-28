@@ -88,7 +88,7 @@ export const Route = createFileRoute("/services/blockchain")({
           buildServiceJsonLd({
             name: "Blockchain & NFT Development",
             description:
-              "Smart contract development, DeFi protocols, NFT marketplaces, and CREST-aligned security audits from Dastute Technologies. Secure, scalable Web3 solutions for enterprise and startups.",
+              "Smart contract development, DeFi protocols, NFT marketplaces, and rigorous security audits from Dastute Technologies. Secure, scalable Web3 solutions for enterprise and startups.",
             path: "/services/blockchain",
           }),
         ),
@@ -127,7 +127,7 @@ function Page() {
             Blockchain Development Company UK. Web3 Engineering for Real-World Value.
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
-            Supply chain traceability, trade finance automation, tokenisation of real-world assets, smart contract development, and CREST-aligned security audits. We build enterprise blockchain solutions that solve operational problems — not speculative ones. Web3 with the governance of Web2.
+            Supply chain traceability, trade finance automation, tokenisation of real-world assets, smart contract development, and rigorous security audits. We build enterprise blockchain solutions that solve operational problems — not speculative ones. Web3 with the governance of Web2.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
@@ -152,7 +152,7 @@ function Page() {
           {[
             { value: "100%", label: "Audits" },
             { value: "73%", label: "Vuln Found" },
-            { value: "CREST", label: "Security" },
+            { value: "OWASP", label: "Security" },
             { value: "Solidity/Rust", label: "Tech" },
           ].map((stat, i) => (
             <div
@@ -435,7 +435,7 @@ function Page() {
             {[
               { num: "01", title: "Architecture & Tokenomics", desc: "Protocol design, tokenomics modelling, threat modelling, and blockchain selection." },
               { num: "02", title: "Development & Testing", desc: "Smart contract development with unit tests, integration tests, and fuzz testing across all code paths." },
-              { num: "03", title: "Security Audit", desc: "CREST-aligned audit against OWASP and SWC registry, economic attack vector analysis, and formal report." },
+              { num: "03", title: "Security Audit", desc: "Audit against OWASP and SWC registry, economic attack vector analysis, and formal report." },
               { num: "04", title: "Deploy & Monitor", desc: "Staged deployment, mainnet launch, and ongoing monitoring for anomalous transaction patterns." },
             ].map((step, i) => (
               <div key={i} className="glass-card-dark rounded-3xl p-6 relative overflow-hidden">

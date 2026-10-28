@@ -42,6 +42,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/careers-apply", priority: "0.6" },
           { path: "/industries/manufacturing", priority: "0.8" },
           { path: "/case-studies", priority: "0.8" },
+          { path: "/resources", priority: "0.8" },
           { path: "/resources/in-house-it-vs-managed-services", priority: "0.7" },
           { path: "/resources/cyber-essentials-guide", priority: "0.7" },
           { path: "/resources/what-is-vcio", priority: "0.7" },
