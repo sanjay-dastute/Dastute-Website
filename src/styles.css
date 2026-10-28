@@ -2471,3 +2471,264 @@ html.motion-ready .is-in .versus-item { opacity: 1; transform: none; }
   .cr-path .cr-flag { animation: none !important; }
   .cr-path .cr-draw { stroke-dashoffset: 0; }
 }
+
+/* Homepage: services bento */
+.hb-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(50% 40% at 15% 0%, rgba(59, 130, 246, 0.25), transparent 70%),
+    radial-gradient(45% 40% at 90% 100%, rgba(139, 92, 246, 0.22), transparent 70%),
+    #050b1f;
+}
+.hb-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(70% 60% at 50% 40%, #000, transparent);
+  pointer-events: none;
+}
+.hb-tile {
+  --hue: #3b82f6;
+  --mx: 50%;
+  --my: 0%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background:
+    radial-gradient(90% 90% at 100% 0%, color-mix(in srgb, var(--hue) 16%, transparent), transparent 60%),
+    rgba(15, 23, 42, 0.7);
+  padding: 2rem;
+  isolation: isolate;
+  transition: translate 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease, box-shadow 0.5s ease;
+}
+.hb-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(340px circle at var(--mx) var(--my), color-mix(in srgb, var(--hue) 22%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.hb-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(260px circle at var(--mx) var(--my), var(--hue), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.hb-tile:hover {
+  translate: 0 -6px;
+  box-shadow: 0 30px 70px -25px color-mix(in srgb, var(--hue) 60%, transparent);
+}
+.hb-tile:hover::before,
+.hb-tile:hover::after { opacity: 1; }
+.hb-orb {
+  display: inline-flex;
+  height: 3.25rem;
+  width: 3.25rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--hue), color-mix(in srgb, var(--hue) 50%, #0b1530));
+  box-shadow: 0 0 30px color-mix(in srgb, var(--hue) 50%, transparent);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.hb-tile:hover .hb-orb { transform: rotate(-10deg) scale(1.08); }
+.hb-big {
+  margin-top: 1.5rem;
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #fff, var(--hue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hb-spark { position: absolute; right: 0; bottom: 0; width: 60%; opacity: 0.6; z-index: -1; }
+.hb-spark path {
+  fill: none;
+  stroke: var(--hue);
+  stroke-width: 2.5;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: hb-draw 3.5s ease-in-out infinite;
+}
+@keyframes hb-draw {
+  0% { stroke-dashoffset: 1; }
+  60%, 100% { stroke-dashoffset: 0; }
+}
+
+/* Orbiting tech chips */
+.hb-orbit { position: relative; margin: 1.5rem auto 0; height: 9rem; width: 9rem; }
+.hb-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1px dashed color-mix(in srgb, var(--hue) 50%, transparent);
+}
+.hb-orbit-core {
+  position: absolute;
+  inset: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 800;
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #c4b5fd, var(--hue));
+  box-shadow: 0 0 40px var(--hue);
+  animation: hb-breathe 3s ease-in-out infinite;
+}
+@keyframes hb-breathe { 50% { transform: scale(1.1); } }
+.hb-orbit-chip {
+  position: absolute;
+  inset: 0;
+  animation: hb-spin 9s linear infinite;
+  animation-delay: calc(var(--k) * -3s);
+}
+.hb-orbit-chip span {
+  position: absolute;
+  left: 50%;
+  top: -0.7rem;
+  translate: -50% 0;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--hue) 60%, transparent);
+  background: #0b1530;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ddd6fe;
+  animation: hb-spin 9s linear infinite reverse;
+  animation-delay: calc(var(--k) * -3s);
+}
+@keyframes hb-spin { to { rotate: 360deg; } }
+
+/* Industry ticker */
+.hb-ticker {
+  margin-top: 1.5rem;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+}
+.hb-ticker div { display: flex; width: max-content; gap: 0.6rem; animation: marquee 14s linear infinite; }
+.hb-ticker span {
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--hue) 40%, transparent);
+  background: color-mix(in srgb, var(--hue) 12%, transparent);
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a7f3d0;
+}
+
+/* Service tiles */
+.hb-service { min-height: 22rem; align-items: stretch; text-align: left; }
+.hb-vis-wrap {
+  position: absolute;
+  right: 1.25rem;
+  top: 4.5rem;
+  z-index: -1;
+  width: 8.5rem;
+  opacity: 0.85;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+}
+.hb-wide .hb-vis-wrap { top: 50%; right: 3rem; width: 11rem; translate: 0 -50%; }
+.hb-service:hover .hb-vis-wrap { transform: scale(1.1); opacity: 1; }
+.hb-service h3 { margin-top: auto; padding-top: 8.5rem; }
+.hb-service .hb-go { align-self: flex-start; }
+.hb-wide h3 { padding-top: 3rem; }
+.hb-vis { width: 100%; overflow: visible; }
+.hb-vis .hb-ring,
+.hb-vis .hb-line { fill: none; stroke: color-mix(in srgb, var(--hue) 55%, transparent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.hb-vis .hb-sweep {
+  fill: color-mix(in srgb, var(--hue) 35%, transparent);
+  transform-origin: 60px 60px;
+  animation: hb-spin 3s linear infinite;
+}
+.hb-vis .hb-blip { fill: var(--hue); animation: hb-blink 3s ease-in-out infinite; }
+@keyframes hb-blink { 0%, 100% { opacity: 0.2; } 15% { opacity: 1; } }
+.hb-vis .hb-up { animation: hb-rise 2s ease-in-out infinite; }
+@keyframes hb-rise {
+  0% { transform: translateY(10px); opacity: 0; }
+  40%, 70% { opacity: 1; }
+  100% { transform: translateY(-14px); opacity: 0; }
+}
+.hb-vis .hb-pulse {
+  fill: none;
+  stroke: var(--hue);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 0.35 0.65;
+  filter: drop-shadow(0 0 6px var(--hue));
+  animation: hb-beat 2.2s linear infinite;
+}
+@keyframes hb-beat { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.hb-vis .hb-code {
+  fill: color-mix(in srgb, var(--hue) 60%, transparent);
+  transform-box: fill-box;
+  transform-origin: left;
+  animation: hb-type 3.2s ease-in-out infinite;
+  animation-delay: calc(var(--k) * 0.3s);
+}
+@keyframes hb-type {
+  0% { transform: scaleX(0); }
+  40%, 85% { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+.hb-vis .hb-note {
+  fill: color-mix(in srgb, var(--hue) 45%, transparent);
+  animation: hb-pop 3s ease-in-out infinite;
+  animation-delay: calc(var(--k, 0) * 0.4s);
+}
+@keyframes hb-pop {
+  0%, 100% { opacity: 0; transform: translateY(6px); }
+  20%, 75% { opacity: 1; transform: none; }
+}
+.hb-vis .hb-block {
+  fill: color-mix(in srgb, var(--hue) 20%, transparent);
+  stroke: var(--hue);
+  stroke-width: 2;
+  animation: hb-chain 3s ease-in-out infinite;
+  animation-delay: calc(var(--k) * 0.5s);
+}
+@keyframes hb-chain {
+  0%, 100% { fill: color-mix(in srgb, var(--hue) 15%, transparent); }
+  20% { fill: var(--hue); }
+}
+.hb-vis .hb-link { stroke: var(--hue); stroke-width: 2.5; stroke-dasharray: 3 3; animation: po-flow 1s linear infinite; }
+.hb-go {
+  position: relative;
+  margin-top: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--hue) 70%, white);
+  transition: gap 0.3s ease;
+}
+.hb-service:hover .hb-go { gap: 0.8rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hb-spark path, .hb-orbit-core, .hb-orbit-chip, .hb-orbit-chip span, .hb-ticker div,
+  .hb-vis * { animation: none !important; }
+  .hb-spark path { stroke-dashoffset: 0; }
+}

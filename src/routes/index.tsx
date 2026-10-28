@@ -5,6 +5,7 @@ import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceListJsonLd, buildFaqJsonLd } from "@/lib/seo";
 import { Icon } from "@/components/Icon";
 import type { CSSProperties } from "react";
+import { HomePillars, ServiceBento } from "@/components/HomeSections";
 import { HeroGlobe } from "@/components/motion/HeroGlobe";
 import { CountUp, Magnetic, Parallax, PinnedHorizontal, SplitWords, TiltCard } from "@/components/motion";
 
@@ -438,72 +439,27 @@ function Home() {
         </div>
       </section>
 
-      <section id="services" className="section-gradient py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section id="services" className="hb-section py-20 sm:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div data-reveal className="space-y-4 text-center">
-            <p className="text-sm uppercase tracking-[0.35em] text-primary">
+            <p className="text-sm uppercase tracking-[0.35em] text-blue-300">
               What We Deliver
             </p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Enterprise IT, security and software designed for growth
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
+              Enterprise IT, security and software{" "}
+              <span className="text-gradient-primary">designed for growth</span>
             </h2>
-            <p className="mx-auto max-w-2xl text-base text-slate-600">
+            <p className="mx-auto max-w-2xl text-base text-slate-300">
               From proactive support and cloud governance to secure software
               delivery, we help leadership teams modernise faster without
               compromising resilience, clarity or control.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {[
-              {
-                title: "Cost-Effectiveness",
-                description:
-                  "Predictable flat-rate pricing with zero hidden fees. Save up to 40% compared to in-house IT teams.",
-              },
-              {
-                title: "Innovative Technology",
-                description:
-                  "AI, blockchain, and cloud-native architectures that give your business a competitive edge.",
-              },
-              {
-                title: "Industry Expertise",
-                description:
-                  "Deep domain knowledge across healthcare, finance, manufacturing, logistics and fintech.",
-              },
-            ].map((item, i) => (
-              <div key={item.title} data-reveal style={{ "--i": i } as CSSProperties}>
-                <TiltCard
-                  className={`glass-card-strong glow-ring h-full rounded-3xl p-8 ${["accent-top-blue", "accent-top-violet", "accent-top-emerald"][i]}`}
-                >
-                  <div className={`icon-badge mb-4 ${["icon-badge-blue", "icon-badge-violet", "icon-badge-emerald"][i]}`}>
-                    {["💰", "⚡", "🏢"][i]}
-                  </div>
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-slate-600">
-                    {item.description}
-                  </p>
-                </TiltCard>
-              </div>
-            ))}
+          <div className="mt-14">
+            <HomePillars />
           </div>
-          <div className="mt-12 grid gap-6 xl:grid-cols-2">
-            {SERVICE_ITEMS.slice(0, 6).map((service, i) => (
-              <article
-                key={service.name}
-                data-reveal={i % 2 ? "right" : "left"}
-                style={{ "--i": i % 2 } as CSSProperties}
-                className="group glass-card-strong rounded-3xl p-8 accent-border-blue transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(59,130,246,0.18)]"
-              >
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="font-mono text-xs text-slate-400">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs uppercase tracking-[0.25em] text-blue-600">
-                    {service.name}
-                  </span>
-                  <span className="h-px flex-1 origin-left scale-x-0 bg-gradient-to-r from-blue-400 to-transparent transition-transform duration-700 group-hover:scale-x-100" />
-                </div>
-                <p className="text-slate-600">{service.description}</p>
-              </article>
-            ))}
+          <div className="mt-5">
+            <ServiceBento services={SERVICE_ITEMS} />
           </div>
           <div data-reveal className="mt-10 flex flex-wrap gap-3">
             <Magnetic>
@@ -516,7 +472,7 @@ function Home() {
             </Magnetic>
             <a
               href="#faq"
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 hover:shadow-md"
+              className="btn-glass inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
             >
               Read FAQ
             </a>
