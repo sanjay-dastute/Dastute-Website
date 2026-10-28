@@ -102,7 +102,7 @@ export const Route = createRootRoute(
           httpEquiv: "Content-Security-Policy",
           content: "upgrade-insecure-requests",
         },
-        { title: "Dastute Technologies — Simplifying IT for a Complex World" },
+        { title: "Dastute Technologies - Simplifying IT for a Complex World" },
         {
           name: "description",
           content:
@@ -118,11 +118,11 @@ export const Route = createRootRoute(
         { name: "twitter:card", content: "summary_large_image" },
         {
           property: "og:title",
-          content: "Dastute Technologies — Simplifying IT for a Complex World",
+          content: "Dastute Technologies - Simplifying IT for a Complex World",
         },
         {
           name: "twitter:title",
-          content: "Dastute Technologies — Simplifying IT for a Complex World",
+          content: "Dastute Technologies - Simplifying IT for a Complex World",
         },
         {
           property: "og:description",

@@ -48,7 +48,7 @@ export const Route = createFileRoute("/resources/blockchain-supply-chain")({
           buildFaqJsonLd("/resources/blockchain-supply-chain", [
             {
               question: "How is blockchain used in supply chain management?",
-              answer: "Blockchain is used in supply chain management to create an immutable, shared ledger of transactions. Every time a product changes hands—from the manufacturer to the shipping port, to the final retailer—the event is permanently recorded on the blockchain. This provides 100% transparent track-and-trace capabilities that all parties can trust.",
+              answer: "Blockchain is used in supply chain management to create an immutable, shared ledger of transactions. Every time a product changes hands - from the manufacturer to the shipping port, to the final retailer - the event is permanently recorded on the blockchain. This provides 100% transparent track-and-trace capabilities that all parties can trust.",
             },
             {
               question: "What are supply chain smart contracts?",
@@ -90,7 +90,7 @@ function Page() {
           
           <div className="prose prose-lg prose-slate max-w-none">
             <p className="lead text-xl text-slate-600 mb-10">
-              Modern global supply chains are incredibly complex networks involving manufacturers, freight forwarders, customs officials, and retailers. Traditionally, each of these parties maintained their own isolated database. When a dispute arose—such as a missing shipment or damaged goods—reconciling these conflicting databases took weeks.
+              Modern global supply chains are incredibly complex networks involving manufacturers, freight forwarders, customs officials, and retailers. Traditionally, each of these parties maintained their own isolated database. When a dispute arose - such as a missing shipment or damaged goods - reconciling these conflicting databases took weeks.
             </p>
             <p>
               Blockchain technology solves this problem by introducing a single, immutable, shared ledger that every participant can see, but no single participant can alter.
@@ -130,7 +130,7 @@ function Page() {
               <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                 <h3 className="text-xl font-bold text-slate-900 mb-3 mt-0">Hyperledger Fabric</h3>
                 <p className="text-sm text-slate-600">
-                  Backed by IBM and the Linux Foundation, Hyperledger Fabric is the industry standard for enterprise supply chains. It allows you to create "channels"—private sub-ledgers where two companies can transact securely without the rest of the network seeing the data.
+                  Backed by IBM and the Linux Foundation, Hyperledger Fabric is the industry standard for enterprise supply chains. It allows you to create "channels" - private sub-ledgers where two companies can transact securely without the rest of the network seeing the data.
                 </p>
               </div>
 
@@ -166,7 +166,7 @@ function Page() {
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-border">
               <h3 className="text-lg font-bold text-slate-900 mb-2">How is blockchain used in supply chain management?</h3>
               <p className="text-slate-600 leading-relaxed text-sm">
-                Blockchain is used in supply chain management to create an immutable, shared ledger of transactions. Every time a product changes hands—from the manufacturer to the shipping port, to the final retailer—the event is permanently recorded on the blockchain. This provides 100% transparent track-and-trace capabilities that all parties can trust.
+                Blockchain is used in supply chain management to create an immutable, shared ledger of transactions. Every time a product changes hands - from the manufacturer to the shipping port, to the final retailer - the event is permanently recorded on the blockchain. This provides 100% transparent track-and-trace capabilities that all parties can trust.
               </p>
             </div>
             

@@ -65,7 +65,7 @@ function Page() {
             Why Perimeter Defense is Dead: The Reality of Zero Trust
           </h1>
           <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            The old way of securing a network was like a castle with a moat—hard to get in, but once inside, you had free rein. Zero Trust changes the paradigm to "never trust, always verify."
+            The old way of securing a network was like a castle with a moat - hard to get in, but once inside, you had free rein. Zero Trust changes the paradigm to "never trust, always verify."
           </p>
         </div>
       </section>
@@ -107,7 +107,7 @@ function Page() {
 
             <h3 className="text-slate-900">With Zero Trust Architecture</h3>
             <p className="text-slate-700 mb-0">
-              The attacker attempts to use Sarah's credentials. However, the Zero Trust broker analyzes multiple data points in real-time. It notices that the login request is coming from an unrecognized IP address, and the device lacks the company's mandatory security certificates. <strong>The request is instantly denied.</strong> Even if the attacker bypassed that step, Zero Trust uses micro-segmentation, meaning Sarah's account only has access to specific finance apps—the attacker cannot move laterally to the central file server.
+              The attacker attempts to use Sarah's credentials. However, the Zero Trust broker analyzes multiple data points in real-time. It notices that the login request is coming from an unrecognized IP address, and the device lacks the company's mandatory security certificates. <strong>The request is instantly denied.</strong> Even if the attacker bypassed that step, Zero Trust uses micro-segmentation, meaning Sarah's account only has access to specific finance apps - the attacker cannot move laterally to the central file server.
             </p>
           </div>
 

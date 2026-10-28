@@ -79,7 +79,7 @@ async function prerender() {
       const html = await response.text();
 
       if (response.status >= 400) {
-        console.error(`  ✗ ${route} — HTTP ${response.status}`);
+        console.error(`  ✗ ${route} - HTTP ${response.status}`);
         failed++;
         continue;
       }

@@ -77,7 +77,7 @@ function Page() {
             A Security Operations Center (SOC) is a centralized command hub where a dedicated team of cybersecurity analysts uses specialized technology to continuously monitor an organization's IT infrastructure. Their singular goal is to detect, analyze, and respond to cybersecurity incidents before they cause business disruption.
           </p>
           <p>
-            Most small to medium enterprises cannot afford to build a dedicated 24/7 SOC internally—it requires millions in software and a large team of highly paid analysts to provide round-the-clock coverage. Instead, they leverage an outsourced or "Managed SOC" provided by an MSP.
+            Most small to medium enterprises cannot afford to build a dedicated 24/7 SOC internally - it requires millions in software and a large team of highly paid analysts to provide round-the-clock coverage. Instead, they leverage an outsourced or "Managed SOC" provided by an MSP.
           </p>
 
           <hr className="my-12 border-slate-200" />

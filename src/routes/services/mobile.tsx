@@ -116,7 +116,7 @@ function Page() {
             <span className="text-gradient-primary">Ship Faster with React Native & Flutter.</span>
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
-            Cross-platform mobile development that deploys to both iOS and Android from a single codebase — without sacrificing native-quality performance. React Native and Flutter expertise for MVPs, enterprise tools, and consumer apps that need both stores simultaneously.
+            Cross-platform mobile development that deploys to both iOS and Android from a single codebase - without sacrificing native-quality performance. React Native and Flutter expertise for MVPs, enterprise tools, and consumer apps that need both stores simultaneously.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
@@ -167,7 +167,7 @@ function Page() {
               One Codebase. Native-Quality UX. Both Stores. React Native & Flutter Specialists.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Most business apps don't need separate iOS and Android codebases. React Native and Flutter share 80–90% of code across both platforms — delivering near-native performance and a single team managing a single codebase. Dastute's cross-platform engineers build hybrid apps that users can't distinguish from native, at a fraction of the cost and time-to-market.
+              Most business apps don't need separate iOS and Android codebases. React Native and Flutter share 80–90% of code across both platforms - delivering near-native performance and a single team managing a single codebase. Dastute's cross-platform engineers build hybrid apps that users can't distinguish from native, at a fraction of the cost and time-to-market.
             </p>
           </div>
 
@@ -226,7 +226,7 @@ function Page() {
               Our Mobile Capabilities
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              From consumer apps targeting millions of users to enterprise mobility tools for field teams — we engineer mobile products that perform, engage, and scale.
+              From consumer apps targeting millions of users to enterprise mobility tools for field teams - we engineer mobile products that perform, engage, and scale.
             </p>
           </div>
 
@@ -250,7 +250,7 @@ function Page() {
               <span className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2 block">Native</span>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">iOS Development</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Premium iOS applications built with Swift and SwiftUI — delivering the fluid, responsive, and delightful experience that Apple users expect. Full access to iOS capabilities: Face ID, HealthKit, ARKit, Core ML, and in-app purchases.
+                Premium iOS applications built with Swift and SwiftUI - delivering the fluid, responsive, and delightful experience that Apple users expect. Full access to iOS capabilities: Face ID, HealthKit, ARKit, Core ML, and in-app purchases.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Swift & SwiftUI</li>
@@ -266,7 +266,7 @@ function Page() {
                   <span className="text-xs font-bold uppercase tracking-widest text-violet-600 mb-2 block">Popular</span>
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">Cross-Platform: React Native & Flutter</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    Deliver high-quality apps on both iOS and Android from a single codebase with React Native (JS/TS) or Flutter (Dart) — achieving 70–80% cost savings versus dual native development without sacrificing native-quality UX. Ideal for startups, MVPs, and enterprise tools where feature parity across platforms is critical.
+                    Deliver high-quality apps on both iOS and Android from a single codebase with React Native (JS/TS) or Flutter (Dart) - achieving 70–80% cost savings versus dual native development without sacrificing native-quality UX. Ideal for startups, MVPs, and enterprise tools where feature parity across platforms is critical.
                   </p>
                   <ul className="space-y-2 text-sm text-slate-700">
                     <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> 70–80% cost vs dual native</li>

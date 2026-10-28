@@ -215,7 +215,7 @@ function Page() {
               What's Included
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Everything Your Business Needs — Under One Managed Service
+              Everything Your Business Needs - Under One Managed Service
               <br />
               Our managed IT service is not a helpdesk bolt-on. It's a complete, co-managed IT department delivering proactive support, strategic leadership, and enterprise tooling at an SME price.
             </p>
@@ -358,7 +358,7 @@ function Page() {
               { title: "Zero Reactive Surprises", desc: "Our proactive monitoring resolves 70% of issues automatically before any user is affected. The remaining 30% are triaged and escalated before they become outages." },
               { title: "Dedicated Account Team", desc: "You don't get a generic helpdesk number. You get a named account engineer who knows your systems, your team, your quirks, and your priorities." },
               { title: "Security Built In", desc: "Every managed IT engagement includes enterprise endpoint protection (EDR), patch management, Microsoft 365 hardening, and vulnerability reporting." },
-              { title: "Contractually Bound SLAs", desc: "We don't just promise uptime and response times — we put them in the contract and report against them monthly. If we miss an SLA, we are accountable." },
+              { title: "Contractually Bound SLAs", desc: "We don't just promise uptime and response times - we put them in the contract and report against them monthly. If we miss an SLA, we are accountable." },
             ].map((item, i) => (
               <div key={i} className="glass-card-strong p-6 rounded-2xl">
                 <h4 className="font-bold text-slate-900 mb-3">{item.title}</h4>

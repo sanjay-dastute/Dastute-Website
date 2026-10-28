@@ -117,7 +117,7 @@ function Page() {
             <span className="text-gradient-primary">Penetration testing & managed SOC UK.</span>
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
-            Real security requires adversarial thinking. Dastute's Red Team operators simulate nation-state and APT tactics to find what scanners cannot. Our Blue Team analysts detect, respond, and harden — building security operations that catch real threats, not just textbook ones.
+            Real security requires adversarial thinking. Dastute's Red Team operators simulate nation-state and APT tactics to find what scanners cannot. Our Blue Team analysts detect, respond, and harden - building security operations that catch real threats, not just textbook ones.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
@@ -196,7 +196,7 @@ function Page() {
               },
               {
                 title: "Purple Team Exercises",
-                desc: "Collaborative Red/Blue sessions where attack techniques are run in real-time with Blue Team visibility — accelerating detection rule development and analyst upskilling.",
+                desc: "Collaborative Red/Blue sessions where attack techniques are run in real-time with Blue Team visibility - accelerating detection rule development and analyst upskilling.",
                 color: "accent-top-emerald"
               }
             ].map((card, i) => (
@@ -236,13 +236,13 @@ function Page() {
             <div>
               <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                 <span className="w-3 h-3 rounded-full bg-rose-500"></span>
-                Red Team — Offensive Security
+                Red Team - Offensive Security
               </h3>
               <div className="space-y-8">
                 <div>
                   <h4 className="font-bold text-slate-900 mb-2">Full-Scope Red Team Engagement</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    End-to-end adversary simulation with defined objectives — "exfiltrate customer PII", "access CEO email", "reach finance systems". Tests technical controls, detection capability, and human response simultaneously. MITRE ATT&CK framework throughout.
+                    End-to-end adversary simulation with defined objectives - "exfiltrate customer PII", "access CEO email", "reach finance systems". Tests technical controls, detection capability, and human response simultaneously. MITRE ATT&CK framework throughout.
                   </p>
                 </div>
                 <div>
@@ -254,13 +254,13 @@ function Page() {
                 <div>
                   <h4 className="font-bold text-slate-900 mb-2">Social Engineering & Phishing</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Tailored spear-phishing campaigns, vishing (voice phishing) attacks, and physical intrusion assessments that test both technical controls and human vulnerability — the number one initial access vector for ransomware. Full campaign reporting with click and credential rates.
+                    Tailored spear-phishing campaigns, vishing (voice phishing) attacks, and physical intrusion assessments that test both technical controls and human vulnerability - the number one initial access vector for ransomware. Full campaign reporting with click and credential rates.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 mb-2">Assumed Breach Exercise</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Simulating an attacker already inside your network — testing detection capability, lateral movement resistance, privilege escalation paths, and incident response speed. Identifies gaps in your defence that perimeter-focused testing misses entirely.
+                    Simulating an attacker already inside your network - testing detection capability, lateral movement resistance, privilege escalation paths, and incident response speed. Identifies gaps in your defence that perimeter-focused testing misses entirely.
                   </p>
                 </div>
                 <div>
@@ -274,7 +274,7 @@ function Page() {
                     <Icon name="fa-tools" className="text-rose-500" /> Red Team Tools We Use
                   </h4>
                   <p className="text-sm text-rose-800 leading-relaxed">
-                    Cobalt Strike, Sliver C2, Empire, BloodHound, Impacket, Responder, Mimikatz, Metasploit Pro, Burp Suite Pro, Nmap, CrackMapExec — all used ethically within agreed rules of engagement and legal frameworks.
+                    Cobalt Strike, Sliver C2, Empire, BloodHound, Impacket, Responder, Mimikatz, Metasploit Pro, Burp Suite Pro, Nmap, CrackMapExec - all used ethically within agreed rules of engagement and legal frameworks.
                   </p>
                 </div>
               </div>
@@ -284,7 +284,7 @@ function Page() {
             <div>
               <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                 <span className="w-3 h-3 rounded-full bg-blue-500"></span>
-                Blue Team — Threat Defence
+                Blue Team - Threat Defence
               </h3>
               <div className="space-y-8 mb-10">
                 <div>

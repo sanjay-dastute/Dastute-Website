@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { Magnetic, SplitWords } from "@/components/motion";
+import { HexExplorer, TechHoneycomb } from "@/components/TechSections";
 import {
   buildBreadcrumbJsonLd,
   buildServiceListJsonLd,
@@ -221,163 +223,74 @@ const SERVICES = [
     ],
   },
 ];
-{/* Industries */}
-      <section className="px-4 sm:px-6 py-16 sm:py-24 max-w-7xl mx-auto">
-        <div className="flex items-end gap-4 sm:gap-6 mb-12 sm:mb-16">
-          <h2 className="text-[8px] sm:text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            Industry Focus
-          </h2>
-          <div className="h-px flex-1 bg-border" />
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
-          {[
-            "Manufacturing",
-            "Transportation & Logistics",
-            "Healthcare",
-            "Banks & Insurance",
-            "Consulting Providers",
-            "Non Profit",
-            "Fintech",
-            "Dating Apps",
-          ].map((industry) => (
-            <div
-              key={industry}
-              className="bg-background p-3 sm:p-6 hover:bg-foreground hover:text-background transition-colors duration-300 group"
-            >
-              <span className="text-[12px] sm:text-sm font-bold">
-                {industry}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      
 function TechnologyPage() {
   return (
     <SiteLayout>
       {/* Hero */}
       <section className="section-hero-dark">
-        <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
-            / Technology Practice
-          </span>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl text-white">
-            Managed IT Services, security
-            <br />
-            <span className="text-gradient-primary">and software — simplified.</span>
-          </h1>
-          <p className="mt-8 max-w-xl text-slate-300 text-lg">
-            Ten core disciplines covering the entire technology lifecycle, from
-            local office helpdesk to audited on-chain smart contracts.
-          </p>
-          <div className="mt-10 font-mono text-[10px] uppercase tracking-widest text-slate-400 flex flex-wrap gap-x-6 gap-y-2">
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">10 Disciplines</span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">AWS · GCP · Azure</span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">SIEM / SOC</span>
+        <div className="relative px-6 py-24 md:py-28 max-w-7xl mx-auto grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div>
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
+              / Technology Practice
+            </span>
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1] text-balance max-w-4xl text-white">
+              <SplitWords text="Managed IT Services, security" />
+              <br />
+              <SplitWords className="text-gradient-primary" text="and software - simplified." delay={0.3} />
+            </h1>
+            <p className="mt-8 max-w-xl text-slate-300 text-lg">
+              Ten core disciplines covering the entire technology lifecycle, from
+              local office helpdesk to audited on-chain smart contracts.
+            </p>
+            <div className="mt-10 font-mono text-[10px] uppercase tracking-widest text-slate-400 flex flex-wrap gap-x-3 gap-y-2">
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">10 Disciplines</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">AWS · GCP · Azure</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">SIEM / SOC</span>
+            </div>
+          </div>
+          <div className="hero-visual mx-auto w-full max-w-xl">
+            <TechHoneycomb />
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Disciplines */}
       <section className="section-gradient border-y border-border">
-        <div className="max-w-7xl mx-auto p-6 md:p-10">
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-            {SERVICES.map((s, i) => {
-              const accents = [
-                "accent-top-blue",
-                "accent-top-violet",
-                "accent-top-emerald",
-                "accent-top-cyan",
-                "accent-top-rose",
-              ];
-              const badgeColors = [
-                "bg-blue-500",
-                "bg-violet-500",
-                "bg-emerald-500",
-                "bg-cyan-500",
-                "bg-rose-500",
-              ];
-              const accentClass = accents[i % 5];
-              const badgeClass = badgeColors[i % 5];
-
-              return (
-                <article
-                  key={s.code}
-                  className={`glass-card-strong rounded-3xl p-6 md:p-8 ${accentClass}`}
-                >
-                  <span
-                    className={`inline-flex items-center justify-center font-mono text-xs ${badgeClass} text-white rounded-lg px-3 py-1 mb-4`}
-                  >
-                    {s.code}
-                  </span>
-                  <div>
-                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">
-                      {s.title}
-                    </h2>
-                    <p className="text-muted-foreground leading-relaxed mb-3">
-                      {s.summary}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                      {s.detail}
-                    </p>
-                  </div>
-                  <div>
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground block mb-4">
-                      Deliverables
-                    </span>
-                    <ul className="grid sm:grid-cols-2 gap-x-4 gap-y-2 text-sm">
-                      {s.deliverables.map((d) => (
-                        <li key={d} className="flex items-start gap-3">
-                          <span className="font-mono text-[10px] text-emerald-500 mt-1.5">
-                            →
-                          </span>
-                          <span>{d}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-6 flex justify-end">
-                      <Link
-                        // @ts-ignore - Valid dynamic route
-                        to={s.ctaHref}
-                        className="btn-gradient inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[10px] uppercase tracking-[0.2em]"
-                      >
-                        Explore {s.title} <span aria-hidden>↗</span>
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+        <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+          <HexExplorer services={SERVICES} />
         </div>
       </section>
 
       {/* Footer CTA */}
-      <section className="px-6 py-24 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-end">
+      <section className="future-section px-6 py-24 sm:py-28">
+        <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-end">
           <div>
-            <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Need digital marketing too?
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-300">/ Launch together</p>
+            <h3 className="mt-4 text-4xl md:text-5xl font-black tracking-tight text-white">
+              Need digital <span className="text-gradient-primary">marketing too?</span>
             </h3>
-            <p className="mt-4 text-muted-foreground max-w-md">
+            <p className="mt-4 text-slate-300 max-w-md">
               Our marketing practice handles brand strategy, visual identity,
               paid search, SEO and advertising to align your launch.
             </p>
           </div>
-          <div className="flex md:justify-end gap-4">
-            <Link
-              to="/marketing"
-              className="inline-flex items-center gap-2 border border-foreground px-6 py-3 text-sm font-medium hover:bg-foreground hover:text-background transition-colors"
-            >
-              Marketing Practice <span aria-hidden>↗</span>
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 text-sm font-medium hover:opacity-90 transition-opacity"
-            >
-              Start a Brief <span aria-hidden>↗</span>
-            </Link>
+          <div className="flex flex-wrap md:justify-end gap-4">
+            <Magnetic>
+              <Link
+                to="/marketing"
+                className="btn-glass inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold"
+              >
+                Marketing Practice <span aria-hidden>↗</span>
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <Link
+                to="/contact"
+                className="btn-gradient inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold"
+              >
+                Start a Brief <span aria-hidden>↗</span>
+              </Link>
+            </Magnetic>
           </div>
         </div>
       </section>

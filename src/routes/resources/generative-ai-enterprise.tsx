@@ -74,7 +74,7 @@ function Page() {
         <div className="max-w-3xl mx-auto px-6 prose prose-lg prose-slate">
           <h2>The Problem with Public AI</h2>
           <p>
-            When employees use public AI tools like ChatGPT to draft emails or summarize reports, they are inadvertently feeding confidential corporate data—and potentially protected customer data—into a public model. This is a massive compliance and cybersecurity risk.
+            When employees use public AI tools like ChatGPT to draft emails or summarize reports, they are inadvertently feeding confidential corporate data - and potentially protected customer data - into a public model. This is a massive compliance and cybersecurity risk.
           </p>
           <p>
             Enterprise Generative AI involves integrating powerful large language models (LLMs) directly into your private corporate infrastructure via APIs. This ensures that the AI only operates on your private data, and none of that data is ever used to train public models.

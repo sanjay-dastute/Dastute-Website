@@ -3,6 +3,7 @@ import { useRouterState } from "@tanstack/react-router";
 import { SiteNav } from "./SiteNav";
 import { SiteFooter } from "./SiteFooter";
 import { buildFaqJsonLd } from "@/lib/seo";
+import { MotionRoot, ScrollProgress } from "./motion";
 
 const SERVICE_FAQ_MAP: Record<
   string,
@@ -220,8 +221,10 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           }}
         />
       ) : null}
+      <MotionRoot />
+      <ScrollProgress />
       <SiteNav />
-      <main className="overflow-x-hidden">{children}</main>
+      <main className="overflow-x-clip">{children}</main>
       <SiteFooter />
     </div>
   );

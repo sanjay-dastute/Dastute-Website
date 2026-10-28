@@ -1,4 +1,4 @@
-# ai.txt — AI access policy for dastute.co.uk
+# ai.txt - AI access policy for dastute.co.uk
 
 [PERMISSIONS]
 allow: indexing

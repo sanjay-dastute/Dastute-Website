@@ -216,9 +216,9 @@ function Page() {
               Our ERP Capabilities
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Complete ERP Services — From Selection to Optimisation
+              Complete ERP Services - From Selection to Optimisation
               <br />
-              We handle every phase of your ERP journey — making sure the platform you invest in actually delivers the operational clarity and efficiency you need.
+              We handle every phase of your ERP journey - making sure the platform you invest in actually delivers the operational clarity and efficiency you need.
             </p>
           </div>
 
@@ -228,7 +228,7 @@ function Page() {
               <span className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2 block">Start Here</span>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">ERP Selection & Consulting</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Choosing the wrong ERP costs millions and years. We conduct vendor-neutral ERP selection — assessing your requirements, current landscape, budget, and growth plans — running a structured RFP/RFI process to identify the best fit.
+                Choosing the wrong ERP costs millions and years. We conduct vendor-neutral ERP selection - assessing your requirements, current landscape, budget, and growth plans - running a structured RFP/RFI process to identify the best fit.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Vendor-neutral evaluation</li>
@@ -281,7 +281,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-rose">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Data Migration & Master Data</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                ERP migrations fail most often because of dirty data. We run structured data migration programmes: profiling, cleansing, deduplication, mapping, and validation testing — ensuring your new ERP goes live with accurate data.
+                ERP migrations fail most often because of dirty data. We run structured data migration programmes: profiling, cleansing, deduplication, mapping, and validation testing - ensuring your new ERP goes live with accurate data.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Data profiling & cleansing</li>
@@ -358,7 +358,7 @@ function Page() {
               { title: "Change Management Included", desc: "Our methodology includes dedicated change management: stakeholder engagement, user training, and hypercare to drive genuine adoption." },
               { title: "Data-First Approach", desc: "We treat data migration as a strategic workstream. Our structured profiling and cleansing programme ensures your ERP starts life with trustworthy data." },
               { title: "On-Time, On-Budget Delivery", desc: "Our structured methodology combines proven phase gates, weekly checkpoints, and clear scope management to keep ERP projects on track." },
-              { title: "Deep Integration Expertise", desc: "We build robust integrations with CRM, e-commerce, WMS, payroll, and banking feeds — making your ERP the operational hub it was designed to be." },
+              { title: "Deep Integration Expertise", desc: "We build robust integrations with CRM, e-commerce, WMS, payroll, and banking feeds - making your ERP the operational hub it was designed to be." },
               { title: "Long-Term Support Partnership", desc: "Our retainer provides ongoing administration, user support, upgrades, and performance optimisation to keep pace with your business growth." },
             ].map((item, i) => (
               <div key={i} className="glass-card-strong p-6 rounded-2xl">

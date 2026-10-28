@@ -7,7 +7,7 @@ import { useFormSubmit } from "@/lib/useFormSubmit";
 export const Route = createFileRoute("/request-audit")({
   head: () => ({
     meta: [
-      { title: "Request an Audit — Dastute Technologies" },
+      { title: "Request an Audit - Dastute Technologies" },
       {
         name: "description",
         content:
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/request-audit")({
       },
       {
         property: "og:title",
-        content: "Request an Audit — Dastute Technologies",
+        content: "Request an Audit - Dastute Technologies",
       },
       {
         property: "og:description",
@@ -394,7 +394,7 @@ function RequestAuditPage() {
               </button>
               {status === 'success' && (
                 <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-500 rounded-md text-sm mt-4">
-                  Thanks — our team will review your request and respond within one business day.
+                  Thanks - our team will review your request and respond within one business day.
                 </div>
               )}
               {status === 'error' && (

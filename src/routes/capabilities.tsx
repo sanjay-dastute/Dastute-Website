@@ -7,13 +7,13 @@ import { FAQS } from "@/lib/faqs";
 export const Route = createFileRoute("/capabilities")({
   head: () => ({
     meta: [
-      { title: "Capabilities — Dastute Technologies" },
+      { title: "Capabilities - Dastute Technologies" },
       {
         name: "description",
         content:
           "Explore Dastute Technologies' specialist capabilities across Managed IT, Cloud, Cyber Security, Software Engineering, Blockchain, Brand and Marketing.",
       },
-      { property: "og:title", content: "Capabilities — Dastute Technologies" },
+      { property: "og:title", content: "Capabilities - Dastute Technologies" },
       {
         property: "og:description",
         content:
@@ -144,7 +144,7 @@ function CapabilitiesPage() {
             <div>
               <h3 className="text-xl font-bold mb-3">Senior-Led Delivery Across Global Hubs</h3>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                Our capability matrix is powered by a globally distributed team of senior engineers and consultants operating from our headquarters in London, and our dedicated delivery centers in India and Singapore. This "follow-the-sun" model guarantees continuous 24/7 monitoring and rapid incident response. Furthermore, it allows us to deploy specialized talent precisely when and where it is needed—whether that involves architecting complex smart contracts, migrating legacy ERP systems, or running sophisticated red-team penetration tests. Our cross-functional teams collaborate seamlessly to deliver high-performance solutions tailored strictly to your business objectives.
+                Our capability matrix is powered by a globally distributed team of senior engineers and consultants operating from our headquarters in London, and our dedicated delivery centers in India and Singapore. This "follow-the-sun" model guarantees continuous 24/7 monitoring and rapid incident response. Furthermore, it allows us to deploy specialized talent precisely when and where it is needed - whether that involves architecting complex smart contracts, migrating legacy ERP systems, or running sophisticated red-team penetration tests. Our cross-functional teams collaborate seamlessly to deliver high-performance solutions tailored strictly to your business objectives.
               </p>
             </div>
           </div>

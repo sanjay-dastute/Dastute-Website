@@ -1,5 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import type { CSSProperties } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
+import { ModuleShowcase } from "@/components/ModuleShowcase";
+import { CompeteSplit, FutureRoadmap, IndustryPanels, ProductFaq } from "@/components/ProductSections";
+import { PlatformOrbit } from "@/components/motion/PlatformOrbit";
+import { Boxes, Gauge, Layers, ShieldCheck, Sparkles, Workflow } from "lucide-react";
+import { Magnetic, SplitWords } from "@/components/motion";
 import {
   buildBreadcrumbJsonLd,
   buildCollectionPageJsonLd,
@@ -98,7 +104,7 @@ export const Route = createFileRoute("/products")({
         children: JSON.stringify(
           buildCollectionPageJsonLd({
             path: "/products",
-            name: "Enterprise Software Products — Dastute Technologies",
+            name: "Enterprise Software Products - Dastute Technologies",
             description:
               "Security-first enterprise software modules including ERP, HRMS, CRM, WMS, AI Agents, and Hospitality.",
           }),
@@ -176,12 +182,14 @@ function ProductsPage() {
   return (
     <SiteLayout>
       <section className="section-hero-dark">
-        <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
+        <div className="relative px-6 py-24 md:py-28 max-w-7xl mx-auto grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / Products
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] max-w-5xl text-white">
-            Dastute Enterprise Platform Built for <span className="text-gradient-primary">Security, Scale, and Future Adaptability</span>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.02] max-w-5xl text-white">
+            <SplitWords text="Dastute Enterprise Platform Built for" />{" "}
+            <SplitWords className="text-gradient-primary" text="Security, Scale, and Future Adaptability" delay={0.35} />
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
             Modern organizations need more than disconnected tools, rigid
@@ -191,18 +199,24 @@ function ProductsPage() {
             while preparing teams for tomorrow's business models.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link
-              to="/contact"
-              className="btn-gradient inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
-            >
-              Request a Demo
-            </Link>
+            <Magnetic>
+              <Link
+                to="/contact"
+                className="btn-gradient inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
+              >
+                Request a Demo
+              </Link>
+            </Magnetic>
             <a
               href="#modules"
               className="btn-glass inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
             >
               Explore Modules
             </a>
+          </div>
+          </div>
+          <div className="hero-visual mx-auto w-full max-w-md lg:max-w-none">
+            <PlatformOrbit />
           </div>
         </div>
       </section>
@@ -238,15 +252,32 @@ function ProductsPage() {
             "Lower complexity compared with managing multiple disconnected enterprise vendors.",
             "Faster decision-making through centralized data visibility and cross-functional reporting.",
           ].map((item, i) => {
-            const accents = ["accent-top-blue", "accent-top-violet", "accent-top-emerald", "accent-top-cyan", "accent-top-amber", "accent-top-rose"];
+            const icons = [Layers, ShieldCheck, Boxes, Sparkles, Workflow, Gauge];
+            const hues = ["#3b82f6", "#8b5cf6", "#10b981", "#06b6d4", "#f59e0b", "#f43f5e"];
+            const FeatureIcon = icons[i];
             return (
               <article
                 key={item}
-                className={`glass-card-strong rounded-3xl p-6 ${accents[i]}`}
+                className="feature-card group"
+                style={{ "--hue": hues[i] } as CSSProperties}
+                onPointerMove={(e) => {
+                  const r = e.currentTarget.getBoundingClientRect();
+                  e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+                  e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
+                }}
               >
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <div className="flex items-start justify-between">
+                  <span className="feature-icon">
+                    <FeatureIcon aria-hidden="true" className="h-6 w-6" />
+                  </span>
+                  <span aria-hidden="true" className="feature-num">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <p className="mt-6 text-[15px] font-medium leading-relaxed text-slate-700">
                   {item}
                 </p>
+                <span aria-hidden="true" className="feature-bar" />
               </article>
             );
           })}
@@ -260,129 +291,73 @@ function ProductsPage() {
           </h2>
           <div className="h-px flex-1 bg-border" />
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {MODULES.map((module, i) => {
-            const accents = ["accent-top-blue", "accent-top-emerald", "accent-top-violet", "accent-top-cyan", "accent-top-amber", "accent-top-rose"];
-            const badges = ["icon-badge-blue", "icon-badge-emerald", "icon-badge-violet", "icon-badge-cyan", "icon-badge-amber", "icon-badge-rose"];
-            const icons = ["📊", "👥", "🤝", "📦", "🤖", "🏨"];
-            return (
-              <article
-                key={module.name}
-                className={`glass-card-strong rounded-3xl p-6 ${accents[i]}`}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`icon-badge ${badges[i]}`}>{icons[i]}</div>
-                  <p className="text-[10px] uppercase tracking-[0.35em] text-primary">
-                    {module.name}
-                  </p>
-                </div>
-                <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-900">
-                  {module.eyebrow}
-                </h3>
-                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                  {module.text}
-                </p>
-                <ul className="mt-5 space-y-2 text-sm text-slate-700">
-                  {module.benefits.map((benefit) => (
-                    <li key={benefit} className="flex gap-2">
-                      <span className="mt-1 text-emerald-500">✓</span>
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            );
-          })}
-        </div>
+        <ModuleShowcase modules={MODULES} />
       </section>
 
-      <section className="section-dark px-6 py-20">
+      <section className="section-dark px-6 py-20 sm:py-24">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-white">
-            Industry Solutions
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {INDUSTRY_SOLUTIONS.map((item) => (
-              <article
-                key={item.title}
-                className="glass-card-dark rounded-3xl p-6"
-              >
-                <h3 className="text-xl font-semibold tracking-tight text-white">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-sm text-slate-300 leading-relaxed">
-                  {item.description}
-                </p>
-              </article>
-            ))}
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-400">/ Sectors</p>
+              <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
+                Industry Solutions
+              </h2>
+            </div>
+            <p className="max-w-md text-slate-400">
+              Hover or tap a sector to see how the platform adapts to its controls and workflows.
+            </p>
           </div>
+          <IndustryPanels items={INDUSTRY_SOLUTIONS} />
         </div>
       </section>
 
-      <section className="px-6 py-20 max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-          Built to Compete with Top Enterprise Software Players
-        </h2>
-        <p className="max-w-4xl text-base md:text-lg text-muted-foreground leading-relaxed">
-          Many top-tier enterprise platforms offer strong functionality, but
-          customers often face high total cost of ownership, slow implementation
-          cycles, vendor lock-in, excessive customization dependency, poor
-          module interoperability, and complex user experiences. The Dastute Enterprise Platform
-          is built to challenge those limitations with a more connected,
+      <section className="px-6 py-20 sm:py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-600">/ Why switch</p>
+            <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight">
+              Built to Compete with Top Enterprise Software Players
+            </h2>
+            <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+              Many top-tier enterprise platforms offer strong functionality, but
+          customers often face high total cost of ownership, slow implementation
+          cycles, vendor lock-in, excessive customization dependency, poor
+          module interoperability, and complex user experiences. The Dastute Enterprise Platform
+          is built to challenge those limitations with a more connected,
           security-focused, and adaptable product strategy.
-        </p>
-        <ul className="mt-8 grid gap-3 md:grid-cols-2 text-sm text-slate-700">
-          {[
-            "Built as a practical alternative to legacy and top-market enterprise vendors.",
-            "Focused on customer pain points, not just feature parity.",
-            "Designed for adaptability, faster evolution, and long-term platform relevance.",
-            "Combines operational depth with stronger data security and governance.",
-          ].map((item) => (
-            <li
-              key={item}
-              className="glass-card-strong rounded-2xl p-4"
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
+            </p>
+          </div>
+          <CompeteSplit
+            points={[
+              "Built as a practical alternative to legacy and top-market enterprise vendors.",
+              "Focused on customer pain points, not just feature parity.",
+              "Designed for adaptability, faster evolution, and long-term platform relevance.",
+              "Combines operational depth with stronger data security and governance.",
+            ]}
+          />
+        </div>
       </section>
 
-      <section className="border-y border-border px-6 py-20">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Designed for What Your Business Becomes Next
+      <section className="future-section px-6 py-24 sm:py-32">
+        <div className="relative max-w-5xl mx-auto text-center">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-300">/ The road ahead</p>
+          <h2 className="mt-4 text-4xl md:text-6xl font-black tracking-tight text-white">
+            Designed for What Your Business{" "}
+            <span className="text-gradient-primary">Becomes Next</span>
           </h2>
-          <p className="max-w-4xl text-base md:text-lg text-muted-foreground leading-relaxed">
-            Enterprise software should not only solve current issues; it should
-            also support future expansion, AI adoption, compliance changes, new
-            business models, and deeper automation. The Dastute Enterprise Platform is built with
-            that long-term view in mind, helping organizations evolve without
+          <p className="mx-auto mt-6 max-w-3xl text-base md:text-lg text-slate-300 leading-relaxed">
+            Enterprise software should not only solve current issues; it should
+            also support future expansion, AI adoption, compliance changes, new
+            business models, and deeper automation. The Dastute Enterprise Platform is built with
+            that long-term view in mind, helping organizations evolve without
             being trapped by static systems.
           </p>
+          <FutureRoadmap />
         </div>
       </section>
 
-      <section id="faq" className="px-6 py-20 max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-          Frequently Asked Questions
-        </h2>
-        <div className="mt-8 grid gap-4">
-          {FAQ_ITEMS.map((faq) => (
-            <details
-              key={faq.question}
-              className="glass-card-strong rounded-3xl p-6 group"
-            >
-              <summary className="cursor-pointer text-lg font-semibold text-slate-900 flex items-center justify-between">
-                {faq.question}
-                <span className="text-blue-500 group-open:rotate-45 transition-transform duration-300 text-xl">+</span>
-              </summary>
-              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                {faq.answer}
-              </p>
-            </details>
-          ))}
-        </div>
+      <section id="faq" className="px-6 py-20 sm:py-24 max-w-7xl mx-auto">
+        <ProductFaq items={FAQ_ITEMS} />
       </section>
     </SiteLayout>
   );

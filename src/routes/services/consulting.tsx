@@ -219,9 +219,9 @@ function Page() {
               Our Advisory Capabilities
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Strategic IT Consulting — From Roadmap to Execution.
+              Strategic IT Consulting - From Roadmap to Execution.
               <br />
-              We translate complex technology decisions into clear business outcomes — giving leadership teams the confidence to invest wisely and move fast.
+              We translate complex technology decisions into clear business outcomes - giving leadership teams the confidence to invest wisely and move fast.
             </p>
           </div>
 
@@ -231,7 +231,7 @@ function Page() {
               <span className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2 block">Core</span>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">IT Strategy & Digital Roadmap</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Develop a 12–36 month technology roadmap that aligns every IT investment with your business objectives — revenue growth, cost reduction, risk mitigation, or competitive differentiation. We benchmark your estate, identify gaps, and produce an actionable roadmap with budget.
+                Develop a 12–36 month technology roadmap that aligns every IT investment with your business objectives - revenue growth, cost reduction, risk mitigation, or competitive differentiation. We benchmark your estate, identify gaps, and produce an actionable roadmap with budget.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Current-state assessment</li>
@@ -297,7 +297,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-blue">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Digital Transformation Advisory</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Guide end-to-end digital transformation programmes — from legacy modernisation and cloud-first strategies to customer experience re-platforming and data-driven operating models. We provide programme management and change management frameworks.
+                Guide end-to-end digital transformation programmes - from legacy modernisation and cloud-first strategies to customer experience re-platforming and data-driven operating models. We provide programme management and change management frameworks.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Legacy modernisation planning</li>
@@ -351,7 +351,7 @@ function Page() {
               Why Leaders Choose Dastute for IT Consulting
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We don't sell implementations hidden behind advisory. We give you independent, honest guidance — then support you through execution if you need us.
+              We don't sell implementations hidden behind advisory. We give you independent, honest guidance - then support you through execution if you need us.
             </p>
           </div>
 
@@ -361,7 +361,7 @@ function Page() {
               { title: "Business Outcomes Focus", desc: "We measure our success by your business results. Every recommendation is linked to a specific metric: cost reduction, revenue uplift, or risk mitigation." },
               { title: "Advisory to Execution", desc: "Unlike pure-play consultancies, Dastute can execute everything we recommend. Our engineers stand ready to implement the roadmap we build together." },
               { title: "Multi-Geography Expertise", desc: "With operations in the UK, India, and Singapore, we advise on technology decisions with genuine international perspective and cross-border understanding." },
-              { title: "Speed to Insight", desc: "We deliver actionable recommendations in weeks — not months. Our structured methodology lets us produce a strategic roadmap in 2–6 weeks." },
+              { title: "Speed to Insight", desc: "We deliver actionable recommendations in weeks - not months. Our structured methodology lets us produce a strategic roadmap in 2–6 weeks." },
               { title: "Deep Technical Breadth", desc: "Our consultants are engineers and architects with hands-on experience. When they advise on a technology decision, they have built it before." },
             ].map((item, i) => (
               <div key={i} className="glass-card-strong p-6 rounded-2xl">

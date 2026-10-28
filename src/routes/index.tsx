@@ -4,6 +4,9 @@ import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceListJsonLd, buildFaqJsonLd } from "@/lib/seo";
 import { Icon } from "@/components/Icon";
+import type { CSSProperties } from "react";
+import { HeroGlobe } from "@/components/motion/HeroGlobe";
+import { CountUp, Magnetic, Parallax, PinnedHorizontal, SplitWords, TiltCard } from "@/components/motion";
 
 const SERVICE_SUMMARY =
   "Dastute Technologies delivers managed IT services, advanced cybersecurity, scalable cloud solutions, and bespoke software development to ambitious UK businesses.";
@@ -94,7 +97,7 @@ const WHY_POINTS = [
   {
     title: "Scalable Solutions",
     description:
-      "Services that scale with your business—from startup to enterprise.",
+      "Services that scale with your business - from startup to enterprise.",
   },
   {
     title: "Dedicated vCIO",
@@ -304,11 +307,11 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <SiteLayout>
-      <section className="section-hero-dark border-b border-white/10">
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
-            <div className="flex h-full flex-col justify-between space-y-8">
-              <div className="inline-flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.35em] text-blue-300/80">
+      <section className="hero-cinematic border-b border-white/10">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="flex h-full flex-col justify-center space-y-8">
+              <div data-reveal className="inline-flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.35em] text-blue-300/80">
                 <span className="rounded-full border border-blue-400/20 bg-white/5 backdrop-blur px-3 py-1">
                   Strategy
                 </span>
@@ -324,34 +327,40 @@ function Home() {
               <div className="max-w-3xl space-y-6">
                 <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
                   <span className="sr-only">Managed IT Services London & UK IT Support Company. </span>
-                  Managed IT services for SMEs and ambitious businesses.
+                  <SplitWords text="Managed IT services for SMEs and ambitious businesses." />
                   <br />
-                  <span className="text-gradient-primary">
-                    Secure, scalable, and ready to grow.
-                  </span>
+                  <SplitWords
+                    className="text-gradient-primary"
+                    text="Secure, scalable, and ready to grow."
+                    delay={0.45}
+                  />
                 </h1>
-                <p className="max-w-2xl text-lg leading-8 text-slate-300">
+                <p data-reveal style={{ "--i": 4 } as CSSProperties} className="max-w-2xl text-lg leading-8 text-slate-300">
                   We provide expert managed IT services, advanced cybersecurity,
                   scalable cloud solutions, and bespoke software development to
                   keep modern companies moving. Every engagement is structured
                   around measurable outcomes, not just ticket volume.
                 </p>
               </div>
-              <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-                <Link
-                  to="/contact"
-                  className="btn-gradient inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold"
-                >
-                  Book a Strategy Call
-                </Link>
-                <Link
-                  to="/products"
-                  className="btn-glass inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold"
-                >
-                  Explore Our Products
-                </Link>
+              <div data-reveal style={{ "--i": 6 } as CSSProperties} className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+                <Magnetic>
+                  <Link
+                    to="/contact"
+                    className="btn-gradient inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold sm:w-auto"
+                  >
+                    Book a Strategy Call
+                  </Link>
+                </Magnetic>
+                <Magnetic>
+                  <Link
+                    to="/products"
+                    className="btn-glass inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold sm:w-auto"
+                  >
+                    Explore Our Products
+                  </Link>
+                </Magnetic>
               </div>
-              <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.25em] text-slate-400">
+              <div data-reveal style={{ "--i": 8 } as CSSProperties} className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.25em] text-slate-400">
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
                   24/7 Support
                 </span>
@@ -363,50 +372,48 @@ function Home() {
                 </span>
               </div>
             </div>
-            <div className="relative mx-auto flex h-full w-full max-w-xl items-stretch">
-              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-blue-500/20 blur-3xl" />
-              <div className="absolute -left-6 -bottom-6 h-24 w-24 rounded-full bg-violet-500/15 blur-3xl" />
-              <div className="glass-card-dark w-full rounded-[2rem] p-6 md:p-8">
-                <div className="flow-rail rounded-[1.6rem] border border-white/10 bg-white/5 p-5">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-[10px] uppercase tracking-[0.35em] text-blue-400">
-                        Executive Delivery View
-                      </p>
-                      <h2 className="mt-2 text-xl font-semibold text-white">
-                        A connected operating model for IT, security and software
-                      </h2>
-                    </div>
-                    <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-emerald-400">
-                      Live
-                    </span>
-                  </div>
-                  <div className="mt-5 grid gap-3">
-                    {[
-                      ["Cloud Operations", "Migration, governance and cost-conscious performance.", "flow-chip", "accent-border-blue"],
-                      ["Security & Compliance", "Monitoring, response planning and control maturity.", "flow-chip flow-chip-delay", "accent-border-emerald"],
-                      ["Product Engineering", "Modern software, integrations and scalable delivery.", "flow-chip flow-chip-delay-2", "accent-border-violet"],
-                    ].map(([label, copy, chipClass, accentClass]) => (
-                      <article
-                        key={label}
-                        className={`rounded-2xl border border-white/10 bg-white/5 p-4 ${chipClass} ${accentClass}`}
-                      >
-                        <p className="text-[10px] uppercase tracking-[0.3em] text-blue-300">
-                          {label}
-                        </p>
-                        <p className="mt-2 text-sm text-slate-300">{copy}</p>
-                      </article>
-                    ))}
-                  </div>
+            <div data-reveal="zoom" className="relative mx-auto w-full max-w-xl">
+              <HeroGlobe />
+              <Parallax offset={30} className="absolute left-0 top-[14%] sm:-left-4">
+                <div className="glass-card-dark rounded-2xl px-4 py-3 shadow-2xl">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-blue-300">Cloud Operations</p>
+                  <p className="mt-1 text-xs text-slate-300">Migration & governance</p>
                 </div>
-              </div>
+              </Parallax>
+              <Parallax offset={-40} className="absolute right-0 top-[40%] sm:-right-6">
+                <div className="glass-card-dark rounded-2xl px-4 py-3 shadow-2xl">
+                  <p className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-emerald-400">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                    Security & Compliance
+                  </p>
+                  <p className="mt-1 text-xs text-slate-300">Monitoring & response</p>
+                </div>
+              </Parallax>
+              <Parallax offset={-25} className="absolute right-[4%] top-[2%]">
+                <div className="glass-card-dark rounded-2xl px-4 py-3 shadow-2xl">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-sky-300">Managed IT Support</p>
+                  <p className="mt-1 text-xs text-slate-300">24/7 proactive helpdesk</p>
+                </div>
+              </Parallax>
+              <Parallax offset={35} className="absolute bottom-[14%] right-[2%] hidden sm:block">
+                <div className="glass-card-dark rounded-2xl px-4 py-3 shadow-2xl">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-amber-300">Network & Connectivity</p>
+                  <p className="mt-1 text-xs text-slate-300">SD-WAN & secure links</p>
+                </div>
+              </Parallax>
+              <Parallax offset={50} className="absolute bottom-[4%] left-[4%]">
+                <div className="glass-card-dark rounded-2xl px-4 py-3 shadow-2xl">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-violet-300">Product Engineering</p>
+                  <p className="mt-1 text-xs text-slate-300">Secure, scalable delivery</p>
+                </div>
+              </Parallax>
             </div>
           </div>
         </div>
       </section>
 
       <section className="section-gradient py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div data-reveal className="max-w-7xl mx-auto px-4 sm:px-6">
           <p className="text-center text-sm uppercase tracking-[0.35em] text-slate-500">
             Most Valuable Clients & Technology Partners
           </p>
@@ -414,7 +421,7 @@ function Home() {
             {/* Gradient masks for fading edges */}
             <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[--background] to-transparent z-10 pointer-events-none hidden sm:block"></div>
             <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[--background] to-transparent z-10 pointer-events-none hidden sm:block"></div>
-            
+
             <div className="flex gap-4 w-max animate-marquee">
               {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((logo, idx) => (
                 <div
@@ -433,7 +440,7 @@ function Home() {
 
       <section id="services" className="section-gradient py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="space-y-4 text-center">
+          <div data-reveal className="space-y-4 text-center">
             <p className="text-sm uppercase tracking-[0.35em] text-primary">
               What We Deliver
             </p>
@@ -464,40 +471,49 @@ function Home() {
                   "Deep domain knowledge across healthcare, finance, manufacturing, logistics and fintech.",
               },
             ].map((item, i) => (
-              <div
-                key={item.title}
-                className={`glass-card-strong rounded-3xl p-8 ${["accent-top-blue", "accent-top-violet", "accent-top-emerald"][i]}`}
-              >
-                <div className={`icon-badge mb-4 ${["icon-badge-blue", "icon-badge-violet", "icon-badge-emerald"][i]}`}>
-                  {["💰", "⚡", "🏢"][i]}
-                </div>
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-slate-600">
-                  {item.description}
-                </p>
+              <div key={item.title} data-reveal style={{ "--i": i } as CSSProperties}>
+                <TiltCard
+                  className={`glass-card-strong glow-ring h-full rounded-3xl p-8 ${["accent-top-blue", "accent-top-violet", "accent-top-emerald"][i]}`}
+                >
+                  <div className={`icon-badge mb-4 ${["icon-badge-blue", "icon-badge-violet", "icon-badge-emerald"][i]}`}>
+                    {["💰", "⚡", "🏢"][i]}
+                  </div>
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </TiltCard>
               </div>
             ))}
           </div>
           <div className="mt-12 grid gap-6 xl:grid-cols-2">
-            {SERVICE_ITEMS.slice(0, 6).map((service) => (
+            {SERVICE_ITEMS.slice(0, 6).map((service, i) => (
               <article
                 key={service.name}
-                className="glass-card-strong rounded-3xl p-8 accent-border-blue"
+                data-reveal={i % 2 ? "right" : "left"}
+                style={{ "--i": i % 2 } as CSSProperties}
+                className="group glass-card-strong rounded-3xl p-8 accent-border-blue transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(59,130,246,0.18)]"
               >
-                <div className="mb-4 inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs uppercase tracking-[0.25em] text-blue-600">
-                  {service.name}
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="font-mono text-xs text-slate-400">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs uppercase tracking-[0.25em] text-blue-600">
+                    {service.name}
+                  </span>
+                  <span className="h-px flex-1 origin-left scale-x-0 bg-gradient-to-r from-blue-400 to-transparent transition-transform duration-700 group-hover:scale-x-100" />
                 </div>
                 <p className="text-slate-600">{service.description}</p>
               </article>
             ))}
           </div>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link
-              to="/technology"
-              className="btn-gradient inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
-            >
-              View Full Services
-            </Link>
+          <div data-reveal className="mt-10 flex flex-wrap gap-3">
+            <Magnetic>
+              <Link
+                to="/technology"
+                className="btn-gradient inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
+              >
+                View Full Services
+              </Link>
+            </Magnetic>
             <a
               href="#faq"
               className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 hover:shadow-md"
@@ -510,7 +526,7 @@ function Home() {
 
       <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="space-y-4 text-center">
+          <div data-reveal="zoom" className="space-y-4 text-center">
             <p className="text-sm uppercase tracking-[0.35em] text-primary">
               Explore the practice
             </p>
@@ -523,12 +539,26 @@ function Home() {
               strategy to delivery.
             </p>
           </div>
+          <div className="mt-10 grid grid-cols-3 gap-4 text-center">
+            {[
+              { value: 3, suffix: "", label: "Global offices" },
+              { value: 11, suffix: "", label: "Service lines" },
+              { value: 24, suffix: "/7", label: "Support coverage" },
+            ].map((stat, i) => (
+              <div key={stat.label} data-reveal style={{ "--i": i } as CSSProperties} className="glass-card-strong rounded-3xl p-6">
+                <p className="text-gradient-primary text-4xl font-black sm:text-5xl">
+                  <CountUp to={stat.value} suffix={stat.suffix} />
+                </p>
+                <p className="mt-2 text-xs uppercase tracking-[0.25em] text-slate-500">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="section-dark py-16 sm:py-20" id="about">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div>
+          <div data-reveal="left">
             <p className="text-sm uppercase tracking-[0.35em] text-primary">
               About Dastute
             </p>
@@ -564,9 +594,11 @@ function Home() {
                   description:
                     "Clear delivery frameworks, transparent communication, and dependable execution at every stage.",
                 },
-              ].map((item) => (
+              ].map((item, i) => (
                 <div
                   key={item.title}
+                  data-reveal
+                  style={{ "--i": i + 2 } as CSSProperties}
                   className="glass-card-dark rounded-3xl p-6"
                 >
                   <h3 className="font-semibold text-white">{item.title}</h3>
@@ -578,86 +610,92 @@ function Home() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/about"
-                className="btn-gradient inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
-              >
-                Learn More About Us
-              </Link>
-              <Link
-                to="/team"
-                className="btn-glass inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
-              >
-                Meet the Team
-              </Link>
+              <Magnetic>
+                <Link
+                  to="/about"
+                  className="btn-gradient inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
+                >
+                  Learn More About Us
+                </Link>
+              </Magnetic>
+              <Magnetic>
+                <Link
+                  to="/team"
+                  className="btn-glass inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
+                >
+                  Meet the Team
+                </Link>
+              </Magnetic>
             </div>
           </div>
 
-          <aside className="glass-card-dark rounded-[32px] p-6 sm:p-8">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-              <p className="text-xs uppercase tracking-[0.35em] text-blue-400">
-                Why teams choose us
-              </p>
-              <ul className="mt-5 space-y-4 text-sm text-slate-300">
+          <Parallax offset={40}>
+            <aside data-reveal="right" className="glass-card-dark glow-ring rounded-[32px] p-6 sm:p-8">
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+                <p className="text-xs uppercase tracking-[0.35em] text-blue-400">
+                  Why teams choose us
+                </p>
+                <ul className="mt-5 space-y-4 text-sm text-slate-300">
+                  {[
+                    "Fast response times with senior-level support when it matters most.",
+                    "Practical, business-first advice instead of generic technology hype.",
+                    "A flexible delivery model for web, cloud, security, and operations.",
+                  ].map((item, i) => (
+                    <li key={item} data-reveal="left" style={{ "--i": i + 2 } as CSSProperties} className="flex gap-3">
+                      <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-semibold">
+                        ✓
+                      </span>
+                      <span className="leading-6">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 {[
-                  "Fast response times with senior-level support when it matters most.",
-                  "Practical, business-first advice instead of generic technology hype.",
-                  "A flexible delivery model for web, cloud, security, and operations.",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-semibold">
-                      ✓
-                    </span>
-                    <span className="leading-6">{item}</span>
-                  </li>
+                  {
+                    label: "Global footprint",
+                    value: "UK · India · Singapore",
+                  },
+                  {
+                    label: "Delivery strength",
+                    value: "Security, software, cloud, and advisory",
+                  },
+                ].map((card) => (
+                  <article
+                    key={card.label}
+                    className="rounded-3xl border border-white/10 bg-white/5 p-5"
+                  >
+                    <p className="text-[11px] uppercase tracking-[0.35em] text-blue-400">
+                      {card.label}
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-slate-300">
+                      {card.value}
+                    </p>
+                  </article>
                 ))}
-              </ul>
-            </div>
+              </div>
 
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
-              {[
-                {
-                  label: "Global footprint",
-                  value: "UK · India · Singapore",
-                },
-                {
-                  label: "Delivery strength",
-                  value: "Security, software, cloud, and advisory",
-                },
-              ].map((card) => (
-                <article
-                  key={card.label}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-5"
-                >
-                  <p className="text-[11px] uppercase tracking-[0.35em] text-blue-400">
-                    {card.label}
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-slate-300">
-                    {card.value}
-                  </p>
-                </article>
-              ))}
-            </div>
-
-            <div className="mt-6 rounded-3xl bg-gradient-to-br from-blue-600/20 to-violet-600/20 border border-blue-400/20 p-6 text-white">
-              <p className="text-xs uppercase tracking-[0.35em] text-slate-300">
-                Our approach
-              </p>
-              <h3 className="mt-3 text-xl font-semibold tracking-tight">
-                One partner for strategy, delivery, and support.
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-slate-300">
-                From planning and implementation to continuous optimisation, we
-                keep your technology reliable, secure, and ready to scale.
-              </p>
-            </div>
-          </aside>
+              <div className="mt-6 rounded-3xl bg-gradient-to-br from-blue-600/20 to-violet-600/20 border border-blue-400/20 p-6 text-white">
+                <p className="text-xs uppercase tracking-[0.35em] text-slate-300">
+                  Our approach
+                </p>
+                <h3 className="mt-3 text-xl font-semibold tracking-tight">
+                  One partner for strategy, delivery, and support.
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">
+                  From planning and implementation to continuous optimisation, we
+                  keep your technology reliable, secure, and ready to scale.
+                </p>
+              </div>
+            </aside>
+          </Parallax>
         </div>
       </section>
 
       <section id="why-us" className="section-gradient py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="space-y-4 text-center">
+          <div data-reveal className="space-y-4 text-center">
             <p className="text-sm uppercase tracking-[0.35em] text-primary">
               Why Dastute
             </p>
@@ -665,59 +703,65 @@ function Home() {
               The Smart Choice for Modern IT Management
             </h2>
             <p className="mx-auto max-w-2xl text-base text-slate-600">
-              We don't just fix problems—we prevent them. Our proactive,
+              We don't just fix problems - we prevent them. Our proactive,
               people-first approach ensures your business stays online, secure,
               and efficient 24/7.
             </p>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {WHY_POINTS.map((point) => (
-              <div
-                key={point.title}
-                className="glass-card-strong rounded-3xl p-8"
-              >
-                <h3 className="text-xl font-semibold">{point.title}</h3>
-                <p className="mt-4 text-slate-600">{point.description}</p>
+            {WHY_POINTS.map((point, i) => (
+              <div key={point.title} data-reveal style={{ "--i": i % 3 } as CSSProperties}>
+                <TiltCard className="glass-card-strong h-full rounded-3xl p-8">
+                  <h3 className="text-xl font-semibold">{point.title}</h3>
+                  <p className="mt-4 text-slate-600">{point.description}</p>
+                </TiltCard>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="process" className="section-dark py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="space-y-4 text-center">
-            <p className="text-sm uppercase tracking-[0.35em] text-blue-400">
-              Our Process
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white">
-              Simple, Transparent & Effective
-            </h2>
-            <p className="mx-auto max-w-2xl text-base text-slate-600">
-              From first contact to continuous management, we make IT effortless
-              for your business.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-4">
-            {PROCESS_STEPS.map((step) => (
-              <div
-                key={step.number}
-                className="glass-card-dark rounded-3xl p-8"
-              >
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-violet-500 text-white font-bold text-lg">
-                  {step.number}
-                </div>
-                <h3 className="text-xl font-semibold text-white">{step.title}</h3>
-                <p className="mt-3 text-slate-300">{step.description}</p>
+      <section id="process" className="section-dark">
+        <PinnedHorizontal
+          header={
+            <div data-reveal className="mx-auto max-w-7xl space-y-4 px-4 pt-16 text-center sm:px-6 lg:pt-0">
+              <p className="text-sm uppercase tracking-[0.35em] text-blue-400">
+                Our Process
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white">
+                Simple, Transparent & Effective
+              </h2>
+              <p className="mx-auto max-w-2xl text-base text-slate-400">
+                From first contact to continuous management, we make IT effortless
+                for your business.
+              </p>
+            </div>
+          }
+        >
+          {PROCESS_STEPS.map((step, i) => (
+            <div
+              key={step.number}
+              data-reveal
+              style={{ "--i": i } as CSSProperties}
+              className="glass-card-dark glow-ring relative mx-4 rounded-3xl p-8 sm:mx-6 lg:mx-0 lg:min-h-[340px] lg:w-[440px] lg:shrink-0 lg:p-10 lg:first:ml-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:last:mr-[max(2rem,calc((100vw-80rem)/2+2rem))]"
+            >
+              <span aria-hidden="true" className="pointer-events-none absolute right-6 top-2 text-8xl font-black text-white/5 lg:text-9xl">
+                {step.number}
+              </span>
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-violet-500 text-white font-bold text-lg shadow-[0_0_30px_rgba(99,102,241,0.5)]">
+                {step.number}
               </div>
-            ))}
-          </div>
-        </div>
+              <h3 className="text-2xl font-semibold text-white">{step.title}</h3>
+              <p className="mt-4 text-slate-300">{step.description}</p>
+            </div>
+          ))}
+        </PinnedHorizontal>
+        <div className="pb-16 sm:pb-20" />
       </section>
 
       <section id="industries" className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="space-y-4 text-center">
+          <div data-reveal className="space-y-4 text-center">
             <p className="text-sm uppercase tracking-[0.35em] text-primary">
               Industries
             </p>
@@ -731,10 +775,12 @@ function Home() {
             </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {INDUSTRIES.map((industry) => (
+            {INDUSTRIES.map((industry, i) => (
               <div
                 key={industry.title}
-                className="glass-card-strong rounded-3xl p-6 hover:border-blue-200 transition-colors"
+                data-reveal="zoom"
+                style={{ "--i": i % 4 } as CSSProperties}
+                className="glass-card-strong rounded-3xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-blue-200 hover:shadow-[0_20px_50px_rgba(59,130,246,0.15)]"
               >
                 <h3 className="font-semibold">{industry.title}</h3>
                 <p className="mt-3 text-slate-600">{industry.description}</p>
@@ -746,7 +792,7 @@ function Home() {
 
       <section id="testimonials" className="section-gradient py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="space-y-4 text-center">
+          <div data-reveal className="space-y-4 text-center">
             <p className="text-sm uppercase tracking-[0.35em] text-primary">
               Client Reviews
             </p>
@@ -759,22 +805,23 @@ function Home() {
             </p>
           </div>
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {TESTIMONIALS.map((item) => (
-              <div
-                key={item.author}
-                className={`rounded-3xl ${item.featured ? "glass-card-strong border-blue-200 bg-blue-50/50" : "glass-card-strong"} p-8`}
-              >
-                <p className="text-2xl leading-none text-gradient-primary font-bold mb-2">"</p>
-                <p className="text-slate-600">{item.quote}</p>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-white">
-                    <Icon name="fa-user" />
+            {TESTIMONIALS.map((item, i) => (
+              <div key={item.author} data-reveal style={{ "--i": i } as CSSProperties}>
+                <TiltCard
+                  className={`h-full rounded-3xl ${item.featured ? "glass-card-strong glow-ring border-blue-200 bg-blue-50/50" : "glass-card-strong"} p-8`}
+                >
+                  <p className="text-2xl leading-none text-gradient-primary font-bold mb-2">"</p>
+                  <p className="text-slate-600">{item.quote}</p>
+                  <div className="mt-6 flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-white">
+                      <Icon name="fa-user" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">{item.author}</p>
+                      <p className="text-sm text-slate-500">{item.role}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold">{item.author}</p>
-                    <p className="text-sm text-slate-500">{item.role}</p>
-                  </div>
-                </div>
+                </TiltCard>
               </div>
             ))}
           </div>
@@ -786,4 +833,3 @@ function Home() {
     </SiteLayout>
   );
 }
-

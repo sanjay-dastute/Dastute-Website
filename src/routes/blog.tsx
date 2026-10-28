@@ -100,12 +100,12 @@ function BlogPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl text-slate-300 text-lg md:text-xl leading-relaxed">
             <p className="transition-all duration-700 delay-150">
               Actionable guides, industry analysis, and expert perspectives on
-              cybersecurity, cloud, AI, ERP, and digital transformation — written
+              cybersecurity, cloud, AI, ERP, and digital transformation - written
               by the engineers and consultants who deliver these solutions every day.
             </p>
             <p className="transition-all duration-700 delay-300">
               New articles published regularly to keep you ahead of the curve.
-              From technical deep-dives to strategic overviews — everything
+              From technical deep-dives to strategic overviews - everything
               you need to make informed technology decisions.
             </p>
           </div>

@@ -91,7 +91,7 @@ function Page() {
           
           <div className="prose prose-lg prose-slate max-w-none">
             <p className="lead text-xl text-slate-600 mb-10">
-              ISO 27001 is the international gold standard for information security. For B2B companies in the UK—especially SaaS providers, fintechs, and managed service providers—holding this certification is often a mandatory prerequisite for closing enterprise deals.
+              ISO 27001 is the international gold standard for information security. For B2B companies in the UK - especially SaaS providers, fintechs, and managed service providers - holding this certification is often a mandatory prerequisite for closing enterprise deals.
             </p>
             <p>
               Unlike Cyber Essentials, which focuses purely on technical IT controls, ISO 27001 takes a holistic approach. It requires you to build a comprehensive <strong>Information Security Management System (ISMS)</strong> that governs your people, processes, and technology.

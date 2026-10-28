@@ -186,7 +186,7 @@ function ProcessPage() {
             >
               <div>
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-600 block mb-4">
-                  Phase {phase.id} &mdash; Duration: {phase.duration}
+                  Phase {phase.id} - Duration: {phase.duration}
                 </span>
                 <h2 className="text-3xl font-bold tracking-tight text-slate-900">
                   {phase.title}

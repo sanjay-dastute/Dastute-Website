@@ -168,7 +168,7 @@ function ContactPage() {
                 Hours
               </p>
               <p className="text-xs sm:text-sm">
-                Mon — Fri · 09:00 — 18:00 (Local Office Time)
+                Mon - Fri · 09:00 - 18:00 (Local Office Time)
               </p>
             </div>
           </div>
@@ -271,7 +271,7 @@ function ContactPage() {
               disabled={status === 'submitting'}
               className="btn-gradient rounded-full px-6 sm:px-8 py-3 sm:py-4 text-[10px] sm:text-xs font-bold uppercase tracking-widest min-h-[44px] disabled:opacity-50"
             >
-              {status === 'submitting' ? "Sending..." : "Send Message — We'll Reply Within 1 Business Day"}
+              {status === 'submitting' ? "Sending..." : "Send Message - We'll Reply Within 1 Business Day"}
             </button>
             {status === 'success' && (
               <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-500 rounded-md text-sm mt-4">

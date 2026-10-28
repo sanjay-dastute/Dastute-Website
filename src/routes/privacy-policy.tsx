@@ -5,7 +5,7 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Dastute Technologies" },
+      { title: "Privacy Policy - Dastute Technologies" },
       {
         name: "description",
         content:
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/privacy-policy")({
       },
       {
         property: "og:title",
-        content: "Privacy Policy — Dastute Technologies",
+        content: "Privacy Policy - Dastute Technologies",
       },
       { property: "og:url", content: "https://dastute.co.uk/privacy-policy" },
     ],

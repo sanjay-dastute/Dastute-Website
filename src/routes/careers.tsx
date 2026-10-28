@@ -1,19 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildFaqJsonLd, buildJobPostingListJsonLd } from "@/lib/seo";
-import { FaqSection } from "@/components/FaqSection";
+import { ProductFaq } from "@/components/ProductSections";
+import { CareerPath, PerkBento, RoleBoard, ValueCards } from "@/components/CareerSections";
+import { CountUp, Magnetic, SplitWords } from "@/components/motion";
 import { FAQS } from "@/lib/faqs";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Dastute Technologies" },
+      { title: "Careers - Dastute Technologies" },
       {
         name: "description",
         content:
           "Careers at Dastute Technologies, a growing global IT consultancy. Competitive benefits, performance bonuses, and paid training and certifications.",
       },
-      { property: "og:title", content: "Careers — Dastute Technologies" },
+      { property: "og:title", content: "Careers - Dastute Technologies" },
       {
         property: "og:description",
         content:
@@ -81,7 +83,7 @@ export const Route = createFileRoute("/careers")({
 const VALUES = [
   {
     title: "People First",
-    desc: "We believe when we place a high value on our team's happiness, work/life balance and professional development, everybody wins — clients included.",
+    desc: "We believe when we place a high value on our team's happiness, work/life balance and professional development, everybody wins - clients included.",
   },
   {
     title: "Unified Team",
@@ -99,32 +101,26 @@ const VALUES = [
 
 const PERKS = [
   {
-    icon: "🏖️",
     title: "Paid Vacation",
     desc: "Four weeks paid vacation, plus an additional week at years 5 and 10.",
   },
   {
-    icon: "⚡",
     title: "Company Holidays",
     desc: "Two weeks of company-wide holidays per year, plus your birthday off.",
   },
   {
-    icon: "🏥",
     title: "Comprehensive Insurance",
     desc: "Competitive health, vision, dental, disability and life insurance plans.",
   },
   {
-    icon: "📈",
     title: "401k & Matching",
     desc: "Retirement plan with competitive company matching from day one.",
   },
   {
-    icon: "🎓",
     title: "Training & Education",
     desc: "Full certification reimbursement, internships and leadership development tracks.",
   },
   {
-    icon: "🎁",
     title: "Performance Bonuses",
     desc: "Company-wide performance-based bonuses and a sales referral program (up to a free company Tesla).",
   },
@@ -173,177 +169,132 @@ function CareersPage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="px-4 sm:px-6 py-16 sm:py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-primary block mb-4 sm:mb-6">
-          / Careers
-        </span>
-        <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-8 sm:mb-12">
-          We put our people first.
-        </h1>
-        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl">
-          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-            It's something a lot of companies say, but not a lot of companies
-            do. Here at Dastute, it's our most important core value. We believe
-            that professional growth and personal happiness shouldn't be
-            trade-offs.
-          </p>
-          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-            Dastute is rapidly growing globally, both organically and by
-            bringing in like-minded managed IT service providers. We're building
-            a network that provides exceptional levels of service to clients by
-            taking exceptional care of our team.
-          </p>
+      <section className="section-hero-dark">
+        <div className="relative px-6 py-24 md:py-28 max-w-7xl mx-auto grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
+              / Careers
+            </span>
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance text-white">
+              <SplitWords text="We put our" />{" "}
+              <SplitWords className="text-gradient-primary" text="people first." delay={0.25} />
+            </h1>
+            <p className="mt-8 max-w-xl text-slate-300 text-lg leading-relaxed">
+              It's something a lot of companies say, but not a lot of companies
+              do. Here at Dastute, it's our most important core value. We believe
+              that professional growth and personal happiness shouldn't be
+              trade-offs.
+            </p>
+            <p className="mt-4 max-w-xl text-slate-400 leading-relaxed">
+              Dastute is rapidly growing globally, both organically and by
+              bringing in like-minded managed IT service providers. We're building
+              a network that provides exceptional levels of service to clients by
+              taking exceptional care of our team.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Magnetic>
+                <a href="#open-roles" className="btn-gradient inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+                  See Open Roles <span aria-hidden>↓</span>
+                </a>
+              </Magnetic>
+              <Magnetic>
+                <Link to="/careers-apply" className="btn-glass inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+                  Apply Now <span aria-hidden>↗</span>
+                </Link>
+              </Magnetic>
+            </div>
+          </div>
+          <div className="hero-visual mx-auto w-full max-w-lg">
+            <CareerPath />
+          </div>
         </div>
       </section>
 
       {/* Stats Bar */}
-      <section className="section-gradient border-y border-border">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-4 md:divide-x divide-border">
+      <section className="section-gradient border-b border-border">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 md:divide-x divide-border">
           {[
-            { k: "Growth", v: "Rapid Global Scale" },
-            { k: "Vacation", v: "4+ Weeks Paid" },
-            { k: "Learning", v: "Full Cert Reimbursement" },
-            { k: "Open Roles", v: String(OPEN_ROLES.length) },
+            { k: "Growth", v: <>Rapid Global Scale</> },
+            { k: "Vacation", v: <><CountUp to={4} />+ Weeks Paid</> },
+            { k: "Learning", v: <>Full Cert Reimbursement</> },
+            { k: "Open Roles", v: <CountUp to={OPEN_ROLES.length} /> },
           ].map((s) => (
-            <div
-              key={s.k}
-              className="p-8 md:p-12 border-b md:border-b-0 border-border"
-            >
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-4">
-                {s.k}
-              </p>
-              <p className="text-2xl font-bold tracking-tight">{s.v}</p>
+            <div key={s.k} className="p-6 md:p-12 border-b md:border-b-0 border-border">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-4">{s.k}</p>
+              <p className="text-xl md:text-2xl font-bold tracking-tight">{s.v}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Values */}
-      <section className="px-6 py-24 max-w-7xl mx-auto">
-        <div className="flex items-end gap-6 mb-16">
-          <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            Our Culture Values
-          </h2>
-          <div className="h-px flex-1 bg-border" />
+      <section className="px-6 py-20 md:py-28 max-w-7xl mx-auto">
+        <div className="mb-12">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-600">/ How we work</p>
+          <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Our Culture Values</h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {VALUES.map((v, i) => (
-            <div key={v.title}>
-              <span className="font-mono text-xs text-primary">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h4 className="font-bold text-lg mt-4 mb-3">{v.title}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {v.desc}
-              </p>
-            </div>
-          ))}
-        </div>
+        <ValueCards values={VALUES} />
       </section>
 
       {/* Perks */}
-      <section className="section-gradient border-y border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="p-8 md:p-12">
-            <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-12">
-              Perks & Benefits
-            </h2>
+      <section className="future-section px-6 py-20 md:py-28">
+        <div className="relative max-w-7xl mx-auto">
+          <div className="mb-12">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-300">/ Life at Dastute</p>
+            <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight text-white">Perks & Benefits</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 md:divide-x divide-border border-t border-border">
-            {PERKS.map((p, i) => (
-              <div
-                key={p.title}
-                className={`p-8 md:p-10 ${i >= 3 ? "border-t border-border" : ""}`}
-              >
-                <span className="text-2xl block mb-4">{p.icon}</span>
-                <h4 className="font-bold mb-2">{p.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {p.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+          <PerkBento perks={PERKS} />
         </div>
       </section>
 
       {/* Open Roles */}
-      <section className="px-6 py-24 max-w-7xl mx-auto">
-        <div className="flex items-end gap-6 mb-16">
-          <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            Open Roles
-          </h2>
-          <div className="h-px flex-1 bg-border" />
+      <section id="open-roles" className="scroll-mt-24 px-6 py-20 md:py-28 max-w-7xl mx-auto">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-600">/ Join the team</p>
+            <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Open Roles</h2>
+          </div>
+          <p className="max-w-xs text-sm text-slate-500">Pick a role to email your application straight to our team.</p>
         </div>
-        <div className="grid gap-px bg-border">
-          {OPEN_ROLES.map((role) => (
-            <div
-              key={role.id}
-              className="bg-background p-8 md:p-10 group hover:bg-foreground hover:text-background transition-colors duration-300"
-            >
-              <div className="grid md:grid-cols-[160px_1fr_200px] gap-6 md:gap-12 items-start">
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-primary group-hover:text-background/60 block mb-2">
-                    {role.practice}
-                  </span>
-                  <span className="font-mono text-[10px] text-muted-foreground group-hover:text-background/50">
-                    {role.type}
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-3">
-                    {role.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-background/70 leading-relaxed mb-4">
-                    {role.description}
-                  </p>
-                  <span className="text-sm text-muted-foreground group-hover:text-background/50">
-                    {role.location}
-                  </span>
-                </div>
-                <div className="flex md:justify-end">
-                  <a
-                    href={`mailto:contact@dastute.co.uk?subject=Application: ${role.title}`}
-                    className="inline-flex items-center gap-2 px-5 py-3 border border-current text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:border-primary hover:text-white transition-colors"
-                  >
-                    Apply <span aria-hidden>↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <RoleBoard roles={OPEN_ROLES} />
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 pb-16 sm:pb-24 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-end">
+      <section className="future-section px-6 py-24 sm:py-28">
+        <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-end">
           <div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
-              Ready to join us?
-            </h3>
-            <p className="mt-4 text-muted-foreground max-w-md text-sm sm:text-base">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-300">/ Your next chapter</p>
+            <h2 className="mt-4 text-4xl md:text-5xl font-black tracking-tight text-white">
+              Ready to <span className="text-gradient-primary">join us?</span>
+            </h2>
+            <p className="mt-4 text-slate-300 max-w-md">
               Apply directly through our career application portal and tell us
               about yourself. We review applications and contact promising
               candidates within 2 weeks.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row md:justify-end gap-3 sm:gap-4">
-            <Link
-              to="/careers-apply"
-              className="inline-flex items-center justify-center sm:justify-start gap-2 border border-foreground px-4 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-sm font-medium hover:bg-foreground hover:text-background transition-colors"
-            >
-              Apply Now <span aria-hidden>↗</span>
-            </Link>
-            <a
-              href="mailto:contact@dastute.co.uk"
-              className="inline-flex items-center justify-center sm:justify-start gap-2 bg-primary text-white px-4 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-sm font-medium hover:opacity-90 transition-opacity"
-            >
-              Email Us <span aria-hidden>↗</span>
-            </a>
+          <div className="flex flex-wrap md:justify-end gap-4">
+            <Magnetic>
+              <Link to="/careers-apply" className="btn-gradient inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+                Apply Now <span aria-hidden>↗</span>
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <a href="mailto:contact@dastute.co.uk" className="btn-glass inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+                Email Us <span aria-hidden>↗</span>
+              </a>
+            </Magnetic>
           </div>
         </div>
       </section>
-      <FaqSection items={FAQS["careers"]} />
+
+      <section className="px-6 py-20 sm:py-24 max-w-7xl mx-auto">
+        <ProductFaq
+          items={FAQS["careers"]}
+          title="Careers FAQs"
+          intro="What to expect from applying, interviewing and growing with Dastute."
+        />
+      </section>
     </SiteLayout>
   );
 }

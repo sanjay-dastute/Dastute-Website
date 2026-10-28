@@ -128,7 +128,7 @@ const ALL_ARTICLES = [
     title: "What You Shouldn't Be Doing with Your Cybersecurity in 2023",
     date: "10 Apr 2023",
     category: "CYBERSECURITY",
-    summary: "Common cybersecurity anti-patterns that leave organisations exposed. From over-reliance on perimeter defences to neglecting employee training — the mistakes costing businesses millions.",
+    summary: "Common cybersecurity anti-patterns that leave organisations exposed. From over-reliance on perimeter defences to neglecting employee training - the mistakes costing businesses millions.",
     tags: [],
     readTime: "7 min read"
   },
@@ -170,7 +170,7 @@ function InsightsPage() {
               Deep-dives into cybersecurity, cloud strategy, ERP implementation, AI integration and IT operations. Practical insights shaped by the projects we deliver for clients every week.
             </p>
             <p className="transition-all duration-700 delay-300">
-              From case studies demonstrating $750k/month savings to actionable cybersecurity guidance — every article is written by practitioners, not a marketing team.
+              From case studies demonstrating $750k/month savings to actionable cybersecurity guidance - every article is written by practitioners, not a marketing team.
             </p>
           </div>
         </div>

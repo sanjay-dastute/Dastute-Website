@@ -115,7 +115,7 @@ function Page() {
             Data-Driven Digital Marketing That Fills Your Pipeline.
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
-            From organic search and paid media to social campaigns and marketing automation — Dastute's digital marketing practice combines strategy, creative, and data analytics to deliver measurable ROI across every channel. We don't run campaigns; we engineer growth.
+            From organic search and paid media to social campaigns and marketing automation - Dastute's digital marketing practice combines strategy, creative, and data analytics to deliver measurable ROI across every channel. We don't run campaigns; we engineer growth.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
@@ -169,10 +169,10 @@ function Page() {
           </h2>
           <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
             <p>
-              In 2026, digital marketing is no longer optional — it is the primary growth engine for B2B and B2C businesses operating in competitive markets. Dastute's marketing division combines the analytical rigour of a technology company with the creative output of a specialist agency. We build end-to-end marketing ecosystems that attract, nurture, and convert your ideal customers — with full-funnel transparency and weekly reporting at every step.
+              In 2026, digital marketing is no longer optional - it is the primary growth engine for B2B and B2C businesses operating in competitive markets. Dastute's marketing division combines the analytical rigour of a technology company with the creative output of a specialist agency. We build end-to-end marketing ecosystems that attract, nurture, and convert your ideal customers - with full-funnel transparency and weekly reporting at every step.
             </p>
             <p>
-              Our team operates across all major digital channels: organic search (SEO), paid search and display (PPC/Google Ads), social media management and advertising, content marketing, email marketing automation, influencer partnerships, and conversion rate optimisation. We integrate every channel into a unified data layer — giving you one source of truth for attribution, ROI, and growth decisions.
+              Our team operates across all major digital channels: organic search (SEO), paid search and display (PPC/Google Ads), social media management and advertising, content marketing, email marketing automation, influencer partnerships, and conversion rate optimisation. We integrate every channel into a unified data layer - giving you one source of truth for attribution, ROI, and growth decisions.
             </p>
           </div>
         </div>
@@ -217,7 +217,7 @@ function Page() {
                 icon: "fa-pen-nib",
                 color: "rose",
                 title: "Content Marketing",
-                desc: "SEO-optimised blog articles, long-form guides, pillar pages, white papers, case studies, press releases, and video scripts. Content written by industry specialists — not generalist writers — ensuring technical accuracy and authority in complex sectors."
+                desc: "SEO-optimised blog articles, long-form guides, pillar pages, white papers, case studies, press releases, and video scripts. Content written by industry specialists - not generalist writers - ensuring technical accuracy and authority in complex sectors."
               },
               {
                 icon: "fa-envelope-open-text",
@@ -229,7 +229,7 @@ function Page() {
                 icon: "fa-chart-pie",
                 color: "violet",
                 title: "Marketing Analytics & Attribution",
-                desc: "GA4 setup and audit, custom Looker Studio dashboard build, multi-touch attribution modelling, and CRM pipeline reporting. We connect marketing spend directly to pipeline and revenue — not just impressions and clicks."
+                desc: "GA4 setup and audit, custom Looker Studio dashboard build, multi-touch attribution modelling, and CRM pipeline reporting. We connect marketing spend directly to pipeline and revenue - not just impressions and clicks."
               },
               {
                 icon: "fa-funnel-dollar",
@@ -314,7 +314,7 @@ function Page() {
               What We Deliver
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Tangible outputs that build long-term marketing equity — not just monthly reports.
+              Tangible outputs that build long-term marketing equity - not just monthly reports.
             </p>
           </div>
 
@@ -323,8 +323,8 @@ function Page() {
               { title: "Marketing Strategy Document", desc: "Full-channel strategy: target audience personas, channel priorities, messaging matrix, and 12-month content calendar." },
               { title: "SEO Audit & Roadmap", desc: "Technical SEO audit with prioritised action list, keyword gap analysis, competitor backlink report, and 6-month ranking projection." },
               { title: "Monthly Performance Report", desc: "Full-funnel attribution report: impressions → clicks → leads → pipeline → revenue. Includes spend vs. return by channel." },
-              { title: "Campaign Creative Assets", desc: "Ad copy variants, landing page designs, email templates, and social media visuals — all brand-aligned and A/B tested." },
-              { title: "Live Analytics Dashboard", desc: "Custom GA4 and Looker Studio dashboard giving your team 24/7 visibility of all metrics — refreshed daily, no waiting for the monthly report." },
+              { title: "Campaign Creative Assets", desc: "Ad copy variants, landing page designs, email templates, and social media visuals - all brand-aligned and A/B tested." },
+              { title: "Live Analytics Dashboard", desc: "Custom GA4 and Looker Studio dashboard giving your team 24/7 visibility of all metrics - refreshed daily, no waiting for the monthly report." },
               { title: "Quarterly Strategy Review", desc: "Every quarter, we reassess channel mix, budget allocation, keyword opportunities, and competitive positioning to recalibrate strategy." }
             ].map((item, i) => (
               <div key={i} className="glass-card-strong p-8 rounded-3xl border border-slate-200">
@@ -376,7 +376,7 @@ function Page() {
               Our Marketing Engagement Process
             </h2>
             <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-              From discovery to full-funnel optimisation — transparent, structured, and results-driven.
+              From discovery to full-funnel optimisation - transparent, structured, and results-driven.
             </p>
             <div className="mt-4 inline-flex px-4 py-2 bg-blue-50 text-blue-700 text-sm font-semibold rounded-full">
               Onboarding to first campaign live: 2–3 weeks
@@ -387,7 +387,7 @@ function Page() {
             {[
               { num: "01", title: "Discovery & Audit", desc: "We audit your current digital presence: existing keyword rankings, traffic sources, ad account performance, social following, and competitor positioning. This establishes the baseline." },
               { num: "02", title: "Strategy & Planning", desc: "We develop a 12-month digital marketing strategy with channel prioritisation, budget allocation, messaging framework, and measurable OKRs agreed with your team." },
-              { num: "03", title: "Campaign Build & Launch", desc: "We set up tracking, build creative assets, configure automation workflows, and launch campaigns — with a structured go-live checklist." },
+              { num: "03", title: "Campaign Build & Launch", desc: "We set up tracking, build creative assets, configure automation workflows, and launch campaigns - with a structured go-live checklist." },
               { num: "04", title: "Optimise & Report", desc: "Weekly performance monitoring with automated dashboards. Monthly strategic review calls. Quarterly strategy recalibration based on results and market changes." }
             ].map((step, i) => (
               <div key={i} className="relative p-6 pt-10 rounded-3xl border border-slate-200 bg-slate-50 hover:border-blue-300 transition-colors">

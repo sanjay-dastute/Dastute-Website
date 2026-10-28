@@ -218,9 +218,9 @@ function Page() {
               Our Web Development Capabilities
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Full-Stack Web Development — From Corporate Websites to Enterprise Platforms
+              Full-Stack Web Development - From Corporate Websites to Enterprise Platforms
               <br />
-              We build web products that perform, convert, and scale — from pixel-perfect marketing sites to complex transactional platforms handling millions of users.
+              We build web products that perform, convert, and scale - from pixel-perfect marketing sites to complex transactional platforms handling millions of users.
             </p>
           </div>
 
@@ -230,7 +230,7 @@ function Page() {
               <span className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2 block">Popular</span>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Corporate & Marketing Websites</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                High-performance, SEO-optimised corporate websites and landing pages built with Next.js, Nuxt.js, Gatsby, or custom HTML/CSS — delivering sub-2-second load times, Core Web Vitals compliance, and conversion-focused UX. Full CMS integration for editorial teams to manage content independently.
+                High-performance, SEO-optimised corporate websites and landing pages built with Next.js, Nuxt.js, Gatsby, or custom HTML/CSS - delivering sub-2-second load times, Core Web Vitals compliance, and conversion-focused UX. Full CMS integration for editorial teams to manage content independently.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Core Web Vitals optimised</li>
@@ -270,7 +270,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-amber">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">API Development & Microservices</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Design and build RESTful and GraphQL APIs, microservices architectures, and event-driven systems. We implement API gateway patterns, OpenAPI specifications, OAuth 2.0 authentication, rate limiting, and monitoring — creating APIs that are performant, secure, and easy to integrate.
+                Design and build RESTful and GraphQL APIs, microservices architectures, and event-driven systems. We implement API gateway patterns, OpenAPI specifications, OAuth 2.0 authentication, rate limiting, and monitoring - creating APIs that are performant, secure, and easy to integrate.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> REST / GraphQL / gRPC</li>
@@ -283,7 +283,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-rose">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">CMS & Headless Content Platforms</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Build content-driven platforms with headless CMS architectures that decouple content management from frontend delivery — enabling editorial teams to publish across web, mobile, and third-party channels from a single source of truth. We also implement WordPress at enterprise scale.
+                Build content-driven platforms with headless CMS architectures that decouple content management from frontend delivery - enabling editorial teams to publish across web, mobile, and third-party channels from a single source of truth. We also implement WordPress at enterprise scale.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Contentful / Sanity / Strapi</li>
@@ -296,7 +296,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-blue">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Performance, SEO & CRO</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Systematic performance and conversion improvement for existing web platforms. We conduct Core Web Vitals audits, Google Lighthouse analysis, technical SEO audits, and A/B testing programmes — identifying and fixing the specific bottlenecks costing you ranking and revenue.
+                Systematic performance and conversion improvement for existing web platforms. We conduct Core Web Vitals audits, Google Lighthouse analysis, technical SEO audits, and A/B testing programmes - identifying and fixing the specific bottlenecks costing you ranking and revenue.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Core Web Vitals optimisation</li>

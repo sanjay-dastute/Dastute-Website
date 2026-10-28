@@ -98,7 +98,7 @@ function Page() {
               A <strong>Virtual Chief Information Officer (vCIO)</strong> is an outsourced, highly experienced executive who acts as your company's strategic IT advisor. Unlike a standard IT support engineer who fixes broken laptops, a vCIO sits at the boardroom table. They ensure that every technology investment directly supports your company's revenue goals, operational efficiency, and risk management strategy.
             </p>
             <p>
-              Typically provided as a premium service by top-tier Managed Service Providers (MSPs), a vCIO works on a fractional basis—giving you access to enterprise-grade leadership for a predictable monthly fee.
+              Typically provided as a premium service by top-tier Managed Service Providers (MSPs), a vCIO works on a fractional basis - giving you access to enterprise-grade leadership for a predictable monthly fee.
             </p>
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">The Difference: vCIO vs. IT Manager</h2>

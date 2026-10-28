@@ -5,7 +5,7 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms of Service — Dastute Technologies" },
+      { title: "Terms of Service - Dastute Technologies" },
       {
         name: "description",
         content:
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/terms")({
       },
       {
         property: "og:title",
-        content: "Terms of Service — Dastute Technologies",
+        content: "Terms of Service - Dastute Technologies",
       },
       { property: "og:url", content: "https://dastute.co.uk/terms" },
     ],
@@ -109,8 +109,8 @@ function TermsPage() {
             </div>
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed pl-10">
               <p>
-                All content on this website — including text, graphics, logos,
-                design elements, code, and documentation — is the property of
+                All content on this website - including text, graphics, logos,
+                design elements, code, and documentation - is the property of
                 Dastute Technologies Limited or its licensors, and is protected
                 by copyright, trademark and other intellectual property laws.
               </p>

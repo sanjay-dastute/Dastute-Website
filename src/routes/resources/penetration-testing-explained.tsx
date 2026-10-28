@@ -98,7 +98,7 @@ function Page() {
               Penetration testing (often called "pen testing" or ethical hacking) is a simulated cyber attack on your computer systems, authorized by you. Certified cybersecurity experts use the exact same tools, techniques, and methodologies as malicious hackers (threat actors). 
             </p>
             <p>
-              The goal is to find security vulnerabilities—such as unpatched software, misconfigured firewalls, or weak employee passwords—and safely exploit them to prove the risk is real. They then provide a detailed report on how to fix the issues before a real criminal can find them.
+              The goal is to find security vulnerabilities - such as unpatched software, misconfigured firewalls, or weak employee passwords - and safely exploit them to prove the risk is real. They then provide a detailed report on how to fix the issues before a real criminal can find them.
             </p>
 
             <div className="bg-rose-50 border-l-4 border-rose-600 p-6 my-10 rounded-r-lg">
@@ -117,7 +117,7 @@ function Page() {
 
             <h3 className="text-xl font-bold text-slate-800 mt-8 mb-3">1. Black Box Testing</h3>
             <p>
-              The testers are given <strong>zero</strong> inside information about your network—only your company name and website. This is the most realistic simulation of an external cyber attack. The testers must independently map your infrastructure, find your employee emails, and attempt to break in from the outside.
+              The testers are given <strong>zero</strong> inside information about your network - only your company name and website. This is the most realistic simulation of an external cyber attack. The testers must independently map your infrastructure, find your employee emails, and attempt to break in from the outside.
             </p>
 
             <h3 className="text-xl font-bold text-slate-800 mt-8 mb-3">2. White Box Testing</h3>

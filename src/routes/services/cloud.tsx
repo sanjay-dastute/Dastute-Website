@@ -216,7 +216,7 @@ function Page() {
               Our Cloud Capabilities
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              End-to-End Cloud Services — One Partner, Every Layer.
+              End-to-End Cloud Services - One Partner, Every Layer.
               <br />
               From initial migration to continuous managed operations, we cover every cloud discipline your business needs.
             </p>
@@ -268,7 +268,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-amber">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Cloud Security & Compliance</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Security is built into every cloud environment we design — not bolted on. We implement zero-trust networking, IAM least-privilege policies, CloudTrail/Security Hub alerting, and compliance controls for ISO 27001, PCI-DSS, HIPAA, and UK Cyber Essentials.
+                Security is built into every cloud environment we design - not bolted on. We implement zero-trust networking, IAM least-privilege policies, CloudTrail/Security Hub alerting, and compliance controls for ISO 27001, PCI-DSS, HIPAA, and UK Cyber Essentials.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Zero-trust architecture</li>
@@ -281,7 +281,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-rose">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">FinOps & Cost Optimisation</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Cloud spend without governance spirals out of control. Our FinOps practice combines rightsizing analysis, reserved instance planning, Spot/Savings Plan strategies, and tagging governance to reduce cloud bills by 25–40% — with monthly visibility dashboards.
+                Cloud spend without governance spirals out of control. Our FinOps practice combines rightsizing analysis, reserved instance planning, Spot/Savings Plan strategies, and tagging governance to reduce cloud bills by 25–40% - with monthly visibility dashboards.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Rightsizing & reserved instances</li>
@@ -294,7 +294,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-blue">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Disaster Recovery & Business Continuity</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Design and implement cloud-based DR solutions with defined RTO and RPO targets. We build multi-region failover architectures, automate backup schedules and integrity verification, and conduct regular DR drills — ensuring your business keeps running.
+                Design and implement cloud-based DR solutions with defined RTO and RPO targets. We build multi-region failover architectures, automate backup schedules and integrity verification, and conduct regular DR drills - ensuring your business keeps running.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Multi-region failover</li>
@@ -354,10 +354,10 @@ function Page() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Multi-Cloud Certified", desc: "Our cloud team holds active certifications across AWS, Azure, and Google Cloud. You get specialists — not generalists — working on your infrastructure." },
-              { title: "Security-First Architecture", desc: "Every environment starts with a security baseline — zero-trust networking, IAM least privilege, encryption, and automated compliance checks." },
-              { title: "Guaranteed Cost Reduction", desc: "Our FinOps practice has delivered an average 31% cloud cost reduction for clients in the first 12 months — making every pound visible and justified." },
-              { title: "IaC by Default", desc: "Every environment is defined in version-controlled Terraform and Helm — not click-ops. This means reproducible deployments and auditability." },
+              { title: "Multi-Cloud Certified", desc: "Our cloud team holds active certifications across AWS, Azure, and Google Cloud. You get specialists - not generalists - working on your infrastructure." },
+              { title: "Security-First Architecture", desc: "Every environment starts with a security baseline - zero-trust networking, IAM least privilege, encryption, and automated compliance checks." },
+              { title: "Guaranteed Cost Reduction", desc: "Our FinOps practice has delivered an average 31% cloud cost reduction for clients in the first 12 months - making every pound visible and justified." },
+              { title: "IaC by Default", desc: "Every environment is defined in version-controlled Terraform and Helm - not click-ops. This means reproducible deployments and auditability." },
               { title: "UK Data Sovereignty", desc: "We design architectures using UK-region cloud deployments with appropriate egress controls and cross-border safeguards under UK GDPR." },
               { title: "24/7 Managed Operations", desc: "Post-deployment, we provide round-the-clock monitoring, incident response, and patch management so your platform is always healthy." },
             ].map((item, i) => (

@@ -117,7 +117,7 @@ function Page() {
             Blockchain Development Company UK. Web3 Engineering for Real-World Value.
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-slate-300 leading-relaxed">
-            Supply chain traceability, trade finance automation, tokenisation of real-world assets, smart contract development, and rigorous security audits. We build enterprise blockchain solutions that solve operational problems — not speculative ones. Web3 with the governance of Web2.
+            Supply chain traceability, trade finance automation, tokenisation of real-world assets, smart contract development, and rigorous security audits. We build enterprise blockchain solutions that solve operational problems - not speculative ones. Web3 with the governance of Web2.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
@@ -165,10 +165,10 @@ function Page() {
         <div className="max-w-7xl mx-auto p-6 py-16 md:py-24">
           <div className="mb-16 max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
-              Enterprise Blockchain — Built for Operational Impact
+              Enterprise Blockchain - Built for Operational Impact
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We focus on blockchain use cases that deliver measurable business value — supply chain integrity, trade finance efficiency, asset tokenisation, and verifiable digital identity. Every solution is security-audited against the OWASP Smart Contract Top 10 and SWC registry, and built to meet enterprise governance requirements.
+              We focus on blockchain use cases that deliver measurable business value - supply chain integrity, trade finance efficiency, asset tokenisation, and verifiable digital identity. Every solution is security-audited against the OWASP Smart Contract Top 10 and SWC registry, and built to meet enterprise governance requirements.
             </p>
           </div>
 
@@ -227,7 +227,7 @@ function Page() {
               Our Blockchain Capabilities
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Full-Stack Blockchain & Web3 Development — From Protocol to Product
+              Full-Stack Blockchain & Web3 Development - From Protocol to Product
               <br />
               We build audited, scalable, production-grade blockchain systems across public chains, private networks, and hybrid architectures.
             </p>
@@ -292,7 +292,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-rose">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Real World Asset (RWA) Tokenisation</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Design and build compliant platforms for on-chain representation of real-world assets — property, private equity, infrastructure, commodities, and invoices. We build KYC/AML-integrated platforms with regulatory-compliant token structures and secondary market liquidity.
+                Design and build compliant platforms for on-chain representation of real-world assets - property, private equity, infrastructure, commodities, and invoices. We build KYC/AML-integrated platforms with regulatory-compliant token structures and secondary market liquidity.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> KYC/AML integration</li>
@@ -305,7 +305,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-blue">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Wallet, dApp & Web3 Frontend</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Build high-performance decentralised applications (dApps) and Web3 frontends integrated with MetaMask, WalletConnect, Coinbase Wallet, and hardware wallets. We design intuitive UX for non-crypto-native users — critical for enterprise and consumer adoption.
+                Build high-performance decentralised applications (dApps) and Web3 frontends integrated with MetaMask, WalletConnect, Coinbase Wallet, and hardware wallets. We design intuitive UX for non-crypto-native users - critical for enterprise and consumer adoption.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> MetaMask / WalletConnect</li>
@@ -359,7 +359,7 @@ function Page() {
               Why Enterprises Trust Dastute for Blockchain
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Blockchain projects fail when the team doesn't understand the full stack — from cryptography and consensus to UX and compliance. We do.
+              Blockchain projects fail when the team doesn't understand the full stack - from cryptography and consensus to UX and compliance. We do.
             </p>
           </div>
 
@@ -367,8 +367,8 @@ function Page() {
             {[
               { title: "Security-Audited Code by Default", desc: "Every smart contract we write is subjected to a rigorous internal security audit covering reentrancy, access control, and economic exploits." },
               { title: "Full-Stack Blockchain Expertise", desc: "We cover the entire stack: smart contracts, protocol design, Web3 frontend, wallet integration, and backend node infrastructure." },
-              { title: "Regulatory Awareness", desc: "We design solutions with regulatory awareness — FCA guidelines, MiCA (EU), AML/KYC requirements, and data minimisation principles." },
-              { title: "Chain-Agnostic Approach", desc: "We evaluate Ethereum, Polygon, Solana, Avalanche, and Hyperledger based on your specific requirements — you get the right chain, not just the one we know." },
+              { title: "Regulatory Awareness", desc: "We design solutions with regulatory awareness - FCA guidelines, MiCA (EU), AML/KYC requirements, and data minimisation principles." },
+              { title: "Chain-Agnostic Approach", desc: "We evaluate Ethereum, Polygon, Solana, Avalanche, and Hyperledger based on your specific requirements - you get the right chain, not just the one we know." },
               { title: "Enterprise Integration Specialists", desc: "We connect blockchain to SAP, Oracle, Salesforce, and custom ERP systems via REST APIs, webhooks, and event-driven middleware." },
               { title: "Proven DeFi & NFT Track Record", desc: "With production DeFi protocols and NFT marketplaces live on mainnet, we bring real battle-tested experience to your project." },
             ].map((item, i) => (

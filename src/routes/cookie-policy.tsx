@@ -5,13 +5,13 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/cookie-policy")({
   head: () => ({
     meta: [
-      { title: "Cookie Policy — Dastute Technologies" },
+      { title: "Cookie Policy - Dastute Technologies" },
       {
         name: "description",
         content:
           "Cookie Policy for Dastute Technologies Limited. Information about the cookies we use and how to manage your preferences.",
       },
-      { property: "og:title", content: "Cookie Policy — Dastute Technologies" },
+      { property: "og:title", content: "Cookie Policy - Dastute Technologies" },
       { property: "og:url", content: "https://dastute.co.uk/cookie-policy" },
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/cookie-policy" }],
@@ -54,13 +54,13 @@ const COOKIE_TABLE = [
       {
         name: "_ga",
         purpose:
-          "Google Analytics — distinguishes unique users to compile site usage reports.",
+          "Google Analytics - distinguishes unique users to compile site usage reports.",
         duration: "24 months",
         type: "Third-party (Google)",
       },
       {
         name: "_ga_*",
-        purpose: "Google Analytics 4 — used to persist session state.",
+        purpose: "Google Analytics 4 - used to persist session state.",
         duration: "24 months",
         type: "Third-party (Google)",
       },
@@ -88,20 +88,20 @@ const COOKIE_TABLE = [
     cookies: [
       {
         name: "_gcl_au",
-        purpose: "Google Ads — stores conversion data on ad clicks.",
+        purpose: "Google Ads - stores conversion data on ad clicks.",
         duration: "90 days",
         type: "Third-party (Google)",
       },
       {
         name: "_fbp",
         purpose:
-          "Facebook Pixel — delivers advertisements and tracks conversions.",
+          "Facebook Pixel - delivers advertisements and tracks conversions.",
         duration: "90 days",
         type: "Third-party (Meta)",
       },
       {
         name: "li_sugr",
-        purpose: "LinkedIn Insight Tag — identifies visitors for ad targeting.",
+        purpose: "LinkedIn Insight Tag - identifies visitors for ad targeting.",
         duration: "90 days",
         type: "Third-party (LinkedIn)",
       },

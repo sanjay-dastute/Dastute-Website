@@ -64,7 +64,7 @@ function Page() {
             Surviving Ransomware: The Anatomy of a Cyber Attack
           </h1>
           <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            It only takes one click. Explore how modern ransomware gangs orchestrate devastating double-extortion attacks—and how to ensure your business survives without paying a dime.
+            It only takes one click. Explore how modern ransomware gangs orchestrate devastating double-extortion attacks - and how to ensure your business survives without paying a dime.
           </p>
         </div>
       </section>
@@ -110,7 +110,7 @@ function Page() {
             In the scenario above, standard backups fail because the attacker encrypts them alongside the production data. A true Business Continuity and Disaster Recovery (BCDR) strategy relies on <strong>Immutable Backups</strong>.
           </p>
           <p>
-            An immutable backup cannot be altered, deleted, or encrypted by anyone—not even an administrator with full network privileges—for a set period of time. 
+            An immutable backup cannot be altered, deleted, or encrypted by anyone - not even an administrator with full network privileges - for a set period of time. 
           </p>
           <p>
             If the victim in our scenario had an immutable BCDR appliance managed by Dastute, the recovery would look entirely different:

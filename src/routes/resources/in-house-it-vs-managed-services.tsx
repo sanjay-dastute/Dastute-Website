@@ -146,7 +146,7 @@ function Page() {
               <strong>In-House Vulnerability:</strong> It is nearly impossible for a small internal team to be experts in everything. They become "jacks of all trades, masters of none," which leaves dangerous gaps in your cybersecurity posture. Furthermore, when your primary IT manager leaves the company, they take all the undocumented institutional knowledge with them.
             </p>
             <p>
-              <strong>The MSP Advantage:</strong> A premium MSP provides fractional access to a deep bench of specialists. You get a Cloud Architect, a Cybersecurity Analyst, a Network Engineer, and a virtual CIO (vCIO)—all for less than the cost of one mid-level internal hire.
+              <strong>The MSP Advantage:</strong> A premium MSP provides fractional access to a deep bench of specialists. You get a Cloud Architect, a Cybersecurity Analyst, a Network Engineer, and a virtual CIO (vCIO) - all for less than the cost of one mid-level internal hire.
             </p>
 
             <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-10 rounded-r-lg">

@@ -7,7 +7,7 @@ import { useFormSubmit } from "@/lib/useFormSubmit";
 export const Route = createFileRoute("/project-estimator")({
   head: () => ({
     meta: [
-      { title: "Project Estimator — Dastute Technologies" },
+      { title: "Project Estimator - Dastute Technologies" },
       {
         name: "description",
         content:
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/project-estimator")({
       },
       {
         property: "og:title",
-        content: "Project Estimator — Dastute Technologies",
+        content: "Project Estimator - Dastute Technologies",
       },
       {
         property: "og:description",
@@ -87,7 +87,7 @@ const BUDGETS = [
   "Not sure yet",
 ];
 const TIMELINES = [
-  "ASAP — Under 4 weeks",
+  "ASAP - Under 4 weeks",
   "1 – 3 months",
   "3 – 6 months",
   "6+ months",
@@ -609,7 +609,7 @@ function ProjectEstimatorPage() {
               In the landscape of modern software engineering, cloud architecture, and cybersecurity, the ability to accurately forecast project costs and timelines is a critical determinant of commercial success. Historically, the IT industry has been plagued by "black box" pricing models, where initial quotes are artificially lowered to secure a contract, only for scope creep and hidden dependencies to trigger massive budget overruns. At Dastute Technologies, we believe that project estimation should be a rigorous, transparent, and collaborative discipline.
             </p>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-              When an enterprise commits to a digital transformation initiative—whether that entails migrating legacy monolithic architectures to cloud-native microservices, building bespoke Enterprise Resource Planning (ERP) integrations, or deploying complex Web3 decentralized applications (dApps)—the financial and operational stakes are incredibly high. An accurate estimate provides stakeholders with the fiscal clarity required to secure board approval, allocate internal resources effectively, and measure ultimate Return on Investment (ROI). Without a highly detailed initial scoping phase, development sprints become chaotic, technical debt accumulates rapidly, and Go-To-Market (GTM) strategies are compromised.
+              When an enterprise commits to a digital transformation initiative - whether that entails migrating legacy monolithic architectures to cloud-native microservices, building bespoke Enterprise Resource Planning (ERP) integrations, or deploying complex Web3 decentralized applications (dApps) - the financial and operational stakes are incredibly high. An accurate estimate provides stakeholders with the fiscal clarity required to secure board approval, allocate internal resources effectively, and measure ultimate Return on Investment (ROI). Without a highly detailed initial scoping phase, development sprints become chaotic, technical debt accumulates rapidly, and Go-To-Market (GTM) strategies are compromised.
             </p>
           </div>
 

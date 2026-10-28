@@ -216,9 +216,9 @@ function Page() {
               Our Network Capabilities
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Enterprise Network Services — Designed for Performance, Security & Resilience
+              Enterprise Network Services - Designed for Performance, Security & Resilience
               <br />
-              From head office to branch, data centre to cloud, remote worker to IoT device — we design and manage networks that never let your business down.
+              From head office to branch, data centre to cloud, remote worker to IoT device - we design and manage networks that never let your business down.
             </p>
           </div>
 
@@ -228,7 +228,7 @@ function Page() {
               <span className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2 block">Core</span>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Network Design & Architecture</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Custom network architecture design for enterprise, multi-site, and hybrid environments — covering LAN, WAN, WLAN, and data centre interconnects. We produce detailed network diagrams, IP schemas, VLAN design, routing protocols, and QoS policies.
+                Custom network architecture design for enterprise, multi-site, and hybrid environments - covering LAN, WAN, WLAN, and data centre interconnects. We produce detailed network diagrams, IP schemas, VLAN design, routing protocols, and QoS policies.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> LAN / WAN / WLAN design</li>
@@ -255,7 +255,7 @@ function Page() {
             <div className="glass-card-strong p-8 rounded-3xl accent-top-violet">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">SD-WAN & WAN Optimisation</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Replace expensive MPLS circuits with software-defined WAN solutions from Cisco Meraki, VMware VeloCloud, Fortinet, and Palo Alto — reducing WAN costs while improving performance, visibility, and application-aware routing.
+                Replace expensive MPLS circuits with software-defined WAN solutions from Cisco Meraki, VMware VeloCloud, Fortinet, and Palo Alto - reducing WAN costs while improving performance, visibility, and application-aware routing.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Cisco Meraki / VeloCloud</li>
