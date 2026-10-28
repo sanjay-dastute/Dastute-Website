@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/cyber-security")({
   head: () => ({
@@ -63,17 +64,6 @@ export const Route = createFileRoute("/services/cyber-security")({
       { rel: "icon", href: "/favicon-16x16.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-      },
-      { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-      { rel: "dns-prefetch", href: "https://cdnjs.cloudflare.com" },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-      },
     ],
     scripts: [
       {
@@ -116,7 +106,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Technology Services
+            <Icon name="fa-arrow-left" /> Back to Technology Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / Cyber Security
@@ -281,7 +271,7 @@ function Page() {
                 </div>
                 <div className="p-5 bg-rose-50 border border-rose-100 rounded-2xl">
                   <h4 className="font-bold text-rose-900 mb-2 flex items-center gap-2">
-                    <i className="fas fa-tools text-rose-500"></i> Red Team Tools We Use
+                    <Icon name="fa-tools" className="text-rose-500" /> Red Team Tools We Use
                   </h4>
                   <p className="text-sm text-rose-800 leading-relaxed">
                     Cobalt Strike, Sliver C2, Empire, BloodHound, Impacket, Responder, Mimikatz, Metasploit Pro, Burp Suite Pro, Nmap, CrackMapExec — all used ethically within agreed rules of engagement and legal frameworks.
@@ -380,63 +370,63 @@ function Page() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-3xl border border-border shadow-sm">
-              <i className="fas fa-user-shield text-3xl text-blue-500 mb-6"></i>
+              <Icon name="fa-user-shield" className="text-3xl text-blue-500 mb-6" />
               <h3 className="text-xl font-bold text-slate-900 mb-4">GDPR & Privacy Program</h3>
               <ul className="space-y-3 text-sm text-slate-700">
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Data mapping and classification</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> DPIA (Data Protection Impact Assessment)</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Privacy by Design reviews</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Records of Processing Activities (RoPA)</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Data retention and deletion controls</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Subject Access Request processes</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Data mapping and classification</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> DPIA (Data Protection Impact Assessment)</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Privacy by Design reviews</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Records of Processing Activities (RoPA)</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Data retention and deletion controls</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Subject Access Request processes</li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl border border-border shadow-sm">
-              <i className="fas fa-landmark text-3xl text-indigo-500 mb-6"></i>
+              <Icon name="fa-landmark" className="text-3xl text-indigo-500 mb-6" />
               <h3 className="text-xl font-bold text-slate-900 mb-4">Security Governance</h3>
               <ul className="space-y-3 text-sm text-slate-700">
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Information Security Management Framework</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Risk Register creation</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Security Metrics and Reporting</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Board-level security reporting</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Incident response governance</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Information Security Management Framework</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Risk Register creation</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Security Metrics and Reporting</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Board-level security reporting</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Incident response governance</li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl border border-border shadow-sm">
-              <i className="fas fa-network-wired text-3xl text-rose-500 mb-6"></i>
+              <Icon name="fa-network-wired" className="text-3xl text-rose-500 mb-6" />
               <h3 className="text-xl font-bold text-slate-900 mb-4">Technical Security Assessment</h3>
               <ul className="space-y-3 text-sm text-slate-700">
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Vulnerability assessment</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> External attack surface review</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Secure cloud configuration review</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Endpoint security assessment</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Identity and Access Management review</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Vulnerability assessment</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> External attack surface review</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Secure cloud configuration review</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Endpoint security assessment</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Identity and Access Management review</li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl border border-border shadow-sm lg:col-span-2">
-              <i className="fas fa-code-branch text-3xl text-violet-500 mb-6"></i>
+              <Icon name="fa-code-branch" className="text-3xl text-violet-500 mb-6" />
               <h3 className="text-xl font-bold text-slate-900 mb-4">Product & Application Security</h3>
               <ul className="grid md:grid-cols-2 gap-y-3 gap-x-6 text-sm text-slate-700">
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Secure SDLC implementation</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Security architecture reviews</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Threat modeling</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Secure coding guidance</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Security testing strategy</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Vulnerability management program</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Secure SDLC implementation</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Security architecture reviews</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Threat modeling</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Secure coding guidance</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Security testing strategy</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Vulnerability management program</li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-3xl border border-border shadow-sm">
-              <i className="fas fa-shield-alt text-3xl text-amber-500 mb-6"></i>
+              <Icon name="fa-shield-alt" className="text-3xl text-amber-500 mb-6" />
               <h3 className="text-xl font-bold text-slate-900 mb-4">Incident Response & Resilience</h3>
               <ul className="space-y-3 text-sm text-slate-700">
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Incident response plans</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Tabletop exercises</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Breach notification procedures</li>
-                <li className="flex items-start gap-2"><i className="fas fa-check text-emerald-500 mt-1"></i> Business continuity support</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Incident response plans</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Tabletop exercises</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Breach notification procedures</li>
+                <li className="flex items-start gap-2"><Icon name="fa-check" className="text-emerald-500 mt-1" /> Business continuity support</li>
               </ul>
             </div>
           </div>

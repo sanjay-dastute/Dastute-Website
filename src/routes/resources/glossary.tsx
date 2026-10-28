@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildStandardPageHead, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/resources/glossary")({
   head: () => ({
@@ -195,7 +196,7 @@ function Page() {
                   to={item.link}
                   className="text-blue-600 font-semibold hover:text-blue-800 transition-colors inline-flex items-center"
                 >
-                  Learn more about our related services <i className="fas fa-arrow-right ml-2 text-sm"></i>
+                  Learn more about our related services <Icon name="fa-arrow-right" className="ml-2 text-sm" />
                 </Link>
               </div>
             ))}

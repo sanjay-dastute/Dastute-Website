@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildStandardPageHead, buildFaqJsonLd , buildBlogPostingJsonLd, buildPersonJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/resources/in-house-it-vs-managed-services")({
   head: () => ({
@@ -166,11 +167,11 @@ function Page() {
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Conclusion: Making the Decision</h2>
             <ul className="space-y-4 mb-10">
               <li className="flex gap-3">
-                <i className="fas fa-arrow-right text-blue-600 mt-1"></i>
+                <Icon name="fa-arrow-right" className="text-blue-600 mt-1" />
                 <span><strong>Choose In-House IT if:</strong> You are a massive enterprise (1000+ employees) with specific proprietary software that requires constant, dedicated, on-site developer-level support.</span>
               </li>
               <li className="flex gap-3">
-                <i className="fas fa-arrow-right text-blue-600 mt-1"></i>
+                <Icon name="fa-arrow-right" className="text-blue-600 mt-1" />
                 <span><strong>Choose Managed Services if:</strong> You are an ambitious SME (20-500 employees) that needs enterprise-grade cybersecurity, 24/7 reliability, and predictable IT budgets without the headache of managing technical recruitment.</span>
               </li>
             </ul>

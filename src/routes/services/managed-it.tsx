@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/managed-it")({
   head: () => ({
@@ -95,7 +96,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Technology Services
+            <Icon name="fa-arrow-left" /> Back to Technology Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / Managed IT
@@ -229,9 +230,9 @@ function Page() {
                 Get 24/7 helpdesk support via phone, email, or chat. We answer in 3 minutes on average. You get dedicated engineers who know your setup. We do not use scripted call centres.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Avg 3-min response time</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Dedicated account engineers</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Multi-channel support</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Avg 3-min response time</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Dedicated account engineers</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Multi-channel support</li>
               </ul>
             </div>
 
@@ -242,9 +243,9 @@ function Page() {
                 We monitor your servers, networks, and cloud 24/7. Our tools detect and fix 70% of issues before you even notice them. Say goodbye to IT downtime.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> 24/7 real-time monitoring</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Automated pre-emptive remediation</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> SLA-backed uptime guarantees</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> 24/7 real-time monitoring</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Automated pre-emptive remediation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> SLA-backed uptime guarantees</li>
               </ul>
             </div>
 
@@ -256,9 +257,9 @@ function Page() {
                 Get a dedicated technology strategist for your board meetings. They build your IT roadmap and manage vendors. You get the value of a full-time CIO for less.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Quarterly business reviews</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Annual IT roadmap</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Budget & vendor management</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Quarterly business reviews</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Annual IT roadmap</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Budget & vendor management</li>
               </ul>
             </div>
 
@@ -269,9 +270,9 @@ function Page() {
                 We protect all your devices with enterprise security tools. We detect threats in real-time and block them instantly. Your data stays safe.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> CrowdStrike / SentinelOne EDR</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Automated threat response</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Device compliance enforcement</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> CrowdStrike / SentinelOne EDR</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Automated threat response</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Device compliance enforcement</li>
               </ul>
             </div>
             
@@ -282,9 +283,9 @@ function Page() {
                 We update your systems and software automatically. This happens quietly in the background. We also scan for risks every month to keep hackers out.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Automated OS & app patching</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Monthly vulnerability reports</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Zero-day emergency patching</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Automated OS & app patching</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Monthly vulnerability reports</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Zero-day emergency patching</li>
               </ul>
             </div>
             
@@ -295,9 +296,9 @@ function Page() {
                 We back up your data daily and store it safely off-site. This includes servers and Microsoft 365. We also run regular tests to ensure fast recovery.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Daily encrypted backups</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> M365 data protection</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Quarterly DR tests</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Daily encrypted backups</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> M365 data protection</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Quarterly DR tests</li>
               </ul>
             </div>
 
@@ -314,21 +315,21 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-file-alt text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-file-alt" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Service Reports</h3>
               <p className="text-sm text-muted-foreground">
                 Monthly executive reports covering uptime metrics, incidents resolved, patch status, security alerts, and SLA performance.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-map-signs text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-map-signs" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">IT Roadmap</h3>
               <p className="text-sm text-muted-foreground">
                 Annual strategic IT plan aligned with your business objectives, including technology refresh schedules and investment priorities.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-shield-alt text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-shield-alt" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Security Baseline</h3>
               <p className="text-sm text-muted-foreground">
                 Documented security posture assessment, endpoint protection status, and vulnerability management summary.

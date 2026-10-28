@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/custom-software")({
   head: () => ({
@@ -63,17 +64,6 @@ export const Route = createFileRoute("/services/custom-software")({
       { rel: "icon", href: "/favicon-16x16.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-      },
-      { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-      { rel: "dns-prefetch", href: "https://cdnjs.cloudflare.com" },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-      },
     ],
     scripts: [
       {
@@ -116,7 +106,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Technology Services
+            <Icon name="fa-arrow-left" /> Back to Technology Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / Custom Software
@@ -248,9 +238,9 @@ function Page() {
                 We provide all customised work for existing products that your clients are already using. Instead of rip-and-replace, we build custom plugins, API layers, and ongoing functional extensions to make the current software work exactly as required.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Platform-specific customisations</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> API & Middleware development</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Ongoing technical support</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Platform-specific customisations</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> API & Middleware development</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Ongoing technical support</li>
               </ul>
             </div>
 
@@ -262,9 +252,9 @@ function Page() {
                 For complex, unique business models, off-the-shelf software falls short. We build very customised versions of enterprise software from the ground up, delivering SaaS platforms, internal portals, and automation tools engineered for your specific global industry.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Bespoke SaaS product development</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Internal enterprise portals</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Custom workflow automation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Bespoke SaaS product development</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Internal enterprise portals</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Custom workflow automation</li>
               </ul>
             </div>
 
@@ -275,9 +265,9 @@ function Page() {
                 Our custom software practice serves clients globally. Whether you are in healthcare, fintech, logistics, retail, or manufacturing, we adapt to the specific compliance, security, and operational standards of your sort of industry.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Cross-border compliance (GDPR, etc.)</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Multi-currency & localisation support</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Industry-specific data workflows</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Cross-border compliance (GDPR, etc.)</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Multi-currency & localisation support</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Industry-specific data workflows</li>
               </ul>
             </div>
             
@@ -288,9 +278,9 @@ function Page() {
                 We are technology agnostic. We use all sorts of tech stacks depending on what the project demands. Our well-skilled developers are experts in JavaScript frameworks, Python, Java, .NET, Go, and modern cloud-native architectures.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Senior full-stack engineers</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Polyglot language capabilities</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Cloud-agnostic infrastructure</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Senior full-stack engineers</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Polyglot language capabilities</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Cloud-agnostic infrastructure</li>
               </ul>
             </div>
           </div>
@@ -322,7 +312,7 @@ function Page() {
               { title: "Cloud Ecosystems", products: "AWS, Azure, Google Cloud Workspace", icon: "fa-cloud" }
             ].map((ecosystem, i) => (
               <div key={i} className="bg-white border border-border rounded-2xl p-6 shadow-sm">
-                <i className={`fas ${ecosystem.icon} text-2xl text-blue-500 mb-4`}></i>
+                <Icon name={ecosystem.icon} className="text-2xl text-blue-500 mb-4" />
                 <h4 className="font-bold text-slate-900 mb-2">{ecosystem.title}</h4>
                 <p className="text-sm text-muted-foreground">{ecosystem.products}</p>
               </div>
@@ -347,15 +337,15 @@ function Page() {
               </p>
               <ul className="space-y-4 text-slate-300 text-sm">
                 <li className="flex gap-3">
-                  <i className="fas fa-check-circle text-emerald-500 mt-1"></i>
+                  <Icon name="fa-check-circle" className="text-emerald-500 mt-1" />
                   <span><strong>Zero Licensing Traps:</strong> You own the IP. No per-seat scaling costs as your team grows globally.</span>
                 </li>
                 <li className="flex gap-3">
-                  <i className="fas fa-check-circle text-emerald-500 mt-1"></i>
+                  <Icon name="fa-check-circle" className="text-emerald-500 mt-1" />
                   <span><strong>Exact Process Fit:</strong> We build around your operations, so your staff don't have to change how they work to fit the software.</span>
                 </li>
                 <li className="flex gap-3">
-                  <i className="fas fa-check-circle text-emerald-500 mt-1"></i>
+                  <Icon name="fa-check-circle" className="text-emerald-500 mt-1" />
                   <span><strong>Infinite Scalability:</strong> Using modern tech stacks, we build architecture that handles 10 users or 10 million.</span>
                 </li>
               </ul>
@@ -394,21 +384,21 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-code text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-code" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Maintainable Codebase</h3>
               <p className="text-sm text-muted-foreground">
                 Clean, documented, and fully tested code owned completely by you with no vendor lock-in.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-plug text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-plug" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Custom Integrations</h3>
               <p className="text-sm text-muted-foreground">
                 Bespoke APIs and middleware connecting your new software securely to your existing products.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-life-ring text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-life-ring" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Ongoing Support</h3>
               <p className="text-sm text-muted-foreground">
                 Continuous iteration, feature development, and SLAs delivered globally by skilled developers.

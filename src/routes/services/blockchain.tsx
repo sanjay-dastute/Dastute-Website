@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/blockchain")({
   head: () => ({
@@ -65,17 +66,6 @@ export const Route = createFileRoute("/services/blockchain")({
       { rel: "icon", href: "/favicon-16x16.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-      },
-      { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-      { rel: "dns-prefetch", href: "https://cdnjs.cloudflare.com" },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-      },
     ],
     scripts: [
       {
@@ -118,7 +108,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Technology Services
+            <Icon name="fa-arrow-left" /> Back to Technology Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / Blockchain
@@ -252,9 +242,9 @@ function Page() {
                 Custom Solidity, Rust, and Vyper smart contracts for Ethereum, Polygon, Solana, Avalanche, and BNB Chain. Every contract undergoes a formal security audit covering reentrancy, integer overflow, access control, and economic exploit vectors before deployment.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Solidity / Rust / Vyper</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Formal security audit</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Multi-chain deployment</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Solidity / Rust / Vyper</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Formal security audit</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Multi-chain deployment</li>
               </ul>
             </div>
 
@@ -265,9 +255,9 @@ function Page() {
                 Build decentralised finance protocols including automated market makers (AMMs), lending and borrowing platforms, yield optimisers, cross-chain bridges, and liquidity pools. Our DeFi engineering team includes specialists in tokenomics design and MEV protection.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> AMM & DEX development</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Lending protocols</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Tokenomics design</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> AMM & DEX development</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Lending protocols</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Tokenomics design</li>
               </ul>
             </div>
 
@@ -279,9 +269,9 @@ function Page() {
                 End-to-end NFT marketplace development with ERC-721, ERC-1155, and SBT (Soulbound Token) standards. Features include lazy minting, royalty enforcement (EIP-2981), auction mechanisms, multi-wallet support, IPFS/Arweave metadata storage, and gas optimisation.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> ERC-721 / ERC-1155 / SBT</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Lazy minting & gas optimisation</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> IPFS / Arweave storage</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> ERC-721 / ERC-1155 / SBT</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Lazy minting & gas optimisation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> IPFS / Arweave storage</li>
               </ul>
             </div>
 
@@ -292,9 +282,9 @@ function Page() {
                 Private and consortium blockchain networks using Hyperledger Fabric, Quorum, and Corda for enterprise use cases: supply chain provenance, trade finance, document verification, and cross-border payments. Full integration with existing ERP and WMS systems.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Hyperledger Fabric / Corda</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Supply chain provenance</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> ERP & WMS integration</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Hyperledger Fabric / Corda</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Supply chain provenance</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> ERP & WMS integration</li>
               </ul>
             </div>
             
@@ -305,9 +295,9 @@ function Page() {
                 Design and build compliant platforms for on-chain representation of real-world assets — property, private equity, infrastructure, commodities, and invoices. We build KYC/AML-integrated platforms with regulatory-compliant token structures and secondary market liquidity.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> KYC/AML integration</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Regulated token structures</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Secondary market support</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> KYC/AML integration</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Regulated token structures</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Secondary market support</li>
               </ul>
             </div>
             
@@ -318,9 +308,9 @@ function Page() {
                 Build high-performance decentralised applications (dApps) and Web3 frontends integrated with MetaMask, WalletConnect, Coinbase Wallet, and hardware wallets. We design intuitive UX for non-crypto-native users — critical for enterprise and consumer adoption.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> MetaMask / WalletConnect</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Multi-chain dApp frontend</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Web3 UX for enterprise</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> MetaMask / WalletConnect</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Multi-chain dApp frontend</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Web3 UX for enterprise</li>
               </ul>
             </div>
 
@@ -337,21 +327,21 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-shield-alt text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-shield-alt" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Audit Report</h3>
               <p className="text-sm text-muted-foreground">
                 Comprehensive security audit report with vulnerability classifications, CVSS scores, PoC exploits, and remediation recommendations.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-file-contract text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-file-contract" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Verified Smart Contracts</h3>
               <p className="text-sm text-muted-foreground">
                 Production-ready contracts with NatSpec documentation, full test suite, and deployment scripts.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-coins text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-coins" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Tokenomics Model</h3>
               <p className="text-sm text-muted-foreground">
                 Economic design documentation covering supply mechanics, distribution schedule, utility analysis, and sustainability modelling.

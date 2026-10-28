@@ -15,8 +15,6 @@ import type {
   Person,
   SoftwareApplication,
   Review,
-  WebSite,
-  SearchAction,
 } from "schema-dts";
 
 const BASE_URL = "https://dastute.co.uk";
@@ -41,6 +39,10 @@ interface JobPostingItem {
   title: string;
   description: string;
   location: string;
+  /** ISO 3166-1 alpha-2 country code of the primary office, e.g. "GB" */
+  country: string;
+  /** Fixed ISO date the role was first advertised; never the build date */
+  datePosted: string;
   employmentType?: string;
 }
 
@@ -242,23 +244,6 @@ export function buildWebPageJsonLd(
   };
 }
 
-export function buildWebSiteJsonLd(): WithContext<WebSite> {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: SITE_NAME,
-    url: BASE_URL,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${BASE_URL}/search?q={search_term_string}`
-      },
-      "query-input": "required name=search_term_string",
-    } as SearchAction,
-  };
-}
-
 export function buildBreadcrumbJsonLd(
   items: BreadcrumbItem[],
 ): WithContext<BreadcrumbList> {
@@ -325,7 +310,7 @@ export function buildJobPostingListJsonLd(
     "@type": "JobPosting",
     title: job.title,
     description: job.description,
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: job.datePosted,
     hiringOrganization: {
       "@type": "Organization",
       name: "Dastute Technologies Limited",
@@ -336,13 +321,10 @@ export function buildJobPostingListJsonLd(
       address: {
         "@type": "PostalAddress",
         addressLocality: job.location,
+        addressCountry: job.country,
       },
     },
     employmentType: job.employmentType ?? "FULL_TIME",
-    applicantLocationRequirements: {
-      "@type": "Country",
-      name: "UK, India, Singapore",
-    },
     url: absoluteUrl(pagePath),
   }));
 }

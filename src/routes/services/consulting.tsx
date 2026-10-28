@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/consulting")({
   head: () => ({
@@ -60,17 +61,6 @@ export const Route = createFileRoute("/services/consulting")({
       { rel: "icon", href: "/favicon-16x16.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-      },
-      { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-      { rel: "dns-prefetch", href: "https://cdnjs.cloudflare.com" },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-      },
     ],
     scripts: [
       {
@@ -110,7 +100,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Technology Services
+            <Icon name="fa-arrow-left" /> Back to Technology Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / IT Consulting & Advisory
@@ -244,9 +234,9 @@ function Page() {
                 Develop a 12–36 month technology roadmap that aligns every IT investment with your business objectives — revenue growth, cost reduction, risk mitigation, or competitive differentiation. We benchmark your estate, identify gaps, and produce an actionable roadmap with budget.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Current-state assessment</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> 12–36 month roadmap</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> ROI-linked prioritisation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Current-state assessment</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> 12–36 month roadmap</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> ROI-linked prioritisation</li>
               </ul>
             </div>
 
@@ -258,9 +248,9 @@ function Page() {
                 A dedicated fractional CIO who sits with your leadership team, attends board meetings, leads digital transformation initiatives, manages your technology vendors, and ensures your IT investments generate measurable business value.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Board-level IT representation</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Vendor & budget management</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Digital transformation leadership</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Board-level IT representation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Vendor & budget management</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Digital transformation leadership</li>
               </ul>
             </div>
 
@@ -271,9 +261,9 @@ function Page() {
                 A comprehensive assessment of your technology estate covering infrastructure, security posture, software licensing, vendor contracts, support processes, and compliance status. Delivered as an executive report with a traffic-light risk rating and quick-win recommendations.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Infrastructure & security audit</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Licensing & contract review</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Executive risk report</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Infrastructure & security audit</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Licensing & contract review</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Executive risk report</li>
               </ul>
             </div>
 
@@ -284,9 +274,9 @@ function Page() {
                 Identify where artificial intelligence and intelligent automation (RPA, LLMs, computer vision) can generate measurable ROI in your business. We conduct an AI readiness assessment, model your data landscape, and design a practical AI adoption roadmap.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> AI readiness assessment</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Use case ROI modelling</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Governance & ethics framework</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> AI readiness assessment</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Use case ROI modelling</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Governance & ethics framework</li>
               </ul>
             </div>
             
@@ -297,9 +287,9 @@ function Page() {
                 Navigate the overwhelming landscape of enterprise software with independent, vendor-neutral guidance. We manage full RFP/RFI processes, build evaluation matrices weighted to your specific requirements, and conduct technical due diligence.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Vendor-neutral evaluation</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> RFP/RFI management</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Commercial negotiation support</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Vendor-neutral evaluation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> RFP/RFI management</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Commercial negotiation support</li>
               </ul>
             </div>
             
@@ -310,9 +300,9 @@ function Page() {
                 Guide end-to-end digital transformation programmes — from legacy modernisation and cloud-first strategies to customer experience re-platforming and data-driven operating models. We provide programme management and change management frameworks.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Legacy modernisation planning</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Change management</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Programme governance</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Legacy modernisation planning</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Change management</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Programme governance</li>
               </ul>
             </div>
 
@@ -329,21 +319,21 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-map text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-map" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">IT Strategy Document</h3>
               <p className="text-sm text-muted-foreground">
                 Comprehensive technology strategy aligned to business goals, with a prioritised multi-year roadmap and investment recommendations.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-clipboard-check text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-clipboard-check" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Vendor Evaluation Report</h3>
               <p className="text-sm text-muted-foreground">
                 Weighted vendor scoring matrix, feature comparison, total cost of ownership analysis, and recommended shortlist with justification.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-chart-line text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-chart-line" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Business Case & ROI Model</h3>
               <p className="text-sm text-muted-foreground">
                 Quantified business case for technology investments - benefits realisation plan, risk analysis, and projected ROI over 3-5 years.

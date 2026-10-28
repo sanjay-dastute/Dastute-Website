@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd } from "@/lib/seo";
+import { buildBreadcrumbJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { FaqSection } from "@/components/FaqSection";
+import { FAQS } from "@/lib/faqs";
 
 export const Route = createFileRoute("/capabilities")({
   head: () => ({
@@ -21,6 +23,10 @@ export const Route = createFileRoute("/capabilities")({
     ],
     links: [{ rel: "canonical", href: "https://dastute.co.uk/capabilities" }],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildFaqJsonLd("/capabilities", FAQS["capabilities"])),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify(
@@ -144,6 +150,7 @@ function CapabilitiesPage() {
           </div>
         </div>
       </section>
+      <FaqSection items={FAQS["capabilities"]} />
     </SiteLayout>
   );
 }

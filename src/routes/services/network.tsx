@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/network")({
   head: () => ({
@@ -57,17 +58,6 @@ export const Route = createFileRoute("/services/network")({
       { rel: "icon", href: "/favicon-16x16.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-      },
-      { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-      { rel: "dns-prefetch", href: "https://cdnjs.cloudflare.com" },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-      },
     ],
     scripts: [
       {
@@ -107,7 +97,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Technology Services
+            <Icon name="fa-arrow-left" /> Back to Technology Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / Network Infrastructure
@@ -241,9 +231,9 @@ function Page() {
                 Custom network architecture design for enterprise, multi-site, and hybrid environments — covering LAN, WAN, WLAN, and data centre interconnects. We produce detailed network diagrams, IP schemas, VLAN design, routing protocols, and QoS policies.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> LAN / WAN / WLAN design</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Redundancy & HA planning</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Detailed network documentation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> LAN / WAN / WLAN design</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Redundancy & HA planning</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Detailed network documentation</li>
               </ul>
             </div>
 
@@ -255,9 +245,9 @@ function Page() {
                 High-density enterprise wireless deployments for offices, warehouses, hospitals, and campuses using Cisco, Aruba, and Meraki access points with Ekahau heat-map survey methodology. We design for 100% coverage and seamless roaming.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Ekahau RF survey</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> WPA3 Enterprise / 802.1X</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Post-install validation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Ekahau RF survey</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> WPA3 Enterprise / 802.1X</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Post-install validation</li>
               </ul>
             </div>
 
@@ -268,9 +258,9 @@ function Page() {
                 Replace expensive MPLS circuits with software-defined WAN solutions from Cisco Meraki, VMware VeloCloud, Fortinet, and Palo Alto — reducing WAN costs while improving performance, visibility, and application-aware routing.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Cisco Meraki / VeloCloud</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Up to 60% WAN cost reduction</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Application-aware routing</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Cisco Meraki / VeloCloud</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Up to 60% WAN cost reduction</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Application-aware routing</li>
               </ul>
             </div>
 
@@ -281,9 +271,9 @@ function Page() {
                 Implement next-generation firewall (NGFW) solutions from Fortinet, Palo Alto, Cisco, and Check Point with deep packet inspection. Design zero-trust network access (ZTNA) frameworks that replace implicit trust with continuous verification.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Fortinet / Palo Alto NGFW</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Zero-trust network access</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> IPS & threat prevention</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Fortinet / Palo Alto NGFW</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Zero-trust network access</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> IPS & threat prevention</li>
               </ul>
             </div>
             
@@ -294,9 +284,9 @@ function Page() {
                 Secure remote access solutions for hybrid workforces using SSL VPN, IPSec VPN, and modern ZTNA platforms. We design full-tunnel configurations, implement MFA-enforced policies, and integrate with Azure AD and Okta for SSO.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> SSL / IPSec / ZTNA</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> MFA enforcement</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Azure AD / Okta integration</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> SSL / IPSec / ZTNA</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> MFA enforcement</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Azure AD / Okta integration</li>
               </ul>
             </div>
             
@@ -307,9 +297,9 @@ function Page() {
                 24/7 network operations centre (NOC) monitoring with real-time visibility of every device, link, and application using SolarWinds, PRTG, and Zabbix. Proactive alerting, baseline monitoring, and incident management.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> 24/7 NOC monitoring</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> SolarWinds / PRTG / Zabbix</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Capacity planning reports</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> 24/7 NOC monitoring</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> SolarWinds / PRTG / Zabbix</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Capacity planning reports</li>
               </ul>
             </div>
 
@@ -326,21 +316,21 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-project-diagram text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-project-diagram" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Network Architecture Diagrams</h3>
               <p className="text-sm text-muted-foreground">
                 Full logical and physical network diagrams, IP addressing schemas, VLAN plans, and firewall rule documentation.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-tachometer-alt text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-tachometer-alt" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Performance Baseline Report</h3>
               <p className="text-sm text-muted-foreground">
                 Post-deployment performance benchmarks covering latency, throughput, packet loss, and Wi-Fi coverage validation.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-chart-line text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-chart-line" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Monthly NOC Reports</h3>
               <p className="text-sm text-muted-foreground">
                 Monthly network health summaries with uptime statistics, incident logs, bandwidth trends, and optimisation recommendations.

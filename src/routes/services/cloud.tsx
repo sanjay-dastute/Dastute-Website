@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/cloud")({
   head: () => ({
@@ -57,17 +58,6 @@ export const Route = createFileRoute("/services/cloud")({
       { rel: "icon", href: "/favicon-16x16.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-      },
-      { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-      { rel: "dns-prefetch", href: "https://cdnjs.cloudflare.com" },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-      },
     ],
     scripts: [
       {
@@ -107,7 +97,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Technology Services
+            <Icon name="fa-arrow-left" /> Back to Technology Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / Cloud Services
@@ -241,9 +231,9 @@ function Page() {
                 Lift-and-shift, re-platform, and re-architect workloads to AWS, Azure, or GCP with zero-downtime cutover strategies, dependency mapping, and full rollback plans. We assess every application for cloud readiness before a single byte moves.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Application readiness assessment</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Data migration & validation</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Zero-downtime cutover</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Application readiness assessment</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Data migration & validation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Zero-downtime cutover</li>
               </ul>
             </div>
 
@@ -254,9 +244,9 @@ function Page() {
                 Design, deploy, and manage production Kubernetes clusters on EKS, AKS, and GKE. We implement service mesh (Istio), GitOps workflows (ArgoCD), horizontal pod autoscaling, and multi-region cluster federation for enterprise-grade container platforms.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> EKS / AKS / GKE clusters</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Istio service mesh</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> GitOps with ArgoCD</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> EKS / AKS / GKE clusters</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Istio service mesh</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> GitOps with ArgoCD</li>
               </ul>
             </div>
 
@@ -268,9 +258,9 @@ function Page() {
                 Implement fully automated build, test, security-scan, and deployment pipelines using GitHub Actions, GitLab CI, Jenkins, and ArgoCD. We embed SAST/DAST security scanning, container image signing, and release gating directly into your pipeline.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> GitHub Actions / GitLab CI</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> SAST/DAST in pipeline</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Automated rollback</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> GitHub Actions / GitLab CI</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> SAST/DAST in pipeline</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Automated rollback</li>
               </ul>
             </div>
 
@@ -281,9 +271,9 @@ function Page() {
                 Security is built into every cloud environment we design — not bolted on. We implement zero-trust networking, IAM least-privilege policies, CloudTrail/Security Hub alerting, and compliance controls for ISO 27001, PCI-DSS, HIPAA, and UK Cyber Essentials.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Zero-trust architecture</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> CIS Benchmark hardening</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Compliance automation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Zero-trust architecture</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> CIS Benchmark hardening</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Compliance automation</li>
               </ul>
             </div>
             
@@ -294,9 +284,9 @@ function Page() {
                 Cloud spend without governance spirals out of control. Our FinOps practice combines rightsizing analysis, reserved instance planning, Spot/Savings Plan strategies, and tagging governance to reduce cloud bills by 25–40% — with monthly visibility dashboards.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Rightsizing & reserved instances</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Cost allocation tagging</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Monthly FinOps reports</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Rightsizing & reserved instances</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Cost allocation tagging</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Monthly FinOps reports</li>
               </ul>
             </div>
             
@@ -307,9 +297,9 @@ function Page() {
                 Design and implement cloud-based DR solutions with defined RTO and RPO targets. We build multi-region failover architectures, automate backup schedules and integrity verification, and conduct regular DR drills — ensuring your business keeps running.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Multi-region failover</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Automated backup & restore</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Regular DR testing</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Multi-region failover</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Automated backup & restore</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Regular DR testing</li>
               </ul>
             </div>
 
@@ -326,21 +316,21 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-book text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-book" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Migration Runbook</h3>
               <p className="text-sm text-muted-foreground">
                 Step-by-step migration plan with rollback procedures, dependency mapping, and go-live checklist.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-code-branch text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-code-branch" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">IaC Codebase</h3>
               <p className="text-sm text-muted-foreground">
                 Terraform and Helm charts for your entire infrastructure, fully version-controlled and documented.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-chart-pie text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-chart-pie" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Cost & Performance Report</h3>
               <p className="text-sm text-muted-foreground">
                 Monthly FinOps analysis with savings opportunities, utilisation metrics, and optimisation recommendations.

@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/web-development")({
   head: () => ({
@@ -63,17 +64,6 @@ export const Route = createFileRoute("/services/web-development")({
       { rel: "icon", href: "/favicon-16x16.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-      },
-      { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-      { rel: "dns-prefetch", href: "https://cdnjs.cloudflare.com" },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-      },
     ],
     scripts: [
       {
@@ -109,7 +99,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Technology Services
+            <Icon name="fa-arrow-left" /> Back to Technology Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / Web Development
@@ -243,9 +233,9 @@ function Page() {
                 High-performance, SEO-optimised corporate websites and landing pages built with Next.js, Nuxt.js, Gatsby, or custom HTML/CSS — delivering sub-2-second load times, Core Web Vitals compliance, and conversion-focused UX. Full CMS integration for editorial teams to manage content independently.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Core Web Vitals optimised</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> CMS integration</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> WCAG 2.1 AA accessibility</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Core Web Vitals optimised</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> CMS integration</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> WCAG 2.1 AA accessibility</li>
               </ul>
             </div>
 
@@ -257,9 +247,9 @@ function Page() {
                 Complex, feature-rich web applications built with React, Vue.js, Angular, and TypeScript frontends backed by Node.js, Python/Django, Go, or .NET Core APIs. From SaaS platforms and customer portals to booking systems, workflow management tools, and data dashboards.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> React / Vue / Angular</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Node.js / Django / .NET Core</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> SaaS & multi-tenant architecture</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> React / Vue / Angular</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Node.js / Django / .NET Core</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> SaaS & multi-tenant architecture</li>
               </ul>
             </div>
 
@@ -270,9 +260,9 @@ function Page() {
                 Full-featured e-commerce platforms built on Shopify, WooCommerce, Magento, and custom headless e-commerce architectures with React/Next.js frontends and composable commerce APIs. We handle payment gateway integration, inventory management, multi-currency support, and conversion rate optimisation.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Shopify / WooCommerce / Magento</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Headless commerce architecture</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Payment & checkout optimisation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Shopify / WooCommerce / Magento</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Headless commerce architecture</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Payment & checkout optimisation</li>
               </ul>
             </div>
 
@@ -283,9 +273,9 @@ function Page() {
                 Design and build RESTful and GraphQL APIs, microservices architectures, and event-driven systems. We implement API gateway patterns, OpenAPI specifications, OAuth 2.0 authentication, rate limiting, and monitoring — creating APIs that are performant, secure, and easy to integrate.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> REST / GraphQL / gRPC</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> OpenAPI documentation</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> OAuth 2.0 & API security</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> REST / GraphQL / gRPC</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> OpenAPI documentation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> OAuth 2.0 & API security</li>
               </ul>
             </div>
             
@@ -296,9 +286,9 @@ function Page() {
                 Build content-driven platforms with headless CMS architectures that decouple content management from frontend delivery — enabling editorial teams to publish across web, mobile, and third-party channels from a single source of truth. We also implement WordPress at enterprise scale.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Contentful / Sanity / Strapi</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> WordPress enterprise builds</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Omnichannel content delivery</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Contentful / Sanity / Strapi</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> WordPress enterprise builds</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Omnichannel content delivery</li>
               </ul>
             </div>
             
@@ -309,9 +299,9 @@ function Page() {
                 Systematic performance and conversion improvement for existing web platforms. We conduct Core Web Vitals audits, Google Lighthouse analysis, technical SEO audits, and A/B testing programmes — identifying and fixing the specific bottlenecks costing you ranking and revenue.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Core Web Vitals optimisation</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Technical SEO audit & fix</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> A/B testing & CRO</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Core Web Vitals optimisation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Technical SEO audit & fix</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> A/B testing & CRO</li>
               </ul>
             </div>
 
@@ -328,21 +318,21 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-code text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-code" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Production Application</h3>
               <p className="text-sm text-muted-foreground">
                 Fully tested, documented web application deployed to your chosen hosting environment with CI/CD pipeline active.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-file-code text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-file-code" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Technical Documentation</h3>
               <p className="text-sm text-muted-foreground">
                 Architecture diagrams, API documentation, deployment runbooks, and developer onboarding guides.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-chart-line text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-chart-line" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Performance Report</h3>
               <p className="text-sm text-muted-foreground">
                 Lighthouse scores, Core Web Vitals baseline, load test results, and SEO technical audit.

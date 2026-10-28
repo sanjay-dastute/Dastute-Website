@@ -6,6 +6,7 @@ import {
   buildWebPageJsonLd,
   buildHowToJsonLd,
 } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/process")({
   head: () => ({
@@ -202,7 +203,7 @@ function ProcessPage() {
                 <ul className="space-y-3 text-sm text-slate-700 leading-relaxed">
                   {phase.deliverables.map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <i className="fas fa-check-circle text-blue-500 mt-0.5"></i>
+                      <Icon name="fa-check-circle" className="text-blue-500 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -249,7 +250,7 @@ function ProcessPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="glass-card-strong rounded-3xl p-8 accent-top-blue">
-              <i className="fas fa-code-branch text-2xl text-blue-500 mb-4"></i>
+              <Icon name="fa-code-branch" className="text-2xl text-blue-500 mb-4" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">Code Reviews</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                 Every pull request reviewed by senior engineers before merge. No code ships without a second pair of expert eyes verifying correctness, security, and maintainability.
@@ -261,7 +262,7 @@ function ProcessPage() {
             </div>
 
             <div className="glass-card-strong rounded-3xl p-8 accent-top-emerald">
-              <i className="fas fa-vial text-2xl text-emerald-500 mb-4"></i>
+              <Icon name="fa-vial" className="text-2xl text-emerald-500 mb-4" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">Automated Testing</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                 Unit, integration, and E2E tests run on every commit via CI pipelines. Regressions are caught before they reach staging, protecting production stability.
@@ -273,7 +274,7 @@ function ProcessPage() {
             </div>
 
             <div className="glass-card-strong rounded-3xl p-8 accent-top-rose">
-              <i className="fas fa-shield-alt text-2xl text-rose-500 mb-4"></i>
+              <Icon name="fa-shield-alt" className="text-2xl text-rose-500 mb-4" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">Security Scanning</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                 Static analysis and dependency scanning embedded in the CI pipeline. Vulnerabilities are flagged automatically and resolved before deployment.
@@ -285,7 +286,7 @@ function ProcessPage() {
             </div>
 
             <div className="glass-card-strong rounded-3xl p-8 accent-top-amber">
-              <i className="fas fa-chart-line text-2xl text-amber-500 mb-4"></i>
+              <Icon name="fa-chart-line" className="text-2xl text-amber-500 mb-4" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">Performance Monitoring</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                 Real-time monitoring and alerting from day one. We track response times, error rates, and resource utilisation - reacting before users notice any degradation.

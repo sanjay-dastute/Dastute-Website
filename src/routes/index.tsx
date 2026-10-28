@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
-import { buildBreadcrumbJsonLd, buildServiceListJsonLd, buildReviewJsonLd, buildWebSiteJsonLd, buildHowToJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { buildBreadcrumbJsonLd, buildServiceListJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 const SERVICE_SUMMARY =
   "Dastute Technologies delivers managed IT services, advanced cybersecurity, scalable cloud solutions, and bespoke software development to ambitious UK businesses.";
@@ -227,23 +228,6 @@ export const Route = createFileRoute("/")({
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(buildWebSiteJsonLd()),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(
-          buildHowToJsonLd({
-            name: "How Dastute Delivers Managed IT Services",
-            description: "Our simple, transparent, and effective 4-step process for onboarding and managing your enterprise IT infrastructure.",
-            step: PROCESS_STEPS.map((step) => ({
-              name: step.title,
-              text: step.description,
-            })),
-          })
-        ),
-      },
-      {
-        type: "application/ld+json",
         children: JSON.stringify(
           buildBreadcrumbJsonLd([{ name: "Home", path: "/" }]),
         ),
@@ -260,16 +244,6 @@ export const Route = createFileRoute("/")({
           ),
         ),
       },
-      ...TESTIMONIALS.map((testimonial) => ({
-        type: "application/ld+json",
-        children: JSON.stringify(
-          buildReviewJsonLd({
-            authorName: testimonial.author,
-            reviewBody: testimonial.quote,
-            itemReviewedName: "Dastute Technologies",
-          }),
-        ),
-      })),
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -794,7 +768,7 @@ function Home() {
                 <p className="text-slate-600">{item.quote}</p>
                 <div className="mt-6 flex items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-white">
-                    <i className="fas fa-user" />
+                    <Icon name="fa-user" />
                   </div>
                   <div>
                     <p className="font-semibold">{item.author}</p>

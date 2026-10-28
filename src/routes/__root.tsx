@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
@@ -93,7 +92,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
+export const Route = createRootRoute(
   {
     head: () => ({
       meta: [
@@ -150,16 +149,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         {
           rel: "preload",
           as: "style",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap",
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap",
-        },
-        {
-          rel: "preload",
-          as: "style",
-          href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
+          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap",
         },
         { rel: "stylesheet", href: appCss },
       ],
@@ -250,18 +244,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "@type": "WebSite",
             name: "Dastute Technologies",
             url: "https://dastute.co.uk",
-            potentialAction: {
-              "@type": "SearchAction",
-              target: "https://dastute.co.uk/search?q={search_term_string}",
-              "query-input": "required name=search_term_string",
-            },
           }),
         },
         {
           children: `(function(w,d,s,l,i){try{if(w.localStorage.getItem('dastute_cookie_consent')!=='accepted'){return;}w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode&&f.parentNode.insertBefore(j,f);}catch(e){}})(window,document,'script','dataLayer','${GTM_ID}');`,
-        },
-        {
-          children: `var fa = document.createElement('link'); fa.rel = 'stylesheet'; fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'; document.head.appendChild(fa);`,
         },
       ],
     }),
@@ -287,7 +273,6 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
   const router = useRouter();
 
   useEffect(() => {
@@ -313,10 +298,10 @@ function RootComponent() {
   }, [router]);
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Outlet />
       <CookieConsentBanner />
-    </QueryClientProvider>
+    </>
   );
 }
 

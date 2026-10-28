@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildStandardPageHead, buildFaqJsonLd , buildBlogPostingJsonLd, buildPersonJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/resources/iso-27001-checklist")({
   head: () => ({
@@ -99,18 +100,18 @@ function Page() {
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Phase 1: Preparation & Scoping</h2>
             <p>Before you write a single policy, you must define the boundaries of your certification.</p>
             <ul className="space-y-4 mb-8">
-              <li><i className="fas fa-check-square text-blue-600 mr-2"></i> <strong>Secure Management Commitment:</strong> ISO 27001 cannot be driven by the IT department alone. The board of directors must formally commit to funding and supporting the ISMS.</li>
-              <li><i className="fas fa-check-square text-blue-600 mr-2"></i> <strong>Define the ISMS Scope:</strong> Are you certifying your entire global company, or just the London software development office? Defining a narrow scope initially makes the process much faster.</li>
-              <li><i className="fas fa-check-square text-blue-600 mr-2"></i> <strong>Identify Interested Parties:</strong> Document all stakeholders who care about your security (e.g., customers, regulators like the ICO, suppliers, and employees).</li>
+              <li><Icon name="fa-check-square" className="text-blue-600 mr-2" /> <strong>Secure Management Commitment:</strong> ISO 27001 cannot be driven by the IT department alone. The board of directors must formally commit to funding and supporting the ISMS.</li>
+              <li><Icon name="fa-check-square" className="text-blue-600 mr-2" /> <strong>Define the ISMS Scope:</strong> Are you certifying your entire global company, or just the London software development office? Defining a narrow scope initially makes the process much faster.</li>
+              <li><Icon name="fa-check-square" className="text-blue-600 mr-2" /> <strong>Identify Interested Parties:</strong> Document all stakeholders who care about your security (e.g., customers, regulators like the ICO, suppliers, and employees).</li>
             </ul>
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Phase 2: Risk Assessment & Treatment</h2>
             <p>Risk management is the absolute core of the ISO 27001 standard.</p>
             <ul className="space-y-4 mb-8">
-              <li><i className="fas fa-check-square text-blue-600 mr-2"></i> <strong>Create a Risk Methodology:</strong> Define exactly how you will identify, score, and evaluate risks (e.g., using a 5x5 impact/likelihood matrix).</li>
-              <li><i className="fas fa-check-square text-blue-600 mr-2"></i> <strong>Conduct the Risk Assessment:</strong> Identify all information assets (laptops, servers, source code, employee data) and document the threats they face (theft, fire, ransomware, accidental deletion).</li>
-              <li><i className="fas fa-check-square text-blue-600 mr-2"></i> <strong>Formulate a Risk Treatment Plan:</strong> Decide how you will handle unacceptable risks: Tolerate, Terminate, Transfer (e.g., insurance), or Treat (apply a security control).</li>
-              <li><i className="fas fa-check-square text-blue-600 mr-2"></i> <strong>Produce the Statement of Applicability (SoA):</strong> The SoA is the most important document in your ISMS. It lists all 93 controls from Annex A (2022 revision) and states whether you have applied them and why.</li>
+              <li><Icon name="fa-check-square" className="text-blue-600 mr-2" /> <strong>Create a Risk Methodology:</strong> Define exactly how you will identify, score, and evaluate risks (e.g., using a 5x5 impact/likelihood matrix).</li>
+              <li><Icon name="fa-check-square" className="text-blue-600 mr-2" /> <strong>Conduct the Risk Assessment:</strong> Identify all information assets (laptops, servers, source code, employee data) and document the threats they face (theft, fire, ransomware, accidental deletion).</li>
+              <li><Icon name="fa-check-square" className="text-blue-600 mr-2" /> <strong>Formulate a Risk Treatment Plan:</strong> Decide how you will handle unacceptable risks: Tolerate, Terminate, Transfer (e.g., insurance), or Treat (apply a security control).</li>
+              <li><Icon name="fa-check-square" className="text-blue-600 mr-2" /> <strong>Produce the Statement of Applicability (SoA):</strong> The SoA is the most important document in your ISMS. It lists all 93 controls from Annex A (2022 revision) and states whether you have applied them and why.</li>
             </ul>
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Phase 3: Implementation & Annex A Controls</h2>
@@ -129,9 +130,9 @@ function Page() {
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Phase 4: Training & Internal Auditing</h2>
             <p>You cannot pass ISO 27001 if your staff do not know your policies exist.</p>
             <ul className="space-y-4 mb-8">
-              <li><i className="fas fa-check-square text-blue-600 mr-2"></i> <strong>Conduct Staff Training:</strong> Ensure all employees undergo verifiable security awareness training.</li>
-              <li><i className="fas fa-check-square text-blue-600 mr-2"></i> <strong>Run an Internal Audit:</strong> An independent party (either an external consultant or an internal employee not responsible for the ISMS) must audit your system to find non-conformities before the official auditor arrives.</li>
-              <li><i className="fas fa-check-square text-blue-600 mr-2"></i> <strong>Hold a Management Review:</strong> The board of directors must review the ISMS performance and internal audit results, formally documenting their decisions.</li>
+              <li><Icon name="fa-check-square" className="text-blue-600 mr-2" /> <strong>Conduct Staff Training:</strong> Ensure all employees undergo verifiable security awareness training.</li>
+              <li><Icon name="fa-check-square" className="text-blue-600 mr-2" /> <strong>Run an Internal Audit:</strong> An independent party (either an external consultant or an internal employee not responsible for the ISMS) must audit your system to find non-conformities before the official auditor arrives.</li>
+              <li><Icon name="fa-check-square" className="text-blue-600 mr-2" /> <strong>Hold a Management Review:</strong> The board of directors must review the ISMS performance and internal audit results, formally documenting their decisions.</li>
             </ul>
 
             <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Phase 5: The Certification Audits</h2>

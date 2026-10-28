@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/marketing")({
   head: () => ({
@@ -105,7 +106,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/marketing" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Marketing Services
+            <Icon name="fa-arrow-left" /> Back to Marketing Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / Digital Marketing
@@ -245,7 +246,7 @@ function Page() {
             ].map((service, i) => (
               <div key={i} className={`glass-card-strong rounded-3xl p-8 accent-top-${service.color} h-full flex flex-col`}>
                 <div className={`w-12 h-12 rounded-2xl bg-${service.color}-50 text-${service.color}-600 flex items-center justify-center mb-6`}>
-                  <i className={`fas ${service.icon} text-xl`}></i>
+                  <Icon name={service.icon} className="text-xl" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed flex-grow">

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/industries/manufacturing")({
   head: () => ({
@@ -234,14 +235,14 @@ function Page() {
                 Manufacturers cannot simply rip and replace multi-million pound machinery just because it runs on an outdated operating system. We provide secure pathways to digitize older equipment.
               </p>
               <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex gap-3"><i className="fas fa-microchip text-blue-500 mt-1"></i> <div><strong>Edge Computing:</strong> Process real-time sensor data locally on the factory floor to reduce latency and bandwidth costs before cloud syncing.</div></li>
-                <li className="flex gap-3"><i className="fas fa-shield-alt text-blue-500 mt-1"></i> <div><strong>Virtual Patching:</strong> Deploying intrusion prevention systems (IPS) to shield unpatchable legacy systems (like Windows XP terminals) from modern exploits.</div></li>
-                <li className="flex gap-3"><i className="fas fa-network-wired text-blue-500 mt-1"></i> <div><strong>Secure Remote Access:</strong> VPN and bastion host configurations allowing external machine vendors to perform remote maintenance securely.</div></li>
+                <li className="flex gap-3"><Icon name="fa-microchip" className="text-blue-500 mt-1" /> <div><strong>Edge Computing:</strong> Process real-time sensor data locally on the factory floor to reduce latency and bandwidth costs before cloud syncing.</div></li>
+                <li className="flex gap-3"><Icon name="fa-shield-alt" className="text-blue-500 mt-1" /> <div><strong>Virtual Patching:</strong> Deploying intrusion prevention systems (IPS) to shield unpatchable legacy systems (like Windows XP terminals) from modern exploits.</div></li>
+                <li className="flex gap-3"><Icon name="fa-network-wired" className="text-blue-500 mt-1" /> <div><strong>Secure Remote Access:</strong> VPN and bastion host configurations allowing external machine vendors to perform remote maintenance securely.</div></li>
               </ul>
             </div>
             <div className="glass-card-strong rounded-3xl p-8 accent-top-amber relative overflow-hidden">
               <div className="absolute top-0 right-0 p-8 text-amber-500/10">
-                <i className="fas fa-industry text-9xl"></i>
+                <Icon name="fa-industry" className="text-9xl" />
               </div>
               <h3 className="text-xl font-bold tracking-tight text-slate-900 mb-4 relative z-10">
                 Industry 4.0 Ready

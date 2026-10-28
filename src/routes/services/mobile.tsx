@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/mobile")({
   head: () => ({
@@ -62,17 +63,6 @@ export const Route = createFileRoute("/services/mobile")({
       { rel: "icon", href: "/favicon-16x16.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-      },
-      { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-      { rel: "dns-prefetch", href: "https://cdnjs.cloudflare.com" },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-      },
     ],
     scripts: [
       {
@@ -115,7 +105,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Technology Services
+            <Icon name="fa-arrow-left" /> Back to Technology Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / Mobile App Development
@@ -249,9 +239,9 @@ function Page() {
                 High-performance native Android applications built with Kotlin and Jetpack Compose. We leverage the full Android platform: Material Design 3, background processing, biometric authentication, NFC, camera APIs, and deep system integrations.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Kotlin & Jetpack Compose</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Full Android API access</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Material Design 3</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Kotlin & Jetpack Compose</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Full Android API access</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Material Design 3</li>
               </ul>
             </div>
 
@@ -263,9 +253,9 @@ function Page() {
                 Premium iOS applications built with Swift and SwiftUI — delivering the fluid, responsive, and delightful experience that Apple users expect. Full access to iOS capabilities: Face ID, HealthKit, ARKit, Core ML, and in-app purchases.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Swift & SwiftUI</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Face ID / HealthKit</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> App Store submission</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Swift & SwiftUI</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Face ID / HealthKit</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> App Store submission</li>
               </ul>
             </div>
 
@@ -279,13 +269,13 @@ function Page() {
                     Deliver high-quality apps on both iOS and Android from a single codebase with React Native (JS/TS) or Flutter (Dart) — achieving 70–80% cost savings versus dual native development without sacrificing native-quality UX. Ideal for startups, MVPs, and enterprise tools where feature parity across platforms is critical.
                   </p>
                   <ul className="space-y-2 text-sm text-slate-700">
-                    <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> 70–80% cost vs dual native</li>
-                    <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Near-native performance</li>
+                    <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> 70–80% cost vs dual native</li>
+                    <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Near-native performance</li>
                   </ul>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="p-4 bg-white rounded-xl border border-border shadow-sm text-center">
-                    <i className="fab fa-react text-4xl text-blue-400 mb-2"></i>
+                    <Icon name="fa-react" className="text-4xl text-blue-400 mb-2" />
                     <h4 className="font-bold text-slate-900">React Native</h4>
                     <p className="text-xs text-muted-foreground">JavaScript / TypeScript</p>
                   </div>

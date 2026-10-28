@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/industries/healthcare")({
   head: () => ({
@@ -234,14 +235,14 @@ function Page() {
                 Healthcare providers are prime targets for cyberattacks because patient data is highly valuable. A breach not only triggers massive ICO fines but destroys patient trust.
               </p>
               <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex gap-3"><i className="fas fa-shield-alt text-emerald-500 mt-1"></i> <div><strong>Information Governance:</strong> We align your IT policies with strict GDPR and Caldicott Guardian principles.</div></li>
-                <li className="flex gap-3"><i className="fas fa-lock text-emerald-500 mt-1"></i> <div><strong>Threat Isolation:</strong> We segment clinical networks from guest networks, preventing lateral movement of malware.</div></li>
-                <li className="flex gap-3"><i className="fas fa-eye text-emerald-500 mt-1"></i> <div><strong>Audit Trails:</strong> Comprehensive logging of system access to prove compliance during regulatory inspections.</div></li>
+                <li className="flex gap-3"><Icon name="fa-shield-alt" className="text-emerald-500 mt-1" /> <div><strong>Information Governance:</strong> We align your IT policies with strict GDPR and Caldicott Guardian principles.</div></li>
+                <li className="flex gap-3"><Icon name="fa-lock" className="text-emerald-500 mt-1" /> <div><strong>Threat Isolation:</strong> We segment clinical networks from guest networks, preventing lateral movement of malware.</div></li>
+                <li className="flex gap-3"><Icon name="fa-eye" className="text-emerald-500 mt-1" /> <div><strong>Audit Trails:</strong> Comprehensive logging of system access to prove compliance during regulatory inspections.</div></li>
               </ul>
             </div>
             <div className="glass-card-strong rounded-3xl p-8 accent-top-blue relative overflow-hidden">
               <div className="absolute top-0 right-0 p-8 text-blue-500/10">
-                <i className="fas fa-hospital text-9xl"></i>
+                <Icon name="fa-hospital" className="text-9xl" />
               </div>
               <h3 className="text-xl font-bold tracking-tight text-slate-900 mb-4 relative z-10">
                 Ready for Modern Medicine

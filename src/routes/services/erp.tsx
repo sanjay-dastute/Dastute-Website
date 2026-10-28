@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/erp")({
   head: () => ({
@@ -57,17 +58,6 @@ export const Route = createFileRoute("/services/erp")({
       { rel: "icon", href: "/favicon-16x16.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
-      },
-      { rel: "preconnect", href: "https://cdnjs.cloudflare.com" },
-      { rel: "dns-prefetch", href: "https://cdnjs.cloudflare.com" },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-      },
     ],
     scripts: [
       {
@@ -107,7 +97,7 @@ function Page() {
       <section className="section-hero-dark">
         <div className="relative px-6 py-24 md:py-32 max-w-7xl mx-auto">
           <Link to="/technology" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-8">
-            <i className="fas fa-arrow-left"></i> Back to Technology Services
+            <Icon name="fa-arrow-left" /> Back to Technology Services
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
             / ERP Solutions
@@ -241,9 +231,9 @@ function Page() {
                 Choosing the wrong ERP costs millions and years. We conduct vendor-neutral ERP selection — assessing your requirements, current landscape, budget, and growth plans — running a structured RFP/RFI process to identify the best fit.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Vendor-neutral evaluation</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Requirements mapping</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> ROI business case</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Vendor-neutral evaluation</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Requirements mapping</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> ROI business case</li>
               </ul>
             </div>
 
@@ -255,9 +245,9 @@ function Page() {
                 End-to-end ERP implementation covering configuration, workflow design, master data governance, user acceptance testing, training, and hypercare post-go-live using structured methodologies (ASAP, SureStep, agile sprints).
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> SAP / NetSuite / Dynamics 365</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> Data migration & cleansing</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-500"></i> User training & hypercare</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> SAP / NetSuite / Dynamics 365</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> Data migration & cleansing</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-emerald-500" /> User training & hypercare</li>
               </ul>
             </div>
 
@@ -268,9 +258,9 @@ function Page() {
                 When off-the-shelf ERP cannot meet your unique operational requirements, we build custom ERP systems designed exactly to your processes using modern frameworks (Python/Django, Node.js, .NET), preventing vendor lock-in.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Tailored module development</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> Modern tech stack</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-violet-500"></i> No vendor lock-in</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Tailored module development</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> Modern tech stack</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-violet-500" /> No vendor lock-in</li>
               </ul>
             </div>
 
@@ -281,9 +271,9 @@ function Page() {
                 Connect your ERP to CRM (Salesforce, HubSpot), e-commerce (Shopify, Magento), WMS, payroll, and third-party APIs through robust, monitored integration middleware. We build real-time and batch integration flows.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> CRM & e-commerce integration</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> Real-time API connectors</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-amber-500"></i> EDI & data exchange</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> CRM & e-commerce integration</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> Real-time API connectors</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-amber-500" /> EDI & data exchange</li>
               </ul>
             </div>
             
@@ -294,9 +284,9 @@ function Page() {
                 ERP migrations fail most often because of dirty data. We run structured data migration programmes: profiling, cleansing, deduplication, mapping, and validation testing — ensuring your new ERP goes live with accurate data.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Data profiling & cleansing</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Migration validation testing</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-rose-500"></i> Master data governance</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Data profiling & cleansing</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Migration validation testing</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-rose-500" /> Master data governance</li>
               </ul>
             </div>
             
@@ -307,9 +297,9 @@ function Page() {
                 Transform your ERP data into actionable business intelligence with embedded dashboards, Power BI/Tableau integrations, and custom reporting modules. We design KPI frameworks aligned to your operations.
               </p>
               <ul className="space-y-2 text-sm text-slate-700">
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Power BI / Tableau integration</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Custom KPI dashboards</li>
-                <li className="flex items-center gap-2"><i className="fas fa-check text-blue-500"></i> Automated financial reporting</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Power BI / Tableau integration</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Custom KPI dashboards</li>
+                <li className="flex items-center gap-2"><Icon name="fa-check" className="text-blue-500" /> Automated financial reporting</li>
               </ul>
             </div>
 
@@ -326,21 +316,21 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-project-diagram text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-project-diagram" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Implementation Blueprint</h3>
               <p className="text-sm text-muted-foreground">
                 Detailed project plan covering module configuration, data migration strategy, integration architecture, and go-live timeline.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-book-open text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-book-open" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">Training Documentation</h3>
               <p className="text-sm text-muted-foreground">
                 Role-based user guides, administrator manuals, and video walkthroughs covering all implemented modules.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border shadow-sm text-center">
-              <i className="fas fa-chart-bar text-3xl text-blue-500 mb-4"></i>
+              <Icon name="fa-chart-bar" className="text-3xl text-blue-500 mb-4" />
               <h3 className="text-lg font-bold text-slate-900 mb-2">ROI & Optimisation Report</h3>
               <p className="text-sm text-muted-foreground">
                 Post-go-live performance analysis comparing KPIs before and after ERP, with identified optimisation opportunities.

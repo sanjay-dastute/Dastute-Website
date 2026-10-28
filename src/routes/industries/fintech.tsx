@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/industries/fintech")({
   head: () => ({
@@ -234,14 +235,14 @@ function Page() {
                 In fintech, a single vulnerability can result in catastrophic financial loss. Our DevSecOps methodology ensures that security analysis happens at every stage of the software development lifecycle.
               </p>
               <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex gap-3"><i className="fas fa-code text-blue-500 mt-1"></i> <div><strong>Automated Code Scanning:</strong> SAST and DAST integrations run continuously to catch vulnerabilities before they reach production.</div></li>
-                <li className="flex gap-3"><i className="fas fa-lock text-blue-500 mt-1"></i> <div><strong>Cryptography & Key Management:</strong> Hardware Security Modules (HSM) and strict KMS policies to protect sensitive PII and financial data.</div></li>
-                <li className="flex gap-3"><i className="fas fa-bug text-blue-500 mt-1"></i> <div><strong>Continuous Penetration Testing:</strong> Regular Red Team exercises to stress-test your application's defenses against real-world attack vectors.</div></li>
+                <li className="flex gap-3"><Icon name="fa-code" className="text-blue-500 mt-1" /> <div><strong>Automated Code Scanning:</strong> SAST and DAST integrations run continuously to catch vulnerabilities before they reach production.</div></li>
+                <li className="flex gap-3"><Icon name="fa-lock" className="text-blue-500 mt-1" /> <div><strong>Cryptography & Key Management:</strong> Hardware Security Modules (HSM) and strict KMS policies to protect sensitive PII and financial data.</div></li>
+                <li className="flex gap-3"><Icon name="fa-bug" className="text-blue-500 mt-1" /> <div><strong>Continuous Penetration Testing:</strong> Regular Red Team exercises to stress-test your application's defenses against real-world attack vectors.</div></li>
               </ul>
             </div>
             <div className="glass-card-strong rounded-3xl p-8 accent-top-emerald relative overflow-hidden">
               <div className="absolute top-0 right-0 p-8 text-emerald-500/10">
-                <i className="fas fa-chart-line text-9xl"></i>
+                <Icon name="fa-chart-line" className="text-9xl" />
               </div>
               <h3 className="text-xl font-bold tracking-tight text-slate-900 mb-4 relative z-10">
                 Supporting the Fintech Ecosystem

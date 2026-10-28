@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildStandardPageHead, buildFaqJsonLd , buildBlogPostingJsonLd, buildPersonJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/resources/ai-agents-enterprise-guide")({
   head: () => ({
@@ -112,8 +113,8 @@ function Page() {
                 <strong>Prompt:</strong> "Find all unpaid invoices over £5,000 from last month and remind the clients."
               </p>
               <ul className="text-sm text-emerald-800 space-y-2 mb-0">
-                <li><i className="fas fa-times text-red-500 mr-2"></i> <strong>Generative AI:</strong> "I cannot access your accounting software. Here is a template email you can use to remind them."</li>
-                <li><i className="fas fa-check text-emerald-600 mr-2"></i> <strong>AI Agent:</strong> The agent securely queries your Xero API, filters the unpaid invoices, drafts personalized reminder emails in Microsoft 365, and sends them to the appropriate client contacts automatically.</li>
+                <li><Icon name="fa-times" className="text-red-500 mr-2" /> <strong>Generative AI:</strong> "I cannot access your accounting software. Here is a template email you can use to remind them."</li>
+                <li><Icon name="fa-check" className="text-emerald-600 mr-2" /> <strong>AI Agent:</strong> The agent securely queries your Xero API, filters the unpaid invoices, drafts personalized reminder emails in Microsoft 365, and sends them to the appropriate client contacts automatically.</li>
               </ul>
             </div>
 

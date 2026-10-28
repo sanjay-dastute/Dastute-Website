@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildStandardPageHead, buildFaqJsonLd , buildBlogPostingJsonLd, buildPersonJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/resources/cyber-essentials-guide")({
   head: () => ({
@@ -117,9 +118,9 @@ function Page() {
                   This is a self-assessment certification. You log into a portal, answer a questionnaire about your IT infrastructure, and a board member signs a declaration confirming the answers are true. An assessor then reviews the questionnaire.
                 </p>
                 <ul className="text-sm text-slate-700 space-y-2">
-                  <li><i className="fas fa-check text-emerald-500 mr-2"></i> Self-assessed</li>
-                  <li><i className="fas fa-check text-emerald-500 mr-2"></i> Lower cost (£320 - £600)</li>
-                  <li><i className="fas fa-check text-emerald-500 mr-2"></i> Great baseline for SMEs</li>
+                  <li><Icon name="fa-check" className="text-emerald-500 mr-2" /> Self-assessed</li>
+                  <li><Icon name="fa-check" className="text-emerald-500 mr-2" /> Lower cost (£320 - £600)</li>
+                  <li><Icon name="fa-check" className="text-emerald-500 mr-2" /> Great baseline for SMEs</li>
                 </ul>
               </div>
 
@@ -129,9 +130,9 @@ function Page() {
                   The Plus certification includes the same technical requirements as the basic level, but requires an independent technical audit. A qualified assessor will actively test your systems to verify that the controls are functioning correctly.
                 </p>
                 <ul className="text-sm text-blue-800 space-y-2">
-                  <li><i className="fas fa-shield-alt text-blue-600 mr-2"></i> Independently verified</li>
-                  <li><i className="fas fa-shield-alt text-blue-600 mr-2"></i> Higher cost (£1,500 - £3,000)</li>
-                  <li><i className="fas fa-shield-alt text-blue-600 mr-2"></i> Required for many Govt contracts</li>
+                  <li><Icon name="fa-shield-alt" className="text-blue-600 mr-2" /> Independently verified</li>
+                  <li><Icon name="fa-shield-alt" className="text-blue-600 mr-2" /> Higher cost (£1,500 - £3,000)</li>
+                  <li><Icon name="fa-shield-alt" className="text-blue-600 mr-2" /> Required for many Govt contracts</li>
                 </ul>
               </div>
             </div>

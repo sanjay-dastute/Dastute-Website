@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBlogPostingJsonLd, buildBreadcrumbJsonLd, buildFaqJsonLd, buildStandardPageHead } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/resources/zero-trust-architecture")({
   head: () => ({
@@ -54,7 +55,7 @@ function Page() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="mb-8">
             <Link to="/resources/glossary" className="inline-flex items-center text-sm font-medium text-slate-400 hover:text-white transition-colors">
-              <i className="fas fa-arrow-left mr-2"></i> Back to IT Glossary
+              <Icon name="fa-arrow-left" className="mr-2" /> Back to IT Glossary
             </Link>
           </div>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">

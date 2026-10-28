@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { buildBreadcrumbJsonLd, buildJobPostingListJsonLd } from "@/lib/seo";
+import { buildBreadcrumbJsonLd, buildFaqJsonLd, buildJobPostingListJsonLd } from "@/lib/seo";
+import { FaqSection } from "@/components/FaqSection";
+import { FAQS } from "@/lib/faqs";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -23,6 +25,10 @@ export const Route = createFileRoute("/careers")({
     scripts: [
       {
         type: "application/ld+json",
+        children: JSON.stringify(buildFaqJsonLd("/careers", FAQS["careers"])),
+      },
+      {
+        type: "application/ld+json",
         children: JSON.stringify(
           buildBreadcrumbJsonLd([
             { name: "Home", path: "/" },
@@ -36,24 +42,32 @@ export const Route = createFileRoute("/careers")({
           description:
             "Design and implement production-grade web platforms and custom integrations using modern engineering practices.",
           location: "Coimbatore / Chennai / Remote",
+          country: "IN",
+          datePosted: "2026-05-27",
         },
         {
           title: "Senior Cybersecurity Specialist",
           description:
             "Lead threat modeling, penetration testing, SIEM/SOC operations and security readiness programs.",
           location: "London / Remote (UK)",
+          country: "GB",
+          datePosted: "2026-05-27",
         },
         {
           title: "Cloud & DevOps Architect",
           description:
             "Design secure cloud architecture across AWS and GCP with infrastructure-as-code and FinOps controls.",
           location: "London / Singapore / Remote",
+          country: "GB",
+          datePosted: "2026-05-27",
         },
         {
           title: "Digital Marketing Specialist",
           description:
             "Execute full-funnel campaigns including SEO, PPC, social media and marketing automation.",
           location: "London / Remote",
+          country: "GB",
+          datePosted: "2026-05-27",
         },
       ]).map((jobSchema) => ({
         type: "application/ld+json",
@@ -329,6 +343,7 @@ function CareersPage() {
           </div>
         </div>
       </section>
+      <FaqSection items={FAQS["careers"]} />
     </SiteLayout>
   );
 }

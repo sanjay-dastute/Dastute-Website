@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, ORGANIZATION_SCHEMA, buildLocalBusinessJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -151,21 +152,21 @@ function AboutPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="glass-card-strong p-8 rounded-3xl border border-slate-200">
-              <i className="fas fa-bullseye text-3xl text-rose-500 mb-6"></i>
+              <Icon name="fa-bullseye" className="text-3xl text-rose-500 mb-6" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">Business-First Thinking</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Technology decisions are evaluated against business impact: revenue, risk, cost, and time-to-market.
               </p>
             </div>
             <div className="glass-card-strong p-8 rounded-3xl border border-slate-200">
-              <i className="fas fa-shield-check text-3xl text-emerald-500 mb-6"></i>
+              <Icon name="fa-shield-check" className="text-3xl text-emerald-500 mb-6" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">Security Embedded Everywhere</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 From managed IT to web development and cloud, each engagement includes a security perspective, not just functionality.
               </p>
             </div>
             <div className="glass-card-strong p-8 rounded-3xl border border-slate-200">
-              <i className="fas fa-chart-line text-3xl text-blue-500 mb-6"></i>
+              <Icon name="fa-chart-line" className="text-3xl text-blue-500 mb-6" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">Measurable Outcomes</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Uptime, response times, ticket volumes, deployment frequency, and incident metrics are tracked and shared with clients so value is visible, not assumed.
@@ -249,31 +250,31 @@ function AboutPage() {
               <h3 className="text-xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-3">Company-Wide Security Approach</h3>
               <ul className="space-y-5 text-sm text-slate-600">
                 <li className="flex gap-3">
-                  <i className="fas fa-check text-emerald-500 mt-1"></i>
+                  <Icon name="fa-check" className="text-emerald-500 mt-1" />
                   <div>
                     <span className="font-bold text-slate-900">Security by Design:</span> Security requirements and threat modelling are built into architecture and design discussions for every project, not bolted on later.
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <i className="fas fa-check text-emerald-500 mt-1"></i>
+                  <Icon name="fa-check" className="text-emerald-500 mt-1" />
                   <div>
                     <span className="font-bold text-slate-900">Secure SDLC:</span> Coding standards, peer reviews, SAST/DAST tooling, and dependency scanning are integrated into CI/CD pipelines.
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <i className="fas fa-check text-emerald-500 mt-1"></i>
+                  <Icon name="fa-check" className="text-emerald-500 mt-1" />
                   <div>
                     <span className="font-bold text-slate-900">Encryption Everywhere:</span> Strong encryption for data in transit (TLS) and at rest across databases, object storage, backups, and logs.
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <i className="fas fa-check text-emerald-500 mt-1"></i>
+                  <Icon name="fa-check" className="text-emerald-500 mt-1" />
                   <div>
                     <span className="font-bold text-slate-900">Governance & Compliance:</span> Delivery practices aligned with ISO 27001, SOC 2, PCI-DSS, HIPAA, and GDPR expectations.
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <i className="fas fa-check text-emerald-500 mt-1"></i>
+                  <Icon name="fa-check" className="text-emerald-500 mt-1" />
                   <div>
                     <span className="font-bold text-slate-900">Monitoring & Response:</span> Centralised logging, SIEM integration, and documented incident response procedures.
                   </div>

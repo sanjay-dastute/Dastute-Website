@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/services/it-staffing")({
   head: () => ({
@@ -234,14 +235,14 @@ function Page() {
                 Most IT staffing agencies rely on keyword matching to find candidates. We don't. Every candidate we submit has been technically vetted by our own senior engineering and infrastructure teams.
               </p>
               <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex gap-3"><i className="fas fa-check-circle text-blue-500 mt-1"></i> <div><strong>Technical Screening:</strong> Live coding sessions and architectural whiteboarding, not just multiple-choice tests.</div></li>
-                <li className="flex gap-3"><i className="fas fa-check-circle text-blue-500 mt-1"></i> <div><strong>Cultural Fit:</strong> Assessing communication skills, remote-work capability, and team collaboration styles.</div></li>
-                <li className="flex gap-3"><i className="fas fa-check-circle text-blue-500 mt-1"></i> <div><strong>Reference Checking:</strong> Verifying past project delivery, code quality, and reliability with previous employers.</div></li>
+                <li className="flex gap-3"><Icon name="fa-check-circle" className="text-blue-500 mt-1" /> <div><strong>Technical Screening:</strong> Live coding sessions and architectural whiteboarding, not just multiple-choice tests.</div></li>
+                <li className="flex gap-3"><Icon name="fa-check-circle" className="text-blue-500 mt-1" /> <div><strong>Cultural Fit:</strong> Assessing communication skills, remote-work capability, and team collaboration styles.</div></li>
+                <li className="flex gap-3"><Icon name="fa-check-circle" className="text-blue-500 mt-1" /> <div><strong>Reference Checking:</strong> Verifying past project delivery, code quality, and reliability with previous employers.</div></li>
               </ul>
             </div>
             <div className="glass-card-strong rounded-3xl p-8 accent-top-violet relative overflow-hidden">
               <div className="absolute top-0 right-0 p-8 text-violet-500/10">
-                <i className="fas fa-users text-9xl"></i>
+                <Icon name="fa-users" className="text-9xl" />
               </div>
               <h3 className="text-xl font-bold tracking-tight text-slate-900 mb-4 relative z-10">
                 Flexible Staffing Models

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -206,10 +207,10 @@ function Page() {
                 Hiring an internal team carries substantial hidden costs beyond salary.
               </p>
               <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex gap-3"><i className="fas fa-times text-rose-500 mt-1"></i> <div><strong>High Base Costs:</strong> Salaries, NI, benefits, and recruitment fees for 1st-line, 2nd-line, and management.</div></li>
-                <li className="flex gap-3"><i className="fas fa-times text-rose-500 mt-1"></i> <div><strong>Tooling Expenses:</strong> You must purchase your own RMM, ticketing systems, and enterprise security tools.</div></li>
-                <li className="flex gap-3"><i className="fas fa-times text-rose-500 mt-1"></i> <div><strong>Coverage Gaps:</strong> Sickness, holidays, and out-of-hours coverage require overstaffing.</div></li>
-                <li className="flex gap-3"><i className="fas fa-times text-rose-500 mt-1"></i> <div><strong>Skills Silos:</strong> Hard to hire a single person who is an expert in networking, cloud, and cybersecurity.</div></li>
+                <li className="flex gap-3"><Icon name="fa-times" className="text-rose-500 mt-1" /> <div><strong>High Base Costs:</strong> Salaries, NI, benefits, and recruitment fees for 1st-line, 2nd-line, and management.</div></li>
+                <li className="flex gap-3"><Icon name="fa-times" className="text-rose-500 mt-1" /> <div><strong>Tooling Expenses:</strong> You must purchase your own RMM, ticketing systems, and enterprise security tools.</div></li>
+                <li className="flex gap-3"><Icon name="fa-times" className="text-rose-500 mt-1" /> <div><strong>Coverage Gaps:</strong> Sickness, holidays, and out-of-hours coverage require overstaffing.</div></li>
+                <li className="flex gap-3"><Icon name="fa-times" className="text-rose-500 mt-1" /> <div><strong>Skills Silos:</strong> Hard to hire a single person who is an expert in networking, cloud, and cybersecurity.</div></li>
               </ul>
             </div>
 
@@ -220,10 +221,10 @@ function Page() {
                 A predictable flat fee granting you access to an entire department of specialists.
               </p>
               <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex gap-3"><i className="fas fa-check text-blue-500 mt-1"></i> <div><strong>Fractional Cost:</strong> Typically 40-60% cheaper than maintaining an equivalent internal headcount.</div></li>
-                <li className="flex gap-3"><i className="fas fa-check text-blue-500 mt-1"></i> <div><strong>Enterprise Tooling Included:</strong> EDR, monitoring agents, and backup platforms are baked into our per-user fee.</div></li>
-                <li className="flex gap-3"><i className="fas fa-check text-blue-500 mt-1"></i> <div><strong>24/7/365 Coverage:</strong> True round-the-clock monitoring and helpdesk without paying night-shift premiums.</div></li>
-                <li className="flex gap-3"><i className="fas fa-check text-blue-500 mt-1"></i> <div><strong>Deep Expertise:</strong> Access to a diverse pool of certified network engineers, security analysts, and cloud architects.</div></li>
+                <li className="flex gap-3"><Icon name="fa-check" className="text-blue-500 mt-1" /> <div><strong>Fractional Cost:</strong> Typically 40-60% cheaper than maintaining an equivalent internal headcount.</div></li>
+                <li className="flex gap-3"><Icon name="fa-check" className="text-blue-500 mt-1" /> <div><strong>Enterprise Tooling Included:</strong> EDR, monitoring agents, and backup platforms are baked into our per-user fee.</div></li>
+                <li className="flex gap-3"><Icon name="fa-check" className="text-blue-500 mt-1" /> <div><strong>24/7/365 Coverage:</strong> True round-the-clock monitoring and helpdesk without paying night-shift premiums.</div></li>
+                <li className="flex gap-3"><Icon name="fa-check" className="text-blue-500 mt-1" /> <div><strong>Deep Expertise:</strong> Access to a diverse pool of certified network engineers, security analysts, and cloud architects.</div></li>
               </ul>
             </div>
           </div>

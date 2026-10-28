@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildStandardPageHead } from "@/lib/seo";
+import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
@@ -133,7 +134,7 @@ function Page() {
                   <ul className="space-y-3">
                     {c.results.map((r, i) => (
                       <li key={i} className="flex items-start">
-                        <i className="fas fa-check-circle text-emerald-500 mt-1 mr-3"></i>
+                        <Icon name="fa-check-circle" className="text-emerald-500 mt-1 mr-3" />
                         <span className="text-slate-700 font-medium">{r}</span>
                       </li>
                     ))}

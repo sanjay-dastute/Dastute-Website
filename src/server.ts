@@ -90,6 +90,20 @@ const SECURITY_HEADERS: Record<string, string> = {
   "X-Frame-Options": "SAMEORIGIN",
   "Referrer-Policy": "strict-origin-when-cross-origin",
   "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  // Report-only until the browser console shows no violations; then rename to Content-Security-Policy
+  "Content-Security-Policy-Report-Only": [
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://app.trysoro.com",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://app.trysoro.com",
+    "font-src 'self' https://fonts.gstatic.com",
+    "img-src 'self' data: https:",
+    "connect-src 'self' https://formsubmit.co https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://app.trysoro.com https://*.supabase.co",
+    "frame-src https://app.trysoro.com https://www.googletagmanager.com",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self' https://formsubmit.co",
+    "frame-ancestors 'self'",
+  ].join("; "),
 };
 
 export default {

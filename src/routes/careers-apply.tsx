@@ -5,7 +5,6 @@ import { useFormSubmit } from "@/lib/useFormSubmit";
 
 // NOTE: Job application submissions are sent to info@dastute.co.uk via FormSubmit (src/lib/useFormSubmit.ts)
 // Update the formspree form ID in the action attribute if needed
-// Formspree endpoint format: https://formspree.io/f/{FORM_ID}
 
 export const Route = createFileRoute("/careers-apply")({
   head: () => ({

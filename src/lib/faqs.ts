@@ -363,6 +363,50 @@ export const FAQS: Record<string, Faq[]> = {
         "Start with one or two high-value internal tasks where people review the output, measure the time saved, put governance in place, and then scale to further processes.",
     },
   ],
+  capabilities: [
+    {
+      question: "What services does Dastute Technologies offer?",
+      answer:
+        "Dastute offers managed IT services, IT consulting and vCIO advisory, cyber security, cloud systems on AWS, Azure and Google Cloud, web and mobile software development, blockchain, digital marketing, and brand and film production.",
+    },
+    {
+      question: "Why use one partner for IT, security and software?",
+      answer:
+        "Using one partner removes the gaps and hand-offs between separate vendors. Security is built into every software release and cloud migration, and you have a single team accountable for the whole technology stack.",
+    },
+    {
+      question: "Which cloud platforms do you support?",
+      answer:
+        "We architect, deploy and monitor environments on AWS, Microsoft Azure and Google Cloud, with FinOps cost controls built in.",
+    },
+    {
+      question: "Do you help with Cyber Essentials and ISO 27001?",
+      answer:
+        "Yes. Our cyber security team prepares businesses for Cyber Essentials and ISO 27001 through gap analysis, remediation and readiness reviews, alongside SOC monitoring and vulnerability scanning.",
+    },
+  ],
+  careers: [
+    {
+      question: "How do I apply for a job at Dastute?",
+      answer:
+        "Choose an open role and submit the online application form with your CV and details. If no current role fits, you can still send a speculative application through the same form.",
+    },
+    {
+      question: "How long does it take to hear back?",
+      answer:
+        "We review every application and contact shortlisted candidates within two weeks.",
+    },
+    {
+      question: "Where are Dastute's offices?",
+      answer:
+        "We have teams in the United Kingdom, India and Singapore, and several roles can be worked remotely.",
+    },
+    {
+      question: "Do you support training and certifications?",
+      answer:
+        "Yes. We reimburse professional certifications and offer internships and leadership development tracks.",
+    },
+  ],
   "custom-software": [
     {
       question: "Should I choose custom software or an off-the-shelf product?",
