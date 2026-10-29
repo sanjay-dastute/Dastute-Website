@@ -1,6 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd, buildPersonJsonLd, buildStandardPageHead } from "@/lib/seo";
+import type { CSSProperties } from "react";
+import { TeamFan, memberId } from "@/components/TeamSections";
+import { Magnetic, SplitWords } from "@/components/motion";
 
 const TEAM_MEMBERS = [
   {
@@ -60,7 +63,7 @@ export const Route = createFileRoute("/team")({
             name: member.name,
             jobTitle: member.role,
             description: member.bio,
-            path: `/team#${member.name.toLowerCase().replace(/\s+/g, "-")}`,
+            path: `/team#${memberId(member.name)}`,
           }),
         ),
       })),
@@ -73,104 +76,99 @@ function TeamPage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="px-4 sm:px-6 py-16 sm:py-24 md:py-32 max-w-7xl mx-auto">
-        <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-primary block mb-4 sm:mb-6">
-          / Team
-        </span>
-        <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-balance max-w-4xl mb-8 sm:mb-12">
-          Experienced practitioners.
-          <br />
-          Real partnerships.
-        </h1>
-        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl">
-          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-            Every project at Dastute is staffed by experienced professionals who
-            understand your business. Our team brings together expertise from
-            Google Developer Groups, NCS Singapore, and leading institutions
-            across Asia and Europe.
-          </p>
-          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-            When you work with Dastute, you're working with a team who
-            understands your pain points and your goals. We forge real
-            partnerships - not just vendor relationships - to deliver outcomes
-            that matter.
-          </p>
+      <section className="section-hero-dark">
+        <div className="relative px-6 pt-24 pb-20 md:pt-28 md:pb-24 max-w-7xl mx-auto">
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+            <div>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400 block mb-6">
+                / Team
+              </span>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] text-white">
+                <SplitWords text="Experienced practitioners." />{" "}
+                <SplitWords className="text-gradient-primary" text="Real partnerships." delay={0.3} />
+              </h1>
+            </div>
+            <div className="space-y-4">
+              <p className="leading-relaxed text-slate-300">
+                Every project at Dastute is staffed by experienced professionals who
+                understand your business. Our team brings together expertise from
+                Google Developer Groups, NCS Singapore, and leading institutions
+                across Asia and Europe.
+              </p>
+              <p className="leading-relaxed text-slate-400">
+                When you work with Dastute, you're working with a team who
+                understands your pain points and your goals. We forge real
+                partnerships - not just vendor relationships - to deliver outcomes
+                that matter.
+              </p>
+            </div>
+          </div>
+          <div className="mt-16 md:mt-20">
+            <h2 className="mb-8 flex items-center gap-4 font-mono text-xs uppercase tracking-[0.3em] text-blue-300">
+              Leadership & Specialists <span className="h-px flex-1 bg-white/10" />
+            </h2>
+            <TeamFan members={TEAM_MEMBERS} />
+          </div>
         </div>
       </section>
 
       {/* Stats Bar */}
-      <section className="section-gradient border-y border-border">
+      <section className="section-gradient border-b border-border">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 md:divide-x divide-border">
           {[
-            { k: "Founded", v: "2023" },
-            { k: "Global Presence", v: "UK · India · SG" },
-            { k: "Core Expertise", v: "Engineering + Advisory" },
+            { k: "Founded", v: <>2023</> },
+            { k: "Global Presence", v: <>UK · India · SG</> },
+            { k: "Core Expertise", v: <>Engineering + Advisory</> },
           ].map((s) => (
-            <div
-              key={s.k}
-              className="p-4 sm:p-8 md:p-12 border-b md:border-b-0 border-border"
-            >
-              <p className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mb-2 sm:mb-4">
-                {s.k}
-              </p>
-              <p className="text-lg sm:text-2xl font-bold tracking-tight">
-                {s.v}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Team Grid */}
-      <section className="px-4 sm:px-6 py-16 sm:py-24 max-w-7xl mx-auto">
-        <div className="flex items-end gap-4 sm:gap-6 mb-12 sm:mb-16">
-          <h2 className="text-[8px] sm:text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            Leadership & Specialists
-          </h2>
-          <div className="h-px flex-1 bg-border" />
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-          {TEAM_MEMBERS.map((member) => (
-            <div
-              key={member.name}
-              className="bg-background p-4 sm:p-8 md:p-10 group hover:bg-foreground hover:text-background transition-colors duration-300"
-            >
-              <div className="flex justify-between items-start gap-2 mb-6 sm:mb-8">
-                <span className="font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-primary group-hover:text-background/60">
-                  {member.practice}
-                </span>
-                <span className="font-mono text-[8px] sm:text-[10px] text-muted-foreground group-hover:text-background/50 text-right">
-                  {member.role}
-                </span>
-              </div>
-              <h4 className="text-base sm:text-xl font-bold tracking-tight mb-3 sm:mb-4">
-                {member.name}
-              </h4>
-              <p className="text-[12px] sm:text-sm text-muted-foreground group-hover:text-background/70 leading-relaxed">
-                {member.bio}
-              </p>
+            <div key={s.k} className="p-6 md:p-12 border-b md:border-b-0 border-border">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">{s.k}</p>
+              <p className="text-2xl font-bold tracking-tight">{s.v}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Platform Partnerships */}
-      <section className="border-t border-border px-4 sm:px-6 py-16 sm:py-24 max-w-7xl mx-auto">
-        <div className="flex items-end gap-4 sm:gap-6 mb-12 sm:mb-16">
-          <h2 className="text-[8px] sm:text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            Platform Partnerships
-          </h2>
-          <div className="h-px flex-1 bg-border" />
+      <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
+        <div className="mb-10">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-600">/ Ecosystem</p>
+          <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight text-slate-900">Platform Partnerships</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
-          {["AWS", "Google Cloud", "Microsoft", "Salesforce"].map((partner) => (
-            <div
-              key={partner}
-              className="p-4 sm:p-8 border border-border text-center hover:border-primary transition-colors"
-            >
-              <span className="font-bold text-lg">{partner}</span>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { p: "AWS", hue: "#f59e0b" },
+            { p: "Google Cloud", hue: "#3b82f6" },
+            { p: "Microsoft", hue: "#06b6d4" },
+            { p: "Salesforce", hue: "#0ea5e9" },
+          ].map(({ p, hue }) => (
+            <div key={p} className="tm-partner" style={{ "--hue": hue } as CSSProperties}>
+              <span className="font-bold text-lg">{p}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="future-section px-6 py-24 sm:py-28">
+        <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-end">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-300">/ Work with us</p>
+            <h2 className="mt-4 text-4xl md:text-5xl font-black tracking-tight text-white">
+              Meet the team <span className="text-gradient-primary">on a call.</span>
+            </h2>
+          </div>
+          <div className="flex flex-wrap md:justify-end gap-4">
+            <Magnetic>
+              <Link to="/contact" className="btn-gradient inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+                Talk to Us <span aria-hidden>↗</span>
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <Link to="/careers" className="btn-glass inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold">
+                Join the Team <span aria-hidden>↗</span>
+              </Link>
+            </Magnetic>
+          </div>
         </div>
       </section>
     </SiteLayout>

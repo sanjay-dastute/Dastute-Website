@@ -1,4 +1,5 @@
 import { useState, type CSSProperties, type PointerEvent } from "react";
+import { roleSlug } from "@/lib/openRoles";
 import { ArrowUpRight, Award, Gift, GraduationCap, HeartPulse, MapPin, PiggyBank, Sun, CalendarHeart } from "lucide-react";
 
 const MILESTONES = [
@@ -161,7 +162,7 @@ export function RoleBoard({ roles }: { roles: Role[] }) {
           return (
             <li key={role.id} className={`cr-role ${hidden ? "is-hidden" : ""}`} style={{ "--i": i } as CSSProperties}>
               <a
-                href={`mailto:contact@dastute.co.uk?subject=Application: ${role.title}`}
+                href={`/careers-apply?role=${roleSlug(role.title)}#apply`}
                 tabIndex={hidden ? -1 : 0}
                 className="cr-role-link"
               >

@@ -43,13 +43,6 @@ export function SiteNav() {
             </Link>
 
             <Link
-              to="/careers"
-              className="hover:text-primary transition-colors"
-              activeProps={{ className: "text-primary" }}
-            >
-              Careers
-            </Link>
-            <Link
               to="/about"
               className="hover:text-primary transition-colors"
               activeProps={{ className: "text-primary" }}
@@ -57,25 +50,11 @@ export function SiteNav() {
               About
             </Link>
             <Link
-              to="/blog"
-              className="hover:text-primary transition-colors"
-              activeProps={{ className: "text-primary" }}
-            >
-              Blog
-            </Link>
-            <Link
               to="/team"
               className="hover:text-primary transition-colors"
               activeProps={{ className: "text-primary" }}
             >
               Team
-            </Link>
-            <Link
-              to="/contact"
-              className="hover:text-primary transition-colors"
-              activeProps={{ className: "text-primary" }}
-            >
-              Contact
             </Link>
           </div>
         </div>
@@ -141,14 +120,6 @@ export function SiteNav() {
             </Link>
 
             <Link
-              to="/careers"
-              className="py-2 hover:text-primary transition-colors"
-              activeProps={{ className: "text-primary" }}
-              onClick={() => setMobileOpen(false)}
-            >
-              Careers
-            </Link>
-            <Link
               to="/about"
               className="py-2 hover:text-primary transition-colors"
               activeProps={{ className: "text-primary" }}
@@ -157,28 +128,12 @@ export function SiteNav() {
               About
             </Link>
             <Link
-              to="/blog"
-              className="py-2 hover:text-primary transition-colors"
-              activeProps={{ className: "text-primary" }}
-              onClick={() => setMobileOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link
               to="/team"
               className="py-2 hover:text-primary transition-colors"
               activeProps={{ className: "text-primary" }}
               onClick={() => setMobileOpen(false)}
             >
               Team
-            </Link>
-            <Link
-              to="/contact"
-              className="py-2 hover:text-primary transition-colors"
-              activeProps={{ className: "text-primary" }}
-              onClick={() => setMobileOpen(false)}
-            >
-              Contact
             </Link>
             <div className="border-t border-border pt-4 mt-2 flex flex-col gap-3 text-muted-foreground">
               <Link

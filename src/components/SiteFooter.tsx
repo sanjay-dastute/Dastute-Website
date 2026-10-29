@@ -1,206 +1,128 @@
 import { Link } from "@tanstack/react-router";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+
+const COLUMNS: { title: string; links: [string, string][] }[] = [
+  {
+    title: "Practice",
+    links: [
+      ["/technology", "Technology"],
+      ["/products", "Products"],
+      ["/pricing", "Pricing"],
+      ["/marketing", "Marketing"],
+      ["/capabilities", "Capabilities"],
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      ["/about", "About"],
+      ["/team", "Team"],
+      ["/careers", "Careers"],
+      ["/case-studies", "Case Studies"],
+      ["/contact", "Contact"],
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      ["/blog", "Blog"],
+      ["/insights", "Insights & FAQs"],
+      ["/resources", "Guides & Resources"],
+      ["/resources/glossary", "IT Glossary"],
+    ],
+  },
+  {
+    title: "Get Started",
+    links: [
+      ["/contact", "Talk to an Expert"],
+      ["/request-audit", "Request an Audit"],
+      ["/project-estimator", "Project Estimator"],
+      ["/careers-apply", "Apply for a Role"],
+    ],
+  },
+];
 
 export function SiteFooter() {
   return (
-    <footer className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 text-white px-4 sm:px-6 py-4 sm:py-6">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-      <div className="max-w-7xl mx-auto">
-        {/* Top section */}
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+    <footer className="ft">
+      <div className="ft-glow" aria-hidden="true" />
+      <div className="relative max-w-7xl mx-auto px-6">
+        {/* Call to action */}
+        <div className="ft-cta">
           <div>
-            <h2 className="text-lg sm:text-xl font-bold tracking-tighter mb-2 sm:mb-3 leading-tight">
-              DASTUTE
-              <br />
-              TECHNOLOGIES
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-blue-300">/ Let's build</p>
+            <h2 className="mt-3 text-3xl sm:text-5xl font-bold tracking-tight text-white">
+              Have a project in mind? <span className="text-gradient-primary">Let's talk.</span>
             </h2>
-            <address className="not-italic text-xs text-white/90 space-y-0.5 font-mono">
-              <p>Dastute Technologies Limited</p>
-              <p>128 City Road, London, EC1V 2NX</p>
-              <p>United Kingdom &bull; Co. No. 17019407</p>
-            </address>
           </div>
-          <div className="flex flex-col justify-end items-start md:items-end">
-            <a
-              href="mailto:contact@dastute.co.uk"
-              className="text-sm sm:text-base font-light hover:text-primary transition-colors underline decoration-1 underline-offset-2 break-all"
-            >
-              contact@dastute.co.uk
-            </a>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/contact" className="ft-btn btn-gradient">
+              Contact Us <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link to="/careers" className="ft-btn btn-glass">
+              Join the Team
+            </Link>
           </div>
         </div>
 
-        {/* Link columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 md:gap-12 py-3 sm:py-4 border-t border-white/20">
-          <div className="text-left">
-            <p className="font-mono text-[8px] uppercase tracking-widest text-white/50 mb-1">
-              Practice
+        {/* Brand and links */}
+        <div className="ft-main">
+          <div className="ft-brand">
+            <Link to="/" className="ft-logo">DASTUTE</Link>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
+              Technology, security and growth partner for ambitious businesses across the UK, India and Singapore.
             </p>
-            <div className="flex flex-col gap-0 text-xs text-white/80 leading-tight">
+            <ul className="mt-6 space-y-3 text-sm text-slate-300">
+              <li className="flex gap-3">
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-blue-400" aria-hidden="true" />
+                <address className="not-italic">
+                  Dastute Technologies Limited
+                  <br />
+                  128 City Road, London, EC1V 2NX
+                  <br />
+                  United Kingdom &bull; Co. No. 17019407
+                </address>
+              </li>
+              <li>
+                <a href="mailto:contact@dastute.co.uk" className="ft-contact">
+                  <Mail className="h-4 w-4 text-blue-400" aria-hidden="true" /> contact@dastute.co.uk
+                </a>
+              </li>
+              <li>
+                <a href="tel:+447423021644" className="ft-contact">
+                  <Phone className="h-4 w-4 text-blue-400" aria-hidden="true" /> +44 7423 021644
+                </a>
+              </li>
+            </ul>
+          </div>
 
-              <Link
-                to="/technology"
-                className="hover:text-white transition-colors block"
-              >
-                Technology
-              </Link>
-              <Link
-                to="/products"
-                className="hover:text-white transition-colors block"
-              >
-                Products
-              </Link>
-              <Link
-                to="/pricing"
-                className="hover:text-white transition-colors block"
-              >
-                Pricing
-              </Link>
-              <Link
-                to="/marketing"
-                className="hover:text-white transition-colors block"
-              >
-                Marketing
-              </Link>
-              <Link
-                to="/capabilities"
-                className="hover:text-white transition-colors block"
-              >
-                Capabilities
-              </Link>
-            </div>
-          </div>
-          <div className="text-left">
-            <p className="font-mono text-[8px] uppercase tracking-widest text-white/50 mb-1">
-              Company
-            </p>
-            <div className="flex flex-col gap-0 text-xs text-white/80 leading-tight">
-              <Link
-                to="/about"
-                className="hover:text-white transition-colors block"
-              >
-                About
-              </Link>
-              <Link
-                to="/team"
-                className="hover:text-white transition-colors block"
-              >
-                Team
-              </Link>
-              <Link
-                to="/careers"
-                className="hover:text-white transition-colors block"
-              >
-                Careers
-              </Link>
-              <Link
-                to="/case-studies"
-                className="hover:text-white transition-colors block"
-              >
-                Case Studies
-              </Link>
-            </div>
-          </div>
-          <div className="text-left">
-            <p className="font-mono text-[8px] uppercase tracking-widest text-white/50 mb-1">
-              Engage
-            </p>
-            <div className="flex flex-col gap-0 text-xs text-white/80 leading-tight">
-              <Link
-                to="/contact"
-                className="hover:text-white transition-colors block"
-              >
-                Contact
-              </Link>
-              <Link
-                to="/request-audit"
-                className="hover:text-white transition-colors block"
-              >
-                Request an Audit
-              </Link>
-              <Link
-                to="/project-estimator"
-                className="hover:text-white transition-colors block"
-              >
-                Project Estimator
-              </Link>
-              <Link
-                to="/blog"
-                className="hover:text-white transition-colors block"
-              >
-                Blog
-              </Link>
-              <Link
-                to="/insights"
-                className="hover:text-white transition-colors block"
-              >
-                Insights & FAQs
-              </Link>
-              <Link
-                to="/resources"
-                className="hover:text-white transition-colors block"
-              >
-                Guides & Resources
-              </Link>
-              <Link
-                to="/resources/glossary"
-                className="hover:text-white transition-colors block"
-              >
-                IT Glossary
-              </Link>
-            </div>
-          </div>
-          <div className="text-left">
-            <p className="font-mono text-[8px] uppercase tracking-widest text-white/50 mb-1">
-              Legal
-            </p>
-            <div className="flex flex-col gap-0 text-xs text-white/80 leading-tight">
-              <Link
-                to="/privacy-policy"
-                className="hover:text-white transition-colors block"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                to="/terms"
-                className="hover:text-white transition-colors block"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                to="/cookie-policy"
-                className="hover:text-white transition-colors block"
-              >
-                Cookie Policy
-              </Link>
-            </div>
-          </div>
+          {COLUMNS.map((col) => (
+            <nav key={col.title} aria-label={col.title}>
+              <p className="ft-heading">{col.title}</p>
+              <ul className="space-y-2.5">
+                {col.links.map(([to, label]) => (
+                  <li key={label}>
+                    <Link to={to} className="ft-link">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-2 sm:pt-3 border-t border-white/20 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 text-[7px] sm:text-[9px] uppercase tracking-widest text-white/80">
-          <span>© {new Date().getFullYear()} Dastute Technologies Limited</span>
-          <div className="flex gap-2 sm:gap-4">
-            <Link to="/privacy-policy" className="hover:text-white">
-              Privacy
-            </Link>
-            <Link to="/terms" className="hover:text-white">
-              Terms
-            </Link>
-            <a
-              href="https://www.linkedin.com/company/dastute-switcher-technologies"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white"
-            >
-              LinkedIn
-            </a>
-            <a href="https://github.com/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub</a>
-            <a href="https://www.crunchbase.com/organization/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">Crunchbase</a>
-            <a href="https://clutch.co/profile/dastute-technologies" target="_blank" rel="noopener noreferrer" className="hover:text-white">Clutch</a>
-            <a href="https://www.trustpilot.com/review/dastute.co.uk" target="_blank" rel="noopener noreferrer" className="hover:text-white">Trustpilot</a>
+        {/* Legal */}
+        <div className="ft-bottom">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-500">
+            <span>© {new Date().getFullYear()} Dastute Technologies Limited</span>
+            <Link to="/privacy-policy" className="ft-legal">Privacy Policy</Link>
+            <Link to="/terms" className="ft-legal">Terms of Service</Link>
+            <Link to="/cookie-policy" className="ft-legal">Cookie Policy</Link>
           </div>
         </div>
       </div>
+      <p className="ft-word" aria-hidden="true">DASTUTE</p>
     </footer>
   );
 }

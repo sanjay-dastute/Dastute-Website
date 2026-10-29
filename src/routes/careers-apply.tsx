@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { buildBreadcrumbJsonLd } from "@/lib/seo";
+import { OPEN_ROLES, roleSlug } from "@/lib/openRoles";
 import { useFormSubmit } from "@/lib/useFormSubmit";
 
 // NOTE: Job application submissions are sent to info@dastute.co.uk via FormSubmit (src/lib/useFormSubmit.ts)
@@ -76,6 +78,15 @@ function Field({
 
 function CareerApplicationPage() {
   const { status, handleSubmit, errorMessage } = useFormSubmit();
+  const [position, setPosition] = useState("");
+  // Preselect the role passed from the Careers page (?role=senior-full-stack-engineer). Read after
+  // mount so the prerendered HTML stays the same for every visitor.
+  useEffect(() => {
+    const role = new URLSearchParams(window.location.search).get("role");
+    const match = OPEN_ROLES.find((r) => roleSlug(r.title) === role);
+    if (match) setPosition(match.title);
+  }, []);
+  const selectedRole = OPEN_ROLES.find((r) => r.title === position);
   return (
     <SiteLayout>
       {/* Hero */}
@@ -98,9 +109,16 @@ function CareerApplicationPage() {
       {/* Application Form */}
       <section className="section-gradient border-t border-border px-4 sm:px-6 py-16 sm:py-24 max-w-4xl mx-auto">
         <form
-          className="space-y-4 sm:space-y-6"
+          id="apply"
+          className="space-y-4 sm:space-y-6 scroll-mt-24"
           onSubmit={handleSubmit}
         >
+          {selectedRole && (
+            <div className="rounded-2xl border border-blue-200 bg-blue-50 px-5 py-4 text-sm text-slate-700">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-blue-600 block mb-1">Applying for</span>
+              <span className="font-bold text-slate-900">{selectedRole.title}</span> · {selectedRole.location}
+            </div>
+          )}
           {/* Personal Information */}
           <div>
             <h3 className="text-lg sm:text-xl font-bold mb-6 pb-4 border-b border-border">
@@ -141,9 +159,19 @@ function CareerApplicationPage() {
                   id="position"
                   name="position"
                   required
+                  value={position}
+                  onChange={(e) => setPosition(e.target.value)}
                   className="w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 text-sm transition-colors"
                 >
                   <option value="">Select a position...</option>
+                  <optgroup label="Open roles">
+                    {OPEN_ROLES.map((r) => (
+                      <option key={r.id} value={r.title}>
+                        {r.title}
+                      </option>
+                    ))}
+                  </optgroup>
+                  <optgroup label="General interest">
                   <option value="senior-engineer">
                     Senior Software Engineer
                   </option>
@@ -163,6 +191,7 @@ function CareerApplicationPage() {
                   <option value="other">
                     Other (please specify in cover letter)
                   </option>
+                  </optgroup>
                 </select>
               </div>
 

@@ -5,6 +5,7 @@ import { ProductFaq } from "@/components/ProductSections";
 import { CareerPath, PerkBento, RoleBoard, ValueCards } from "@/components/CareerSections";
 import { CountUp, Magnetic, SplitWords } from "@/components/motion";
 import { FAQS } from "@/lib/faqs";
+import { OPEN_ROLES } from "@/lib/openRoles";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -123,45 +124,6 @@ const PERKS = [
   {
     title: "Performance Bonuses",
     desc: "Company-wide performance-based bonuses and a sales referral program (up to a free company Tesla).",
-  },
-];
-
-const OPEN_ROLES = [
-  {
-    id: "tech-01",
-    practice: "Technology",
-    title: "Senior Full-Stack Engineer",
-    location: "Coimbatore / Chennai / Remote",
-    type: "Full-time",
-    description:
-      "Design and implement production-grade web platforms and custom integrations. Experience with Next.js, Node.js, React and cloud databases.",
-  },
-  {
-    id: "tech-02",
-    practice: "Technology",
-    title: "Senior Cybersecurity Specialist",
-    location: "London / Remote (UK)",
-    type: "Full-time",
-    description:
-      "Lead threat modeling, penetration testing, SIEM/SOC operations and Cyber Essentials / ISO 27001 readiness for global clients.",
-  },
-  {
-    id: "tech-03",
-    practice: "Technology",
-    title: "Cloud & DevOps Architect",
-    location: "London / Singapore / Remote",
-    type: "Full-time",
-    description:
-      "Design secure, scalable hybrid-cloud architectures on AWS and GCP. Implement infrastructure-as-code and FinOps cost optimisations.",
-  },
-  {
-    id: "mkt-01",
-    practice: "Marketing",
-    title: "Digital Marketing Specialist",
-    location: "London / Remote",
-    type: "Full-time",
-    description:
-      "Execute full-funnel digital campaigns including SEO, PPC, social media advertising and marketing automation for enterprise accounts.",
   },
 ];
 
