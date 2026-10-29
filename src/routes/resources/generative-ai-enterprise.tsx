@@ -2,13 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
-import { buildBlogPostingJsonLd, buildBreadcrumbJsonLd, buildFaqJsonLd, buildStandardPageHead } from "@/lib/seo";
+import { buildBlogPostingJsonLd, buildBreadcrumbJsonLd, buildFaqJsonLd, buildPersonJsonLd, buildStandardPageHead } from "@/lib/seo";
 import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/resources/generative-ai-enterprise")({
   head: () => ({
     ...buildStandardPageHead({
-      title: "Generative AI in the Enterprise | Real-World Automation Scenario",
+      title: "Generative AI in the Enterprise | Real Automation Scenarios",
       description: "How businesses use generative AI beyond chatbots: a real-world scenario of AI automating large-scale data analysis and saving hundreds of hours.",
       path: "/resources/generative-ai-enterprise",
 
@@ -24,6 +24,16 @@ export const Route = createFileRoute("/resources/generative-ai-enterprise")({
             dateModified: "2026-10-28T00:00:00+00:00",
             authorName: "Sanjay Dastute",
             path: "/resources/generative-ai-enterprise",
+          }),
+        ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildPersonJsonLd({
+            name: "Sanjay Dastute",
+            jobTitle: "Chief Technology Officer",
+            path: "/team",
           }),
         ),
       },

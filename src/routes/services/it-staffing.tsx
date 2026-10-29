@@ -10,7 +10,7 @@ export const Route = createFileRoute("/services/it-staffing")({
       {
         name: "description",
         content:
-          "Pre-vetted IT staffing solutions in the UK. We provide elite tech talent for contract, permanent, and contract-to-hire roles across software, cloud, and security.",
+          "Pre-vetted IT staffing in the UK. We provide elite tech talent for contract, permanent and contract-to-hire roles across software, cloud and security.",
       },
       { name: "author", content: "Dastute Technologies Limited" },
       { name: "robots", content: "index, follow" },
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/services/it-staffing")({
       {
         property: "og:description",
         content:
-          "Pre-vetted IT staffing solutions in the UK. We provide elite tech talent for contract, permanent, and contract-to-hire roles across software, cloud, and security.",
+          "Pre-vetted IT staffing in the UK. We provide elite tech talent for contract, permanent and contract-to-hire roles across software, cloud and security.",
       },
       { property: "og:type", content: "website" },
       {
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/services/it-staffing")({
       {
         name: "twitter:description",
         content:
-          "Pre-vetted IT staffing solutions in the UK. We provide elite tech talent for contract, permanent, and contract-to-hire roles across software, cloud, and security.",
+          "Pre-vetted IT staffing in the UK. We provide elite tech talent for contract, permanent and contract-to-hire roles across software, cloud and security.",
       },
       { name: "twitter:site", content: "@DastuteTech" },
       {
@@ -62,7 +62,7 @@ export const Route = createFileRoute("/services/it-staffing")({
         children: JSON.stringify(
           buildServiceJsonLd({
             name: "IT Staffing & Resource Augmentation",
-            description: "Pre-vetted IT staffing solutions in the UK. We provide elite tech talent for contract, permanent, and contract-to-hire roles across software, cloud, and security.",
+            description: "Pre-vetted IT staffing in the UK. We provide elite tech talent for contract, permanent and contract-to-hire roles across software, cloud and security.",
             path: "/services/it-staffing",
           }),
         ),

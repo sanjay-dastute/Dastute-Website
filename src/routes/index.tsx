@@ -10,7 +10,7 @@ import { HeroGlobe } from "@/components/motion/HeroGlobe";
 import { CountUp, Magnetic, Parallax, PinnedHorizontal, SplitWords, TiltCard } from "@/components/motion";
 
 const SERVICE_SUMMARY =
-  "Dastute Technologies delivers managed IT services, advanced cybersecurity, scalable cloud solutions, and bespoke software development to ambitious UK businesses.";
+  "Dastute Technologies delivers managed IT services, advanced cybersecurity, scalable cloud solutions and bespoke software development to ambitious UK businesses.";
 
 const SERVICE_ITEMS = [
   {

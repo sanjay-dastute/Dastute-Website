@@ -5,7 +5,7 @@ import { ProductFaq } from "@/components/ProductSections";
 import { CareerPath, PerkBento, RoleBoard, ValueCards } from "@/components/CareerSections";
 import { CountUp, Magnetic, SplitWords } from "@/components/motion";
 import { FAQS } from "@/lib/faqs";
-import { OPEN_ROLES } from "@/lib/openRoles";
+import { OPEN_ROLES, ROLES_CLOSE, ROLES_POSTED } from "@/lib/openRoles";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -39,40 +39,20 @@ export const Route = createFileRoute("/careers")({
           ]),
         ),
       },
-      ...buildJobPostingListJsonLd("/careers", [
-        {
-          title: "Senior Full-Stack Engineer",
-          description:
-            "Design and implement production-grade web platforms and custom integrations using modern engineering practices.",
-          location: "Coimbatore / Chennai / Remote",
-          country: "IN",
-          datePosted: "2026-05-27",
-        },
-        {
-          title: "Senior Cybersecurity Specialist",
-          description:
-            "Lead threat modeling, penetration testing, SIEM/SOC operations and security readiness programs.",
-          location: "London / Remote (UK)",
-          country: "GB",
-          datePosted: "2026-05-27",
-        },
-        {
-          title: "Cloud & DevOps Architect",
-          description:
-            "Design secure cloud architecture across AWS and GCP with infrastructure-as-code and FinOps controls.",
-          location: "London / Singapore / Remote",
-          country: "GB",
-          datePosted: "2026-05-27",
-        },
-        {
-          title: "Digital Marketing Specialist",
-          description:
-            "Execute full-funnel campaigns including SEO, PPC, social media and marketing automation.",
-          location: "London / Remote",
-          country: "GB",
-          datePosted: "2026-05-27",
-        },
-      ]).map((jobSchema) => ({
+      ...buildJobPostingListJsonLd(
+        OPEN_ROLES.map((role) => ({
+          title: role.title,
+          description: `<p>${role.description}</p><p>Responsibilities:</p><ul>${role.responsibilities
+            .map((r) => `<li>${r}</li>`)
+            .join("")}</ul><p>Dastute Technologies is a technology, security and growth partner with teams in the UK, India and Singapore. Apply online through our careers page.</p>`,
+          offices: role.offices,
+          remote: role.remote,
+          datePosted: ROLES_POSTED,
+          validThrough: ROLES_CLOSE,
+          path: "/careers",
+          identifier: role.id,
+        })),
+      ).map((jobSchema) => ({
         type: "application/ld+json",
         children: JSON.stringify(jobSchema),
       })),

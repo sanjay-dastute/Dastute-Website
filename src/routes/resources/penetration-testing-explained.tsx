@@ -5,7 +5,7 @@ import { buildBreadcrumbJsonLd, buildStandardPageHead, buildFaqJsonLd , buildBlo
 export const Route = createFileRoute("/resources/penetration-testing-explained")({
   head: () => ({
     ...buildStandardPageHead({
-      title: "What is Penetration Testing? A Guide for UK Businesses | Dastute",
+      title: "What Is Penetration Testing? UK Business Guide | Dastute",
       description: "Penetration testing explained simply. Learn the difference between vulnerability scanning and pen testing, and understand black box vs white box methodologies.",
       path: "/resources/penetration-testing-explained",
     }),
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/resources/penetration-testing-explained")
         type: "application/ld+json",
         children: JSON.stringify(
           buildBlogPostingJsonLd({
-            headline: "What is Penetration Testing? A Guide for UK Businesses | Dastute",
+            headline: "What Is Penetration Testing? UK Business Guide | Dastute",
             description: "Penetration testing explained simply. Learn the difference between vulnerability scanning and pen testing, and understand black box vs white box methodologies.",
             datePublished: "2026-05-13T13:05:27.272Z",
             authorName: "Sanjay Dastute",

@@ -6,7 +6,7 @@ export const Route = createFileRoute("/resources/cloud-migration-cost-guide")({
   head: () => ({
     ...buildStandardPageHead({
       title: "Cloud Migration Cost Guide UK | AWS vs Azure Pricing",
-      description: "A comprehensive guide to cloud migration costs in the UK. Understand AWS vs Azure pricing, hidden fees, and the difference between lift-and-shift and refactoring.",
+      description: "A complete guide to UK cloud migration costs. Understand AWS vs Azure pricing, hidden fees and the difference between lift-and-shift and refactoring.",
       path: "/resources/cloud-migration-cost-guide",
     }),
     scripts: [
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/resources/cloud-migration-cost-guide")({
         children: JSON.stringify(
           buildBlogPostingJsonLd({
             headline: "Cloud Migration Cost Guide UK | AWS vs Azure Pricing",
-            description: "A comprehensive guide to cloud migration costs in the UK. Understand AWS vs Azure pricing, hidden fees, and the difference between lift-and-shift and refactoring.",
+            description: "A complete guide to UK cloud migration costs. Understand AWS vs Azure pricing, hidden fees and the difference between lift-and-shift and refactoring.",
             datePublished: "2026-02-06T10:54:32.727Z",
             authorName: "Sanjay Dastute",
             path: "/resources/cloud-migration-cost-guide",

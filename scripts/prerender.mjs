@@ -1,3 +1,5 @@
+import { execFileSync } from "child_process";
+import { existsSync } from "fs";
 import { mkdir, writeFile } from "fs/promises";
 import { join, dirname } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
@@ -99,11 +101,11 @@ async function prerender() {
     }
   }
 
-  // Generate sitemap.xml separately
+  // Generate sitemap.xml separately, with <lastmod> from each route file's last commit
   try {
     const sitemapReq = new Request(`${ORIGIN}/sitemap.xml`, { method: "GET" });
     const sitemapRes = await handler.fetch(sitemapReq, {}, {});
-    const xml = await sitemapRes.text();
+    const xml = addLastmod(await sitemapRes.text());
     await writeFile(join(OUT_DIR, "sitemap.xml"), xml, "utf-8");
     console.log(`  ✓ /sitemap.xml`);
     success++;
@@ -118,3 +120,19 @@ prerender().catch((err) => {
   console.error("Fatal prerender error:", err);
   process.exit(1);
 });
+
+/** Adds <lastmod> to each sitemap entry from the last git commit of its route file. */
+function addLastmod(xml) {
+  const routes = join(__dirname, "..", "src", "routes");
+  return xml.replace(/<loc>https:\/\/[^/<]+(\/[^<]*)<\/loc>/g, (match, path) => {
+    const base = join(routes, path === "/" ? "index" : path);
+    const file = [`${base}.tsx`, join(base, "index.tsx")].find((f) => existsSync(f));
+    if (!file) return match;
+    try {
+      const date = execFileSync("git", ["log", "-1", "--format=%cs", "--", file], { encoding: "utf-8" }).trim();
+      return date ? `${match}<lastmod>${date}</lastmod>` : match;
+    } catch {
+      return match;
+    }
+  });
+}

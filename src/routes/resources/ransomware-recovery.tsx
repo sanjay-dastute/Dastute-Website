@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
-import { buildBlogPostingJsonLd, buildBreadcrumbJsonLd, buildFaqJsonLd, buildStandardPageHead } from "@/lib/seo";
+import { buildBlogPostingJsonLd, buildBreadcrumbJsonLd, buildFaqJsonLd, buildPersonJsonLd, buildStandardPageHead } from "@/lib/seo";
 import { Icon } from "@/components/Icon";
 
 export const Route = createFileRoute("/resources/ransomware-recovery")({
@@ -24,6 +24,16 @@ export const Route = createFileRoute("/resources/ransomware-recovery")({
             dateModified: "2026-10-28T00:00:00+00:00",
             authorName: "Sanjay Dastute",
             path: "/resources/ransomware-recovery",
+          }),
+        ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildPersonJsonLd({
+            name: "Sanjay Dastute",
+            jobTitle: "Chief Technology Officer",
+            path: "/team",
           }),
         ),
       },

@@ -6,7 +6,7 @@ import { Icon } from "@/components/Icon";
 export const Route = createFileRoute("/industries/healthcare")({
   head: () => ({
     meta: [
-      { title: "IT Support for Healthcare UK | Medical IT Solutions | Dastute" },
+      { title: "Healthcare IT Support UK | Medical IT Solutions | Dastute" },
       {
         name: "description",
         content:
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/industries/healthcare")({
       { name: "theme-color", content: "#1a56db" },
       {
         property: "og:title",
-        content: "IT Support for Healthcare UK | Medical IT Solutions | Dastute",
+        content: "Healthcare IT Support UK | Medical IT Solutions | Dastute",
       },
       {
         property: "og:description",
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/industries/healthcare")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "IT Support for Healthcare UK | Medical IT Solutions | Dastute",
+        content: "Healthcare IT Support UK | Medical IT Solutions | Dastute",
       },
       {
         name: "twitter:description",

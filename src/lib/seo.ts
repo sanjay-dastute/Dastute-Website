@@ -37,13 +37,20 @@ interface ServiceItem {
 
 interface JobPostingItem {
   title: string;
+  /** Full job description; simple HTML (<p>, <ul>, <li>) is allowed */
   description: string;
-  location: string;
-  /** ISO 3166-1 alpha-2 country code of the primary office, e.g. "GB" */
-  country: string;
+  /** Offices the role is based at, with ISO 3166-1 alpha-2 country codes */
+  offices: { city: string; country: string }[];
+  /** Countries remote applicants may work from; omit for office-only roles */
+  remote?: string[];
   /** Fixed ISO date the role was first advertised; never the build date */
   datePosted: string;
+  /** ISO date the listing closes */
+  validThrough: string;
   employmentType?: string;
+  /** Page that carries this posting's markup */
+  path: string;
+  identifier: string;
 }
 
 interface StandardPageHeadInput {
@@ -301,31 +308,41 @@ export function buildServiceListJsonLd(
   };
 }
 
-export function buildJobPostingListJsonLd(
-  pagePath: string,
-  jobs: JobPostingItem[],
-): WithContext<JobPosting>[] {
+export function buildJobPostingListJsonLd(jobs: JobPostingItem[]): WithContext<JobPosting>[] {
   return jobs.map((job) => ({
     "@context": "https://schema.org",
     "@type": "JobPosting",
     title: job.title,
     description: job.description,
+    identifier: { "@type": "PropertyValue", name: "Dastute Technologies Limited", value: job.identifier },
     datePosted: job.datePosted,
+    validThrough: job.validThrough,
+    employmentType: job.employmentType ?? "FULL_TIME",
     hiringOrganization: {
       "@type": "Organization",
       name: "Dastute Technologies Limited",
       sameAs: BASE_URL,
+      logo: absoluteUrl("/logo.png"),
     },
-    jobLocation: {
-      "@type": "Place",
+    jobLocation: job.offices.map((office) => ({
+      "@type": "Place" as const,
       address: {
-        "@type": "PostalAddress",
-        addressLocality: job.location,
-        addressCountry: job.country,
+        "@type": "PostalAddress" as const,
+        addressLocality: office.city,
+        addressCountry: office.country,
       },
-    },
-    employmentType: job.employmentType ?? "FULL_TIME",
-    url: absoluteUrl(pagePath),
+    })),
+    ...(job.remote?.length
+      ? {
+          jobLocationType: "TELECOMMUTE",
+          applicantLocationRequirements: job.remote.map((country) => ({
+            "@type": "Country" as const,
+            name: country,
+          })),
+        }
+      : {}),
+    directApply: true,
+    url: absoluteUrl(job.path),
   }));
 }
 

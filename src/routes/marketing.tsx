@@ -13,7 +13,7 @@ import {
 const marketingPageHead = buildStandardPageHead({
   title: "Brand & Digital Marketing Services - Dastute Technologies",
   description:
-    "Result-driven digital marketing (SEO, PPC, Social Media, Email), Brand Strategy, Brand Identity systems and Product Film visualization from Dastute Technologies.",
+    "Results-driven digital marketing (SEO, PPC, social, email), brand strategy, brand identity systems and product film visualisation from Dastute Technologies.",
   ogDescription:
     "Comprehensive brand strategy and full-funnel digital marketing services from our UK and India teams.",
   path: "/marketing",
