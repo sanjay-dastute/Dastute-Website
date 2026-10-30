@@ -4,6 +4,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { FAQS } from "@/lib/faqs";
 import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
 import { Icon } from "@/components/Icon";
+import { LaunchPlan, ProofGrid, ScopeTabs } from "@/components/MarketingProgramme";
 
 export const Route = createFileRoute("/services/marketing")({
   head: () => ({
@@ -258,6 +259,18 @@ function Page() {
         </div>
       </section>
 
+      {/* Proof and industries */}
+      <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
+        <ProofGrid />
+      </section>
+
+      {/* Scope of work */}
+      <section className="section-gradient border-y border-border px-6 py-20 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <ScopeTabs />
+        </div>
+      </section>
+
       {/* Industries We Serve */}
       <section className="bg-slate-50 border-b border-border">
         <div className="max-w-7xl mx-auto p-6 py-16 md:py-24">
@@ -361,6 +374,14 @@ function Page() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* 30-day launch plan */}
+      <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
+        <LaunchPlan />
+        <Link to="/pricing" hash="plans" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700">
+          See plans and pricing <span aria-hidden>→</span>
+        </Link>
       </section>
 
       {/* Engagement Process */}

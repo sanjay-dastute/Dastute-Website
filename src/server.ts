@@ -116,6 +116,14 @@ export default {
         return Response.redirect(url.toString(), 301);
       }
 
+      // Visitor country for regional pricing (lib/region.ts)
+      if (url.pathname === "/api/geo") {
+        const country = (request as Request & { cf?: { country?: string } }).cf?.country ?? null;
+        return new Response(JSON.stringify({ country }), {
+          headers: { "content-type": "application/json", "cache-control": "private, no-store" },
+        });
+      }
+
       const handler = await getServerEntry();
       
       // Determine if this is an agent requesting markdown

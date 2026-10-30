@@ -4,6 +4,7 @@ import { buildBreadcrumbJsonLd, buildServiceJsonLd, buildFaqJsonLd } from "@/lib
 import { Magnetic, SplitWords } from "@/components/motion";
 import { ProductFaq } from "@/components/ProductSections";
 import { CostChart, PricingCta, PricingModels, VersusBlock } from "@/components/PricingSections";
+import { AdBudget, PlansTable, ScopeClarity, TermsGrid } from "@/components/MarketingProgramme";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -199,6 +200,30 @@ function Page() {
           </div>
           <VersusBlock />
         </div>
+      </section>
+
+      {/* Digital marketing plans (£ / ₹ by visitor region) */}
+      <section className="section-gradient border-y border-border px-6 py-20 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <PlansTable heading="Digital marketing plans" />
+          <Link to="/marketing" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700">
+            See the full marketing programme <span aria-hidden>→</span>
+          </Link>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
+        <AdBudget />
+      </section>
+
+      <section className="section-gradient border-y border-border px-6 py-20 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <ScopeClarity />
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
+        <TermsGrid />
       </section>
 
       {/* FAQ */}

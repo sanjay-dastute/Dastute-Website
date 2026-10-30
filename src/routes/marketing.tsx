@@ -4,6 +4,20 @@ import { Magnetic, SplitWords } from "@/components/motion";
 import { ProductFaq } from "@/components/ProductSections";
 import { DisciplineRows, MarketingFunnel } from "@/components/MarketingSections";
 import {
+  AdBudget,
+  LaunchPlan,
+  NextSteps,
+  ObjectivesFunnel,
+  PlansTable,
+  ProofGrid,
+  ScopeClarity,
+  ScopeTabs,
+  ServiceCodes,
+  TermsGrid,
+} from "@/components/MarketingProgramme";
+import { HEADLINE_STATS } from "@/lib/marketingProgramme";
+import { useLocalise } from "@/lib/region";
+import {
   buildBreadcrumbJsonLd,
   buildServiceListJsonLd,
   buildStandardPageHead,
@@ -171,6 +185,7 @@ const SERVICES = [
 ];
 
 function MarketingPage() {
+  const t = useLocalise();
   return (
     <SiteLayout>
       {/* Hero */}
@@ -185,20 +200,33 @@ function MarketingPage() {
               <br />
               <SplitWords className="text-gradient-primary" text="and SEO services London." delay={0.3} />
             </h1>
-            <p className="mt-8 max-w-xl text-slate-300 text-lg">
-              Five creative and marketing disciplines designed to help you stand
-              out, drive search traffic, and capture leads globally.
+            <p className="mt-8 max-w-xl text-white text-xl font-semibold">
+              Grow your brand with marketing that performs.
             </p>
-            <div className="mt-10 font-mono text-[10px] uppercase tracking-widest text-slate-400 flex flex-wrap gap-x-3 gap-y-2">
-              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">5 Disciplines</span>
-              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">SEO · PPC · Paid Search</span>
-              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">3D Product Visualisation</span>
-            </div>
+            <p className="mt-3 max-w-xl text-slate-300 text-lg">
+              A complete digital marketing partnership on a project basis: strategy, content, ads, SEO and
+              reporting, run by one in-house team. Five creative and marketing disciplines designed to help you
+              stand out, drive search traffic, and capture leads globally.
+            </p>
+            <dl className="mt-10 grid max-w-xl grid-cols-3 gap-4 border-t border-white/10 pt-6">
+              {HEADLINE_STATS.map((st) => (
+                <div key={st.label}>
+                  <dt className="sr-only">{st.label}</dt>
+                  <dd className="text-2xl sm:text-3xl font-black tracking-tight text-white">{t(st.value)}</dd>
+                  <dd className="mt-1 text-xs text-slate-400">{st.label}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
           <div className="hero-visual mx-auto w-full max-w-lg">
             <MarketingFunnel />
           </div>
         </div>
+      </section>
+
+      {/* Proof */}
+      <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
+        <ProofGrid />
       </section>
 
       {/* Disciplines */}
@@ -215,12 +243,60 @@ function MarketingPage() {
         </div>
       </section>
 
+      {/* 16 services */}
+      <section className="future-section px-6 py-20 md:py-28">
+        <div className="relative max-w-7xl mx-auto">
+          <ServiceCodes />
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
+        <ObjectivesFunnel />
+      </section>
+
+      <section className="section-gradient border-y border-border px-6 py-20 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <ScopeTabs />
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
+        <LaunchPlan />
+      </section>
+
+      <section className="section-gradient border-y border-border px-6 py-20 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <PlansTable />
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
+        <AdBudget />
+      </section>
+
+      <section className="section-gradient border-y border-border px-6 py-20 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <ScopeClarity />
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
+        <TermsGrid />
+      </section>
+
       <section id="faq" className="px-6 py-20 sm:py-24 max-w-7xl mx-auto">
         <ProductFaq
           items={FAQ_ITEMS}
           title="People Also Ask"
           intro="Straight answers on SEO timelines, brand strategy and measuring marketing ROI."
         />
+      </section>
+
+      {/* Next steps */}
+      <section className="hb-section px-6 py-20 md:py-24">
+        <div className="relative max-w-7xl mx-auto">
+          <NextSteps />
+        </div>
       </section>
 
       {/* Footer CTA */}
