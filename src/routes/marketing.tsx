@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Magnetic, SplitWords } from "@/components/motion";
 import { ProductFaq } from "@/components/ProductSections";
-import { DisciplineRows, MarketingFunnel } from "@/components/MarketingSections";
+import { MarketingFunnel } from "@/components/MarketingSections";
 import {
   AdBudget,
   LaunchPlan,
@@ -102,88 +102,6 @@ const FAQ_ITEMS = [
   }
 ];
 
-const SERVICES = [
-  {
-    code: "M.01",
-    title: "Digital Marketing",
-    ctaLabel: "Read More",
-    ctaHref: "/services/marketing",
-    summary:
-      "Result-driven campaign planning and full-funnel execution across digital channels.",
-    detail:
-      "Search Engine Optimisation (SEO), Pay-Per-Click (PPC) search ads, social media marketing, content creation, email automation campaigns and web conversion optimisation (CRO). Fully tracked with custom analytics dashboards.",
-    deliverables: [
-      "Comprehensive SEO audits & maps",
-      "Google Ads / Meta Ads setup & management",
-      "Email marketing & automation flows",
-      "Monthly performance & ROI reports",
-    ],
-  },
-  {
-    code: "M.02",
-    title: "Brand Strategy",
-    ctaLabel: "Request a Brief",
-    ctaHref: "/contact",
-    summary: "Define your positioning, audience mapping and brand narrative.",
-    detail:
-      "Discovery workshops, competitor analysis, target persona profiling, brand architecture planning, positioning maps and corporate messaging guidelines to establish a clear market direction.",
-    deliverables: [
-      "Brand positioning guidelines",
-      "Competitor & audience profiles",
-      "Core messaging framework",
-      "Brand architecture map",
-    ],
-  },
-  {
-    code: "M.03",
-    title: "Brand Identity Design",
-    ctaLabel: "See the Process",
-    ctaHref: "/contact",
-    summary:
-      "Logo, typography and color systems that perform across all mediums.",
-    detail:
-      "Logo design, typographic systems, custom color palettes, brand graphics, corporate stationary, presentation decks and comprehensive brand style guides to enforce consistency.",
-    deliverables: [
-      "Logo files & brand assets",
-      "Typography & color schemes",
-      "Full brand guidelines document",
-      "Stationary & deck templates",
-    ],
-  },
-  {
-    code: "M.04",
-    title: "Media Planning & Advertising",
-    ctaLabel: "Discuss Budget",
-    ctaHref: "/contact",
-    summary:
-      "Optimise your ad budget across high-performing programmatic channels.",
-    detail:
-      "Campaign design, budget allocation, programmatic display advertising, retargeting setup, conversion tracking configuration, and ongoing performance optimization.",
-    deliverables: [
-      "Multi-channel media budget plan",
-      "Display & video ad placements",
-      "Retargeting & conversion setup",
-      "Performance optimisation logs",
-    ],
-  },
-  {
-    code: "M.05",
-    title: "Product Film & Visualisation",
-    ctaLabel: "Start a Project",
-    ctaHref: "/contact",
-    summary:
-      "Showcase your technology or physical products with high-end visuals.",
-    detail:
-      "3D product rendering, explainer animations, product overview videos, and digital showcase materials. Helping you explain complex technology or hardware visually.",
-    deliverables: [
-      "High-fidelity 3D renderings",
-      "Explainer animation files",
-      "Product showcase videos",
-      "Digital launch asset packages",
-    ],
-  },
-];
-
 function MarketingPage() {
   const t = useLocalise();
   return (
@@ -227,20 +145,6 @@ function MarketingPage() {
       {/* Proof */}
       <section className="px-6 py-20 md:py-24 max-w-7xl mx-auto">
         <ProofGrid />
-      </section>
-
-      {/* Disciplines */}
-      <section className="section-gradient border-y border-border">
-        <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-600">/ What we create</p>
-              <p className="mt-3 text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Five disciplines, one growth engine</p>
-            </div>
-            <p className="max-w-xs text-sm text-slate-500">Select a discipline to see what's included.</p>
-          </div>
-          <DisciplineRows services={SERVICES} />
-        </div>
       </section>
 
       {/* 16 services */}
